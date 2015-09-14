@@ -1,0 +1,17 @@
+Package: sdmpredictors
+Type: Package
+Title: Species Distribution Modeling Predictor Datasets from Around the Web
+Version: 1.0
+Date: 2015-07-15
+Depends:
+    R (>= 3.2.0),
+    raster (>= 2.4-15)
+Imports:
+    R.utils (>= 2.1.0),
+    sets (>= 1.0-15)
+Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre"))
+Maintainer: Samuel Bosch <mail@samuelbosch.com>
+Description: Terrestrial and marine predictors for species distribution modeling from multiple sources, including WorldClim (http://www.worldclim.org/), Bio-ORACLE (http://www.oracle.ugent.be/) and MARSPEC (http://www.marspec.org/).
+License: MIT + file LICENSE
+LazyData: true
+Suggests: testthat
