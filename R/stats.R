@@ -21,7 +21,7 @@
 #' @seealso 
 #' \code{\link{list_layers}} \code{\link{layers_correlation}}
 layer_stats <- function(layercodes = c()) {
-  d <- .layerstats
+  d <- get_sysdata()$layerstats
   if(is.data.frame(layercodes)) {
     layercodes <- layercodes$layer_code
   }
@@ -64,7 +64,7 @@ layer_stats <- function(layercodes = c()) {
 #' \code{\link{list_layers}} \code{\link{layer_stats}} \code{\link{correlation_groups}}
 #' @encoding UTF-8
 layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
-  d <- .layerscorrelation
+  d <- get_sysdata()$layerscorrelation
   if(is.data.frame(layercodes)) {
     layercodes <- layercodes$layer_code
   }
