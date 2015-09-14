@@ -1,24 +1,26 @@
-# sdmpredictors: Species Distribution Modeling Predictor Datasets from Around the Web
+# sdmpredictors: a compilation of species distribution modeling predictors data
 
 An R package to improve the usability of datasets with predictors for species distribution modeling (SDM).
 
 Installation:
 
-    devtools::install_github("swbosch/sdmpredictors")
+    devtools::install_github("samuelbosch/sdmpredictors")
 
-or:
+or with packrat:
 
     packrat::init()
-    devtools::install_github("swbosch/sdmpredictors")
+    devtools::install_github("samuelbosch/sdmpredictors")
 
 Example usage:
 
+    # Example 1: view marine datasets, layers and load a few of them by name
+    
     library(sdmpredictors)
     
-    # exploring the datasets
+    # exploring the marine datasets
     datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
     View(datasets)
-    browseUrl(datasets$url[1])
+    browseURL(datasets$url[1])
     
     # exploring the layers
     layers <- list_layers(datasets)
@@ -27,8 +29,13 @@ Example usage:
     # download specific layers to the current directory or load previously downloaded rasters
     rasters <- load_layers(c("BO_calcite", "BO_chlomean", "MS_bathy_5m"), datadir = ".")
     
-    ## filter MARSPEC monthly
-    layers <- layers[!grepl("MS_ss[st][01][0-9]", layers$layer_code),]
+    # Example: 2 looking up statistics and correlations for marine annual layers:
+    
+    datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
+    layers <- list_layers(datasets)
+    
+    # filter out monthly layers
+    layers <- layers[is.na(layers$month),]
     
     stats <- layer_stats(layers)
     View(stats)
@@ -36,12 +43,14 @@ Example usage:
     correlations <- layers_correlation(layers)
     View(correlations)
     
+    # create groups of layers where no layers in one group 
+    # have a correlation > 0.7 with a layer from another group
     groups <- correlation_groups(correlations, max_correlation=0.7)
     
-    ## inspect groups
-    ## heatmap plot for larger groups (if gplots library is installed)
+    # inspect groups
+    # heatmap plot for larger groups (if gplots library is installed)
     for(group in groups) {
-      group_correlation <- as.matrix(correlations[group,group])
+      group_correlation <- as.matrix(correlations[group, group, drop=FALSE])
       if(require(gplots) && length(group) > 4){
         heatmap.2(abs(group_correlation)
                  ,main = "Correlation"

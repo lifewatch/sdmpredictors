@@ -14,13 +14,13 @@
 #' @param equalarea logical. If \code{TRUE} then layers are loaded with a Behrmann 
 #' cylindrical equal-area projection, otherwise unprojected (lonlat).
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is a 
-#' \code{\link[raster]{RasterStack}} otherwise a list of rasters is returned.
+#' \code{\link[raster]{stack}} otherwise a list of rasters is returned.
 #'
 #' @return RasterStack or list of raster
 #' 
 #' @export
 #' @seealso 
-#' \code{\link{list_layers}} for finding out the layercodes, \code{\link[raster]{stack}} 
+#' \code{\link{list_layers}}, \code{\link{layer_stats}}, \code{\link{layers_correlation}}
 load_layers <- function(layercodes, datadir = ".", equalarea = TRUE, rasterstack = TRUE) {
   ## TODO replace datadir with the rasterOptions approach from the raster package ???
   datadir <- normalizePath(paste0(datadir,"/"), winslash = "/", mustWork = TRUE)

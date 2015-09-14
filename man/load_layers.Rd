@@ -17,7 +17,7 @@ are stored in the current directory.}
 cylindrical equal-area projection, otherwise unprojected (lonlat).}
 
 \item{rasterstack}{logical. If \code{TRUE} (default value) then the result is a
-\code{\link[raster]{RasterStack}} otherwise a list of rasters is returned.}
+\code{\link[raster]{stack}} otherwise a list of rasters is returned.}
 }
 \value{
 RasterStack or list of raster
@@ -28,6 +28,6 @@ By default a RasterStack is returned but this is only possible When all rasters 
 the same spatial extent and resolution.
 }
 \seealso{
-\code{\link{list_layers}} for finding out the layercodes, \code{\link[raster]{stack}}
+\code{\link{list_layers}}, \code{\link{layer_stats}}, \code{\link{layers_correlation}}
 }
 
