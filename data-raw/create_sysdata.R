@@ -9,5 +9,8 @@ create_sysdata <- function() {
   .layerscorrelation <- get_all_correlations()
   devtools::use_data(.datasetlist, .layerlist, .layerstats, .layerscorrelation,
                      internal = TRUE, overwrite = TRUE)
+  file.copy("R/sysdata.rda", 
+            "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
+            overwrite = TRUE)
 }
 create_sysdata()
