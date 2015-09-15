@@ -2,6 +2,14 @@ library(sdmpredictors)
 
 context("List datasets/layers")
 
+data_raw_file <- function(fname) {
+  d <- "../../data-raw/"
+  if(!dir.exists(d)) {
+    skip("data-raw not found")
+  }
+  paste0(d, fname)
+}
+
 test_that("list_datasets with defaults params returns correct rows", {
   df <- list_datasets()
   expect_false(is.factor(df$dataset_code))
@@ -25,7 +33,7 @@ test_that("list_datasets type filtering works", {
 
 test_that("list_datasets result is same as datasets.csv", {
   skip_on_cran()
-  original <- read.csv2("../../data-raw/datasets.csv", stringsAsFactors = FALSE)
+  original <- read.csv2(data_raw_file("datasets.csv"), stringsAsFactors = FALSE)
   df <- list_datasets()
   expect_equal(nrow(df),nrow(original))
   expect_equal(df, original)
@@ -65,7 +73,7 @@ test_that("list_layers type filtering works", {
 
 test_that("list_layers result is same as layers.csv", {
   skip_on_cran()
-  original <- read.csv2("../../data-raw/layers.csv", stringsAsFactors = FALSE)
+  original <- read.csv2(data_raw_file("layers.csv"), stringsAsFactors = FALSE)
   df <- list_layers()
   expect_equal(nrow(df),nrow(original))
   expect_equal(df, original)
