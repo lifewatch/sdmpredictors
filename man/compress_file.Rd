@@ -26,9 +26,6 @@ The path of the compressed file.
 \description{
 The internal method \code{compress_file} compresses a file and returns the path to the result.
 }
-\examples{
-print("TODO examples compress_file")
-}
 \seealso{
 \code{\link{decompress_file}}
 }

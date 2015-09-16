@@ -14,7 +14,8 @@
 #' @return A dataframe with basic statistics about each given layercode.
 #' 
 #' @examples
-#' layer_stats()
+#' # layer stats for the first 10 layers
+#' layer_stats()[1:10,]
 #' layer_stats(c("BO_calcite", "MS_bathy_5m"))
 #' 
 #' @export
@@ -50,12 +51,13 @@ layer_stats <- function(layercodes = c()) {
 #' With the default empty vector all statistics are returned.
 #' @param include_quadratic logical. When \code{TRUE}, then the correlation coefficients of 
 #' the square of the layercodes area also returned. These layers are indicated with the
-#' layercode with an extra ² symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
+#' layercode with an extra \\xb2 symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
 #' 
 #' @return A dataframe with the Pearson product-moment correlation coefficients.
 #' 
 #' @examples
-#' layers_correlation()
+#' # correlation of the first 10 layers
+#' layers_correlation()[1:10,1:10]
 #' layers_correlation(c("BO_calcite", "MS_bathy_5m"))
 #' layers_correlation(c("BO_calcite", "MS_bathy_5m"), include_quadratic = FALSE)
 #' 
@@ -70,7 +72,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
   }
   if(!is.null(layercodes)) {
     if(include_quadratic) {
-      layercodes <- c(layercodes, paste0(layercodes, "\u00B2"))
+      layercodes <- c(layercodes, paste0(layercodes, "\xb2"))
     }
     notfound <- layercodes[!(layercodes %in% colnames(d))]
     d <- d[rownames(d) %in% layercodes,colnames(d) %in% layercodes, drop = FALSE]
@@ -80,7 +82,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
     }
   }
   else if(!include_quadratic) {
-    filter <- !grepl("\u00B2$", rownames(d))
+    filter <- !grepl("\xb2$", rownames(d))
     d <- d[filter, filter, drop = FALSE]
   }
   return(d)
@@ -107,7 +109,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #' 
 #' @references
 #' Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G., Carré, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal with it and a simulation study evaluating their performance. Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x
-#' Barbet-Massin, M., & Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of relevant climate predictors for species distribution modelling. Diversity and Distributions, 20(11), 1285–1295. doi:10.1111/ddi.12229
+#' Barbet-Massin, M. & Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of relevant climate predictors for species distribution modelling. Diversity and Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
 #' 
 #' @examples
 #' 
@@ -124,7 +126,7 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
     ## returns only non quadratic layer codes BUT makes sure to make use of the quadratic correlation value
     row <- layers_correlation[i,,drop = FALSE]
     layer_codes <- names(row)[abs(row) > max_correlation]
-    sets::as.set(sub("\u00B2$","", layer_codes)) 
+    sets::as.set(sub("\xb2$","", layer_codes)) 
   }
   group_count <- function (t) { sum(sapply(t, function(s) { ifelse(length(s) > 0, 1, 0) })) }
   t <- lapply(1:nrow(layers_correlation), to_set)
@@ -180,8 +182,8 @@ calc_stats <- function(layercode, raster) {
                   mad = mad(v, center = q[3], na.rm = TRUE),
                   mean = mean(v, na.rm = TRUE),
                   sd = sd(v, na.rm = TRUE),
-                  moran = Moran(raster),
-                  geary = Geary(raster),
+                  moran = raster::Moran(raster),
+                  geary = raster::Geary(raster),
                   stringsAsFactors = FALSE)
   return (d)
 }

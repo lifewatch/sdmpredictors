@@ -27,12 +27,17 @@ A dataframe with information on the supported datasets.
 layers of one or more datasets.
 }
 \examples{
-list_layers()
-list_layers("WorldClim")
-list_layers("Bio-ORACLE")
-list_layers(c("Bio-ORACLE","MARSPEC"))
-list_layers(marine=FALSE)
-list_layers(terrestrial=FALSE)
+# list the first 5 layers
+list_layers()[1:5,]
+# list the layercodes all monthly layers from WorldClim
+worldclim <- list_layers("WorldClim")
+worldclim[!is.na(worldclim$month),]$layer_code
+# list layer codes for Bio-ORACLE and MARSPEC
+list_layers(c("Bio-ORACLE","MARSPEC"))$layer_code
+# list the first 5 terrestrial layers
+list_layers(marine=FALSE)[1:5,]
+# list the first 5 marine layers
+list_layers(terrestrial=FALSE)[1:5,]
 }
 \seealso{
 \code{\link{list_datasets}}, \code{\link{load_layers}}

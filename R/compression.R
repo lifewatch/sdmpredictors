@@ -16,8 +16,8 @@
 #' 
 #' @return The path of the compressed file.
 #' 
-#' @examples
-#' print("TODO examples compress_file")
+# @examples
+# print("TODO examples compress_file")
 #' 
 #' @seealso 
 #' \code{\link{decompress_file}}
@@ -54,12 +54,12 @@ compress_file <- function(filename, outputdir, method="gzip", overwrite=FALSE, r
 #' 
 #' @return The path of the decompressed file.
 #' 
-#' @examples 
-#' #decompress_file("compressed/sst_mean.gri.gz", "decompressed", overwrite = FALSE)
-#' #decompress_file("compressed/gri.bz2", "decompressed", overwrite = TRUE)
-#' #decompress_file("compressed/gri.bz2", "decompressed", remove = TRUE)
-#' #decompress_file("compressed/sst_mean.gri.invalidextension", decompressed")
-#' print("TODO examples decompress_file")
+# @examples 
+# #decompress_file("compressed/sst_mean.gri.gz", "decompressed", overwrite = FALSE)
+# #decompress_file("compressed/gri.bz2", "decompressed", overwrite = TRUE)
+# #decompress_file("compressed/gri.bz2", "decompressed", remove = TRUE)
+# #decompress_file("compressed/sst_mean.gri.invalidextension", decompressed")
+# print("TODO examples decompress_file")
 #'
 #' @seealso 
 #' \code{\link{compress_file}}

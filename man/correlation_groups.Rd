@@ -31,7 +31,7 @@ print(correlation_groups(corr, max_correlation=0.6))
 }
 \references{
 Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G., Carré, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal with it and a simulation study evaluating their performance. Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x
-Barbet-Massin, M., & Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of relevant climate predictors for species distribution modelling. Diversity and Distributions, 20(11), 1285–1295. doi:10.1111/ddi.12229
+Barbet-Massin, M. & Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of relevant climate predictors for species distribution modelling. Diversity and Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
 }
 \seealso{
 \code{ \link{layers_correlation} \link{list_layers} \link{layer_stats}}

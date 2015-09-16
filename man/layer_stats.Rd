@@ -20,7 +20,8 @@ median absolute deviation (mad), mean, standard deviation (sd)) about each
 given layercode.
 }
 \examples{
-layer_stats()
+# layer stats for the first 10 layers
+layer_stats()[1:10,]
 layer_stats(c("BO_calcite", "MS_bathy_5m"))
 }
 \seealso{

@@ -14,7 +14,7 @@ With the default empty vector all statistics are returned.}
 
 \item{include_quadratic}{logical. When \code{TRUE}, then the correlation coefficients of
 the square of the layercodes area also returned. These layers are indicated with the
-layercode with an extra ² symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.}
+layercode with an extra \\xb2 symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.}
 }
 \value{
 A dataframe with the Pearson product-moment correlation coefficients.
@@ -25,7 +25,8 @@ A dataframe with the Pearson product-moment correlation coefficients.
 a terrestrial and a marine layer has been set to \code{NA}.
 }
 \examples{
-layers_correlation()
+# correlation of the first 10 layers
+layers_correlation()[1:10,1:10]
 layers_correlation(c("BO_calcite", "MS_bathy_5m"))
 layers_correlation(c("BO_calcite", "MS_bathy_5m"), include_quadratic = FALSE)
 }
