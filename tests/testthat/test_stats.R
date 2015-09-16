@@ -58,8 +58,8 @@ test_that("layers_correlation with one or more existing layercodes works and qua
 })
 
 test_that("layers_correlation with non existing layercodes generates a warning", {
-  expect_warning(layers_correlation("blabla"), "blabla")
-  expect_warning(layers_correlation("blabla", TRUE), "blabla\xb2")
+  expect_warning(layers_correlation("abcd"), "'abcd'")
+  expect_warning(layers_correlation("blabla", TRUE), "blabla\U00b2")
   expect_warning(layers_correlation("blabla", FALSE), "blabla")
   expect_warning(layers_correlation(c("BO_calcite", "blabla")), "'blabla'")
   expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"))), c("BO_calcite", "BO_calcite\xb2"))
