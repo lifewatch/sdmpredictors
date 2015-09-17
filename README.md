@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/samuelbosch/sdmpredictors.svg?branch=master)](https://travis-ci.org/samuelbosch/sdmpredictors)
+[![Coverage Status](https://coveralls.io/repos/samuelbosch/sdmpredictors/badge.svg?branch=master&service=github)](https://coveralls.io/github/samuelbosch/sdmpredictors?branch=master)
+
 # sdmpredictors: a compilation of species distribution modeling predictors data
 
 An R package to improve the usability of datasets with predictors for species distribution modeling (SDM).
