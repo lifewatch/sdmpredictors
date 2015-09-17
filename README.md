@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/github/license/samuelbosch/sdmpredictors.svg)](https://github.com/samuelbosch/sdmpredictors/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/github/license/samuelbosch/blogbits.svg)](https://github.com/samuelbosch/sdmpredictors/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.org/samuelbosch/sdmpredictors.svg?branch=master)](https://travis-ci.org/samuelbosch/sdmpredictors)
 [![Coverage Status](https://coveralls.io/repos/samuelbosch/sdmpredictors/badge.svg?branch=master&service=github)](https://coveralls.io/github/samuelbosch/sdmpredictors?branch=master)
 
