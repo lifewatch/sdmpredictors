@@ -17,9 +17,10 @@ setup <- function() {
 }
 setup()
 
-load_BO_calcite_test <- function() {
-  check_skip()
-  rs <- load_layers("BO_calcite", datadir = load_tmp_dir, equalarea = F)
+load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE) {
+  skip_on_cran()
+  layercodes <- ifelse(asdataframe, data.frame(layer_code="BO_calcite"), "BO_calcite")
+  rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = F)
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 1)
   expect_equal(nrow(rs), 2160)
@@ -30,10 +31,10 @@ test_that("load_layer for one not previously downloaded layercode works", {
   load_BO_calcite_test()
 })
 test_that("load_layer for a previously downloaded layer works", {
-  load_BO_calcite_test()
+  load_BO_calcite_test(asdataframe=TRUE, rasterstack=FALSE)
 })
 test_that("load_layer for partially downloaded layer works", {
-  skip_on_cran()
+  check_skip()
   # del grd
   unlink(paste0(load_tmp_dir,"/", "BO_calcite.grd"), recursive=FALSE)
   load_BO_calcite_test()

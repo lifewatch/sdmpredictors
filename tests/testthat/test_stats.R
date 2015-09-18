@@ -12,7 +12,7 @@ test_that("layer_stats without args returns all layers", {
 })
 
 test_that("layer_stats with one or more existing layercodes works", {
-  stats <- layer_stats("BO_calcite")
+  stats <- layer_stats(data.frame(layer_code="BO_calcite"))
   expect_equal(nrow(stats), 1)
   expect_equal(stats$layer_code, "BO_calcite")
   
@@ -48,7 +48,7 @@ test_that("layers_correlation with one or more existing layercodes works and qua
   expect_equal(nrow(corr), 4)
   expect_true(all(c("BO_calcite", "BO_calcite\xb2", "MS_bathy_5m", "MS_bathy_5m\xb2") %in% colnames(corr)))
   
-  corr <- layers_correlation("BO_calcite", FALSE)
+  corr <- layers_correlation(data.frame(layer_code="BO_calcite"), FALSE)
   expect_equal(nrow(corr), 1)
   expect_equal("BO_calcite", colnames(corr))
   
@@ -108,4 +108,10 @@ test_that("correlation_groups return correct correlation groups", {
   expect_group(groups, list(c("a", "b")))
   groups <- correlation_groups(layers_correlation, max_correlation = 0.85)
   expect_group(groups, list("a", "b"))
+})
+
+test_that("calc_stats returns stats", {
+  s <- sdmpredictors:::calc_stats("mini_raster", raster(matrix(1:100, nrow=10, ncol=10)))
+  expect_true(ncol(s) >= 11)
+  expect_equal(nrow(s), 1)
 })
