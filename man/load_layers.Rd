@@ -14,7 +14,7 @@ layers to be loaded or dataframe with a "layer_code" column.}
 are stored in the current directory.}
 
 \item{equalarea}{logical. If \code{TRUE} then layers are loaded with a Behrmann
-cylindrical equal-area projection, otherwise unprojected (lonlat).}
+cylindrical equal-area projection (\code{equalareaproj}) , otherwise unprojected (\code{lonlatproj}).}
 
 \item{rasterstack}{logical. If \code{TRUE} (default value) then the result is a
 \code{\link[raster]{stack}} otherwise a list of rasters is returned.}

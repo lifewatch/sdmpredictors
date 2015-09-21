@@ -26,6 +26,7 @@ load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE) {
   expect_equal(nrow(rs), 2160)
   expect_equal(ncol(rs), 4320)
   expect_equal(names(rs),c("BO_calcite"))
+  expect_identical(rs@crs, sdmpredictors::lonlatproj)
 }
 test_that("load_layer for one not previously downloaded layercode works", {
   load_BO_calcite_test()
@@ -96,15 +97,13 @@ test_that("load_layer equal area TRUE/FALSE works", {
   
   is_equalarea <- function(rs) {
     expect_equal(names(rs), c("BO_calcite"))
-    behrmann <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs")
-    expect_identical(rs@crs, behrmann)
+    expect_identical(rs@crs, sdmpredictors::equalareaproj)
   }
   is_lonlat <- function(rs) {
     expect_equal(nrow(rs), 2160)
     expect_equal(ncol(rs), 4320)
     expect_equal(names(rs), c("BO_calcite"))
-    wgs84 <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
-    expect_identical(rs@crs, wgs84)
+    expect_identical(rs@crs, sdmpredictors::lonlatproj)
   }
   expect_identical(rs_default, rs_equalarea)
   is_equalarea(rs_default)

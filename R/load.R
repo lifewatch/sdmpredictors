@@ -12,7 +12,7 @@
 #' @param datadir character. Directory where you want to store the data, by default rasters 
 #' are stored in the current directory.
 #' @param equalarea logical. If \code{TRUE} then layers are loaded with a Behrmann 
-#' cylindrical equal-area projection, otherwise unprojected (lonlat).
+#' cylindrical equal-area projection (\code{equalareaproj}) , otherwise unprojected (\code{lonlatproj}).
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is a 
 #' \code{\link[raster]{stack}} otherwise a list of rasters is returned.
 #'
@@ -55,3 +55,9 @@ load_layers <- function(layercodes, datadir = ".", equalarea = TRUE, rasterstack
     return(lapply(layercodes, function(lc) { raster::raster(load(lc)) }))
   }
 }
+
+#' @export
+lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+
+#' @export
+equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs") ## same as WGS 84 / NSIDC EASE-Grid Global
