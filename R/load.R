@@ -56,8 +56,12 @@ load_layers <- function(layercodes, datadir = ".", equalarea = TRUE, rasterstack
   }
 }
 
+#' Longitude/latitude coordinate reference system (EPSG:4326),
+#' used when using load_layers with equal_area = FALSE
 #' @export
 lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
 
+#' World Behrmann equal area coordinate reference system (ESRI:54017), 
+#' used when using load_layers with equal_area = TRUE
 #' @export
-equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs") ## same as WGS 84 / NSIDC EASE-Grid Global
+equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs")
