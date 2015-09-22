@@ -4,17 +4,20 @@
 \alias{list_layers}
 \title{List the layers provided by one or more datasets}
 \usage{
-list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE)
+list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets.
 #'}
 
-\item{terrestrial}{logical. When \code{TRUE}, then datasets
+\item{terrestrial}{logical. When \code{TRUE} (default), then datasets
 that only have terrestrial data (seamasked) are returned.}
 
-\item{marine}{logical. When \code{TRUE}, then datasets
-that only have marine data (landmasked) are returned.
+\item{marine}{logical. When \code{TRUE} (default), then datasets
+that only have marine data (landmasked) are returned.}
+
+\item{monthly}{logical. When \code{FALSE}, then no monthly layers are returned.
+All annual and monthly layers are returned by default.
 
 By default it returns all layers from all datasets, when both marine and terrestrial are
 \code{FALSE} then only datasets without land- nor seamasks are returned.}
@@ -38,6 +41,8 @@ list_layers(c("Bio-ORACLE","MARSPEC"))$layer_code
 list_layers(marine=FALSE)[1:5,]
 # list the first 5 marine layers
 list_layers(terrestrial=FALSE)[1:5,]
+# list all annual MARSPEC layers (remove monthly layers)
+list_layers("MARSPEC", monthly = FALSE)
 }
 \seealso{
 \code{\link{list_datasets}}, \code{\link{load_layers}}

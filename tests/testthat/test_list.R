@@ -71,6 +71,16 @@ test_that("list_layers type filtering works", {
   expect_more_than(nrow(df[df$marine == FALSE,]), 0)
 })
 
+test_that("list_layers month filtering works", {
+  df <- list_layers(monthly = F)
+  expect_more_than(nrow(df),0)
+  expect_equal(nrow(df[df$month %in% seq(1:12),]), 0)
+  
+  df <- list_layers(monthly = T)
+  expect_more_than(nrow(df),0)
+  expect_more_than(nrow(df[df$month %in% seq(1:12),]), 0)
+})
+
 test_that("list_layers result is same as layers.csv", {
   skip_on_cran()
   original <- read.csv2(data_raw_file("layers.csv"), stringsAsFactors = FALSE)
