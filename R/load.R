@@ -9,20 +9,27 @@
 #' 
 #' @param layercodes character vector or dataframe. Layer_codes of the 
 #' layers to be loaded or dataframe with a "layer_code" column.
-#' @param datadir character. Directory where you want to store the data, by default rasters 
-#' are stored in the current directory.
 #' @param equalarea logical. If \code{TRUE} then layers are loaded with a Behrmann 
 #' cylindrical equal-area projection (\code{equalareaproj}) , otherwise unprojected (\code{lonlatproj}).
+#' @param standardized logical. If \code{TRUE} then standardized rasters 
+#' are returned ((x - mean) / sd). Default value is \code{FALSE}.
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is a 
 #' \code{\link[raster]{stack}} otherwise a list of rasters is returned.
+#' @param datadir character. Directory where you want to store the data. The default values is "." and 
+#' can be overridden with \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
 #'
 #' @return RasterStack or list of raster
 #' 
 #' @export
 #' @seealso 
 #' \code{\link{list_layers}}, \code{\link{layer_stats}}, \code{\link{layers_correlation}}
-load_layers <- function(layercodes, datadir = ".", equalarea = TRUE, rasterstack = TRUE) {
-  ## TODO replace datadir with the rasterOptions approach from the raster package ???
+load_layers <- function(layercodes, equalarea = TRUE, standardized = FALSE, rasterstack = TRUE, datadir = NULL) {
+  if(is.null(datadir)) {
+    datadir <- getOption("sdmpredictors_datadir")
+    if(is.null(datadir)) {
+      datadir <- "."
+    }
+  }
   datadir <- normalizePath(paste0(datadir,"/"), winslash = "/", mustWork = TRUE)
   
   get_layerpath <- function(layercode) {
@@ -38,6 +45,7 @@ load_layers <- function(layercodes, datadir = ".", equalarea = TRUE, rasterstack
       return(path)
     }
     suffix <- ifelse(equalarea, "", "_lonlat")
+    suffix <- paste0(suffix, ifelse(standardized, "_z", ""))
     grd <- get_layerpath_from_extension(".grd", suffix)
     gri <- get_layerpath_from_extension(".gri", suffix)
     if(file.exists(grd) & file.exists(gri)) {

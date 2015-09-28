@@ -1,6 +1,8 @@
 library(raster)
 library(sdmpredictors)
 
+options(sdmpredictors_datadir = "D:/a/projects/predictors/results")
+
 prepare <- function() {
 
   ## Bio-ORACLE from upnpacked rar files
@@ -171,3 +173,26 @@ worldclim <- function() {
   setwd(oldwd)
 }
 #worldclim()
+
+
+standardize_rasters <- function() {
+  for (layer in list_layers()$layer_code) {
+    z <- function(r, outdir) {
+      r <- raster(r, 1) # pull out of stack
+      name <- sub("[.]grd", "", basename(r@file@name))
+      print(name)
+      newf <- paste0(outdir, name, "_z.grd")
+      
+      r <- (r - cellStats(r, "mean")) / cellStats(r, "sd")
+      
+      writeRaster(r, newf, overwrite=T)
+      sdmpredictors:::compress_file(newf, outdir, overwrite=T, remove=T)
+      sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
+    }
+    r <- load_layers(layer, equalarea = TRUE)
+    z(r, "D:/a/projects/predictors/derived/standardized/")
+    r <- load_layers(layer, equalarea = FALSE)
+    z(r, "D:/a/projects/predictors/derived/standardized/")
+  }
+}
+#standardize_rasters()

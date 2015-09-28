@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modeling Predictor Datasets from Around the Web
-Version: 1.0
-Date: 2015-09-15
+Version: 0.0.0.9000
+Date: 2015-09-22
 Depends:
     R (>= 3.2.0),
     raster (>= 2.4-15)
