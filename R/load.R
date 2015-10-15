@@ -5,7 +5,7 @@
 #' the same spatial extent and resolution.
 #' 
 #' @usage
-#' load_layers(layercodes, datadir = ".", equalarea = TRUE, rasterstack = TRUE)
+#' load_layers(layercodes, datadir = ".", equalarea = TRUE, standardized = FALSE, rasterstack = TRUE)
 #' 
 #' @param layercodes character vector or dataframe. Layer_codes of the 
 #' layers to be loaded or dataframe with a "layer_code" column.

@@ -51,7 +51,7 @@ layer_stats <- function(layercodes = c()) {
 #' With the default empty vector all statistics are returned.
 #' @param include_quadratic logical. When \code{TRUE}, then the correlation coefficients of 
 #' the square of the layercodes area also returned. These layers are indicated with the
-#' layercode with an extra \\xb2 symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
+#' layercode with an extra \code{"\xb2"} symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
 #' 
 #' @return A dataframe with the Pearson product-moment correlation coefficients.
 #' 
@@ -108,7 +108,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #' @return A list of vectors with each vector containing the layer codes of one correlation group.
 #' 
 #' @references
-#' Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G., Carré, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal with it and a simulation study evaluating their performance. Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x
+#' Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G., Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal with it and a simulation study evaluating their performance. Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x
 #' Barbet-Massin, M. & Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of relevant climate predictors for species distribution modelling. Diversity and Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
 #' 
 #' @examples

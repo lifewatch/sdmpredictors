@@ -4,20 +4,23 @@
 \alias{load_layers}
 \title{Load layers}
 \usage{
-load_layers(layercodes, datadir = ".", equalarea = TRUE, rasterstack = TRUE)
+load_layers(layercodes, datadir = ".", equalarea = TRUE, standardized = FALSE, rasterstack = TRUE)
 }
 \arguments{
 \item{layercodes}{character vector or dataframe. Layer_codes of the
 layers to be loaded or dataframe with a "layer_code" column.}
 
-\item{datadir}{character. Directory where you want to store the data, by default rasters
-are stored in the current directory.}
-
 \item{equalarea}{logical. If \code{TRUE} then layers are loaded with a Behrmann
 cylindrical equal-area projection (\code{equalareaproj}) , otherwise unprojected (\code{lonlatproj}).}
 
+\item{standardized}{logical. If \code{TRUE} then standardized rasters
+are returned ((x - mean) / sd). Default value is \code{FALSE}.}
+
 \item{rasterstack}{logical. If \code{TRUE} (default value) then the result is a
 \code{\link[raster]{stack}} otherwise a list of rasters is returned.}
+
+\item{datadir}{character. Directory where you want to store the data. The default values is "." and
+can be overridden with \code{options(sdmpredictors_datadir = "<your preferred directory>")}.}
 }
 \value{
 RasterStack or list of raster
