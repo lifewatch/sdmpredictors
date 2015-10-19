@@ -1,5 +1,4 @@
 library(sdmpredictors)
-library(sets)
 
 context("Statistics")
 
@@ -74,7 +73,7 @@ test_that("layers_correlation with non existing layercodes generates a warning",
 expect_group <- function(actual, expected) {
   expect_equal(length(actual), length(expected))
   for (i in 1:length(actual)) {
-    expect_true(set_is_equal(as.set(actual[[i]]), as.set(expected[[i]])))
+    expect_true(setequal(actual[[i]], expected[[i]]))
   }
 }
 

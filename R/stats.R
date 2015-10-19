@@ -126,7 +126,7 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
     ## returns only non quadratic layer codes BUT makes sure to make use of the quadratic correlation value
     row <- layers_correlation[i,,drop = FALSE]
     layer_codes <- names(row)[abs(row) > max_correlation]
-    sets::as.set(sub("\xb2$","", layer_codes)) 
+    unique(sub("\xb2$","", layer_codes))
   }
   group_count <- function (t) { sum(sapply(t, function(s) { ifelse(length(s) > 0, 1, 0) })) }
   t <- lapply(1:nrow(layers_correlation), to_set)
@@ -139,9 +139,9 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
         s1 <- t[[i]]
         for (j in (i+1):length(t)){
           s2 <- t[[j]]
-          if(length(sets::set_intersection(s1,s2)) > 0) {
-            t[[i]] <- sets::set_union(s1,s2)
-            t[[j]] <- sets::set()
+          if(length(intersect(s1,s2)) > 0) {
+            t[[i]] <- union(s1,s2)
+            t[[j]] <- character() # empty non null vector, note that c() is NULL
           }
         }
       }
@@ -149,7 +149,7 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
       new_group_count <- group_count(t)
     }
   }
-  t <- Filter(function(s) { length(s) > 0}, t) # filter empty sets
+  t <- Filter(function(s) { length(s) > 0}, t) # filter empty groups
   t <- lapply(t, function(s) { sapply(s, identity) }) # convert to vector of layer codes
   return(t)
 }
