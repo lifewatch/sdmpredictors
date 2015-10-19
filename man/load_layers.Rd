@@ -4,7 +4,7 @@
 \alias{load_layers}
 \title{Load layers}
 \usage{
-load_layers(layercodes, datadir = ".", equalarea = TRUE, standardized = FALSE, rasterstack = TRUE)
+load_layers(layercodes, equalarea = TRUE, standardized = FALSE, rasterstack = TRUE, datadir = NULL)
 }
 \arguments{
 \item{layercodes}{character vector or dataframe. Layer_codes of the
@@ -19,7 +19,7 @@ are returned ((x - mean) / sd). Default value is \code{FALSE}.}
 \item{rasterstack}{logical. If \code{TRUE} (default value) then the result is a
 \code{\link[raster]{stack}} otherwise a list of rasters is returned.}
 
-\item{datadir}{character. Directory where you want to store the data. The default values is "." and
+\item{datadir}{character. Directory where you want to store the data. The default value used is "." and
 can be overridden with \code{options(sdmpredictors_datadir = "<your preferred directory>")}.}
 }
 \value{

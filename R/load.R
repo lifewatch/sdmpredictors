@@ -5,7 +5,7 @@
 #' the same spatial extent and resolution.
 #' 
 #' @usage
-#' load_layers(layercodes, datadir = ".", equalarea = TRUE, standardized = FALSE, rasterstack = TRUE)
+#' load_layers(layercodes, equalarea = TRUE, standardized = FALSE, rasterstack = TRUE, datadir = NULL)
 #' 
 #' @param layercodes character vector or dataframe. Layer_codes of the 
 #' layers to be loaded or dataframe with a "layer_code" column.
@@ -15,7 +15,7 @@
 #' are returned ((x - mean) / sd). Default value is \code{FALSE}.
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is a 
 #' \code{\link[raster]{stack}} otherwise a list of rasters is returned.
-#' @param datadir character. Directory where you want to store the data. The default values is "." and 
+#' @param datadir character. Directory where you want to store the data. The default value used is "." and 
 #' can be overridden with \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
 #'
 #' @return RasterStack or list of raster
