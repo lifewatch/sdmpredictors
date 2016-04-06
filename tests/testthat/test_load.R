@@ -18,20 +18,20 @@ setup <- function() {
 }
 load_tmp_dir <- setup()
 
-load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F, standardized =F) {
+load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F) {
   skip_on_cran()
   layercodes <- ifelse(asdataframe, data.frame(layer_code="BO_calcite"), "BO_calcite")
-  rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea, standardized =standardized)
+  rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea)
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 1)
   
   expect_equal(names(rs),c("BO_calcite"))
   if(equalarea) {
     expect_equal(nrow(rs), 2108)
-    expect_identical(rs@crs, sdmpredictors::equalareaproj)
+    expect_identical(rs@crs, equalareaproj)
   } else {
     expect_equal(nrow(rs), 2160)
-    expect_identical(rs@crs, sdmpredictors::lonlatproj)
+    expect_identical(rs@crs, lonlatproj)
   }
 }
 test_that("load_layer for one not previously downloaded layercode works", {
@@ -42,9 +42,6 @@ test_that("load_layer for a previously downloaded layer works", {
 })
 test_that("load_layer equal area layer works", {
   load_BO_calcite_test(equalarea = TRUE)
-})
-test_that("load_layer standardized layer works", {
-  load_BO_calcite_test(standardized = TRUE)
 })
 test_that("load_layer works with different datadir options", {
   skip_on_cran()

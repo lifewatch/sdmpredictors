@@ -10,7 +10,7 @@
 #' @param marine logical. When \code{TRUE}, then datasets
 #' that only have marine data (landmasked) are returned.
 #' 
-#' By default it returns all datasets, when both marine and terrestrial are 
+#' By default it returns all datasets, when both \code{marine} and \code{terrestrial} are 
 #' \code{FALSE} then only datasets without land- nor seamasks are returned.
 #' 
 #' @return A dataframe with information on the supported datasets.
