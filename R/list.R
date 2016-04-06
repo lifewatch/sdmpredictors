@@ -2,19 +2,19 @@
 #' 
 #' \code{list_datasets} returns information on the supported datasets.
 #' 
-#' @usage
-#' list_datasets(terrestrial = TRUE, marine = TRUE)
+#' @usage list_datasets(terrestrial = TRUE, marine = TRUE)
 #' 
-#' @param terrestrial logical. When \code{TRUE}, then datasets 
-#' that only have terrestrial data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE}, then datasets
-#' that only have marine data (landmasked) are returned.
-#' 
-#' By default it returns all datasets, when both \code{marine} and \code{terrestrial} are 
-#' \code{FALSE} then only datasets without land- nor seamasks are returned.
-#' 
+#' @param terrestrial logical. When \code{TRUE}, then datasets that only have
+#'   terrestrial data (seamasked) are returned.
+#' @param marine logical. When \code{TRUE}, then datasets that only have marine
+#'   data (landmasked) are returned.
+#'   
+#'   By default it returns all datasets, when both \code{marine} and
+#'   \code{terrestrial} are \code{FALSE} then only datasets without land- nor
+#'   seamasks are returned.
+#'   
 #' @return A dataframe with information on the supported datasets.
-#' 
+#'   
 #' @examples
 #' list_datasets()
 #' list_datasets(marine=FALSE)
@@ -35,25 +35,25 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 
 #' List the layers provided by one or more datasets
 #' 
-#' \code{list_layers} returns information on the 
-#' layers of one or more datasets.
+#' \code{list_layers} returns information on the layers of one or more datasets.
 #' 
-#' @usage
-#' list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE)
+#' @usage list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly =
+#' TRUE)
 #' 
-#' @param datasets character vector. Code of the datasets.
-#' #' @param terrestrial logical. When \code{TRUE} (default), then datasets 
-#' that only have terrestrial data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE} (default), then datasets
-#' that only have marine data (landmasked) are returned.
-#' @param monthly logical. When \code{FALSE}, then no monthly layers are returned. 
-#' All annual and monthly layers are returned by default.
-#' 
-#' By default it returns all layers from all datasets, when both marine and terrestrial are 
-#' \code{FALSE} then only datasets without land- nor seamasks are returned.
-#' 
+#' @param datasets character vector. Code of the datasets. #' @param terrestrial
+#'   logical. When \code{TRUE} (default), then datasets that only have
+#'   terrestrial data (seamasked) are returned.
+#' @param marine logical. When \code{TRUE} (default), then datasets that only
+#'   have marine data (landmasked) are returned.
+#' @param monthly logical. When \code{FALSE}, then no monthly layers are
+#'   returned. All annual and monthly layers are returned by default.
+#'   
+#'   By default it returns all layers from all datasets, when both marine and
+#'   terrestrial are \code{FALSE} then only datasets without land- nor seamasks
+#'   are returned.
+#'   
 #' @return A dataframe with information on the supported datasets.
-#' 
+#'   
 #' @examples
 #' # list the first 5 layers
 #' list_layers()[1:5,]

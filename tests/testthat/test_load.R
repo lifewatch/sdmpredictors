@@ -44,21 +44,29 @@ test_that("load_layer equal area layer works", {
   load_BO_calcite_test(equalarea = TRUE)
 })
 test_that("load_layer works with different datadir options", {
+  normalize <- function(p) {
+    normalizePath(paste0(p,"/"), winslash = "/", mustWork = TRUE)
+  }
+  rpath <- function(rs) {
+    normalize(dirname(raster(rs,1)@file@name))
+  }
   skip_on_cran()
   op <- options()
   wd <- getwd()
   tryCatch({
-    rs <- load_layers("BO_calcite", datadir = load_tmp_dir)
-    expect_equal(paste0(dirname(raster(rs,1)@file@name), "/"), load_tmp_dir)
+    load_tmp_dir <- normalize(load_tmp_dir)
+    rs <- rpath(load_layers("BO_calcite", datadir = load_tmp_dir))
+    expect_equal(rs, load_tmp_dir)
     
     options(sdmpredictors_datadir = tmpDir())
-    rs <- load_layers("BO_calcite")
-    expect_equal(paste0(dirname(raster(rs,1)@file@name), "/"), tmpDir())
+    rs <- rpath(load_layers("BO_calcite"))
+    expect_equal(rs, normalize(tmpDir()))
     
     options(sdmpredictors_datadir = NULL)
     setwd(load_tmp_dir)
-    rs <- load_layers("BO_calcite")
-    expect_equal(paste0(dirname(raster(rs,1)@file@name), "/"), load_tmp_dir)
+    rs <- rpath(load_layers("BO_calcite"))
+    default_path <- normalize(file.path(path.expand("~"), "R/sdmpredictors"))
+    expect_equal(rs, default_path)
   }, finally = { 
     options(op)
     setwd(wd)

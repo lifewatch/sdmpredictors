@@ -1,26 +1,25 @@
 #' Gives basic layer statistics
 #' 
-#' \code{layer_stats} returns basic statistics (minimum, q1, median, q3, maximum, 
-#' median absolute deviation (mad), mean, standard deviation (sd)) about each 
-#' given layercode.
+#' \code{layer_stats} returns basic statistics (minimum, q1, median, q3, 
+#' maximum, median absolute deviation (mad), mean, standard deviation (sd)) 
+#' about each given layercode.
 #' 
-#' @usage
-#' layer_stats(layercodes = c())
-#' 
-#' @param layercodes character vector or dataframe. Codes of the layers you want 
-#' the basic statistics of as a character vector or a dataframe with a "layer_code" column.
-#' With the default empty vector all statistics are returned.
-#' 
+#' @usage layer_stats(layercodes = c())
+#'   
+#' @param layercodes character vector or dataframe. Codes of the layers you want
+#'   the basic statistics of as a character vector or a dataframe with a 
+#'   "layer_code" column. With the default empty vector all statistics are 
+#'   returned.
+#'   
 #' @return A dataframe with basic statistics about each given layercode.
-#' 
+#'   
 #' @examples
 #' # layer stats for the first 10 layers
 #' layer_stats()[1:10,]
 #' layer_stats(c("BO_calcite", "MS_bathy_5m"))
 #' 
 #' @export
-#' @seealso 
-#' \code{\link{list_layers}} \code{\link{layers_correlation}}
+#' @seealso \code{\link{list_layers}} \code{\link{layers_correlation}}
 layer_stats <- function(layercodes = c()) {
   d <- get_sysdata()$layerstats
   if(is.data.frame(layercodes)) {
@@ -39,22 +38,24 @@ layer_stats <- function(layercodes = c()) {
 
 #' Gives the Pearson correlation between layers
 #' 
-#' \code{layers_correlations} returns the Pearson product-moment correlation coefficient
-#' (Pearson's r) for every combination of the give layercodes. The correlation between 
-#' a terrestrial and a marine layer has been set to \code{NA}.
+#' \code{layers_correlations} returns the Pearson product-moment correlation
+#' coefficient (Pearson's r) for every combination of the give layercodes. The
+#' correlation between a terrestrial and a marine layer has been set to
+#' \code{NA}.
 #' 
-#' @usage
-#' layers_correlation(layercodes = c(), include_quadratic = TRUE)
+#' @usage layers_correlation(layercodes = c(), include_quadratic = TRUE)
 #' 
-#' @param layercodes character vector or dataframe. Codes of the layers you want 
-#' the basic statistics of as a character vector or a dataframe with a "layer_code" column.
-#' With the default empty vector all statistics are returned.
-#' @param include_quadratic logical. When \code{TRUE}, then the correlation coefficients of 
-#' the square of the layercodes area also returned. These layers are indicated with the
-#' layercode with an extra \code{"\xb2"} symbol, for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
-#' 
+#' @param layercodes character vector or dataframe. Codes of the layers you want
+#'   the basic statistics of as a character vector or a dataframe with a
+#'   "layer_code" column. With the default empty vector all statistics are
+#'   returned.
+#' @param include_quadratic logical. When \code{TRUE}, then the correlation
+#'   coefficients of the square of the layercodes area also returned. These
+#'   layers are indicated with the layercode with an extra \code{"\xb2"} symbol,
+#'   for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
+#'   
 #' @return A dataframe with the Pearson product-moment correlation coefficients.
-#' 
+#'   
 #' @examples
 #' # correlation of the first 10 layers
 #' layers_correlation()[1:10,1:10]
@@ -62,8 +63,8 @@ layer_stats <- function(layercodes = c()) {
 #' layers_correlation(c("BO_calcite", "MS_bathy_5m"), include_quadratic = FALSE)
 #' 
 #' @export
-#' @seealso
-#' \code{\link{list_layers}} \code{\link{layer_stats}} \code{\link{correlation_groups}}
+#' @seealso \code{\link{list_layers}} \code{\link{layer_stats}}
+#' \code{\link{correlation_groups}}
 #' @encoding UTF-8
 layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
   d <- get_sysdata()$layerscorrelation
@@ -93,23 +94,28 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #' 
 #' \code{correlation_groups} returns groups of layer codes such as each layer 
 #' from one group has an absolute Pearson product-moment correlation coefficient
-#' (Pearson's r) that is smaller than the maximum_correlation (default 0.7) with 
-#' each variable in any other group. The correlation values of quadratic layers are 
-#' used for creating the groups but only non quadratic layer codes are returned.
+#' (Pearson's r) that is smaller than the maximum_correlation (default 0.7) with
+#' each variable in any other group. The correlation values of quadratic layers
+#' are used for creating the groups but only non quadratic layer codes are
+#' returned.
 #' 
-#' @usage
-#' correlation_groups(layers_correlation, max_correlation=0.7)
+#' @usage correlation_groups(layers_correlation, max_correlation=0.7)
 #' 
-#' @param layers_correlation matrix or dataframe. A square matrix with the layers 
-#' correlations  you want to group.
-#' @param max_correlation number. The maximum correlation 2 layers may have before 
-#' they are put in the same correlation group.
-#' 
-#' @return A list of vectors with each vector containing the layer codes of one correlation group.
-#' 
-#' @references
-#' Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G., Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal with it and a simulation study evaluating their performance. Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x
-#' Barbet-Massin, M. & Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of relevant climate predictors for species distribution modelling. Diversity and Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
+#' @param layers_correlation matrix or dataframe. A square matrix with the
+#'   layers correlations  you want to group.
+#' @param max_correlation number. The maximum correlation 2 layers may have
+#'   before they are put in the same correlation group.
+#'   
+#' @return A list of vectors with each vector containing the layer codes of one
+#'   correlation group.
+#'   
+#' @references Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G.,
+#' Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal
+#' with it and a simulation study evaluating their performance. Ecography,
+#' 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x Barbet-Massin, M. &
+#' Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of
+#' relevant climate predictors for species distribution modelling. Diversity and
+#' Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
 #' 
 #' @examples
 #' 
@@ -118,8 +124,8 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #' print(correlation_groups(corr, max_correlation=0.6))
 #' 
 #' @export
-#' @seealso 
-#' \code{ \link{layers_correlation} \link{list_layers} \link{layer_stats}}
+#' @seealso \code{ \link{layers_correlation} \link{list_layers}
+#' \link{layer_stats}}
 #' @encoding UTF-8
 correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
   to_set <- function(i) { 
@@ -165,11 +171,10 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
 #' 
 #' @param layercode character.
 #' @param raster RasterLayer.
-#' 
+#'   
 #' @return A dataframe with the layercode and all basic statistics.
-#' 
-#' @seealso
-#' \code{\link{layer_stats}}
+#'   
+#' @seealso \code{\link{layer_stats}}
 calc_stats <- function(layercode, raster) {
   v <- raster::values(raster)
   q <- quantile(v,na.rm=TRUE)
