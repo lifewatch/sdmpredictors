@@ -3,6 +3,34 @@ library(sdmpredictors)
 
 options(sdmpredictors_datadir = "D:/a/projects/predictors/results")
 
+compress_file <- sdmpredictors:::compress_file
+
+prepare_biooracle_bathy <- function() {
+  newd <- "D:/a/projects/predictors/derived/"
+  for (f in list.files("D:/a/data/BioORACLE_bathy", pattern="[.]asc", full.names=TRUE)) {
+    
+    r <- raster(f)
+    crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+    
+    newf <- paste0("D:/a/projects/predictors/derived", "/BO_", sub("[.]asc", "_lonlat.grd",basename(f)))
+    print(newf)
+    writeRaster(r, newf, overwrite=T)
+    sdmpredictors:::compress_file(newf, newd)
+    sdmpredictors:::compress_file(sub("[.]grd", ".gri", newf), newd)
+    
+    if (nrow(r) == 2160 && ncol(r) == 4320) {
+      eares <- 7000 ## similar number of total cells, cells have same x and y res
+    } else { stop("undefined ea resolution") }
+    r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+    r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
+    newf <- paste0("D:/a/projects/predictors/derived", "/BO_", sub("[.]asc", ".grd",basename(f)))
+    print(newf)
+    writeRaster(r, newf, overwrite=T)
+    sdmpredictors:::compress_file(newf, newd, overwrite=T, remove=T)
+    sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), newd, overwrite=T, remove=T)
+  }
+}
+
 prepare <- function() {
 
   ## Bio-ORACLE from upnpacked rar files

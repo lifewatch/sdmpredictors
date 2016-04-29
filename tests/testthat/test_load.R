@@ -2,7 +2,7 @@ library(sdmpredictors)
 library(raster)
 
 check_skip <- function() {
-  skip("skip today")
+ # skip("skip today")
   skip_on_cran()
 }
 
@@ -20,6 +20,7 @@ load_tmp_dir <- setup()
 
 load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F) {
   skip_on_cran()
+  skip_on_travis()
   layercodes <- ifelse(asdataframe, data.frame(layer_code="BO_calcite"), "BO_calcite")
   rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea)
   expect_false(is.null(rs))
@@ -28,10 +29,12 @@ load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea 
   expect_equal(names(rs),c("BO_calcite"))
   if(equalarea) {
     expect_equal(nrow(rs), 2108)
-    expect_identical(rs@crs, equalareaproj)
+    print(rs@crs@projargs)
+    print(sdmpredictors::equalareaproj@projargs)
+    expect_equal(rs@crs@projargs, sdmpredictors::equalareaproj@projargs)
   } else {
     expect_equal(nrow(rs), 2160)
-    expect_identical(rs@crs, lonlatproj)
+    expect_equal(rs@crs, lonlatproj)
   }
 }
 test_that("load_layer for one not previously downloaded layercode works", {

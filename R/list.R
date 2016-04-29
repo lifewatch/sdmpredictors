@@ -40,7 +40,8 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #' @usage list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly =
 #' TRUE)
 #' 
-#' @param datasets character vector. Code of the datasets. #' @param terrestrial
+#' @param datasets character vector. Code of the datasets. 
+#' @param terrestrial
 #'   logical. When \code{TRUE} (default), then datasets that only have
 #'   terrestrial data (seamasked) are returned.
 #' @param marine logical. When \code{TRUE} (default), then datasets that only

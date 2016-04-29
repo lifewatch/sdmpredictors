@@ -60,6 +60,7 @@ test_that("layers_correlation with one or more existing layercodes works and qua
 
 test_that("layers_correlation with non existing layercodes generates a warning", {
   skip_on_cran()
+  skip_on_travis()
   expect_warning(layers_correlation("abcd"), "'abcd'")
   expect_warning(layers_correlation("blabla", TRUE), "blabla\U00b2")
   expect_warning(layers_correlation("blabla", FALSE), "blabla")

@@ -8,8 +8,9 @@ list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly =
 TRUE)
 }
 \arguments{
-\item{datasets}{character vector. Code of the datasets. #' @param terrestrial
-logical. When \code{TRUE} (default), then datasets that only have
+\item{datasets}{character vector. Code of the datasets.}
+
+\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that only have
 terrestrial data (seamasked) are returned.}
 
 \item{marine}{logical. When \code{TRUE} (default), then datasets that only

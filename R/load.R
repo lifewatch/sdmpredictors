@@ -25,6 +25,9 @@
 #' @seealso \code{\link{list_layers}}, \code{\link{layer_stats}},
 #' \code{\link{layers_correlation}}
 load_layers <- function(layercodes, equalarea = TRUE, rasterstack = TRUE, datadir = NULL) {
+  if(is.na(equalarea) || !is.logical(equalarea) && length(equalarea) != 1) {
+    stop("equalarea should be TRUE or FALSE")
+  }
   if(is.null(datadir)) {
     datadir <- getOption("sdmpredictors_datadir")
     if(is.null(datadir)) {
@@ -75,4 +78,4 @@ lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84
 #' World Behrmann equal area coordinate reference system (ESRI:54017), used when
 #' using load_layers with equal_area = TRUE
 #' @export
-equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs")
+equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs +towgs84=0,0,0")

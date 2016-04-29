@@ -16,14 +16,15 @@ statsdir <- "data-raw/stats"
 calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE) {
   calc_layer_stats <- function(layercode) {
     ## convert to behrmann first OR store data as Behrmann
-    r <- load_layers(layercode, rasterdir)
+    r <- load_layers(layercode)
     d <- predictors:::calc_stats(layercode, raster(r,1))
     return (d)
   }
   
-  for (layercode in predictors::list_layers(terrestrial = terrestrial, marine = marine)[,"layer_code"]) {
+  for (layercode in sdmpredictors::list_layers(terrestrial = terrestrial, marine = marine)[,"layer_code"]) {
     fname <- paste0(statsdir, "/", layercode, ".rds")
     if(layercode != "WC_TODO" & !file.exists(fname)) {
+      print(layercode)
       stats <- calc_layer_stats(layercode)
       saveRDS(stats, fname)
     }
@@ -91,7 +92,7 @@ spatial_autocorrelation_range <- function(r) {
 
 calc_corr_matrix_quad <- function(x, fname) {
   stack_quad <- x ^ 2
-  names(stack_quad) <- paste0(names(x), "²")
+  names(stack_quad) <- paste0(names(x), "\xb2")
   corr_quad <- faster_pearson(stack(x, stack_quad))
   saveRDS(corr_quad, paste0(statsdir, "/corr/", fname, ".rds"))
 }
