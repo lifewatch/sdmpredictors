@@ -21,8 +21,8 @@ test_that("compress_file creates a compressed file for valid methods", {
     output <- compress_file(test_raster_file, test_tmp_dir, method, remove = FALSE)
     expect_equal(tools::file_ext(output), extension)
     expect_true(file.exists(output))
-    expect_more_than(file.size(output), 0)
-    expect_less_than(file.size(output), file.size(test_raster_file))
+    expect_gt(file.size(output), 0)
+    expect_lt(file.size(output), file.size(test_raster_file))
     expect_true(R.utils::isCompressedFile(output,method="content",
                                           ext=extension,fileClass=fileClass))
   }
@@ -44,8 +44,8 @@ test_that("decompress_file decompresses a file for valid extensions", {
     output <- decompress_file(input, test_tmp_dir)
     expect_true(file.exists(output))
     expect_false(file.exists(input)) # compressed file should be removed
-    expect_more_than(file.size(output), 0)
-    expect_more_than(file.size(output), inputsize)
+    expect_gt(file.size(output), 0)
+    expect_gt(file.size(output), inputsize)
     outputmd5 <- md5sum(output)[[1]]
     originalmd5 <- md5sum(test_raster_file)[[1]]
     expect_equal(outputmd5, originalmd5)

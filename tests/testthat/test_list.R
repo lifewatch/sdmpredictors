@@ -13,8 +13,8 @@ data_raw_file <- function(fname) {
 test_that("list_datasets with defaults params returns correct rows", {
   df <- list_datasets()
   expect_false(is.factor(df$dataset_code))
-  expect_more_than(nrow(df),0)
-  expect_more_than(ncol(df),5)
+  expect_gt(nrow(df),0)
+  expect_gt(ncol(df),5)
   expect_true(any(df$terrestrial))
   expect_true(any(df$marine))
   expect_true("citation" %in% colnames(df))
@@ -23,12 +23,12 @@ test_that("list_datasets with defaults params returns correct rows", {
 test_that("list_datasets type filtering works", {
   df <- list_datasets(terrestrial = FALSE)
   
-  expect_more_than(nrow(df),0)
-  expect_more_than(nrow(df[df$terrestrial == FALSE,]), 0)
+  expect_gt(nrow(df),0)
+  expect_gt(nrow(df[df$terrestrial == FALSE,]), 0)
   
   df <- list_datasets(marine = FALSE)
-  expect_more_than(nrow(df),0)
-  expect_more_than(nrow(df[df$marine == FALSE,]), 0)
+  expect_gt(nrow(df),0)
+  expect_gt(nrow(df[df$marine == FALSE,]), 0)
 })
 
 test_that("list_datasets result is same as datasets.csv", {
@@ -43,8 +43,8 @@ test_that("list_layers without params returns correct rows", {
   df <- list_layers()
   expect_false(is.factor(df$dataset_code))
   expect_false(is.factor(df$layer_code))
-  expect_more_than(nrow(df),0)
-  expect_more_than(ncol(df),5)
+  expect_gt(nrow(df),0)
+  expect_gt(ncol(df),5)
   expect_true("terrestrial" %in% colnames(df))
   expect_true("marine" %in% colnames(df))
   
@@ -53,7 +53,7 @@ test_that("list_layers without params returns correct rows", {
 test_that("list_layers dataset filtering works", {
   filter_test <- function(filter) {
     df <- list_layers(filter)
-    expect_more_than(nrow(df),0)
+    expect_gt(nrow(df),0)
     expect_true(all(df$dataset_code %in% filter))
   }
   filter_test("WorldClim")
@@ -63,22 +63,22 @@ test_that("list_layers dataset filtering works", {
 
 test_that("list_layers type filtering works", {
   df <- list_layers(terrestrial = FALSE)
-  expect_more_than(nrow(df),0)
-  expect_more_than(nrow(df[df$terrestrial == FALSE,]), 0)
+  expect_gt(nrow(df),0)
+  expect_gt(nrow(df[df$terrestrial == FALSE,]), 0)
   
   df <- list_layers(marine = FALSE)
-  expect_more_than(nrow(df),0)
-  expect_more_than(nrow(df[df$marine == FALSE,]), 0)
+  expect_gt(nrow(df),0)
+  expect_gt(nrow(df[df$marine == FALSE,]), 0)
 })
 
 test_that("list_layers month filtering works", {
   df <- list_layers(monthly = F)
-  expect_more_than(nrow(df),0)
+  expect_gt(nrow(df),0)
   expect_equal(nrow(df[df$month %in% seq(1:12),]), 0)
   
   df <- list_layers(monthly = T)
-  expect_more_than(nrow(df),0)
-  expect_more_than(nrow(df[df$month %in% seq(1:12),]), 0)
+  expect_gt(nrow(df),0)
+  expect_gt(nrow(df[df$month %in% seq(1:12),]), 0)
 })
 
 test_that("list_layers result is same as layers.csv", {
