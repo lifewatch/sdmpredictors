@@ -20,4 +20,5 @@
 #' @name sdmpredictors
 #'   
 #' @importFrom raster raster stack
+#' @import stats utils
 NULL
