@@ -37,11 +37,11 @@ load_layers <- function(layercodes, equalarea = TRUE, rasterstack = TRUE, datadi
       }
     }
   }
-  datadir <- normalizePath(paste0(datadir,"/"), winslash = "/", mustWork = TRUE)
+  datadir <- normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
   
   get_layerpath <- function(layercode) {
     get_layerpath_from_extension <- function(extension, suffix) {
-      path <- paste0(datadir, layercode, suffix, extension)
+      path <- paste0(datadir, "/", layercode, suffix, extension)
       if (!file.exists(path)) {
         urlroot <- "http://www.phycology.ugent.be/research/sdmpredictors/"
         url <- paste0(urlroot, layercode, suffix, extension, ".gz")

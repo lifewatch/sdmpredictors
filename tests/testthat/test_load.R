@@ -61,6 +61,10 @@ test_that("load_layer works with different datadir options", {
     rs <- rpath(load_layers("BO_calcite", datadir = load_tmp_dir))
     expect_equal(rs, load_tmp_dir)
     
+    load_tmp_dir <- normalize(load_tmp_dir)
+    rs <- rpath(load_layers("BO_calcite", datadir = paste0(load_tmp_dir, "/")))
+    expect_equal(rs, load_tmp_dir)
+    
     options(sdmpredictors_datadir = tmpDir())
     rs <- rpath(load_layers("BO_calcite"))
     expect_equal(rs, normalize(tmpDir()))

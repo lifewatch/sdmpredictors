@@ -36,18 +36,18 @@ test_that("layers_correlation without args returns correlations for all layers a
   expect_equal(2*nrow(layers), nrow(corr))
   expect_equal(2*nrow(layers), ncol(corr))
   expect_true(all(layers$layer_code %in% colnames(corr)))
-  expect_true(all(paste0(layers$layer_code, "\xb2") %in% colnames(corr)))
-  expect_true(all(rownames(corr) %in% c(layers$layer_code, paste0(layers$layer_code, "\xb2"))))
+  expect_true(all(paste0(layers$layer_code, "\u00B2") %in% colnames(corr)))
+  expect_true(all(rownames(corr) %in% c(layers$layer_code, paste0(layers$layer_code, "\u00B2"))))
 })
 
 test_that("layers_correlation with one or more existing layercodes works and quadratic", {
   corr <- layers_correlation("BO_calcite", TRUE)
   expect_equal(nrow(corr), 2)
-  expect_true(all(c("BO_calcite","BO_calcite\xb2") %in% colnames(corr)))
+  expect_true(all(c("BO_calcite","BO_calcite\u00B2") %in% colnames(corr)))
   
   corr <- layers_correlation(c("BO_calcite","MS_bathy_5m"), TRUE)
   expect_equal(nrow(corr), 4)
-  expect_true(all(c("BO_calcite", "BO_calcite\xb2", "MS_bathy_5m", "MS_bathy_5m\xb2") %in% colnames(corr)))
+  expect_true(all(c("BO_calcite", "BO_calcite\u00B2", "MS_bathy_5m", "MS_bathy_5m\u00B2") %in% colnames(corr)))
   
   corr <- layers_correlation(data.frame(layer_code="BO_calcite"), FALSE)
   expect_equal(nrow(corr), 1)
@@ -65,7 +65,7 @@ test_that("layers_correlation with non existing layercodes generates a warning",
   expect_warning(layers_correlation("blabla", TRUE), "blabla\U00b2")
   expect_warning(layers_correlation("blabla", FALSE), "blabla")
   expect_warning(layers_correlation(c("BO_calcite", "blabla")), "'blabla'")
-  expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"))), c("BO_calcite", "BO_calcite\xb2"))
+  expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"))), c("BO_calcite", "BO_calcite\u00B2"))
   expect_warning(layers_correlation(c("BO_calcite", "blabla"), FALSE), "'blabla'")
   expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"), FALSE)), "BO_calcite")
   expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"))), 2)
@@ -102,8 +102,8 @@ test_that("correlation_groups return correct correlation groups", {
   expect_group(groups, list(c("a","b","c")))
   
   # quadratic should be removed but be accounted for
-  layers_correlation <- data.frame(a=c(1,0.9,0.4), a2=c(0.9,1,0.8), b=c(0.4,0.8,1), row.names=c("a","a\xb2","b"))
-  colnames(layers_correlation) <- c("a","a\xb2","b")
+  layers_correlation <- data.frame(a=c(1,0.9,0.4), a2=c(0.9,1,0.8), b=c(0.4,0.8,1), row.names=c("a","a\u00B2","b"))
+  colnames(layers_correlation) <- c("a","a\u00B2","b")
   groups <- correlation_groups(layers_correlation)
   expect_group(groups, list(c("a", "b")))
   groups <- correlation_groups(layers_correlation, max_correlation = 0.0)
