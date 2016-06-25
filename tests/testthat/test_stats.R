@@ -35,8 +35,12 @@ test_that("layers_correlation without args returns correlations for all layers a
   corr <- layers_correlation()
   expect_equal(2*nrow(layers), nrow(corr))
   expect_equal(2*nrow(layers), ncol(corr))
+  print(iconv(colnames(corr)[NROW(corr)], toRaw = T)[[1]])
+  print(iconv(paste0(layers$layer_code, "\u00B2")[NROW(layers)], toRaw = T)[[1]])
   expect_true(all(layers$layer_code %in% colnames(corr)))
   expect_true(all(paste0(layers$layer_code, "\u00B2") %in% colnames(corr)))
+  expect_true(all(sapply(paste0(layers$layer_code, "\u00B2"), function(l) any(grepl(l, colnames(corr), fixed = T)))))
+  expect_true(all(sapply(paste0(layers$layer_code, "\u00B2"), function(l) any(grepl(l, colnames(corr))))))
   expect_true(all(rownames(corr) %in% c(layers$layer_code, paste0(layers$layer_code, "\u00B2"))))
 })
 
