@@ -36,6 +36,7 @@ test_that("layers_correlation without args returns correlations for all layers a
   expect_equal(2*nrow(layers), nrow(corr))
   expect_equal(2*nrow(layers), ncol(corr))
   print(iconv(colnames(corr)[NROW(corr)], toRaw = T)[[1]])
+  print(colnames(corr)[NROW(corr)])
   print(iconv(paste0(layers$layer_code, "\u00B2")[NROW(layers)], toRaw = T)[[1]])
   expect_true(all(layers$layer_code %in% colnames(corr)))
   expect_true(all(paste0(layers$layer_code, "\u00B2") %in% colnames(corr)))

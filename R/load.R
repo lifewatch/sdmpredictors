@@ -4,14 +4,14 @@
 #' RasterStack is returned but this is only possible When all rasters have the
 #' same spatial extent and resolution.
 #' 
-#' @usage load_layers(layercodes, equalarea = TRUE, rasterstack = TRUE, datadir
+#' @usage load_layers(layercodes, equalarea = FALSE, rasterstack = TRUE, datadir
 #' = NULL)
 #' 
 #' @param layercodes character vector or dataframe. Layer_codes of the layers to
 #'   be loaded or dataframe with a "layer_code" column.
 #' @param equalarea logical. If \code{TRUE} then layers are loaded with a
-#'   Behrmann cylindrical equal-area projection (\code{equalareaproj}) ,
-#'   otherwise unprojected (\code{lonlatproj}).
+#'   Behrmann cylindrical equal-area projection (\code{\link{equalareaproj}}),
+#'   otherwise unprojected (\code{\link{lonlatproj}}). Default is \code{FALSE}.
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is
 #'   a \code{\link[raster]{stack}} otherwise a list of rasters is returned.
 #' @param datadir character. Directory where you want to store the data. The
@@ -63,10 +63,11 @@ load_layers <- function(layercodes, equalarea = TRUE, rasterstack = TRUE, datadi
   if(is.data.frame(layercodes)) {
     layercodes <- layercodes$layer_code
   }
+  paths <- sapply(layercodes, get_layerpath)
   if(rasterstack) {
-    return(raster::stack(sapply(layercodes, get_layerpath)))
+    return(raster::stack(paths))
   } else {
-    return(lapply(layercodes, function(lc) { raster::raster(load(lc)) }))
+    return(lapply(paths, function(path) { raster::raster(path) }))
   }
 }
 

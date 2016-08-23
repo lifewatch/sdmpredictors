@@ -22,7 +22,10 @@ load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea 
   skip_on_cran()
   skip_on_travis()
   layercodes <- ifelse(asdataframe, data.frame(layer_code="BO_calcite"), "BO_calcite")
-  rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea)
+  rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea, rasterstack = rasterstack)
+  if(!rasterstack) {
+    rs <- rs[[1]]
+  }
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 1)
   
