@@ -92,10 +92,18 @@ spatial_autocorrelation_range <- function(r) {
 
 calc_corr_matrix_quad <- function(x, fname) {
   stack_quad <- x ^ 2
-  names(stack_quad) <- paste0(names(x), "\xb2")
+  names(stack_quad) <- paste0(names(x), "_quadratic")
   corr_quad <- faster_pearson(stack(x, stack_quad))
   saveRDS(corr_quad, paste0(statsdir, "/corr/", fname, ".rds"))
 }
+
+# for(fname in c("pearson_corr_marine_quad", "pearson_corr_terrestrial_quad")) {
+#   corr_quad <- readRDS(paste0(statsdir, "/corr/", fname, ".rds"))
+#   colnames(corr_quad[[1]]) <- sub("\xb2", "_quadratic", colnames(corr_quad[[1]]))
+#   rownames(corr_quad[[1]]) <- sub("\xb2", "_quadratic", rownames(corr_quad[[1]]))
+#   saveRDS(corr_quad, paste0(statsdir, "/corr/", fname, ".rds"))
+# }
+
 
 calc_all_correlation_matrices <- function(terrestrial=F,marine=F) {
 #   calc_correlation_matrix <- function(rasterstack, fname) {

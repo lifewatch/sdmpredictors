@@ -24,7 +24,7 @@
 #' @export
 #' @seealso \code{\link{list_layers}}, \code{\link{layer_stats}},
 #' \code{\link{layers_correlation}}
-load_layers <- function(layercodes, equalarea = TRUE, rasterstack = TRUE, datadir = NULL) {
+load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datadir = NULL) {
   if(is.na(equalarea) || !is.logical(equalarea) && length(equalarea) != 1) {
     stop("equalarea should be TRUE or FALSE")
   }

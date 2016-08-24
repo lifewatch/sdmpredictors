@@ -51,8 +51,8 @@ layer_stats <- function(layercodes = c()) {
 #'   returned.
 #' @param include_quadratic logical. When \code{TRUE}, then the correlation
 #'   coefficients of the square of the layercodes area also returned. These
-#'   layers are indicated with the layercode with an extra \code{"\xb2"} symbol,
-#'   for example \code{"BO_calcite"} became \code{"BO_calcite²"}.
+#'   layers are indicated with the layercode with \code{"_quadratic"} as a suffix,
+#'   for example \code{"BO_calcite"} became \code{"BO_calcite_quadratic"}.
 #'   
 #' @return A dataframe with the Pearson product-moment correlation coefficients.
 #'   
@@ -73,7 +73,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
   }
   if(!is.null(layercodes)) {
     if(include_quadratic) {
-      layercodes <- c(layercodes, paste0(layercodes, "\xb2"))
+      layercodes <- c(layercodes, paste0(layercodes, "_quadratic"))
     }
     notfound <- layercodes[!(layercodes %in% colnames(d))]
     d <- d[rownames(d) %in% layercodes,colnames(d) %in% layercodes, drop = FALSE]
@@ -83,7 +83,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
     }
   }
   else if(!include_quadratic) {
-    filter <- !grepl("\xb2$", rownames(d))
+    filter <- !grepl("_quadratic$", rownames(d))
     d <- d[filter, filter, drop = FALSE]
   }
   return(d)
@@ -132,7 +132,7 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
     ## returns only non quadratic layer codes BUT makes sure to make use of the quadratic correlation value
     row <- layers_correlation[i,,drop = FALSE]
     layer_codes <- names(row)[abs(row) > max_correlation]
-    unique(sub("\xb2$","", layer_codes))
+    unique(sub("_quadratic$","", layer_codes))
   }
   group_count <- function (t) { sum(sapply(t, function(s) { ifelse(length(s) > 0, 1, 0) })) }
   t <- lapply(1:nrow(layers_correlation), to_set)

@@ -154,9 +154,10 @@ test_that("load_layer equal area TRUE/FALSE works", {
     expect_equal(names(rs), c("BO_calcite"))
     expect_identical(rs@crs, sdmpredictors::lonlatproj)
   }
-  expect_identical(rs_default, rs_equalarea)
-  is_equalarea(rs_default)
+  expect_identical(rs_default, rs_lonlat)
+  
   is_equalarea(rs_equalarea)
+  is_lonlat(rs_default)
   is_lonlat(rs_lonlat)
 })
 
