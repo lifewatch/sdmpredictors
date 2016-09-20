@@ -88,3 +88,102 @@ test_that("list_layers result is same as layers.csv", {
   expect_equal(nrow(df),nrow(original))
   expect_equal(df, original)
 })
+
+test_that("list_layers_future filters scenario", {
+  df <- list_layers_future(datasets = "Bio-ORACLE", scenario = "B1")
+  expect_equal(nrow(df),10)
+  expect_true(all(df$scenario == "B1"))
+})
+
+test_that("list_layers_future filters year", {
+  df <- list_layers_future(datasets = "Bio-ORACLE", year = 2100)
+  expect_equal(nrow(df),15)
+  expect_true(all(df$year == 2100))
+})
+
+test_that("list_layers_future filters general", {
+  df <- list_layers_future(terrestrial=FALSE)
+  expect_gt(ncol(df),0)
+  df <- list_layers_future(marine=FALSE)
+  expect_gt(ncol(df),0)
+  df <- list_layers_future(monthly=FALSE)
+  expect_gt(ncol(df),0)
+})
+
+test_that("list_layers_future result is same as layers_future.csv", {
+  skip_on_cran()
+  original <- read.csv2(data_raw_file("layers_future.csv"), stringsAsFactors = FALSE)
+  df <- list_layers_future()
+  expect_equal(nrow(df),nrow(original))
+  expect_equal(df, original)
+})
+
+test_that("get_future_layers returns correct layer code", {
+  li <- get_layers_info("BO_sstmax")$current
+  l <- get_future_layers(li, "B1", 2100)
+  expect_equal(NROW(l), 1)
+  l <- get_future_layers(c("BO_salinity", "BO_sstmean"), "B1", 2100)
+  expect_equal(NROW(l), 2)
+})
+
+test_that("get_future_layers stops with wrong layer code", {
+  l <- get_future_layers(c("BO_salinity", "BO_sstmean"), "B1", 2100)
+  expect_equal(NROW(l), 2)
+  expect_error(get_future_layers(c("BO_salinity", "blabla"), "B1", 2100), "blabla")
+  expect_error(get_future_layers("BO_salinity", "scenarioblabla", 2100), "scenarioblabla")
+  expect_error(get_future_layers("BO_salinity", "B1", 555), "555")
+})
+
+
+test_that("list_layers_paleo filters model_name", {
+  df <- list_layers_paleo(datasets = "MARSPEC", model_name = "21kya_geophysical")
+  expect_equal(nrow(df),8)
+  expect_true(all(df$model_name == "21kya_geophysical"))
+})
+
+test_that("list_layers_paleo filters epoch", {
+  df <- list_layers_paleo(datasets = "MARSPEC", epoch = "mid-Holocene")
+  expect_equal(nrow(df),10)
+  expect_true(all(df$epoch == "mid-Holocene"))
+})
+
+test_that("list_layers_paleo filters years_ago", {
+  df <- list_layers_paleo(datasets = "MARSPEC", years_ago = 6000)
+  expect_equal(nrow(df),10)
+  expect_true(all(df$years_ago == 6000))
+})
+
+test_that("list_layers_paleo filters general", {
+  df <- list_layers_paleo(terrestrial=FALSE)
+  expect_gt(ncol(df),0)
+  df <- list_layers_paleo(marine=FALSE)
+  expect_gt(ncol(df),0)
+  df <- list_layers_paleo(monthly=FALSE)
+  expect_gt(ncol(df),0)
+})
+
+test_that("list_layers_future result is same as layers_future.csv", {
+  skip_on_cran()
+  original <- read.csv2(data_raw_file("layers_future.csv"), stringsAsFactors = FALSE)
+  df <- list_layers_future()
+  expect_equal(nrow(df),nrow(original))
+  expect_equal(df, original)
+})
+
+test_that("get_paleo_layers returns layer code", {
+  l <- get_paleo_layers("MS_bathy_5m", model_name = "21kya_geophysical", epoch = "Last Glacial Maximum", years_ago = 21000)
+  expect_equal(NROW(l), 1)
+})
+
+test_that("get_paleo_layers stops with wrong layer code", {
+  expect_error(get_paleo_layers(c("blabla")), "blabla")
+})
+
+test_that("get_layers_info returns info", {
+  l <- get_layers_info(c("BO_salinity", "BO_B1_2100_salinity"))
+  expect_equal(nrow(l$current), 1)
+  expect_equal(nrow(l$future), 1)
+  expect_equal(nrow(l$paleo), 0)
+  expect_equal(nrow(l$common), 2)
+})
+

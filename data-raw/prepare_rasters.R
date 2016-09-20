@@ -203,24 +203,152 @@ worldclim <- function() {
 #worldclim()
 
 
-standardize_rasters <- function() {
-  for (layer in list_layers()$layer_code) {
-    z <- function(r, outdir) {
+# standardize_rasters <- function(outdir) {
+#   for (layer in list_layers()$layer_code) {
+#     z <- function(r, outdir) {
+#       r <- raster(r, 1) # pull out of stack
+#       name <- sub("[.]grd", "", basename(r@file@name))
+#       print(name)
+#       newf <- paste0(outdir, name, "_z.grd")
+#       
+#       r <- (r - cellStats(r, "mean")) / cellStats(r, "sd")
+#       
+#       writeRaster(r, newf, overwrite=T)
+#       sdmpredictors:::compress_file(newf, outdir, overwrite=T, remove=T)
+#       sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
+#     }
+#     r <- load_layers(layer, equalarea = TRUE)
+#     z(r, "D:/a/projects/predictors/derived/standardized/")
+#     r <- load_layers(layer, equalarea = FALSE)
+#     z(r, "D:/a/projects/predictors/derived/standardized/")
+#   }
+# }
+
+convert_tif <- function(outdir, overwrite = FALSE) {
+  for(layer in list_layers()$layer_code) {
+    for(equalarea in c(TRUE, FALSE)) {
+      r <- load_layers(layer, equalarea = equalarea)
       r <- raster(r, 1) # pull out of stack
       name <- sub("[.]grd", "", basename(r@file@name))
       print(name)
-      newf <- paste0(outdir, name, "_z.grd")
       
-      r <- (r - cellStats(r, "mean")) / cellStats(r, "sd")
-      
-      writeRaster(r, newf, overwrite=T)
-      sdmpredictors:::compress_file(newf, outdir, overwrite=T, remove=T)
-      sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
+      r[] <- signif(getValues(r), digits = 6)
+      write_tif(r, name, outdir)
     }
-    r <- load_layers(layer, equalarea = TRUE)
-    z(r, "D:/a/projects/predictors/derived/standardized/")
-    r <- load_layers(layer, equalarea = FALSE)
-    z(r, "D:/a/projects/predictors/derived/standardized/")
   }
 }
-#standardize_rasters()
+# convert_tif("../../derived/tif/")
+is_wholenumber <- function(x, tol = .Machine$double.eps^0.5)  abs(x - round(x)) < tol
+in_range <- function(min, min_value, max_value, max) min <= min_value & max_value <= max
+
+
+write_tif <- function(r, name, outdir) {
+  datatype <- "FLT4S"
+  predictor <- "PREDICTOR=3"
+  
+  v <- getValues(r)  
+  if(all(is_wholenumber(na.omit(v)))) {
+    predictor <- "PREDICTOR=2"
+    mn <- min(v, na.rm = TRUE)
+    mx <- max(v, na.rm = TRUE)
+    if(mn >= 0) {
+      if(mx < 256) {
+        datatype <- "INT1U"
+      } else if (mx < 65534) {
+        datatype <- "INT2U"
+      } else if (mx < 4294967296) {
+        datatype <- "INT4U"
+      }
+    } else {
+      if(in_range(-127, mn, mx, 127)) {
+        datatype <- "INT1S"
+      } else if(in_range(-32767, mn, mx, 32767)) {
+        datatype <- "INT2S"
+      } else if(in_range(-2147483647, mn, mx, -2147483647)) {
+        datatype <- "INT4S"
+      }
+    }
+  }
+  newf <- paste0(outdir, name, ".tif")
+  tifoptions <- c("COMPRESS=DEFLATE", predictor, "ZLEVEL=9", "NUM_THREADS=3")
+  writeRaster(r, newf, options = tifoptions, datatype = datatype, overwrite = FALSE)
+}
+
+project_raster <- function(r, name, outdir) {
+  if (nrow(r) == 2160 && ncol(r) == 4320) {
+    eares <- 7000 ## similar number of total cells, cells have same x and y res
+  } else { error("undefined ea resolution") }
+  r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+  r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
+  write_tif(r, name, outdir)
+}
+
+prepare_future_biooracle <- function() {
+  outdir <- "../../derived/future/"
+  for(scenario in c("A1B", "A2", "B1")) {
+    for(year in c(2100, 2200)) {
+      indir <- paste0("D:/a/data/BioOracle_scenarios/", scenario, "/", year, "/")
+      for(l in list.files(indir, "[.]grd", full.names = TRUE)) {
+        r <- raster(l)
+        crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+        names(r) <- paste0("BO_", sub("_", "", names(r)))
+        r[] <- signif(getValues(r), digits = 6)
+        write_tif(r, paste("BO", scenario, year, names(r), "lonlat", sep="_"), outdir)
+        project_raster(r, paste("BO", scenario, year, names(r), sep="_"), outdir)
+      }
+    }
+  }
+}
+# prepare_future_biooracle()
+
+prepare_paleo_marspec <- function() {
+  outdir <- "../../derived/paleo/"
+  scale <- list(bathy_5m = 1,
+                biogeo01_5m = 100, biogeo02_5m = 100,
+                biogeo03_5m = 10000, biogeo04_5m = 10000,
+                biogeo05_5m = 1, biogeo06_5m = 10,
+                biogeo07_5m = 10000, biogeo08_5m = 100,
+                biogeo09_5m = 100, biogeo10_5m = 100,
+                biogeo11_5m = 100, biogeo12_5m = 10000,
+                biogeo13_5m = 100, biogeo14_5m = 100,
+                biogeo15_5m = 100, biogeo16_5m = 100,
+                biogeo17_5m = 10000)
+  suffix <- c("aspect_EW", "aspect_NS", "plan_curvature", "profile_curvature", "dist_shore", "bathy_slope", "concavity", 
+             "sss_mean", "sss_min", "sss_max", "sss_range", "sss_variance",
+             "sst_mean", "sst_min", "sst_max", "sst_range", "sst_variance")
+  for(dir in c("6kya", "21kya", "21kya_adjCCSM", "21kya_noCCSM")) {
+    for(f in list.files(paste0("D:/a/data/marspec_paleo/tif/", dir), "[.]tif$", full.names = TRUE)) {
+      r <- raster(f)
+      crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+      
+      name <- names(r)
+      scalefactor <- scale[[name]]
+      
+      name <- sub("_5m$", "", names(r))
+      if(grepl("^biogeo", name)) {
+        name <- paste0(name, "_", suffix[as.integer(sub("biogeo", "", name))])
+      }
+      name <- paste0("MS_", name, "_", dir)
+      print(name)
+      r[] <- signif(getValues(r) / scalefactor, digits = 6)
+      write_tif(r, paste(name, "lonlat", sep="_"), outdir)
+      project_raster(r, name, outdir)
+    }
+  }
+  
+}
+# prepare_paleo_marspec()
+
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_deflate_9_p3.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_9_p3.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_packbits.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_p3_z9_tiled.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+
+
+# prepare_paleo_marspec()
+# convert_tif("../../derived/tif/")
+# prepare_future_biooracle()
+

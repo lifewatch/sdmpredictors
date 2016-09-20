@@ -21,7 +21,11 @@ load_tmp_dir <- setup()
 load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F) {
   skip_on_cran()
   skip_on_travis()
-  layercodes <- ifelse(asdataframe, data.frame(layer_code="BO_calcite"), "BO_calcite")
+  if (asdataframe) { 
+    layercodes <- data.frame(layer_code="BO_calcite", stringsAsFactors = FALSE)
+  } else {
+    layercodes <- "BO_calcite"
+  }
   rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea, rasterstack = rasterstack)
   if(!rasterstack) {
     rs <- rs[[1]]
@@ -83,15 +87,15 @@ test_that("load_layer works with different datadir options", {
   }) # reset original options
 })
 
-test_that("load_layer for partially downloaded layer works", {
-  check_skip()
-  # del grd
-  unlink(paste0(load_tmp_dir,"/", "BO_calcite.grd"), recursive=FALSE)
-  load_BO_calcite_test()
-  # del gri
-  unlink(paste0(load_tmp_dir,"/", "BO_calcite.gri"), recursive=FALSE)
-  load_BO_calcite_test()
-})
+# test_that("load_layer for partially downloaded layer works", {
+#   check_skip()
+#   # del grd
+#   unlink(paste0(load_tmp_dir,"/", "BO_calcite.grd"), recursive=FALSE)
+#   load_BO_calcite_test()
+#   # del gri
+#   unlink(paste0(load_tmp_dir,"/", "BO_calcite.gri"), recursive=FALSE)
+#   load_BO_calcite_test()
+# })
 
 test_that("load_layer for dataframe from list_layers works", {
   check_skip()

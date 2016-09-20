@@ -1,3 +1,17 @@
+get_datadir <- function(datadir) {
+  if(is.null(datadir)) {
+    datadir <- getOption("sdmpredictors_datadir")
+    if(is.null(datadir)) {
+      datadir <- file.path(path.expand("~"), "R", "sdmpredictors")
+      if(!dir.exists(datadir)) {
+        dir.create(datadir, recursive = TRUE)
+      }
+    }
+  }
+  normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
+}
+
+
 #' Load layers
 #' 
 #' Method to load rasters from disk or from the internet. By default a
@@ -28,46 +42,43 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
   if(is.na(equalarea) || !is.logical(equalarea) && length(equalarea) != 1) {
     stop("equalarea should be TRUE or FALSE")
   }
-  if(is.null(datadir)) {
-    datadir <- getOption("sdmpredictors_datadir")
-    if(is.null(datadir)) {
-      datadir <- file.path(path.expand("~"), "R", "sdmpredictors")
-      if(!dir.exists(datadir)) {
-        dir.create(datadir, recursive = TRUE)
-      }
-    }
-  }
-  datadir <- normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
-  
-  get_layerpath <- function(layercode) {
-    get_layerpath_from_extension <- function(extension, suffix) {
-      path <- paste0(datadir, "/", layercode, suffix, extension)
-      if (!file.exists(path)) {
-        urlroot <- "http://www.phycology.ugent.be/research/sdmpredictors/"
-        url <- paste0(urlroot, layercode, suffix, extension, ".gz")
-        gzpath <- paste0(path, ".gz")
-        download.file(url, gzpath, method = "auto", quiet = FALSE, mode = "wb")
-        path <- decompress_file(gzpath, datadir)
-      }
-      return(path)
-    }
-    suffix <- ifelse(equalarea, "", "_lonlat")
-    grd <- get_layerpath_from_extension(".grd", suffix)
-    gri <- get_layerpath_from_extension(".gri", suffix)
-    if(file.exists(grd) & file.exists(gri)) {
-      return(grd)
-    } else {
-      return(NA)
-    }
-  }
   if(is.data.frame(layercodes)) {
     layercodes <- layercodes$layer_code
   }
+  info <- get_layers_info(layercodes)
+  counts <- table(info$common$time)
+  if(length(unique(info$common$cellsize_equalarea)) > 1) {
+    stop("Loading layers with different cellsize is not supported")
+  } else if (sum(counts) != NROW(layercodes)) {
+    layers <- info$common$layer_code
+    stop(paste0("Following layer codes where not recognized: ", 
+                paste0(layercodes[!(layercodes %in% layers)], collapse = ", ")))
+  }
+  if(max(counts) != NROW(layercodes)) {
+    warning("Layers from different eras (current, future, paleo) are being loaded together")
+  }
+  datadir <- get_datadir(datadir)
+  get_layerpath <- function(layercode) {
+    suffix <- ifelse(equalarea, "", "_lonlat")
+    path <- paste0(datadir, "/", layercode, suffix, ".tif")
+    if(!file.exists(path)) {
+      urlroot <- "http://www.phycology.ugent.be/research/sdmpredictors/"
+      url <- paste0(urlroot, layercode, suffix, ".tif")
+      download.file(url, path, method = "auto", quiet = FALSE, mode = "wb")
+    }
+    ifelse(file.exists(path), path, NA)
+  }
+  
   paths <- sapply(layercodes, get_layerpath)
   if(rasterstack) {
-    return(raster::stack(paths))
+    st <- raster::stack(paths)
+    names(st) <- sub("_lonlat$", "", names(st))
+    return(st)
   } else {
-    return(lapply(paths, function(path) { raster::raster(path) }))
+    return(lapply(paths, function(path) { 
+      r <- raster::raster(path) 
+      names(r) <- sub("_lonlat$", "", names(r))
+      r}))
   }
 }
 
@@ -79,4 +90,4 @@ lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84
 #' World Behrmann equal area coordinate reference system (ESRI:54017), used when
 #' using load_layers with equal_area = TRUE
 #' @export
-equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +ellps=WGS84 +units=m +no_defs +towgs84=0,0,0")
+equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0")

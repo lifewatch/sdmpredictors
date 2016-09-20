@@ -1,6 +1,6 @@
 get_sysdata <- function() {
   fname <- "sysdata.rda"
-  outfile <- paste0(dirname(tempdir()), "/", fname)
+  outfile <- paste0(get_datadir(NULL), "/", fname)
   ## only download every 5 minutes
   if(!file.exists(outfile) || difftime(Sys.time(), file.mtime(outfile), units = "mins") > 5) {
     tryCatch({

@@ -15,8 +15,8 @@ returned.}
 
 \item{include_quadratic}{logical. When \code{TRUE}, then the correlation
 coefficients of the square of the layercodes area also returned. These
-layers are indicated with the layercode with an extra \code{"\xb2"} symbol,
-for example \code{"BO_calcite"} became \code{"BO_calcite²"}.}
+layers are indicated with the layercode with \code{"_quadratic"} as a suffix,
+for example \code{"BO_calcite"} became \code{"BO_calcite_quadratic"}.}
 }
 \value{
 A dataframe with the Pearson product-moment correlation coefficients.
