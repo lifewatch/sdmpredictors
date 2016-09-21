@@ -15,6 +15,7 @@ before_install:
   - sudo apt-get -y install libgdal-dev
   - sudo apt-get -y install gdal-bin
   - sudo apt-get -y install libproj-dev
+  - sudo mv /tmp/* /etc/apt/sources.list.d
   
 before_script:
   - git config --global user.name "travis"
