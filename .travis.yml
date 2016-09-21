@@ -4,12 +4,16 @@ cache: packages
 
 warnings_are_errors: true
 
-before_script:
-  - git config --global user.name "travis"
-  - git config --global user.email "travis@example.org"
+before_install:
+  - sudo apt-get -qq update
   - sudo apt-get install aptitude # install aptitude as an alternative to apt-get
   - sudo aptitude install libgdal-dev # install the package (you may have to respond to queries here)
   - sudo aptitude install libproj-dev # install the proj.4 projection library
+
+before_script:
+  - git config --global user.name "travis"
+  - git config --global user.email "travis@example.org"
+  
 r_github_packages:
   - rstudio/rmarkdown
   - hadley/testthat

@@ -18,6 +18,7 @@
 #' @return The path of the compressed file.
 #'   
 #' @seealso \code{\link{decompress_file}}
+#' @keywords internal
 compress_file <- function(filename, outputdir, method="gzip", overwrite=FALSE, remove=TRUE) {
   # @examples
   # print("TODO examples compress_file")
@@ -54,6 +55,7 @@ compress_file <- function(filename, outputdir, method="gzip", overwrite=FALSE, r
 #' @return The path of the decompressed file.
 #'   
 #' @seealso \code{\link{compress_file}}
+#' @keywords internal
 decompress_file <- function(filename, outputdir, overwrite=FALSE, remove=TRUE) {
   # @examples 
   # #decompress_file("compressed/sst_mean.gri.gz", "decompressed", overwrite = FALSE)

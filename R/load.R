@@ -1,3 +1,21 @@
+#' Get data directory
+#' 
+#' Find out where the environmental data is stored
+#' 
+#' @usage get_datadir(datadir)
+#'   
+#' @param datadir character. Directory as will be passed to 
+#'   \code{\link{load_layers}}. This does not change the data directory used by 
+#'   \code{\link{load_layers}} but only shows the result of passing a specific 
+#'   datadir. If \code{NULL} is used then this returns 
+#'   \code{file.path(path.expand("~"), "R", "sdmpredictors")}. This can be 
+#'   overridden by setting the \code{sdmpredictors_datadir} option with 
+#'   \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
+#' @examples
+#' get_datadir(NULL)
+#' @returns
+#' @seealso \code{\link{load_layers}}
+#' @keywords internal
 get_datadir <- function(datadir) {
   if(is.null(datadir)) {
     datadir <- getOption("sdmpredictors_datadir")

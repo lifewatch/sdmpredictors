@@ -31,4 +31,5 @@ path to the result.
 \seealso{
 \code{\link{decompress_file}}
 }
+\keyword{internal}
 

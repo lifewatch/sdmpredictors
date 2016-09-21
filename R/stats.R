@@ -175,6 +175,7 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
 #' @return A dataframe with the layercode and all basic statistics.
 #'   
 #' @seealso \code{\link{layer_stats}}
+#' @keywords internal
 calc_stats <- function(layercode, raster) {
   v <- raster::values(raster)
   q <- quantile(v,na.rm=TRUE)

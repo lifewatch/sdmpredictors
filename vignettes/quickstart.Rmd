@@ -16,18 +16,111 @@ layers.
 Different list_* functions are available in order to find out which datasets and
 environmental layers can be downloaded.
 
-```{r}
+### list_datasets
 
+With the list_datasets function you can view all the available datasets. If you want only terrestrial datasets then you have to set the marine parameter to *FALSE* and vice versa.
+
+```{r, message=F, warning=F}
 library(sdmpredictors)
 
+# exploring the marine datasets
+datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
+```
 
+```{r, echo = FALSE}
+knitr::kable(datasets, row.names = FALSE)
+```
 
+### list_layers
+
+Using the list_layers we can view all layer information based on datasets, terrestrial (TRUE/FALSE), marine (TRUE/FALSE) and/or whether it should be monthly data. The table only shows the first 4 columns of the first 4 layers
+
+```{r}
+# exploring the marine layers
+layers <- list_layers(datasets)
+```
+```{r, echo = FALSE}
+knitr::kable(layers[1:4,1:4], row.names = FALSE)
 ```
 
 ## Loading the data
 
+### load_layers
+
+To be able to use the layers you want in R you have to call the load_layers function with 
+
+```{r}
+sdmpredictors:::get_datadir(NULL)
+
+# download first two layers (BO_calcite, BO_chlomax)
+firsttwo <- load_layers(layers[1:2,])
+# (down)load specific layers
+specific <- load_layers(c("BO_calcite", "BO_chlomax", "MS_bathy_5m"))
+
+```
 
 ## Loading future and paleo data
 
+Similarly to the current climate layers 
+
+```{r}
+# exploring the available future marine layers
+future <- list_layers_future(terrestrial = FALSE)
+# available scenarios
+unique(future$scenario)
+unique(future$year)
+summary(future)
+```
+
+Other useful functions related to layers metadata and future and paleo layers are:
+
+```{r}
+# get_layers_info("BO_calcite")
+# get_future_layers("BO_sstmax")
+# get_paleo_layers("MS_bathy_5m")
+```
 
 ## Statistics
+
+
+```{r, echo = FALSE}
+# download specific layers (or load previously downloaded rasters)
+#rasters <- load_layers(c("BO_sstmean", "BO_salinity", "MS_bathy_5m"))
+# 
+# # Example: 2 looking up statistics and correlations for marine annual layers:
+# 
+# datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
+# layers <- list_layers(datasets)
+# 
+# # filter out monthly layers
+# layers <- layers[is.na(layers$month),]
+# 
+# stats <- layer_stats(layers)
+# View(stats)
+# 
+# correlations <- layers_correlation(layers)
+# View(correlations)
+# 
+# # create groups of layers where no layers in one group 
+# # have a correlation > 0.7 with a layer from another group
+# groups <- correlation_groups(correlations, max_correlation=0.7)
+# 
+# # inspect groups
+# # heatmap plot for larger groups (if gplots library is installed)
+# for(group in groups) {
+#   group_correlation <- as.matrix(correlations[group, group, drop=FALSE])
+#   if(require(gplots) && length(group) > 4){
+#     heatmap.2(abs(group_correlation)
+#              ,main = "Correlation"
+#              ,col = "rainbow"      
+#              ,notecol="black"      # change font color of cell labels to black
+#              ,density.info="none"  # turns off density plot inside color legend
+#              ,trace="none"         # turns off trace lines inside the heat map
+#              ,margins = c(12,9)    # widens margins around plot
+#              )
+#   } else {
+#     print(group_correlation)
+#   }
+# }
+
+```

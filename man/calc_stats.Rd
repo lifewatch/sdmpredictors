@@ -20,4 +20,5 @@ Internal method used to calculate the statistics of the layers.
 \seealso{
 \code{\link{layer_stats}}
 }
+\keyword{internal}
 

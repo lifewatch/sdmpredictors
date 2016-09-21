@@ -27,4 +27,5 @@ the path to the result.
 \seealso{
 \code{\link{compress_file}}
 }
+\keyword{internal}
 
