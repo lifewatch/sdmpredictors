@@ -5,10 +5,8 @@ cache: packages
 warnings_are_errors: true
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install aptitude # install aptitude as an alternative to apt-get
-  - sudo aptitude install libgdal-dev # install the package (you may have to respond to queries here)
-  - sudo aptitude install libproj-dev # install the proj.4 projection library
+  - sudo aptitude -R -y install libgdal-dev # install the gdal package
+  - sudo aptitude -R -y install libproj-dev # install the proj.4 projection library
 
 before_script:
   - git config --global user.name "travis"

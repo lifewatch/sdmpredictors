@@ -1,7 +1,13 @@
---- title: "sdmpredictors quickstart Guide" author: "Samuel Bosch" date: "`r 
-Sys.Date()`" output: rmarkdown::html_vignette vignette: > 
-%\VignetteIndexEntry{sdmpredictors quickstart guide} 
-%\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8} ---
+--- 
+title: "sdmpredictors quickstart guide" 
+author: "Samuel Bosch" 
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette 
+vignette: > 
+  %\VignetteIndexEntry{sdmpredictors quickstart guide} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8} 
+---
 
 The goal of sdmpredictors is to make environmental data, commonly used for 
 species distribution modelling (SDM), also called ecological niche modelling 
@@ -18,12 +24,14 @@ environmental layers can be downloaded.
 
 ### list_datasets
 
-With the list_datasets function you can view all the available datasets. If you want only terrestrial datasets then you have to set the marine parameter to *FALSE* and vice versa.
+With the list_datasets function you can view all the available datasets. If you 
+want only terrestrial datasets then you have to set the marine parameter to 
+*FALSE* and vice versa.
 
 ```{r, message=F, warning=F}
 library(sdmpredictors)
 
-# exploring the marine datasets
+# exploring the marine datasets 
 datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
 ```
 
@@ -33,94 +41,106 @@ knitr::kable(datasets, row.names = FALSE)
 
 ### list_layers
 
-Using the list_layers we can view all layer information based on datasets, terrestrial (TRUE/FALSE), marine (TRUE/FALSE) and/or whether it should be monthly data. The table only shows the first 4 columns of the first 4 layers
+Using the list_layers we can view all layer information based on datasets, 
+terrestrial (TRUE/FALSE), marine (TRUE/FALSE) and/or whether it should be 
+monthly data. The table only shows the first 4 columns of the first 3 layers.
 
-```{r}
-# exploring the marine layers
+```{r} 
+# exploring the marine layers 
 layers <- list_layers(datasets)
-```
-```{r, echo = FALSE}
-knitr::kable(layers[1:4,1:4], row.names = FALSE)
+``` 
+```{r, echo = FALSE} 
+knitr::kable(layers[1:3,1:4], row.names = FALSE)
 ```
 
 ## Loading the data
 
 ### load_layers
 
-To be able to use the layers you want in R you have to call the load_layers function with 
+To be able to use the layers you want in R you have to call the load_layers 
+function with
 
 ```{r}
-sdmpredictors:::get_datadir(NULL)
+# download first two layers (BO_calcite, BO_chlomax) 
+load_layers(layers[1:2,])
 
-# download first two layers (BO_calcite, BO_chlomax)
-firsttwo <- load_layers(layers[1:2,])
-# (down)load specific layers
+# (down)load specific layers 
 specific <- load_layers(c("BO_calcite", "BO_chlomax", "MS_bathy_5m"))
 
+# to load equal area data (Behrmann equal area projection) 
+equalarea <- load_layers("BO_sstmean", equalarea = TRUE)
+
+# get the default on disc storage location
+# use the datadir parameter in load_layers 
+# or set the sdmpredictors_datadir option to change it 
+sdmpredictors:::get_datadir(NULL) 
 ```
 
 ## Loading future and paleo data
 
-Similarly to the current climate layers 
+Similarly to the current climate layers
 
 ```{r}
-# exploring the available future marine layers
-future <- list_layers_future(terrestrial = FALSE)
-# available scenarios
-unique(future$scenario)
+# exploring the available future marine layers 
+future <- list_layers_future(terrestrial = FALSE) 
+# available scenarios 
+unique(future$scenario) 
 unique(future$year)
-summary(future)
+
+paleo <- list_layers_paleo(terrestrial = FALSE)
+unique(paleo$epoch) 
+unique(paleo$model_name) 
 ```
 
-Other useful functions related to layers metadata and future and paleo layers are:
+Other functions related to layers metadata and future and paleo layers are:
 
-```{r}
-# get_layers_info("BO_calcite")
-# get_future_layers("BO_sstmax")
-# get_paleo_layers("MS_bathy_5m")
+```{r} 
+get_layers_info(c("BO_calcite","BO_B1_2100_sstmax","MS_bathy_21kya"))$common[,1:4]
+
+# functions to get the equivalent future layer for a current climate layer 
+get_future_layers(c("BO_sstmax", "BO_salinity"), 
+                  scenario = "B1", 
+                  year = 2100)$layer_code 
+
+# functions to get the equivalent paleo layer for a current climate layer 
+get_paleo_layers(c("MS_bathy_5m", "MS_biogeo13_sst_mean_5m"), 
+                 model_name = c("21kya_geophysical", "21kya_ensemble_adjCCSM"), 
+                 years_ago = 21000)$layer_code 
 ```
 
 ## Statistics
 
+Two types of statistics are available for the current climate layers:
 
-```{r, echo = FALSE}
-# download specific layers (or load previously downloaded rasters)
-#rasters <- load_layers(c("BO_sstmean", "BO_salinity", "MS_bathy_5m"))
-# 
-# # Example: 2 looking up statistics and correlations for marine annual layers:
-# 
-# datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
-# layers <- list_layers(datasets)
-# 
-# # filter out monthly layers
-# layers <- layers[is.na(layers$month),]
-# 
-# stats <- layer_stats(layers)
-# View(stats)
-# 
-# correlations <- layers_correlation(layers)
-# View(correlations)
-# 
-# # create groups of layers where no layers in one group 
-# # have a correlation > 0.7 with a layer from another group
-# groups <- correlation_groups(correlations, max_correlation=0.7)
-# 
-# # inspect groups
-# # heatmap plot for larger groups (if gplots library is installed)
-# for(group in groups) {
-#   group_correlation <- as.matrix(correlations[group, group, drop=FALSE])
-#   if(require(gplots) && length(group) > 4){
-#     heatmap.2(abs(group_correlation)
-#              ,main = "Correlation"
-#              ,col = "rainbow"      
-#              ,notecol="black"      # change font color of cell labels to black
-#              ,density.info="none"  # turns off density plot inside color legend
-#              ,trace="none"         # turns off trace lines inside the heat map
-#              ,margins = c(12,9)    # widens margins around plot
-#              )
-#   } else {
-#     print(group_correlation)
-#   }
-# }
+- individual layer statistics 
+    - summary statistics (minimum, q1, median, q3, maximum, mad, mean and sd)
+    - spatial autocorrelation (Moran's I and Geary's C) 
+- Pearson correlation coefficient between the different layers and their 
+quadratic
 
+```{r, message=F, warning=F} 
+# looking up statistics and correlations for marine annual layers
+datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
+layers <- list_layers(datasets)
+
+# filter out monthly layers
+layers <- layers[is.na(layers$month),]
+
+layer_stats(layers)[1:2,]
+
+correlations <- layers_correlation(layers)
+
+# create groups of layers where no layers in one group 
+# have a correlation > 0.7 with a layer from another group 
+groups <- correlation_groups(correlations, max_correlation=0.7)
+
+# group lengths
+sapply(groups, length)
+
+for(group in groups) {
+  if(length(group) > 1) {
+    cat(paste(group, collapse =", "))
+    cat("\n")
+  }
+}
 ```

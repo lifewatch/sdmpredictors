@@ -358,7 +358,7 @@ get_layers_info <- function(layer_codes) {
   current <- current[current$layer_code %in% layer_codes,]
   future <- future[future$layer_code %in% layer_codes,]
   paleo <- paleo[paleo$layer_code %in% layer_codes,]
-  common_cols <- c("dataset_code", "layer_code", "terrestrial", "marine", "cellsize_equalarea", "cellsize_lonlat", "units", "derivation", "month")
+  common_cols <- c("dataset_code", "layer_code", "name", "description", "terrestrial", "marine", "cellsize_equalarea", "cellsize_lonlat", "units", "derivation", "month")
   common <- rbind(cbind(time=rep("current", NROW(current)), current[,common_cols]), 
                   cbind(time=rep("future", NROW(future)), future[,common_cols]), 
                   cbind(time=rep("paleo", NROW(paleo)), paleo[,common_cols]))
