@@ -5,6 +5,7 @@ cache: packages
 warnings_are_errors: true
 
 before_install:
+  - sudo apt-get install -y r-cran-devtools
   - sudo mv /etc/apt/sources.list.d/* /tmp
   - sudo apt-get -qq remove postgis
   - sudo apt-get -y install software-properties-common
@@ -15,7 +16,7 @@ before_install:
   - sudo apt-get -y install libgdal-dev
   - sudo apt-get -y install gdal-bin
   - sudo apt-get -y install libproj-dev
-  - sudo mv /tmp/* /etc/apt/sources.list.d
+  - sudo add-apt-repository -r ppa:ubuntugis/ubuntugis-unstable
   
 before_script:
   - git config --global user.name "travis"
