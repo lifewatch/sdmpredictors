@@ -1,21 +1,15 @@
 language: r
-sudo: false
+sudo: required
 cache: packages
 
 warnings_are_errors: true
 
-addons:
-  apt:
-    packages:
-      - libgdal1h
-      - libgdal1-dev
-      - libproj-dev
-      - gdal-bin
-
 before_script:
   - git config --global user.name "travis"
   - git config --global user.email "travis@example.org"
- 
+  - sudo apt-get install aptitude # install aptitude as an alternative to apt-get
+  - sudo aptitude install libgdal-dev # install the package (you may have to respond to queries here)
+  - sudo aptitude install libproj-dev # install the proj.4 projection library
 r_github_packages:
   - rstudio/rmarkdown
   - hadley/testthat

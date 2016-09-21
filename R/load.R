@@ -58,6 +58,7 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
     warning("Layers from different eras (current, future, paleo) are being loaded together")
   }
   datadir <- get_datadir(datadir)
+  urlroot <- get_sysdata()$urldata
   get_layerpath <- function(layercode) {
     suffix <- ifelse(equalarea, "", "_lonlat")
     path <- paste0(datadir, "/", layercode, suffix, ".tif")
