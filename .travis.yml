@@ -7,7 +7,10 @@ warnings_are_errors: true
 addons:
   apt:
     packages:
-      - r-cran-rgdal
+      - libgdal1h
+      - libgdal1-dev
+      - libproj-dev
+      - gdal-bin
 
 before_script:
   - git config --global user.name "travis"

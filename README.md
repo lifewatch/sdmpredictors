@@ -3,9 +3,9 @@
 [![Coverage Status](http://codecov.io/github/samuelbosch/sdmpredictors/coverage.svg?branch=master)](http://codecov.io/github/samuelbosch/sdmpredictors?branch=master)
 
 
-# sdmpredictors: a compilation of species distribution modeling predictors data
+# sdmpredictors: a compilation of species distribution modelling predictors data
 
-An R package to improve the usability of datasets with predictors for species distribution modeling (SDM).
+An R package to improve the usability of datasets with predictors for species distribution modelling (SDM).
 
 Installation:
 
