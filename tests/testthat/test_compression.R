@@ -5,7 +5,17 @@ context("Compress/Decompress")
 
 print(getwd())
 
-test_raster_file <- "../data/sst_mean_crop_70_90_0_20.gri"
+get_test_file <- function() {
+  path <- "../data/test_compress.grd"
+  if(!file.exists(path)) {
+    r <- raster(nrows=180, ncols=360, xmn=-180, xmx=180, ymn=-90, ymx=90, 
+           crs=lonlatproj, vals=runif(180*360))
+    writeRaster(r, path)
+  }
+  path
+}
+
+test_raster_file <- get_test_file()
 test_tmp_dir <- "../tmp_compression"
 setup <- function() {
   if (dir.exists(test_tmp_dir)) {

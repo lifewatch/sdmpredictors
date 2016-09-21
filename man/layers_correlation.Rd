@@ -15,8 +15,9 @@ returned.}
 
 \item{include_quadratic}{logical. When \code{TRUE}, then the correlation
 coefficients of the square of the layercodes area also returned. These
-layers are indicated with the layercode with \code{"_quadratic"} as a suffix,
-for example \code{"BO_calcite"} became \code{"BO_calcite_quadratic"}.}
+layers are indicated with the layercode with \code{"_quadratic"} as a
+suffix, for example \code{"BO_calcite"} became 
+\code{"BO_calcite_quadratic"}.}
 }
 \value{
 A dataframe with the Pearson product-moment correlation coefficients.
@@ -36,6 +37,6 @@ layers_correlation(c("BO_calcite", "MS_bathy_5m"), include_quadratic = FALSE)
 }
 \seealso{
 \code{\link{list_layers}} \code{\link{layer_stats}}
-\code{\link{correlation_groups}}
+  \code{\link{correlation_groups}}
 }
 

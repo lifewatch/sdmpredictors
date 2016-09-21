@@ -19,11 +19,11 @@ A list of vectors with each vector containing the layer codes of one
   correlation group.
 }
 \description{
-\code{correlation_groups} returns groups of layer codes such as each layer 
+\code{correlation_groups} returns groups of layer codes such as each layer
 from one group has an absolute Pearson product-moment correlation coefficient
 (Pearson's r) that is smaller than the maximum_correlation (default 0.7) with
 each variable in any other group. The correlation values of quadratic layers
-are used for creating the groups but only non quadratic layer codes are
+are used for creating the groups but only non quadratic layer codes are 
 returned.
 }
 \examples{
@@ -35,15 +35,16 @@ print(correlation_groups(corr, max_correlation=0.6))
 }
 \references{
 Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G.,
-Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal
-with it and a simulation study evaluating their performance. Ecography,
-36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x Barbet-Massin, M. &
-Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of
-relevant climate predictors for species distribution modelling. Diversity and
-Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
+  Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to
+  deal with it and a simulation study evaluating their performance.
+  Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x 
+  Barbet-Massin, M. & Jetz, W. (2014). A 40-year, continent-wide,
+  multispecies assessment of relevant climate predictors for species
+  distribution modelling. Diversity and Distributions, 20(11), 1285-1295.
+  doi:10.1111/ddi.12229
 }
 \seealso{
 \code{ \link{layers_correlation} \link{list_layers}
-\link{layer_stats}}
+  \link{layer_stats}}
 }
 

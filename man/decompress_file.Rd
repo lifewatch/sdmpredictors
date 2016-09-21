@@ -4,24 +4,24 @@
 \alias{decompress_file}
 \title{Decompress a file}
 \usage{
-decompress_file(filename, outputdir, overwrite = FALSE, remove = TRUE)
+decompress_file(filename, outputdir, overwrite=FALSE, remove=TRUE)
 }
 \arguments{
 \item{filename}{character. Path to the file that should be decompressed.}
 
 \item{outputdir}{character. Path to the output directory.}
 
-\item{overwrite}{logical. If \code{TRUE} and the output file already exists
+\item{overwrite}{logical. If \code{TRUE} and the output file already exists 
 then the file is silently overwritten, otherwise an exception is thrown.}
 
-\item{remove}{logical. If \code{TRUE} then the input file is removed
+\item{remove}{logical. If \code{TRUE} then the input file is removed 
 afterwards, otherwise not.}
 }
 \value{
 The path of the decompressed file.
 }
 \description{
-The internal method \code{decompress_file} decompresses a file and returns
+The internal method \code{decompress_file} decompresses a file and returns 
 the path to the result.
 }
 \seealso{

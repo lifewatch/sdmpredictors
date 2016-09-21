@@ -8,16 +8,16 @@ layer_stats(layercodes = c())
 }
 \arguments{
 \item{layercodes}{character vector or dataframe. Codes of the layers you want
-the basic statistics of as a character vector or a dataframe with a 
-"layer_code" column. With the default empty vector all statistics are 
+the basic statistics of as a character vector or a dataframe with a
+"layer_code" column. With the default empty vector all statistics are
 returned.}
 }
 \value{
 A dataframe with basic statistics about each given layercode.
 }
 \description{
-\code{layer_stats} returns basic statistics (minimum, q1, median, q3, 
-maximum, median absolute deviation (mad), mean, standard deviation (sd)) 
+\code{layer_stats} returns basic statistics (minimum, q1, median, q3,
+maximum, median absolute deviation (mad), mean, standard deviation (sd))
 about each given layercode.
 }
 \examples{

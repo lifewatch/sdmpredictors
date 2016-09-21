@@ -1,4 +1,5 @@
 get_sysdata <- function() {
+  # internal function used to load the layers information and statistics
   fname <- "sysdata.rda"
   outfile <- paste0(get_datadir(NULL), "/", fname)
   ## only download every 5 minutes

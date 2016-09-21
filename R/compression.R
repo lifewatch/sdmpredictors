@@ -1,18 +1,18 @@
 #' Compress a file
 #' 
-#' The internal method \code{compress_file} compresses a file and returns the
+#' The internal method \code{compress_file} compresses a file and returns the 
 #' path to the result.
 #' 
-#' @usage compress_file(filename, outputdir, method = "gzip", overwrite = FALSE,
-#' remove = TRUE)
-#' 
+#' @usage compress_file(filename, outputdir, method="gzip", overwrite=FALSE, 
+#'   remove=TRUE)
+#'   
 #' @param filename character. Path to the file that should be compressed.
 #' @param outputdir character. Path to the output directory.
-#' @param method character. The default value is \code{"gzip"}, the supported
+#' @param method character. The default value is \code{"gzip"}, the supported 
 #'   methods are \code{"gzip"} and \code{"bzip2"}.
-#' @param overwrite logical. If \code{TRUE} and the output file already exists
+#' @param overwrite logical. If \code{TRUE} and the output file already exists 
 #'   then the file is silently overwritten, otherwise an exception is thrown.
-#' @param remove logical. If \code{TRUE} then the input file is remove
+#' @param remove logical. If \code{TRUE} then the input file is remove 
 #'   afterwards, otherwise not.
 #'   
 #' @return The path of the compressed file.
@@ -39,16 +39,16 @@ compress_file <- function(filename, outputdir, method="gzip", overwrite=FALSE, r
 
 #' Decompress a file
 #' 
-#' The internal method \code{decompress_file} decompresses a file and returns
+#' The internal method \code{decompress_file} decompresses a file and returns 
 #' the path to the result.
 #' 
-#' @usage decompress_file(filename, outputdir, overwrite = FALSE, remove = TRUE)
-#' 
+#' @usage decompress_file(filename, outputdir, overwrite=FALSE, remove=TRUE)
+#'   
 #' @param filename character. Path to the file that should be decompressed.
 #' @param outputdir character. Path to the output directory.
-#' @param overwrite logical. If \code{TRUE} and the output file already exists
+#' @param overwrite logical. If \code{TRUE} and the output file already exists 
 #'   then the file is silently overwritten, otherwise an exception is thrown.
-#' @param remove logical. If \code{TRUE} then the input file is removed
+#' @param remove logical. If \code{TRUE} then the input file is removed 
 #'   afterwards, otherwise not.
 #'   
 #' @return The path of the decompressed file.

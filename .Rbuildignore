@@ -4,3 +4,6 @@
 ^.travis.yml$
 ^LICENSE.md$
 ^TODO.md$
+^\.git$
+^tests/tmp_load$
+^tests/data$

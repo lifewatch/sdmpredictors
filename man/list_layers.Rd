@@ -4,19 +4,19 @@
 \alias{list_layers}
 \title{List the current climate layers provided by one or more datasets}
 \usage{
-list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE)
+list_layers(datasets=c(), terrestrial=TRUE, marine=TRUE, monthly=TRUE)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets.}
 
-\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that only have terrestrial
-data (seamasked) are returned.}
+\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that 
+only have terrestrial data (seamasked) are returned.}
 
-\item{marine}{logical. When \code{TRUE} (default), then datasets that only have marine data
-(landmasked) are returned.}
+\item{marine}{logical. When \code{TRUE} (default), then datasets that only 
+have marine data (landmasked) are returned.}
 
-\item{monthly}{logical. When \code{FALSE}, then no monthly layers are returned. All annual and
-monthly layers are returned by default.}
+\item{monthly}{logical. When \code{FALSE}, then no monthly layers are 
+returned. All annual and monthly layers are returned by default.}
 }
 \value{
 A dataframe with information on the supported current climate layers.
@@ -25,8 +25,9 @@ A dataframe with information on the supported current climate layers.
 \code{list_layers} returns information on the layers of one or more datasets.
 }
 \details{
-By default it returns all layers from all datasets, when both marine and terrestrial are
-\code{FALSE} then only datasets without land- nor seamasks are returned.
+By default it returns all layers from all datasets, when both marine
+  and terrestrial are \code{FALSE} then only datasets without land- nor 
+  seamasks are returned.
 }
 \examples{
 # list the first 5 layers
@@ -44,7 +45,7 @@ list_layers(terrestrial=FALSE)[1:5,]
 list_layers("MARSPEC", monthly = FALSE)
 }
 \seealso{
-\code{\link{load_layers}}, \code{\link{list_datasets}},
+\code{\link{load_layers}}, \code{\link{list_datasets}}, 
   \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}
 }
 

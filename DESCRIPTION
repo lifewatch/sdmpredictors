@@ -1,18 +1,19 @@
 Package: sdmpredictors
 Type: Package
-Title: Species Distribution Modeling Predictor Datasets from Around the Web
-Version: 0.0.0.9006
+Title: Species Distribution Modelling Predictor Datasets from Around the Web
+Version: 0.0.0.9007
 Date: 2016-04-06
 Depends:
     R (>= 3.2.0),
-    raster (>= 2.4-15)
+    raster (>= 2.4-15),
+    rgdal (>= 1.1-8)
 Imports:
     R.utils (>= 2.1.0),
     stats,
-    utils
+    utils,
 Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre"))
 Maintainer: Samuel Bosch <mail@samuelbosch.com>
-Description: Terrestrial and marine predictors for species distribution modeling
+Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim (http://www.worldclim.org/), Bio-
     ORACLE (http://www.oracle.ugent.be/) and MARSPEC (http://www.marspec.org/).
 License: MIT + file LICENSE
@@ -20,5 +21,8 @@ LazyData: true
 Suggests:
     biomod2,
     dismo,
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr

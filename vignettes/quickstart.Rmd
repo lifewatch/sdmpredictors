@@ -1,0 +1,23 @@
+---
+title: "sdmpredictors quickstart Guide"
+author: "Samuel Bosch"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sdmpredictors quickstart guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The goal of sdmpredictors is to make environmental data, commonly used for species distribution modelling (SDM), also called ecological niche modelling (ENM) or habitat suitability modelling, easy to use in R. It contains methods for getting metadata about the available environmental data for the current climate but also for future and paleo climatic conditions. A way to download the rasters and load them into R and some general statistics about the different layers.
+
+## Getting the metadata
+
+
+## Loading the data
+
+
+## Loading future and paleo data
+
+
+## Statistics

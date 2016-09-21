@@ -2,16 +2,17 @@
 #' 
 #' \code{list_datasets} returns information on the supported datasets.
 #' 
-#' @usage list_datasets(terrestrial = TRUE, marine = TRUE)
+#' @usage list_datasets(terrestrial=TRUE, marine=TRUE)
 #'   
-#' @param terrestrial logical. When \code{TRUE}, then datasets that only have terrestrial data
-#'   (seamasked) are returned.
-#' @param marine logical. When \code{TRUE}, then datasets that only have marine data (landmasked)
-#'   are returned.
+#' @param terrestrial logical. When \code{TRUE}, then datasets that only have
+#'   terrestrial data (seamasked) are returned.
+#' @param marine logical. When \code{TRUE}, then datasets that only have marine
+#'   data (landmasked) are returned.
 #'   
-#' @details By default it returns all datasets, when both \code{marine} and \code{terrestrial} are
-#' \code{FALSE} then only datasets without land- nor seamasks are returned.
-#' 
+#' @details By default it returns all datasets, when both \code{marine} and
+#'   \code{terrestrial} are \code{FALSE} then only datasets without land- nor
+#'   seamasks are returned.
+#'   
 #' @return A dataframe with information on the supported datasets.
 #'   
 #' @examples
@@ -20,7 +21,7 @@
 #' list_datasets(terrestrial=FALSE)
 #' 
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}},
+#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
 #'   \code{\link{list_layers_paleo}}
 list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
   data <- get_sysdata()$datasetlist
@@ -37,19 +38,20 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #' 
 #' \code{list_layers} returns information on the layers of one or more datasets.
 #' 
-#' @usage list_layers(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE)
+#' @usage list_layers(datasets=c(), terrestrial=TRUE, marine=TRUE, monthly=TRUE)
 #'   
 #' @param datasets character vector. Code of the datasets.
-#' @param terrestrial logical. When \code{TRUE} (default), then datasets that only have terrestrial
-#'   data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE} (default), then datasets that only have marine data
-#'   (landmasked) are returned.
-#' @param monthly logical. When \code{FALSE}, then no monthly layers are returned. All annual and
-#'   monthly layers are returned by default.
+#' @param terrestrial logical. When \code{TRUE} (default), then datasets that 
+#'   only have terrestrial data (seamasked) are returned.
+#' @param marine logical. When \code{TRUE} (default), then datasets that only 
+#'   have marine data (landmasked) are returned.
+#' @param monthly logical. When \code{FALSE}, then no monthly layers are 
+#'   returned. All annual and monthly layers are returned by default.
 #'   
-#' @details By default it returns all layers from all datasets, when both marine and terrestrial are
-#' \code{FALSE} then only datasets without land- nor seamasks are returned.
-#' 
+#' @details By default it returns all layers from all datasets, when both marine
+#'   and terrestrial are \code{FALSE} then only datasets without land- nor 
+#'   seamasks are returned.
+#'   
 #' @return A dataframe with information on the supported current climate layers.
 #'   
 #' @examples
@@ -67,7 +69,7 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #' # list all annual MARSPEC layers (remove monthly layers)
 #' list_layers("MARSPEC", monthly = FALSE)
 #' @export
-#' @seealso \code{\link{load_layers}}, \code{\link{list_datasets}},
+#' @seealso \code{\link{load_layers}}, \code{\link{list_datasets}}, 
 #'   \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}
 list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE) {
   data <- get_sysdata()$layerlist
@@ -92,25 +94,27 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 
 #' List the future climate layers provided by one or more datasets
 #' 
-#' \code{list_layers_future} returns information on the future climate layers of one or more 
-#' datasets.
+#' \code{list_layers_future} returns information on the future climate layers of
+#' one or more datasets.
 #' 
-#' @usage list_layers_future(datasets=c(), scenario = NA, year = NA, terrestrial = TRUE, marine = 
-#'   TRUE, monthly = TRUE)
+#' @usage list_layers_future(datasets=c(), scenario=NA, year=NA,
+#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE)
 #'   
 #' @param datasets character vector. Code of the datasets.
-#' @param scenario character vector. Climate change scenario, e.g. \code{"B1", "A1B", "A2"}.
-#' @param year integer. Year for which you want the climate change prediction, e.g. \code{2100, 
-#'   2200}.
-#' @param terrestrial logical. When \code{TRUE} (default), then datasets that only have terrestrial 
-#'   data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE} (default), then datasets that only have marine data 
-#'   (landmasked) are returned.
-#' @param monthly logical. When \code{FALSE}, then no monthly layers are returned. All annual and 
-#'   monthly layers are returned by default.
+#' @param scenario character vector. Climate change scenario, e.g. \code{"B1", 
+#'   "A1B", "A2"}.
+#' @param year integer. Year for which you want the climate change prediction, 
+#'   e.g. \code{2100, 2200}.
+#' @param terrestrial logical. When \code{TRUE} (default), then datasets that 
+#'   only have terrestrial data (seamasked) are returned.
+#' @param marine logical. When \code{TRUE} (default), then datasets that only 
+#'   have marine data (landmasked) are returned.
+#' @param monthly logical. When \code{FALSE}, then no monthly layers are 
+#'   returned. All annual and monthly layers are returned by default.
 #'   
-#' @details By default it returns all layers from all datasets, when both marine and terrestrial are
-#'   \code{FALSE} then only datasets without land- nor seamasks are returned.
+#' @details By default it returns all layers from all datasets, when both marine
+#'   and terrestrial are \code{FALSE} then only datasets without land- nor 
+#'   seamasks are returned.
 #'   
 #' @return A dataframe with information on the supported future climate layers.
 #'   
@@ -120,7 +124,8 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 #' # list layer codes for Bio-ORACLE with scenario B1 and year 2100
 #' list_layers_future("Bio-ORACLE", scenario = "B1", year = 2100)$layer_code
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_paleo}}, \code{\link{list_datasets}}, \code{\link{load_layers}}
+#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_paleo}}, 
+#'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_future <- function(datasets=c(), scenario = NA, year = NA, 
                                terrestrial = TRUE, marine = TRUE, monthly = TRUE) {
   data <- get_sysdata()$layerlistfuture
@@ -150,30 +155,35 @@ list_layers_future <- function(datasets=c(), scenario = NA, year = NA,
 }
 
 
-#' Get the name of a future climate layer(s) based on the current climate layer(s)
+#' Get the name of a future climate layer(s) based on the current climate
+#' layer(s)
 #' 
-#' \code{get_future_layers} returns information on the future climate layers for the matching 
-#' current climate layers.
+#' \code{get_future_layers} returns information on the future climate layers for
+#' the matching current climate layers.
 #' 
 #' @usage get_future_layers(current_layer_codes, scenario, year)
 #'   
-#' @param current_layer_codes character vector. Code(s) of the current climate layers either as a
-#'   character vector or as the dataframe provided by \code{\link{list_layers}}.
-#' @param scenario character vector. Climate change scenario, e.g. \code{"B1", "A1B", "A2"}.
-#' @param year integer. Year for which you want the climate change prediction, e.g. \code{2100, 
-#'   2200}.
+#' @param current_layer_codes character vector. Code(s) of the current climate
+#'   layers either as a character vector or as the dataframe provided by
+#'   \code{\link{list_layers}}.
+#' @param scenario character vector. Climate change scenario, e.g. \code{"B1",
+#'   "A1B", "A2"}.
+#' @param year integer. Year for which you want the climate change prediction,
+#'   e.g. \code{2100, 2200}.
 #'   
-#' @details Stops with an exception if no matching future climate layer was found for one or more of
-#'   the provided current climate layer codes.
+#' @details Stops with an exception if no matching future climate layer was
+#'   found for one or more of the provided current climate layer codes.
 #'   
-#' @return A dataframe with information on the future layer(s) matching the provided current 
-#'   layer(s).
+#' @return A dataframe with information on the future layer(s) matching the
+#'   provided current layer(s).
 #'   
 #' @examples
-#' future_layers <- get_future_layers(c("BO_salinity", "BO_sstmean"), scenario = "B1", year = 2100)
+#' future_layers <- get_future_layers(c("BO_salinity", "BO_sstmean"), 
+#'                                    scenario = "B1", year = 2100)
 #' future_layers$layer_code
 #' @export
-#' @seealso \code{\link{list_layers_future}}, \code{\link{list_layers}}, \code{\link{load_layers}}
+#' @seealso \code{\link{list_layers_future}}, \code{\link{list_layers}},
+#'   \code{\link{load_layers}}
 get_future_layers <- function(current_layer_codes, scenario, year) {
   if(is.data.frame(current_layer_codes)) {
     current_layer_codes <- current_layer_codes$layer_code
@@ -194,27 +204,29 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 
 #' List the future climate layers provided by one or more datasets
 #' 
-#' \code{list_layers_paleo} returns information on the future climate layers of one or more 
-#' datasets.
+#' \code{list_layers_paleo} returns information on the future climate layers of 
+#' one or more datasets.
 #' 
-#' @usage list_layers_paleo(datasets=c(), model_name = NA, epoch = NA, years_ago = NA, terrestrial =
-#'   TRUE, marine = TRUE, monthly = TRUE)
+#' @usage list_layers_paleo(datasets=c(), model_name=NA, epoch=NA, years_ago=NA,
+#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE)
 #'   
 #' @param datasets character vector. Code of the datasets.
-#' @param model_name character vector. Paleo climate model name see the \code{model_name} column in 
-#'   the result.
-#' @param epoch character vector. Epoch for which you want the paleo layer, e.g. 
+#' @param model_name character vector. Paleo climate model name see the 
+#'   \code{model_name} column in the result.
+#' @param epoch character vector. Epoch for which you want the paleo layer, e.g.
 #'   \code{"mid-Holocene", "Last Glacial Maximum"}.
-#' @param years_ago integer. Years for which you want the paleo layer, e.g. \code{6000, 21000}.
-#' @param terrestrial logical. When \code{TRUE} (default), then datasets that only have terrestrial 
-#'   data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE} (default), then datasets that only have marine data 
-#'   (landmasked) are returned.
-#' @param monthly logical. When \code{FALSE}, then no monthly layers are returned. All annual and 
-#'   monthly layers are returned by default.
+#' @param years_ago integer. Years for which you want the paleo layer, e.g. 
+#'   \code{6000, 21000}.
+#' @param terrestrial logical. When \code{TRUE} (default), then datasets that 
+#'   only have terrestrial data (seamasked) are returned.
+#' @param marine logical. When \code{TRUE} (default), then datasets that only 
+#'   have marine data (landmasked) are returned.
+#' @param monthly logical. When \code{FALSE}, then no monthly layers are 
+#'   returned. All annual and monthly layers are returned by default.
 #'   
-#' @details By default it returns all layers from all datasets, when both marine and terrestrial are
-#'   \code{FALSE} then only datasets without land- nor seamasks are returned.
+#' @details By default it returns all layers from all datasets, when both marine
+#'   and terrestrial are \code{FALSE} then only datasets without land- nor 
+#'   seamasks are returned.
 #'   
 #' @return A dataframe with information on the supported paleo climate layers.
 #'   
@@ -224,7 +236,7 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 #' # list layer codes for MARSPEC for the mid-Holocene
 #' list_layers_paleo("MARSPEC", epoch = "mid-Holocene")$layer_code
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}},
+#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_ago = NA,
                                terrestrial = TRUE, marine = TRUE, monthly = TRUE) {
@@ -257,32 +269,38 @@ list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_a
   return(data)
 }
 
-#' Get the name of a paleo climate layer(s) based on the current climate layer(s)
+#' Get the name of a paleo climate layer(s) based on the current climate
+#' layer(s)
 #' 
-#' \code{get_paleo_layers} returns information on the future climate layers for the matching current
-#' climate layers.
+#' \code{get_paleo_layers} returns information on the future climate layers for
+#' the matching current climate layers.
 #' 
-#' @usage get_paleo_layers(current_layer_codes, model_name = NA, epoch = NA, years_ago = NA)
+#' @usage get_paleo_layers(current_layer_codes, model_name = NA, epoch = NA,
+#'   years_ago = NA)
 #'   
-#' @param current_layer_codes character vector. Code(s) of the current climate layers either as a 
-#'   character vector or as the dataframe provided by \code{\link{list_layers}}.
-#' @param model_name character vector. Paleo climate model name see the \code{model_name} column in
-#'   the result from \code{\link{list_layers_paleo}}.
+#' @param current_layer_codes character vector. Code(s) of the current climate
+#'   layers either as a character vector or as the dataframe provided by
+#'   \code{\link{list_layers}}.
+#' @param model_name character vector. Paleo climate model name see the
+#'   \code{model_name} column in the result from
+#'   \code{\link{list_layers_paleo}}.
 #' @param epoch character vector. Epoch for which you want the paleo layer, e.g.
 #'   \code{"mid-Holocene", "Last Glacial Maximum"}.
-#' @param years_ago integer. Years for which you want the paleo layer, e.g. \code{6000, 21000}.
+#' @param years_ago integer. Years for which you want the paleo layer, e.g.
+#'   \code{6000, 21000}.
 #'   
-#' @details Stops with an exception if no matching paleo layer was found for one or more of the
-#'   provided current climate layer codes.
+#' @details Stops with an exception if no matching paleo layer was found for one
+#'   or more of the provided current climate layer codes.
 #'   
-#' @return A dataframe with information on the paleo layer(s) matching the provided current 
-#'   layer(s).
+#' @return A dataframe with information on the paleo layer(s) matching the
+#'   provided current layer(s).
 #'   
 #' @examples
 #' paleo_layers <- get_paleo_layers("MS_biogeo08_sss_mean_5m", years_ago = 6000)
 #' paleo_layers$layer_code
 #' @export
-#' @seealso \code{\link{list_layers_paleo}}, \code{\link{list_layers}}, \code{\link{load_layers}}
+#' @seealso \code{\link{list_layers_paleo}}, \code{\link{list_layers}},
+#'   \code{\link{load_layers}}
 get_paleo_layers <- function(current_layer_codes, model_name = NA, epoch = NA, years_ago = NA) {
   if(is.data.frame(current_layer_codes)) {
     current_layer_codes <- current_layer_codes$layer_code
@@ -309,16 +327,17 @@ get_paleo_layers <- function(current_layer_codes, model_name = NA, epoch = NA, y
 
 #' Layer info for specific layer codes
 #' 
-#' \code{get_layers_info} returns all detailed information on the current or future climate layers 
-#' of one or more datasets.
+#' \code{get_layers_info} returns all detailed information on the current or
+#' future climate layers of one or more datasets.
 #' 
 #' @usage get_layers_info(layer_codes)
-#' @param layer_codes character vector. Vector with the layer codes of the layers you want the full 
-#'   information for. This can also be a dataframe with as column \code{layer_code}.
-#' @return A list with fout dataframes \code{common}, \code{current}, \code{future} and 
-#'   \code{paleo}, the \code{common} dataframe contains data for all shared columns in the other
-#'   three dataframes. The other dataframes contain all detailed information on the layer(s) matching the
-#'   layer codes.
+#' @param layer_codes character vector. Vector with the layer codes of the
+#'   layers you want the full information for. This can also be a dataframe with
+#'   as column \code{layer_code}.
+#' @return A list with fout dataframes \code{common}, \code{current},
+#'   \code{future} and \code{paleo}, the \code{common} dataframe contains data
+#'   for all shared columns in the other three dataframes. The other dataframes
+#'   contain all detailed information on the layer(s) matching the layer codes.
 #'   
 #' @examples 
 #' info <- get_layers_info(c("BO_salinity", "BO_B1_2100_salinity"))

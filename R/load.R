@@ -14,30 +14,30 @@ get_datadir <- function(datadir) {
 
 #' Load layers
 #' 
-#' Method to load rasters from disk or from the internet. By default a
-#' RasterStack is returned but this is only possible When all rasters have the
+#' Method to load rasters from disk or from the internet. By default a 
+#' RasterStack is returned but this is only possible When all rasters have the 
 #' same spatial extent and resolution.
 #' 
-#' @usage load_layers(layercodes, equalarea = FALSE, rasterstack = TRUE, datadir
-#' = NULL)
-#' 
+#' @usage load_layers(layercodes, equalarea=FALSE, rasterstack=TRUE,
+#'   datadir=NULL)
+#'   
 #' @param layercodes character vector or dataframe. Layer_codes of the layers to
 #'   be loaded or dataframe with a "layer_code" column.
-#' @param equalarea logical. If \code{TRUE} then layers are loaded with a
-#'   Behrmann cylindrical equal-area projection (\code{\link{equalareaproj}}),
+#' @param equalarea logical. If \code{TRUE} then layers are loaded with a 
+#'   Behrmann cylindrical equal-area projection (\code{\link{equalareaproj}}), 
 #'   otherwise unprojected (\code{\link{lonlatproj}}). Default is \code{FALSE}.
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is
 #'   a \code{\link[raster]{stack}} otherwise a list of rasters is returned.
-#' @param datadir character. Directory where you want to store the data. The
-#'   default value used is \code{file.path(path.expand("~"), "R",
-#'   "sdmpredictors")} and can be overridden with
+#' @param datadir character. Directory where you want to store the data. The 
+#'   default value used is \code{file.path(path.expand("~"), "R", 
+#'   "sdmpredictors")} and can be overridden with 
 #'   \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
 #'   
 #' @return RasterStack or list of raster
 #'   
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{layer_stats}},
-#' \code{\link{layers_correlation}}
+#' @seealso \code{\link{list_layers}}, \code{\link{layer_stats}}, 
+#'   \code{\link{layers_correlation}}
 load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datadir = NULL) {
   if(is.na(equalarea) || !is.logical(equalarea) && length(equalarea) != 1) {
     stop("equalarea should be TRUE or FALSE")

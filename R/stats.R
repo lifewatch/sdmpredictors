@@ -1,14 +1,14 @@
 #' Gives basic layer statistics
 #' 
-#' \code{layer_stats} returns basic statistics (minimum, q1, median, q3, 
-#' maximum, median absolute deviation (mad), mean, standard deviation (sd)) 
+#' \code{layer_stats} returns basic statistics (minimum, q1, median, q3,
+#' maximum, median absolute deviation (mad), mean, standard deviation (sd))
 #' about each given layercode.
 #' 
 #' @usage layer_stats(layercodes = c())
 #'   
 #' @param layercodes character vector or dataframe. Codes of the layers you want
-#'   the basic statistics of as a character vector or a dataframe with a 
-#'   "layer_code" column. With the default empty vector all statistics are 
+#'   the basic statistics of as a character vector or a dataframe with a
+#'   "layer_code" column. With the default empty vector all statistics are
 #'   returned.
 #'   
 #' @return A dataframe with basic statistics about each given layercode.
@@ -44,15 +44,16 @@ layer_stats <- function(layercodes = c()) {
 #' \code{NA}.
 #' 
 #' @usage layers_correlation(layercodes = c(), include_quadratic = TRUE)
-#' 
+#'   
 #' @param layercodes character vector or dataframe. Codes of the layers you want
 #'   the basic statistics of as a character vector or a dataframe with a
 #'   "layer_code" column. With the default empty vector all statistics are
 #'   returned.
 #' @param include_quadratic logical. When \code{TRUE}, then the correlation
 #'   coefficients of the square of the layercodes area also returned. These
-#'   layers are indicated with the layercode with \code{"_quadratic"} as a suffix,
-#'   for example \code{"BO_calcite"} became \code{"BO_calcite_quadratic"}.
+#'   layers are indicated with the layercode with \code{"_quadratic"} as a
+#'   suffix, for example \code{"BO_calcite"} became 
+#'   \code{"BO_calcite_quadratic"}.
 #'   
 #' @return A dataframe with the Pearson product-moment correlation coefficients.
 #'   
@@ -64,7 +65,7 @@ layer_stats <- function(layercodes = c()) {
 #' 
 #' @export
 #' @seealso \code{\link{list_layers}} \code{\link{layer_stats}}
-#' \code{\link{correlation_groups}}
+#'   \code{\link{correlation_groups}}
 #' @encoding UTF-8
 layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
   d <- get_sysdata()$layerscorrelation
@@ -92,15 +93,15 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 
 #' Groups layers based on the Pearson correlation
 #' 
-#' \code{correlation_groups} returns groups of layer codes such as each layer 
+#' \code{correlation_groups} returns groups of layer codes such as each layer
 #' from one group has an absolute Pearson product-moment correlation coefficient
 #' (Pearson's r) that is smaller than the maximum_correlation (default 0.7) with
 #' each variable in any other group. The correlation values of quadratic layers
-#' are used for creating the groups but only non quadratic layer codes are
+#' are used for creating the groups but only non quadratic layer codes are 
 #' returned.
 #' 
 #' @usage correlation_groups(layers_correlation, max_correlation=0.7)
-#' 
+#'   
 #' @param layers_correlation matrix or dataframe. A square matrix with the
 #'   layers correlations  you want to group.
 #' @param max_correlation number. The maximum correlation 2 layers may have
@@ -110,13 +111,14 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #'   correlation group.
 #'   
 #' @references Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G.,
-#' Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to deal
-#' with it and a simulation study evaluating their performance. Ecography,
-#' 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x Barbet-Massin, M. &
-#' Jetz, W. (2014). A 40-year, continent-wide, multispecies assessment of
-#' relevant climate predictors for species distribution modelling. Diversity and
-#' Distributions, 20(11), 1285-1295. doi:10.1111/ddi.12229
-#' 
+#'   Carre, G., … Lautenbach, S. (2013). Collinearity: a review of methods to
+#'   deal with it and a simulation study evaluating their performance.
+#'   Ecography, 36(1), 027–046. doi:10.1111/j.1600-0587.2012.07348.x 
+#'   Barbet-Massin, M. & Jetz, W. (2014). A 40-year, continent-wide,
+#'   multispecies assessment of relevant climate predictors for species
+#'   distribution modelling. Diversity and Distributions, 20(11), 1285-1295.
+#'   doi:10.1111/ddi.12229
+#'   
 #' @examples
 #' 
 #' corr <- layers_correlation(c("BO_calcite", "BO_damin", "MS_bathy_5m"))
@@ -125,7 +127,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #' 
 #' @export
 #' @seealso \code{ \link{layers_correlation} \link{list_layers}
-#' \link{layer_stats}}
+#'   \link{layer_stats}}
 #' @encoding UTF-8
 correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
   to_set <- function(i) { 
@@ -165,9 +167,7 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
 #' 
 #' Internal method used to calculate the statistics of the layers.
 #' 
-#' @usage
-#' 
-#' calc_stats(layercode, raster)
+#' @usage calc_stats(layercode, raster)
 #' 
 #' @param layercode character.
 #' @param raster RasterLayer.

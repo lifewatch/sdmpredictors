@@ -7,18 +7,19 @@
 get_layers_info(layer_codes)
 }
 \arguments{
-\item{layer_codes}{character vector. Vector with the layer codes of the layers you want the full 
-information for. This can also be a dataframe with as column \code{layer_code}.}
+\item{layer_codes}{character vector. Vector with the layer codes of the
+layers you want the full information for. This can also be a dataframe with
+as column \code{layer_code}.}
 }
 \value{
-A list with fout dataframes \code{common}, \code{current}, \code{future} and 
-  \code{paleo}, the \code{common} dataframe contains data for all shared columns in the other
-  three dataframes. The other dataframes contain all detailed information on the layer(s) matching the
-  layer codes.
+A list with fout dataframes \code{common}, \code{current},
+  \code{future} and \code{paleo}, the \code{common} dataframe contains data
+  for all shared columns in the other three dataframes. The other dataframes
+  contain all detailed information on the layer(s) matching the layer codes.
 }
 \description{
-\code{get_layers_info} returns all detailed information on the current or future climate layers 
-of one or more datasets.
+\code{get_layers_info} returns all detailed information on the current or
+future climate layers of one or more datasets.
 }
 \examples{
 info <- get_layers_info(c("BO_salinity", "BO_B1_2100_salinity"))
