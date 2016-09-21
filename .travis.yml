@@ -5,9 +5,12 @@ cache: packages
 warnings_are_errors: true
 
 before_install:
-  - sudo aptitude -R -y install libgdal-dev # install the gdal package
-  - sudo aptitude -R -y install libproj-dev # install the proj.4 projection library
-
+  - sudo apt-get update
+  - sudo apt-get -y install libgdal1h
+  - sudo apt-get -y install libgdal1-dev
+  - sudo apt-get install libproj-dev
+  - sudo apt-get install gdal-bin
+  
 before_script:
   - git config --global user.name "travis"
   - git config --global user.email "travis@example.org"

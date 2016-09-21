@@ -224,6 +224,19 @@ worldclim <- function() {
 #   }
 # }
 
+convert_grd_tif <- function(outdir, overwrite = FALSE) {
+  for(layer in list_layers()$layer_code) {
+    for(equalarea in c("", "_lonlat")) {
+      r <- raster(paste0("../../results/",layer, equalarea, ".grd"))
+      name <- sub("[.]grd", "", basename(r@file@name))
+      print(name)
+      
+      r[] <- signif(getValues(r), digits = 6)
+      write_tif(r, name, outdir)
+    }
+  }
+}
+
 convert_tif <- function(outdir, overwrite = FALSE) {
   for(layer in list_layers()$layer_code) {
     for(equalarea in c(TRUE, FALSE)) {
@@ -349,6 +362,6 @@ prepare_paleo_marspec <- function() {
 
 
 # prepare_paleo_marspec()
-# convert_tif("../../derived/tif/")
+# convert_grd_tif("../../derived/tif/")
 # prepare_future_biooracle()
 
