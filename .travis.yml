@@ -1,10 +1,18 @@
 language: r
-sudo: required
+sudo: false
+cache: packages
+
 warnings_are_errors: true
+
+addons:
+  apt:
+    packages:
+      - r-cran-rgdal
+
 before_script:
   - git config --global user.name "travis"
   - git config --global user.email "travis@example.org"
-  - sudo apt-get install r-cran-rgdal
+ 
 r_github_packages:
   - rstudio/rmarkdown
   - hadley/testthat
