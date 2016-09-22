@@ -305,7 +305,7 @@ prepare_future_biooracle <- function() {
         r <- raster(l)
         crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
         names(r) <- paste0("BO_", sub("_", "", names(r)))
-        r[] <- signif(getValues(r), digits = 6)
+        r[] <- signif(getValues(r), digits = 5)
         write_tif(r, paste("BO", scenario, year, names(r), "lonlat", sep="_"), outdir)
         project_raster(r, paste("BO", scenario, year, names(r), sep="_"), outdir)
       }
