@@ -292,7 +292,7 @@ project_raster <- function(r, name, outdir) {
     eares <- 7000 ## similar number of total cells, cells have same x and y res
   } else { error("undefined ea resolution") }
   r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
-  r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
+  r[] <- signif(getValues(r), digits = 5) ## limit number of digits to improve compression rate
   write_tif(r, name, outdir)
 }
 
@@ -304,8 +304,7 @@ prepare_future_biooracle <- function() {
       for(l in list.files(indir, "[.]grd", full.names = TRUE)) {
         r <- raster(l)
         crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-        names(r) <- paste0("BO_", sub("_", "", names(r)))
-        r[] <- signif(getValues(r), digits = 5)
+        names(r) <- sub("_", "", names(r))
         write_tif(r, paste("BO", scenario, year, names(r), "lonlat", sep="_"), outdir)
         project_raster(r, paste("BO", scenario, year, names(r), sep="_"), outdir)
       }
@@ -358,6 +357,13 @@ prepare_paleo_marspec <- function() {
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_packbits.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9"), datatype = "FLT4S", overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z6_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=6", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z6_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=6", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z9_tiled.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=2", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z6.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=6", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z6.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=6", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=9", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
+# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_packbits.tif", options = c("COMPRESS=PACKBITS"), datatype = "FLT4S", overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_p3_z9_tiled.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
 
 
@@ -365,3 +371,19 @@ prepare_paleo_marspec <- function() {
 # convert_grd_tif("../../derived/tif/")
 # prepare_future_biooracle()
 
+
+# bench <- function(layer) {
+#   t <- sapply(1:10, function(i) system.time({getValues(raster(layer))})[1])
+#   plot(t, main=layer)
+#   list(layer=t)
+# }
+# l1 <- bench("D:/temp/MS_bathy_5m_test.tif")
+# l2 <- bench("D:/temp/MS_bathy_5m_test_p2.tif")
+# l3 <- bench("D:/temp/MS_bathy_5m_test_p1.tif")
+# l4 <- bench("D:/temp/MS_bathy_5m_test_lzw.tif")
+# 
+# 
+# s1 <- bench("D:/temp/BO_salinity_A1B_2100_zip.tif")
+# s2 <- bench("D:/temp/BO_salinity_A1B_2100_lzw_p3_z9_tiled.tif")
+# s3 <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z9_tiled.tif")
+# s4 <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif")
