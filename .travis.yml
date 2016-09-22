@@ -1,31 +1,15 @@
 language: r
-sudo: required
+sudo: false
+dist: trusty
 cache: packages
-
 warnings_are_errors: true
 
-before_install:
-  - sudo apt-get install -y r-cran-devtools
-  - mkdir /tmp/ppa
-  - sudo mv /etc/apt/sources.list.d/* /tmp/ppa
-  - sudo apt-get -qq remove postgis
-  - sudo apt-get -y install software-properties-common
-  - sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
-  - sudo apt-get clean
-  - sudo apt-get update
-  - sudo apt-get -y remove python python-pip python-gdal git postgresql-9.3-postgis-2.2 python-dev gcc g++ gdal-bin libgdal-dev libspatialite5  spatialite-bin zip unzip rabbitmq-server
-  - sudo apt-get -y install libgdal-dev
-  - sudo apt-get -y install gdal-bin
-  - sudo apt-get -y install libproj-dev
-  - sudo mv /etc/apt/sources.list.d/* /tmp
-  - sudo mv /tmp/ppa/* /etc/apt/sources.list.d
-  - sudo apt-get clean
-  - sudo apt-get update
-  
-before_script:
-  - git config --global user.name "travis"
-  - git config --global user.email "travis@example.org"
-  
+addons:
+  apt:
+    packages:
+      - libgdal-dev
+      - libproj-dev
+
 r_github_packages:
   - rstudio/rmarkdown
   - hadley/testthat

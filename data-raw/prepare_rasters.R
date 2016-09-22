@@ -372,11 +372,11 @@ prepare_paleo_marspec <- function() {
 # prepare_future_biooracle()
 
 
-# bench <- function(layer) {
-#   t <- sapply(1:10, function(i) system.time({getValues(raster(layer))})[1])
-#   plot(t, main=layer)
-#   list(layer=t)
-# }
+bench <- function(layer) {
+  t <- sapply(1:10, function(i) system.time({getValues(raster(layer))})[1])
+  plot(t, main=layer)
+  list(layer=t)
+}
 # l1 <- bench("D:/temp/MS_bathy_5m_test.tif")
 # l2 <- bench("D:/temp/MS_bathy_5m_test_p2.tif")
 # l3 <- bench("D:/temp/MS_bathy_5m_test_p1.tif")
@@ -387,3 +387,9 @@ prepare_paleo_marspec <- function() {
 # s2 <- bench("D:/temp/BO_salinity_A1B_2100_lzw_p3_z9_tiled.tif")
 # s3 <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z9_tiled.tif")
 # s4 <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif")
+# t <- bench("D:/temp/BO_salinity_A1B_2100_zip_packbits.tif")
+# t <- bench("D:/temp/BO_salinity_A1B_2100_zip_p2_z9.tif")
+# t <- bench("D:/temp/BO_salinity_A1B_2100_zip_p2_z6.tif")
+# t <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif")
+# t <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z6.tif")
+
