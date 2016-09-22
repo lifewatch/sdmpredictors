@@ -26,7 +26,7 @@ environmental layers can be downloaded.
 
 With the list_datasets function you can view all the available datasets. If you 
 want only terrestrial datasets then you have to set the marine parameter to 
-*FALSE* and vice versa.
+FALSE and vice versa.
 
 ```{r, message=F, warning=F}
 library(sdmpredictors)
