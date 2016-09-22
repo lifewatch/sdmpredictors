@@ -16,7 +16,6 @@ before_install:
   - sudo apt-get -y install libgdal-dev
   - sudo apt-get -y install gdal-bin
   - sudo apt-get -y install libproj-dev
-  - sudo add-apt-repository -r ppa:ubuntugis/ubuntugis-unstable
   
 before_script:
   - git config --global user.name "travis"
