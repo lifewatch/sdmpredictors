@@ -14,7 +14,9 @@ r_binary_packages:
   - rgdal
 
 r_github_packages:
+  - rstudio/rmarkdown
   - jimhester/covr
+  - jimhester/lintr
 
 after_success:
   - Rscript -e 'covr::codecov()'
