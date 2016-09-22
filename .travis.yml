@@ -16,7 +16,6 @@ before_install:
   - sudo apt-get -y install libgdal-dev
   - sudo apt-get -y install gdal-bin
   - sudo apt-get -y install libproj-dev
-  - mkdir /tmp/ppa
   - sudo mv /etc/apt/sources.list.d/* /tmp
   - sudo mv /tmp/ppa/* /etc/apt/sources.list.d/*
   - sudo apt-get clean
