@@ -18,9 +18,6 @@ overridden by setting the \code{sdmpredictors_datadir} option with
 \description{
 Find out where the environmental data is stored
 }
-\examples{
-get_datadir(NULL)
-}
 \seealso{
 \code{\link{load_layers}}
 }

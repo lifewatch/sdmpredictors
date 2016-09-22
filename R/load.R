@@ -11,9 +11,8 @@
 #'   \code{file.path(path.expand("~"), "R", "sdmpredictors")}. This can be 
 #'   overridden by setting the \code{sdmpredictors_datadir} option with 
 #'   \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
-#' @examples
-#' get_datadir(NULL)
-#' @returns
+#'   
+#' @returns Path to the data directory.
 #' @seealso \code{\link{load_layers}}
 #' @keywords internal
 get_datadir <- function(datadir) {
