@@ -9,8 +9,8 @@ create_sysdata <- function() {
   layerscorrelation <- get_all_correlations()
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
-                urldata = "http://www.phycology.ugent.be/research/sdmpredictors/", 
-                urlsysdata = "http://www.phycology.ugent.be/research/sdmpredictors/")
+                urldata = "http://sdmpredictors.samuelbosch.com/", 
+                urlsysdata = "http://sdmpredictors.samuelbosch.com/")
   devtools::use_data(.data, internal = TRUE, overwrite = TRUE)
   
   file.copy("R/sysdata.rda", 

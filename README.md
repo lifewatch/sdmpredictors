@@ -16,9 +16,8 @@ or with packrat:
     packrat::init()
     devtools::install_github("samuelbosch/sdmpredictors")
 
-Example usage:
 
-    # Example 1: view marine datasets, layers and load a few of them by name
+Example 1: view marine datasets, layers and load a few of them by name
     
     library(sdmpredictors)
     
@@ -31,10 +30,10 @@ Example usage:
     layers <- list_layers(datasets)
     View(layers)
     
-    # download specific layers to the current directory or load previously downloaded rasters
+    # download specific layers to the current directory
     rasters <- load_layers(c("BO_calcite", "BO_chlomean", "MS_bathy_5m"), datadir = ".")
     
-    # Example: 2 looking up statistics and correlations for marine annual layers:
+Example 2: looking up statistics and correlations for marine annual layers:
     
     datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
     layers <- list_layers(datasets)
@@ -69,3 +68,7 @@ Example usage:
         print(group_correlation)
       }
     }
+    
+See the quickstart vignette for more information
+
+    vignette("quickstart", package = "sdmpredictors")

@@ -15,6 +15,9 @@ datadir. If \code{NULL} is used then this returns
 overridden by setting the \code{sdmpredictors_datadir} option with 
 \code{options(sdmpredictors_datadir = "<your preferred directory>")}.}
 }
+\value{
+Path to the data directory.
+}
 \description{
 Find out where the environmental data is stored
 }

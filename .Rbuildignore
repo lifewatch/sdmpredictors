@@ -7,3 +7,7 @@
 ^\.git$
 ^tests/tmp_load$
 ^tests/data$
+^cran-comments.md
+^README\.Rmd$
+^README-.*\.png$
+^NEWS\.md$
