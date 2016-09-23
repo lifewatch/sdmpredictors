@@ -6,6 +6,9 @@ context("Compress/Decompress")
 print(getwd())
 
 get_test_file <- function() {
+  if (!dir.exists("../data")) {
+    dir.create("../data")
+  }
   path <- "../data/test_compress.grd"
   if(!file.exists(path)) {
     r <- raster(nrows=180, ncols=360, xmn=-180, xmx=180, ymn=-90, ymx=90, 

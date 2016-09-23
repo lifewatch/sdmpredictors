@@ -18,7 +18,9 @@ test_that("get_sysdata returns all expected entries", {
   expect_notnull(sysdata$layerlistpaleo)
   expect_notnull(sysdata$layerstats)
   expect_notnull(sysdata$layerscorrelation)
-  expect_equal(length(names(sysdata)), 6)
+  expect_notnull(sysdata$urldata)
+  expect_notnull(sysdata$urlsysdata)
+  expect_equal(length(names(sysdata)), 8)
 })
 
 test_that("sysdata gets downloaded", {
