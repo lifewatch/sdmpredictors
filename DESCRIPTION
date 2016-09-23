@@ -1,14 +1,14 @@
 Package: sdmpredictors
 Type: Package
-Title: Species Distribution Modelling Predictor Datasets from Around the Web
+Title: Species Distribution Modelling Predictor Data sets from Around the Web
 Version: 0.1.0
-Date: 2016-04-06
+Date: 2016-09-24
 Depends:
-    R (>= 3.2.0),
-    raster (>= 2.4-15),
-    rgdal (>= 1.1-8)
+    R (>= 3.2.5),
+    raster (>= 2.5-8),
+    rgdal (>= 1.1-10)
 Imports:
-    R.utils (>= 2.1.0),
+    R.utils (>= 2.4.0),
     stats,
     utils,
 Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre"))
