@@ -13,4 +13,4 @@ There is 1 NOTE as it is the first submission.
 
 ## Downstream dependencies
 
-No downsteam dependencies
+No downstream dependencies
