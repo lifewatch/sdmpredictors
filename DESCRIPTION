@@ -17,6 +17,7 @@ Description: Terrestrial and marine predictors for species distribution modellin
     from multiple sources, including WorldClim (http://www.worldclim.org/), Bio-
     ORACLE (http://www.oracle.ugent.be/) and MARSPEC (http://www.marspec.org/).
 License: MIT + file LICENSE
+URL: http://www.samuelbosch.com/p/sdmpredictors.html
 LazyData: true
 Suggests:
     biomod2,
