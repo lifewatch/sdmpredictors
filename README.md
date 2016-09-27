@@ -9,6 +9,8 @@ An R package to improve the usability of datasets with predictors for species di
 
 Installation:
 
+    install.packages("sdmpredictors")
+    # or for the latest dev version
     devtools::install_github("samuelbosch/sdmpredictors")
 
 or with packrat:
