@@ -1,7 +1,11 @@
 get_sysdata <- function() {
   # internal function used to load the layers information and statistics
   fname <- "sysdata.rda"
-  outfile <- paste0(get_datadir(NULL), "/", fname)
+  dir <- getOption("sdmpredictors_datadir")
+  if(is.null(dir)) {
+    dir <- tempdir()
+  }
+  outfile <- paste0(dir, "/", fname)
   
   ## only download every 60 minutes
   if(!file.exists(outfile) || difftime(Sys.time(), file.mtime(outfile), units = "mins") > 60) {

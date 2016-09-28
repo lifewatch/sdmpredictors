@@ -2,6 +2,8 @@ library(sdmpredictors)
 
 context("List datasets/layers")
 
+options(sdmpredictors_datadir = "~/R/sdmpredictors")
+
 data_raw_file <- function(fname) {
   d <- "../../data-raw/"
   if(!dir.exists(d)) {

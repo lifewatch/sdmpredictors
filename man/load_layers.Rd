@@ -4,7 +4,7 @@
 \alias{load_layers}
 \title{Load layers}
 \usage{
-load_layers(layercodes, equalarea=FALSE, rasterstack=TRUE,
+load_layers(layercodes, equalarea=FALSE, rasterstack=TRUE, 
   datadir=NULL)
 }
 \arguments{
@@ -18,10 +18,10 @@ otherwise unprojected (\code{\link{lonlatproj}}). Default is \code{FALSE}.}
 \item{rasterstack}{logical. If \code{TRUE} (default value) then the result is
 a \code{\link[raster]{stack}} otherwise a list of rasters is returned.}
 
-\item{datadir}{character. Directory where you want to store the data. The 
-default value used is \code{file.path(path.expand("~"), "R", 
-"sdmpredictors")} and can be overridden with 
-\code{options(sdmpredictors_datadir = "<your preferred directory>")}.}
+\item{datadir}{character. Directory where you want to store the data. If
+\code{NULL} is passed (default) then the \code{sdmpredictors_datadir}
+option is read. To set this run \code{options(sdmpredictors_datadir =
+"<your preferred directory>")} in every session or in your .RProfile.}
 }
 \value{
 RasterStack or list of raster

@@ -1,7 +1,7 @@
 [![MIT License](https://img.shields.io/github/license/samuelbosch/blogbits.svg)](https://github.com/samuelbosch/sdmpredictors/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.org/samuelbosch/sdmpredictors.svg?branch=master)](https://travis-ci.org/samuelbosch/sdmpredictors)
 [![Coverage Status](http://codecov.io/github/samuelbosch/sdmpredictors/coverage.svg?branch=master)](http://codecov.io/github/samuelbosch/sdmpredictors?branch=master)
-
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sdmpredictors)](http://cran.r-project.org/package=sdmpredictors)
 
 # sdmpredictors: a compilation of species distribution modelling predictors data
 

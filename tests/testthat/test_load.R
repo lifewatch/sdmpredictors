@@ -1,6 +1,8 @@
 library(sdmpredictors)
 library(raster)
 
+options(sdmpredictors_datadir = "~/R/sdmpredictors")
+
 check_skip <- function() {
  # skip("skip today")
   skip_on_cran()
@@ -77,10 +79,7 @@ test_that("load_layer works with different datadir options", {
     expect_equal(rs, normalize(tmpDir()))
     
     options(sdmpredictors_datadir = NULL)
-    setwd(load_tmp_dir)
-    rs <- rpath(load_layers("BO_calcite"))
-    default_path <- normalize(file.path(path.expand("~"), "R/sdmpredictors"))
-    expect_equal(rs, default_path)
+    testthat::expect_error(load_layers("BO_calcite"))
   }, finally = { 
     options(op)
     setwd(wd)

@@ -4,13 +4,12 @@
 #' 
 #' @usage get_datadir(datadir)
 #'   
-#' @param datadir character. Directory as will be passed to 
-#'   \code{\link{load_layers}}. This does not change the data directory used by 
-#'   \code{\link{load_layers}} but only shows the result of passing a specific 
-#'   datadir. If \code{NULL} is used then this returns 
-#'   \code{file.path(path.expand("~"), "R", "sdmpredictors")}. This can be 
-#'   overridden by setting the \code{sdmpredictors_datadir} option with 
-#'   \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
+#' @param datadir character. Directory as passed to \code{\link{load_layers}}.
+#'   This does not change the data directory used by \code{\link{load_layers}}
+#'   but only shows the result of passing a specific datadir. If \code{NULL} is
+#'   passed then the \code{sdmpredictors_datadir} option is read. To set this
+#'   run \code{options(sdmpredictors_datadir = "<your preferred directory>")} in
+#'   every session or in your .RProfile.
 #'   
 #' @return Path to the data directory.
 #' @seealso \code{\link{load_layers}}
@@ -19,15 +18,14 @@ get_datadir <- function(datadir) {
   if(is.null(datadir)) {
     datadir <- getOption("sdmpredictors_datadir")
     if(is.null(datadir)) {
-      datadir <- file.path(path.expand("~"), "R", "sdmpredictors")
-      if(!dir.exists(datadir)) {
-        dir.create(datadir, recursive = TRUE)
-      }
+      stop("No datadir provided and the \"sdmpredictors_datadir\" option is NULL, set options(sdmpredictors_datadir=\"<your directory>\") or set the datadir parameter in load_layers")
     }
+  }
+  if(!dir.exists(datadir)) {
+    dir.create(datadir, recursive = TRUE)
   }
   normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
 }
-
 
 #' Load layers
 #' 
@@ -35,7 +33,7 @@ get_datadir <- function(datadir) {
 #' RasterStack is returned but this is only possible When all rasters have the 
 #' same spatial extent and resolution.
 #' 
-#' @usage load_layers(layercodes, equalarea=FALSE, rasterstack=TRUE,
+#' @usage load_layers(layercodes, equalarea=FALSE, rasterstack=TRUE, 
 #'   datadir=NULL)
 #'   
 #' @param layercodes character vector or dataframe. Layer_codes of the layers to
@@ -45,13 +43,17 @@ get_datadir <- function(datadir) {
 #'   otherwise unprojected (\code{\link{lonlatproj}}). Default is \code{FALSE}.
 #' @param rasterstack logical. If \code{TRUE} (default value) then the result is
 #'   a \code{\link[raster]{stack}} otherwise a list of rasters is returned.
-#' @param datadir character. Directory where you want to store the data. The 
-#'   default value used is \code{file.path(path.expand("~"), "R", 
-#'   "sdmpredictors")} and can be overridden with 
-#'   \code{options(sdmpredictors_datadir = "<your preferred directory>")}.
+#' @param datadir character. Directory where you want to store the data. If 
+#'   \code{NULL} is passed (default) then the \code{sdmpredictors_datadir} 
+#'   option is read. To set this run \code{options(sdmpredictors_datadir="<your 
+#'   preferred directory>")} in every session or add it to your .RProfile.
 #'   
 #' @return RasterStack or list of raster
-#'   
+#' @examples \dontrun{
+#' # warning using tempdir() implies that data will be downloaded again in the 
+#' # next R session
+#' env <- load_layers("BO_calcite", datadir = tempdir())
+#' }
 #' @export
 #' @seealso \code{\link{list_layers}}, \code{\link{layer_stats}}, 
 #'   \code{\link{layers_correlation}}

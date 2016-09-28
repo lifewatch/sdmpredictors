@@ -7,13 +7,12 @@
 get_datadir(datadir)
 }
 \arguments{
-\item{datadir}{character. Directory as will be passed to 
-\code{\link{load_layers}}. This does not change the data directory used by 
-\code{\link{load_layers}} but only shows the result of passing a specific 
-datadir. If \code{NULL} is used then this returns 
-\code{file.path(path.expand("~"), "R", "sdmpredictors")}. This can be 
-overridden by setting the \code{sdmpredictors_datadir} option with 
-\code{options(sdmpredictors_datadir = "<your preferred directory>")}.}
+\item{datadir}{character. Directory as passed to \code{\link{load_layers}}.
+This does not change the data directory used by \code{\link{load_layers}}
+but only shows the result of passing a specific datadir. If \code{NULL} is
+passed then the \code{sdmpredictors_datadir} option is read. To set this
+run \code{options(sdmpredictors_datadir = "<your preferred directory>")} in
+every session or in your .RProfile.}
 }
 \value{
 Path to the data directory.
