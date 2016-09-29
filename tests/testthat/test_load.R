@@ -79,7 +79,7 @@ test_that("load_layer works with different datadir options", {
     expect_equal(rs, normalize(tmpDir()))
     
     options(sdmpredictors_datadir = NULL)
-    testthat::expect_error(load_layers("BO_calcite"))
+    testthat::expect_warning(load_layers("BO_calcite"))
   }, finally = { 
     options(op)
     setwd(wd)

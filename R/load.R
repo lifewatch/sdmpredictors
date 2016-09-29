@@ -18,7 +18,8 @@ get_datadir <- function(datadir) {
   if(is.null(datadir)) {
     datadir <- getOption("sdmpredictors_datadir")
     if(is.null(datadir)) {
-      stop("No datadir provided and the \"sdmpredictors_datadir\" option is NULL, set options(sdmpredictors_datadir=\"<your directory>\") or set the datadir parameter in load_layers")
+      datadir <- file.path(tempdir(), "sdmpredictors")
+      warning("file.path(tempdir(), \"sdmpredictors\") will be used as datadir, set options(sdmpredictors_datadir=\"<directory>\") to avoid re-downloading the data in every session or set the datadir parameter in load_layers")
     }
   }
   if(!dir.exists(datadir)) {
