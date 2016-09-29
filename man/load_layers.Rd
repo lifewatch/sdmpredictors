@@ -18,10 +18,10 @@ otherwise unprojected (\code{\link{lonlatproj}}). Default is \code{FALSE}.}
 \item{rasterstack}{logical. If \code{TRUE} (default value) then the result is
 a \code{\link[raster]{stack}} otherwise a list of rasters is returned.}
 
-\item{datadir}{character. Directory where you want to store the data. If
-\code{NULL} is passed (default) then the \code{sdmpredictors_datadir}
-option is read. To set this run \code{options(sdmpredictors_datadir =
-"<your preferred directory>")} in every session or in your .RProfile.}
+\item{datadir}{character. Directory where you want to store the data. If 
+\code{NULL} is passed (default) then the \code{sdmpredictors_datadir} 
+option is read. To set this run \code{options(sdmpredictors_datadir="<your 
+preferred directory>")} in every session or add it to your .RProfile.}
 }
 \value{
 RasterStack or list of raster
@@ -30,6 +30,13 @@ RasterStack or list of raster
 Method to load rasters from disk or from the internet. By default a 
 RasterStack is returned but this is only possible When all rasters have the 
 same spatial extent and resolution.
+}
+\examples{
+\dontrun{
+# warning using tempdir() implies that data will be downloaded again in the 
+# next R session
+env <- load_layers("BO_calcite", datadir = tempdir())
+}
 }
 \seealso{
 \code{\link{list_layers}}, \code{\link{layer_stats}}, 

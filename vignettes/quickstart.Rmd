@@ -25,7 +25,7 @@ environmental layers can be downloaded.
 ### list_datasets
 
 With the list_datasets function you can view all the available datasets. If you 
-want only terrestrial datasets then you have to set the marine parameter to 
+only want terrestrial datasets then you have to set the marine parameter to 
 FALSE and vice versa.
 
 ```{r, message=F, warning=F}
@@ -61,17 +61,18 @@ To be able to use the layers you want in R you have to call the load_layers
 function with
 
 ```{r}
-# download first two layers (BO_calcite, BO_chlomax) to the temporary directory
-load_layers(layers[1:2,], datadir = tempdir())
+# download pH and Salinity to the temporary directory
+load_layers(layers[layers$name %in% c("pH", "Salinity") & 
+                     layers$dataset_code == "Bio-ORACLE",], datadir = tempdir())
 
 # set a default datadir, preferably something different from tempdir()
 options(sdmpredictors_datadir= tempdir())
 
 # (down)load specific layers 
-specific <- load_layers(c("BO_calcite", "BO_chlomax"))
+specific <- load_layers(c("BO_ph", "BO_salinity"))
 
-# to load equal area data (Behrmann equal area projection) 
-equalarea <- load_layers("BO_sstmean", equalarea = TRUE)
+# equal area data (Behrmann equal area projection) 
+equalarea <- load_layers("BO_ph", equalarea = TRUE)
 ```
 
 ## Loading future and paleo data

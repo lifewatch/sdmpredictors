@@ -39,7 +39,7 @@ test_that("sysdata gets downloaded", {
   outfile <- paste0(getOption("sdmpredictors_datadir"), "/", fname)
   gets_downloaded(outfile)
   options(sdmpredictors_datadir = NULL)
-  outfile <- paste0(tempdir(), "/", fname)
+  outfile <- paste0(tempdir(), "/sdmpredictors/", fname)
   gets_downloaded(outfile)
   
 })
