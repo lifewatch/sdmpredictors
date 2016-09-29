@@ -65,7 +65,6 @@ test_that("layers_correlation with one or more existing layercodes works and qua
 
 test_that("layers_correlation with non existing layercodes generates a warning", {
   skip_on_cran()
-  skip_on_travis()
   expect_warning(layers_correlation("abcd"), "'abcd'")
   expect_warning(layers_correlation("blabla", TRUE), "blabla_quadratic")
   expect_warning(layers_correlation("blabla", FALSE), "blabla")
@@ -76,6 +75,16 @@ test_that("layers_correlation with non existing layercodes generates a warning",
   expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"))), 2)
   expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"), FALSE)), 1)
   expect_warning(layers_correlation(c("blibli", "blabla")), "'blibli', 'blabla'")
+})
+
+test_that("layers_correlation quadratic false does not return quadratic and inverse", {
+ corr <- layers_correlation("BO_ph", include_quadratic = FALSE) 
+ expect_equal(NROW(corr), 1)
+ expect_equal(NCOL(corr), 1)
+ 
+ corr <- layers_correlation("BO_ph", include_quadratic = TRUE) 
+ expect_equal(NROW(corr), 2)
+ expect_equal(NCOL(corr), 2)
 })
 
 expect_group <- function(actual, expected) {
