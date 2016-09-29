@@ -140,6 +140,12 @@ test_that("load_layer for multiple mixed previously downloaded layers works", {
   load_multiple_mixed()
 })
 
+test_that("load_layer handles special cases", {
+  expect_error(load_layers("blabla"))
+  expect_error(load_layers("BO_ph", equalarea = NA))
+  expect_error(load_layers(c("BO_ph", "BO_calcite"), equalarea = c(T,F)))
+  expect_warning(load_layers(c("BO_ph", "MS_bathy_21kya"), rasterstack = FALSE))
+})
 
 test_that("load_layer equal area TRUE/FALSE works", {
   check_skip()
