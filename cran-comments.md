@@ -11,6 +11,8 @@ There is 1 NOTE as it is the first submission.
 
 * checking CRAN incoming feasibility ... NOTE
 
+New submission
+
 ## Downstream dependencies
 
 No downstream dependencies
