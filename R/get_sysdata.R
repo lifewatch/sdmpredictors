@@ -4,9 +4,9 @@ get_sysdata <- function() {
   dir <- getOption("sdmpredictors_datadir")
   if(is.null(dir)) {
     dir <- file.path(tempdir(), "sdmpredictors")
-    if(!dir.exists(dir)) {
-      dir.create(dir, recursive = TRUE)
-    }
+  }
+  if(!dir.exists(dir)) {
+    dir.create(dir, recursive = TRUE)
   }
   outfile <- paste0(dir, "/", fname)
   
