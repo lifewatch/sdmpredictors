@@ -85,7 +85,14 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
     if(!file.exists(path)) {
       urlroot <- "http://www.phycology.ugent.be/research/sdmpredictors/"
       url <- paste0(urlroot, layercode, suffix, ".tif")
-      utils::download.file(url, path, method = "auto", quiet = FALSE, mode = "wb")
+      ok <- -1
+      # clean up of download failed
+      on.exit({
+        if(ok != 0 && file.exists(path)) {
+          file.remove(path)
+        }
+      })
+      ok <- utils::download.file(url, path, method = "auto", quiet = FALSE, mode = "wb")  
     }
     ifelse(file.exists(path), path, NA)
   }
