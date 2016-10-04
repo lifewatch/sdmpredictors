@@ -18,6 +18,7 @@ Description: Terrestrial and marine predictors for species distribution modellin
     ORACLE <http://www.oracle.ugent.be/> and MARSPEC <http://www.marspec.org/>.
 License: MIT + file LICENSE
 URL: http://www.samuelbosch.com/p/sdmpredictors.html
+BugReports: https://github.com/samuelbosch/sdmpredictors/issues
 LazyData: true
 Suggests:
     biomod2,
