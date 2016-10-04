@@ -7,11 +7,26 @@
 
 There were no ERRORs and WARNINGs.
 
-There is 1 NOTE as it is the first submission. 
+There is 1 NOTE:
 
 * checking CRAN incoming feasibility ... NOTE
 
+Maintainer: 'Samuel Bosch <mail@samuelbosch.com>'
+
 New submission
+
+Package was archived on CRAN
+
+License components with restrictions and base license permitting such:
+  MIT + file LICENSE
+File 'LICENSE':
+  YEAR: 2016
+  COPYRIGHT HOLDER: Samuel Bosch
+
+Possibly mis-spelled words in DESCRIPTION:
+  Datasets (3:49)
+  MARSPEC (13:46)
+  WorldClim (12:38)
 
 ## Downstream dependencies
 
