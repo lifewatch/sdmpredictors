@@ -15,7 +15,7 @@ Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("a
 Maintainer: Samuel Bosch <mail@samuelbosch.com>
 Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim (http://www.worldclim.org/), Bio-
-    ORACLE (http://www.oracle.ugent.be/) and MARSPEC (http://www.marspec.org/).
+    ORACLE <http://www.oracle.ugent.be/> and MARSPEC <http://www.marspec.org/>.
 License: MIT + file LICENSE
 URL: http://www.samuelbosch.com/p/sdmpredictors.html
 LazyData: true
