@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.3
+
+Remove usage of ~/R/sdmpredictors from tests
+
 # sdmpredictors 0.2.2
 
 Fix url in description

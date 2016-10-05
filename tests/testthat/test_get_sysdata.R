@@ -35,7 +35,7 @@ test_that("sysdata gets downloaded", {
     expect_true(file.exists(outfile))
   }
   fname <- "sysdata.rda"
-  options(sdmpredictors_datadir = "~/R/sdmpredictors")
+  options(sdmpredictors_datadir = file.path(tempdir(), "sdmpredictors_test"))
   outfile <- paste0(getOption("sdmpredictors_datadir"), "/", fname)
   gets_downloaded(outfile)
   options(sdmpredictors_datadir = NULL)

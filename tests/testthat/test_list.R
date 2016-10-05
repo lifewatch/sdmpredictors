@@ -2,9 +2,10 @@ library(sdmpredictors)
 
 context("List datasets/layers")
 
-options(sdmpredictors_datadir = "~/R/sdmpredictors")
+options(sdmpredictors_datadir = file.path(tempdir(), "sdmpredictors"))
 
 data_raw_file <- function(fname) {
+  testthat::skip_on_cran()
   d <- "../../data-raw/"
   if(!dir.exists(d)) {
     skip("data-raw not found")

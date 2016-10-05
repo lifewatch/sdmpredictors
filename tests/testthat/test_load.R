@@ -1,7 +1,8 @@
 library(sdmpredictors)
 library(raster)
 
-options(sdmpredictors_datadir = "~/R/sdmpredictors")
+test_dir <- file.path(tempdir(), "sdmpredictors")
+options(sdmpredictors_datadir = test_dir)
 
 check_skip <- function() {
  # skip("skip today")
@@ -11,7 +12,7 @@ check_skip <- function() {
 context("Load layers")
 
 setup <- function() {
-  load_tmp_dir <- "../tmp_load/"
+  load_tmp_dir <- file.path(tempdir(),"tmp_load")
   if (dir.exists(load_tmp_dir)) {
     unlink(load_tmp_dir, recursive=TRUE)
   }
