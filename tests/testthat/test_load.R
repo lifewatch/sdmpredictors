@@ -21,13 +21,13 @@ setup <- function() {
 }
 load_tmp_dir <- setup()
 
-load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F) {
+load_BO_ph_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F) {
   skip_on_cran()
   skip_on_travis()
   if (asdataframe) { 
-    layercodes <- data.frame(layer_code="BO_calcite", stringsAsFactors = FALSE)
+    layercodes <- data.frame(layer_code="BO_ph", stringsAsFactors = FALSE)
   } else {
-    layercodes <- "BO_calcite"
+    layercodes <- "BO_ph"
   }
   rs <- load_layers(layercodes, datadir = load_tmp_dir, equalarea = equalarea, rasterstack = rasterstack)
   if(!rasterstack) {
@@ -36,7 +36,7 @@ load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea 
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 1)
   
-  expect_equal(names(rs),c("BO_calcite"))
+  expect_equal(names(rs),c("BO_ph"))
   if(equalarea) {
     expect_equal(nrow(rs), 2108)
     print(rs@crs@projargs)
@@ -48,13 +48,13 @@ load_BO_calcite_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea 
   }
 }
 test_that("load_layer for one not previously downloaded layercode works", {
-  load_BO_calcite_test()
+  load_BO_ph_test()
 })
 test_that("load_layer for a previously downloaded layer works", {
-  load_BO_calcite_test(asdataframe=TRUE, rasterstack=FALSE)
+  load_BO_ph_test(asdataframe=TRUE, rasterstack=FALSE)
 })
 test_that("load_layer equal area layer works", {
-  load_BO_calcite_test(equalarea = TRUE)
+  load_BO_ph_test(equalarea = TRUE)
 })
 test_that("load_layer works with different datadir options", {
   normalize <- function(p) {
@@ -66,58 +66,48 @@ test_that("load_layer works with different datadir options", {
   skip_on_cran()
   op <- options()
   wd <- getwd()
-  tryCatch({
-    load_tmp_dir <- normalize(load_tmp_dir)
-    rs <- rpath(load_layers("BO_calcite", datadir = load_tmp_dir))
-    expect_equal(rs, load_tmp_dir)
-    
-    load_tmp_dir <- normalize(load_tmp_dir)
-    rs <- rpath(load_layers("BO_calcite", datadir = paste0(load_tmp_dir, "/")))
-    expect_equal(rs, load_tmp_dir)
-    
-    tmp <- file.path(tempdir(), "sdmpredictors")
-    options(sdmpredictors_datadir = tmp)
-    rs <- rpath(load_layers("BO_calcite"))
-    expect_equal(rs, normalize(tmp))
-    
-    options(sdmpredictors_datadir = NULL)
-    testthat::expect_warning(load_layers("BO_calcite"))
-  }, finally = { 
+  on.exit({
     options(op)
     setwd(wd)
-  }) # reset original options
+  })
+  
+  load_tmp_dir <- normalize(load_tmp_dir)
+  rs <- rpath(load_layers("BO_ph", datadir = load_tmp_dir))
+  expect_equal(rs, load_tmp_dir)
+  
+  load_tmp_dir <- normalize(load_tmp_dir)
+  rs <- rpath(load_layers("BO_ph", datadir = paste0(load_tmp_dir, "/")))
+  expect_equal(rs, load_tmp_dir)
+  
+  tmp <- file.path(tempdir(), "sdmpredictors")
+  options(sdmpredictors_datadir = tmp)
+  rs <- rpath(load_layers("BO_ph"))
+  expect_equal(rs, normalize(tmp))
+  
+  options(sdmpredictors_datadir = NULL)
+  testthat::expect_warning(load_layers("BO_ph"))
 })
-
-# test_that("load_layer for partially downloaded layer works", {
-#   check_skip()
-#   # del grd
-#   unlink(paste0(load_tmp_dir,"/", "BO_calcite.grd"), recursive=FALSE)
-#   load_BO_calcite_test()
-#   # del gri
-#   unlink(paste0(load_tmp_dir,"/", "BO_calcite.gri"), recursive=FALSE)
-#   load_BO_calcite_test()
-# })
 
 test_that("load_layer for dataframe from list_layers works", {
   check_skip()
   layers <- list_layers()
-  layers <- layers[layers$layer_code == "BO_calcite",]
+  layers <- layers[layers$layer_code == "BO_ph",]
   rs <- load_layers(layers, datadir = load_tmp_dir, equalarea = F)
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 1)
   expect_equal(nrow(rs), 2160)
   expect_equal(ncol(rs), 4320)
-  expect_equal(names(rs),c("BO_calcite"))
+  expect_equal(names(rs),c("BO_ph"))
 })
 
 load_multiple_test <- function() {
   check_skip()
-  rs <- load_layers(c("BO_ph","BO_chlomin"), datadir = load_tmp_dir, equalarea = F)
+  rs <- load_layers(c("BO_ph","BO_dissox"), datadir = load_tmp_dir, equalarea = F)
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 2)
   expect_equal(nrow(rs), 2160)
   expect_equal(ncol(rs), 4320)
-  expect_equal(names(rs),c("BO_ph","BO_chlomin"))
+  expect_equal(names(rs),c("BO_ph","BO_dissox"))
 }
 test_that("load_layer for multiple not previously downloaded layers works", {
   load_multiple_test()
@@ -128,12 +118,12 @@ test_that("load_layer for multiple previously downloaded layers works", {
 
 load_multiple_mixed <- function() {
   check_skip()
-  rs <- load_layers(c("BO_damax","MS_sst07_5m"), datadir = load_tmp_dir, equalarea = F)
+  rs <- load_layers(c("BO_ph","MS_biogeo05_dist_shore_5m"), datadir = load_tmp_dir, equalarea = F)
   expect_false(is.null(rs))
   expect_equal(nlayers(rs), 2)
   expect_equal(nrow(rs), 2160)
   expect_equal(ncol(rs), 4320)
-  expect_equal(names(rs),c("BO_damax","MS_sst07_5m"))
+  expect_equal(names(rs),c("BO_ph","MS_biogeo05_dist_shore_5m"))
 }
 test_that("load_layer for multiple mixed not previously downloaded layers works", {
   load_multiple_mixed()
@@ -151,18 +141,18 @@ test_that("load_layer handles special cases", {
 
 test_that("load_layer equal area TRUE/FALSE works", {
   check_skip()
-  rs_default <- load_layers("BO_calcite", datadir = load_tmp_dir)
-  rs_equalarea <- load_layers("BO_calcite", datadir = load_tmp_dir, equalarea = TRUE)
-  rs_lonlat <- load_layers("BO_calcite", datadir = load_tmp_dir, equalarea = FALSE)
+  rs_default <- load_layers("BO_ph", datadir = load_tmp_dir)
+  rs_equalarea <- load_layers("BO_ph", datadir = load_tmp_dir, equalarea = TRUE)
+  rs_lonlat <- load_layers("BO_ph", datadir = load_tmp_dir, equalarea = FALSE)
   
   is_equalarea <- function(rs) {
-    expect_equal(names(rs), c("BO_calcite"))
+    expect_equal(names(rs), c("BO_ph"))
     expect_identical(rs@crs, sdmpredictors::equalareaproj)
   }
   is_lonlat <- function(rs) {
     expect_equal(nrow(rs), 2160)
     expect_equal(ncol(rs), 4320)
-    expect_equal(names(rs), c("BO_calcite"))
+    expect_equal(names(rs), c("BO_ph"))
     expect_identical(rs@crs, sdmpredictors::lonlatproj)
   }
   expect_identical(rs_default, rs_lonlat)

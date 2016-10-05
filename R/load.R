@@ -22,10 +22,11 @@ get_datadir <- function(datadir) {
       warning("file.path(tempdir(), \"sdmpredictors\") will be used as datadir, set options(sdmpredictors_datadir=\"<directory>\") to avoid re-downloading the data in every session or set the datadir parameter in load_layers")
     }
   }
+  datadir <- normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
   if(!dir.exists(datadir)) {
     dir.create(datadir, recursive = TRUE)
   }
-  normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
+  datadir
 }
 
 #' Load layers
@@ -59,7 +60,7 @@ get_datadir <- function(datadir) {
 #' @seealso \code{\link{list_layers}}, \code{\link{layer_stats}}, 
 #'   \code{\link{layers_correlation}}
 load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datadir = NULL) {
-  if(is.na(equalarea) || !is.logical(equalarea) && length(equalarea) != 1) {
+  if(is.na(equalarea) || !is.logical(equalarea) || length(equalarea) != 1) {
     stop("equalarea should be TRUE or FALSE")
   }
   if(is.data.frame(layercodes)) {

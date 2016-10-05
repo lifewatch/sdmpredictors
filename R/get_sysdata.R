@@ -5,11 +5,12 @@ get_sysdata <- function() {
   if(is.null(dir)) {
     dir <- file.path(tempdir(), "sdmpredictors")
   }
+  dir <- normalizePath(dir)
   if(!dir.exists(dir)) {
     dir.create(dir, recursive = TRUE)
   }
   tmp <- tempfile("sysdata_sdmpredictors", fileext = ".rda")
-  outfile <- paste0(dir, "/", fname)
+  outfile <- file.path(dir, fname)
   
   ## only download every 60 minutes
   if(!file.exists(outfile) || difftime(Sys.time(), file.mtime(outfile), units = "mins") > 24*60 || file.size(outfile) <= 0) {
