@@ -84,7 +84,6 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
     suffix <- ifelse(equalarea, "", "_lonlat")
     path <- paste0(datadir, "/", layercode, suffix, ".tif")
     if(!file.exists(path)) {
-      urlroot <- "http://www.phycology.ugent.be/research/sdmpredictors/"
       url <- paste0(urlroot, layercode, suffix, ".tif")
       ok <- -1
       # clean up of download failed
