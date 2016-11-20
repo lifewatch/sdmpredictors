@@ -12,7 +12,9 @@ create_sysdata <- function() {
                 urldata = "http://sdmpredictors.samuelbosch.com/", 
                 urlsysdata = "http://sdmpredictors.samuelbosch.com/")
   devtools::use_data(.data, internal = TRUE, overwrite = TRUE)
-  
+  if(!is.null(file.path(getOption("sdmpredictors_datadir")))) {
+    file.copy("R/sysdata.rda", file.path(getOption("sdmpredictors_datadir"), "sysdata.rda"), overwrite = TRUE)
+  }
   file.copy("R/sysdata.rda", 
             "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
             overwrite = TRUE)

@@ -5,29 +5,37 @@ options(sdmpredictors_datadir = "D:/a/projects/predictors/results")
 
 compress_file <- sdmpredictors:::compress_file
 
+prepare_layer <- function(layerpath, outputdir, newname) {
+  r <- raster(layerpath)
+  crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+#   newf <- file.path(outputdir, paste0(newname, "_lonlat.grd"))
+#   print(newf)
+#   writeRaster(r, newf, overwrite=T)
+#   sdmpredictors:::compress_file(newf, outputdir)
+#   sdmpredictors:::compress_file(sub("[.]grd", ".gri", newf), outputdir)
+  write_tif(r, paste0(newname, "_lonlat"), outputdir)
+  
+  if (nrow(r) == 2160 && ncol(r) == 4320) {
+    eares <- 7000 ## similar number of total cells, cells have same x and y res
+  } else { stop("undefined ea resolution") }
+  r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+  r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
+#   newf <- file.path(outputdir, paste0(newname, ".grd"))
+#   print(newf)
+#   writeRaster(r, newf, overwrite=T)
+#   sdmpredictors:::compress_file(newf, outputdir, overwrite=T, remove=T)
+#   sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outputdir, overwrite=T, remove=T)
+  write_tif(r, newname, outputdir)
+}
+# prepare_layer("D:/a/data/BioORACLE_bathy/shoredistance.asc", "D:/a/projects/predictors/derived", "BO_shoredistance")
+
 prepare_biooracle_bathy <- function() {
+  ind <- "D:/a/data/BioORACLE_bathy"
   newd <- "D:/a/projects/predictors/derived/"
-  for (f in list.files("D:/a/data/BioORACLE_bathy", pattern="[.]asc", full.names=TRUE)) {
-    
-    r <- raster(f)
-    crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-    
-    newf <- paste0("D:/a/projects/predictors/derived", "/BO_", sub("[.]asc", "_lonlat.grd",basename(f)))
-    print(newf)
-    writeRaster(r, newf, overwrite=T)
-    sdmpredictors:::compress_file(newf, newd)
-    sdmpredictors:::compress_file(sub("[.]grd", ".gri", newf), newd)
-    
-    if (nrow(r) == 2160 && ncol(r) == 4320) {
-      eares <- 7000 ## similar number of total cells, cells have same x and y res
-    } else { stop("undefined ea resolution") }
-    r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
-    r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
-    newf <- paste0("D:/a/projects/predictors/derived", "/BO_", sub("[.]asc", ".grd",basename(f)))
-    print(newf)
-    writeRaster(r, newf, overwrite=T)
-    sdmpredictors:::compress_file(newf, newd, overwrite=T, remove=T)
-    sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), newd, overwrite=T, remove=T)
+  for(bathy in c("bathymin", "bathymax", "bathymean")) {
+    prepare_layer(file.path(ind, paste0(bathy, ".asc")), 
+                  "D:/a/projects/predictors/derived/", 
+                  paste0("BO_", bathy))  
   }
 }
 
@@ -282,7 +290,7 @@ write_tif <- function(r, name, outdir) {
       }
     }
   }
-  newf <- paste0(outdir, name, ".tif")
+  newf <- file.path(outdir, paste0(name, ".tif"))
   tifoptions <- c("COMPRESS=DEFLATE", predictor, "ZLEVEL=9", "NUM_THREADS=3")
   writeRaster(r, newf, options = tifoptions, datatype = datatype, overwrite = FALSE)
 }

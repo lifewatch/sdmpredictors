@@ -8,7 +8,6 @@ library(dismo)
 library(sp)
 library(gplots)
 
-rasterdir <- "../../results"
 statsdir <- "data-raw/stats"
 
 # TODO define WorldClim layer codes, copy compressed to phycology site, then calc all terrestrial layer stats and all terrestrial correlations
@@ -16,8 +15,8 @@ statsdir <- "data-raw/stats"
 calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE) {
   calc_layer_stats <- function(layercode) {
     ## convert to behrmann first OR store data as Behrmann
-    r <- load_layers(layercode)
-    d <- predictors:::calc_stats(layercode, raster(r,1))
+    r <- load_layers(layercode, equalarea = TRUE)
+    d <- sdmpredictors:::calc_stats(layercode, raster(r,1))
     return (d)
   }
   
@@ -25,11 +24,20 @@ calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE) {
     fname <- paste0(statsdir, "/", layercode, ".rds")
     if(layercode != "WC_TODO" & !file.exists(fname)) {
       print(layercode)
-      stats <- calc_layer_stats(layercode)
+      stats <- calc_layer_stats(layercode) ## TODO update calc_layer_stats so that it takes a raster or a layercode
       saveRDS(stats, fname)
     }
   }
 }
+
+new_layer_stats <- function(dir, layercode) {
+  r <- raster(file.path(dir, paste0(layercode, ".tif")))
+  fname <- paste0(statsdir, "/", layercode, ".rds")
+  stats <- sdmpredictors:::calc_stats(layercode, r)
+  saveRDS(stats, fname)
+}
+# new_layer_stats("D:/a/projects/predictors/derived", "BO_shoredistance")
+
 #calc_all_layer_stats(terrestrial = FALSE, marine = TRUE)
 #calc_all_layer_stats(terrestrial = TRUE, marine = FALSE)
 
@@ -105,19 +113,25 @@ calc_corr_matrix_quad <- function(x, fname) {
 # }
 
 
-calc_all_correlation_matrices <- function(terrestrial=F,marine=F) {
+calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, new_rasters = NULL) {
 #   calc_correlation_matrix <- function(rasterstack, fname) {
 #     stats <- layerStats(rasterstack, 'pearson', na.rm=TRUE)
 #     correlations <- stats$`pearson correlation coefficient`
 #     saveRDS(correlations, fname)
 #   }
   if(marine) {
-    marine_stack <- load_layers(list_layers(terrestrial=F,marine=T), datadir = rasterdir)
+    marine_stack <- load_layers(list_layers(terrestrial=F,marine=T), equalarea = TRUE)
+    if(!is.null(new_rasters)){
+      marine_stack <- stack(marine_stack, new_rasters)
+    }
     #calc_correlation_matrix(marine_stack, paste0(statsdir, "/pearson_corr_marine.rds"))
     calc_corr_matrix_quad(marine_stack, "pearson_corr_marine_quad")
   }
   if(terrestrial) {
-    terrestrial_stack <- load_layers(list_layers(terrestrial=T,marine=F), datadir = rasterdir)
+    terrestrial_stack <- load_layers(list_layers(terrestrial=T,marine=F), equalarea = TRUE)
+    if(!is.null(new_rasters)){
+      terrestrial_stack <- stack(terrestrial_stack, new_rasters)
+    }
     #calc_correlation_matrix(terrestrial_stack, paste0(statsdir, "/pearson_corr_terrestrial_quad.rds"))
     calc_corr_matrix_quad(terrestrial_stack, "pearson_corr_terrestrial_quad")
   }
@@ -126,6 +140,7 @@ calc_all_correlation_matrices <- function(terrestrial=F,marine=F) {
 }
 #calc_all_correlation_matrices(marine=T)
 #calc_all_correlation_matrices(terrestrial=T)
+# calc_all_correlation_matrices(marine=TRUE, new_rasters = raster("../../derived/BO_shoredistance.tif"))
 
 combine_data_frame <- function(a, b) {
   r <- as.data.frame(a)
@@ -181,7 +196,7 @@ inspects_correlations <- function(corr_quad) {
 #   BO_cloudmin²  -0.6711996              -0.7047402
 }
 
-pearson_corr <- function(sds, mat, i, j, iR, jR) {
+pearson_corr <- function(mat, i, j, iR, jR, sds, n, asSample) {
   if (i <= nrow(mat) && j <= ncol(mat)) {
     if (i == j) {
       mat[i,j] = 1
@@ -225,7 +240,7 @@ faster_pearson <- function(x, cachesize=20) { ## always na.rm=TRUE
     
     for( vi in 1:(length(v)-1)) {## calculate correlations for all "cached" rasters
       for (vj in (vi+1):length(v)) {
-        mat <- pearson_corr(sds, mat, indexes[vi], indexes[vj], v[[vi]], v[[vj]])
+        mat <- pearson_corr(mat, indexes[vi], indexes[vj], v[[vi]], v[[vj]], sds, n, asSample)
       }
     }
     
@@ -233,7 +248,7 @@ faster_pearson <- function(x, cachesize=20) { ## always na.rm=TRUE
       for (j in (max(indexes)+1):nl) {
         jR <- values(raster(x, layer=j))
         for(vi in 1:length(v)) {
-          mat <- pearson_corr(sds, mat, indexes[vi], j, v[[vi]], jR)
+          mat <- pearson_corr(mat, indexes[vi], j, v[[vi]], jR, sds, n, asSample)
         }
       }
     }
