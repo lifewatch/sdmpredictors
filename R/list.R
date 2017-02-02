@@ -334,7 +334,7 @@ get_paleo_layers <- function(current_layer_codes, model_name = NA, epoch = NA, y
 #' @param layer_codes character vector. Vector with the layer codes of the
 #'   layers you want the full information for. This can also be a dataframe with
 #'   as column \code{layer_code}.
-#' @return A list with fout dataframes \code{common}, \code{current},
+#' @return A list with four dataframes \code{common}, \code{current},
 #'   \code{future} and \code{paleo}, the \code{common} dataframe contains data
 #'   for all shared columns in the other three dataframes. The other dataframes
 #'   contain all detailed information on the layer(s) matching the layer codes.
