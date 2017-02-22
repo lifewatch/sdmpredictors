@@ -12,7 +12,7 @@ layers you want the full information for. This can also be a dataframe with
 as column \code{layer_code}.}
 }
 \value{
-A list with fout dataframes \code{common}, \code{current},
+A list with four dataframes \code{common}, \code{current},
   \code{future} and \code{paleo}, the \code{common} dataframe contains data
   for all shared columns in the other three dataframes. The other dataframes
   contain all detailed information on the layer(s) matching the layer codes.
