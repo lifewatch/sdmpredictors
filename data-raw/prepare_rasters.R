@@ -15,7 +15,7 @@ prepare_layer <- function(layerpath, outputdir, newname) {
 #   sdmpredictors:::compress_file(sub("[.]grd", ".gri", newf), outputdir)
   write_tif(r, paste0(newname, "_lonlat"), outputdir)
   
-  if (nrow(r) == 2160 && ncol(r) == 4320) {
+  if (ncol(r) == 4320 && abs(res(r)-0.0833333) < 0.001) {
     eares <- 7000 ## similar number of total cells, cells have same x and y res
   } else { stop("undefined ea resolution") }
   r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
@@ -358,6 +358,98 @@ prepare_paleo_marspec <- function() {
   
 }
 # prepare_paleo_marspec()
+
+prepare_envirem <- function() {
+  ind <- "D:/a/data/ENVIREM"
+  newd <- "D:/a/projects/predictors/derived/envirem"
+  layerpaths <- list.files(ind, "[.]tif$", full.names = TRUE)
+  for(layerpath in layerpaths) {
+    p <- sub("[.]tif$", "", basename(layerpath))
+    parts <- unlist(strsplit(p, "_5arcmin_"))
+    if(parts[1] == "current") {
+      newname <- paste0("ER_",parts[2])
+    } else {
+      newname <- paste0("ER_",parts[2],"_",parts[1])
+    }
+    print(newname)
+    prepare_layer(layerpath, newd, newname)  
+  }
+}
+# prepare_envirem()
+
+prepare_worldclim_paleofuture <- function() {
+  layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
+  future <- read.csv2("data-raw/layers_future.csv", stringsAsFactors = FALSE)
+  paleo <- read.csv2("data-raw/layers_paleo.csv", stringsAsFactors = FALSE)
+  
+  wc_layers <- c("tmin", "tmax", "tmean", "prec", "alt", "bio")
+  
+  outdir <- "D:/a/projects/predictors/derived/worldclim_paleo_future"
+  
+  gcm_lookup <- list(CC="CCSM4", ME="MPI-ESM-P", MR="MIROC-ESM", HE="HadGEM2-ES")
+  
+  
+  for(zip in list.files("D:/a/data/WorldClim/paleo_future", full.names = TRUE)) {
+    fname <- basename(zip)
+    gcm_code <- toupper(substr(fname, 1, 2))
+    gcm <- gcm_lookup[[gcm_code]]
+    paleo_code <- substr(fname, 3, 5)
+    if(paleo_code %in% c("lgm", "mid")) {
+      info <- list(lgm=list(epoch="Last Glacial Maximum", year=21000, code="lgm"), 
+                   mid=list(epoch="mid-Holocene", year = 21000, code="holo"))[[paleo_code]]
+      
+      # TODO: plenty of work left to finish this import, idea was to insert in csv on the fly
+      # both for paleo and future
+      
+    } else {
+      scenario_code <- substr(fname, 3, 4)
+      year <- 2000 + as.integer(substr(fname, 7, 8))
+    }
+    
+  }
+  
+  for (f in list.files("D:/temp/wc5", ".bil$", full.names = TRUE)) {
+    newf <- paste0(outdir, "/WC_", sub("[.]bil$", ".grd", basename(f)))
+    lonlatf <- sub("[.]grd$", "_lonlat.grd", newf)
+    
+    r <- raster(f)
+    
+    ## convert to true values
+    if(grepl("tm[eainx]*[0-9]+", names(r)) || 
+       names(r) %in% paste0("bio", c(1,2,5,6,7,8,9,10,11))) {
+      print(paste(names(r), "divided by 10"))
+      r <- r / 10
+    } else if(names(r) %in% c("bio3", "bio4")) {
+      print(paste(names(r), "divided by 100"))
+      r <- r / 100
+    }
+    
+    names(r) <- sub("[.]grd$", "", x = basename(newf))
+    crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+    writeRaster(r, lonlatf, overwrite = TRUE)
+    
+    print(lonlatf)
+    compress_file(lonlatf, outdir, overwrite=T, remove=T)
+    compress_file(sub("[.]grd$", ".gri", lonlatf), outdir, overwrite=T, remove=T)
+    
+    newf <- paste0(outdir, "/WC_", sub("[.]bil", ".grd", basename(f)))
+    
+    # out resolution
+    if (ncol(r) == 4320) {
+      eares <- 7000 ## similar number of total cells, cells have same x and y res
+    } else { error("undefined ea resolution") }
+    r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+    r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
+    print(newf)
+    writeRaster(r, newf, overwrite=T)
+    compress_file(newf, outdir, overwrite=T, remove=T)
+    compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
+  }
+  
+  
+  
+}
+
 
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_deflate_9_p3.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)

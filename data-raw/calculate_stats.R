@@ -38,6 +38,23 @@ new_layer_stats <- function(dir, layercode) {
 }
 # new_layer_stats("D:/a/projects/predictors/derived", "BO_shoredistance")
 
+stats_envirem <- function() {
+  layerpaths <- list.files("D:/a/data/ENVIREM", "[.]tif$", full.names = TRUE)
+  for(layerpath in layerpaths) {
+    p <- sub("[.]tif$", "", basename(layerpath))
+    parts <- unlist(strsplit(p, "_5arcmin_"))
+    if(parts[1] == "current") {
+      layercode <- paste0("ER_",parts[2])
+    } else {
+      layercode <- paste0("ER_",parts[2],"_",parts[1])
+    }
+    print(newname)
+    new_layer_stats("D:/a/projects/predictors/derived/envirem", layercode)  
+  }
+}
+# stats_envirem()
+
+
 #calc_all_layer_stats(terrestrial = FALSE, marine = TRUE)
 #calc_all_layer_stats(terrestrial = TRUE, marine = FALSE)
 
