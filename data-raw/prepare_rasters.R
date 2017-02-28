@@ -5,8 +5,12 @@ options(sdmpredictors_datadir = "D:/a/projects/predictors/results")
 
 compress_file <- sdmpredictors:::compress_file
 
-prepare_layer <- function(layerpath, outputdir, newname) {
+prepare_layer <- function(layerpath, outputdir, newname, scalefactor = 1)  {
   r <- raster(layerpath)
+  if(scalefactor != 1) {
+    print(paste(newname, "divided by ", scalefactor))
+    r <- r / scalefactor
+  }
   crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
 #   newf <- file.path(outputdir, paste0(newname, "_lonlat.grd"))
 #   print(newf)
@@ -387,7 +391,7 @@ prepare_envirem <- function() {
 }
 # prepare_envirem()
 
-prepare_worldclim_paleofuture <- function() {
+prepare_worldclim_paleofuture <- function(prepare_layers=TRUE) {
   layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
   future <- read.csv2("data-raw/layers_future.csv", stringsAsFactors = FALSE)
   paleo <- read.csv2("data-raw/layers_paleo.csv", stringsAsFactors = FALSE)
@@ -398,69 +402,69 @@ prepare_worldclim_paleofuture <- function() {
   
   gcm_lookup <- list(CC="CCSM4", ME="MPI-ESM-P", MR="MIROC-ESM", HE="HadGEM2-ES")
   
+  paleo_info <- list(lgm=list(epoch="Last Glacial Maximum", year = 21000, code="lgm"), 
+                     mid=list(epoch="mid-Holocene", year = 6000, code="holo"))
+  vartypes <- list(bi="bio", pr="prec", "tx"="tmax", "tn" = "tmin")
   
   for(zip in list.files("D:/a/data/WorldClim/paleo_future", full.names = TRUE)) {
-    fname <- basename(zip)
+    print(zip)
+    fname <- sub("_5m[.]", ".", basename(zip))
     gcm_code <- toupper(substr(fname, 1, 2))
     gcm <- gcm_lookup[[gcm_code]]
     paleo_code <- substr(fname, 3, 5)
-    if(paleo_code %in% c("lgm", "mid")) {
-      info <- list(lgm=list(epoch="Last Glacial Maximum", year=21000, code="lgm"), 
-                   mid=list(epoch="mid-Holocene", year = 21000, code="holo"))[[paleo_code]]
-      
-      stop("pleanty things to do !!!")
-      # TODO: plenty of work left to finish this import, idea was to insert in csv on the fly
-      # both for paleo and future
-      
+    rasters <- unzip(zip, list = TRUE)
+    
+    is_paleo <- paleo_code %in% c("lgm", "mid")
+    if(is_paleo) {
+      vartype <- substr(fname, 6, 7)
+      info <- paleo_info[[paleo_code]]
+      modelname <- paste(info$code, gcm, sep = " ")
+      info <- data.frame(dataset_code = "WorldClim", layer_code = rep(NA, length(rasters)), current_layer_code = NA, 
+                         model_name = modelname, epoch = info$epoch, years_ago = info$year)  
+      suffix <- substr(fname, 1, 5)
     } else {
-      scenario_code <- substr(fname, 3, 4)
+      scenario <- paste0("rcp", substr(fname, 3, 4))
+      vartype <- substr(fname, 5, 6)
       year <- 2000 + as.integer(substr(fname, 7, 8))
+      info <- data.frame(dataset_code = "WorldClim", layer_code = rep(NA, length(rasters)), current_layer_code = NA, 
+                         model = gcm, scenario = scenario, year = year)
+      suffix <- paste0(substr(fname, 1, 4), "_", year)
     }
-    
-  }
-  
-  for (f in list.files("D:/temp/wc5", ".bil$", full.names = TRUE)) {
-    newf <- paste0(outdir, "/WC_", sub("[.]bil$", ".grd", basename(f)))
-    lonlatf <- sub("[.]grd$", "_lonlat.grd", newf)
-    
-    r <- raster(f)
-    
-    ## convert to true values
-    if(grepl("tm[eainx]*[0-9]+", names(r)) || 
-       names(r) %in% paste0("bio", c(1,2,5,6,7,8,9,10,11))) {
-      print(paste(names(r), "divided by 10"))
-      r <- r / 10
-    } else if(names(r) %in% c("bio3", "bio4")) {
-      print(paste(names(r), "divided by 100"))
-      r <- r / 100
+    wc_temp_dir <- "D:/temp/worldclim"
+    for(ri in seq_along(rasters)) {
+      r <- rasters[ri,]
+      
+      name <- sub(tools::file_path_sans_ext(fname), "", tools::file_path_sans_ext(r$Name))
+      name <- paste0(vartypes[[vartype]], name)
+      
+      layer_code <- paste0("WC_", name, "_", suffix)
+      info[ri,"layer_code"] <- layer_code
+      info[ri,"current_layer_code"] <- paste0("WC_", name)
+      
+      ## convert to true values
+      scalefactor <- 1
+      if(grepl("tm[eainx]*[0-9]+", name) || 
+         name %in% paste0("bio", c(1,2,5,6,7,8,9,10,11))) {
+        scalefactor <- 10
+      } else if(name %in% c("bio3", "bio4")) {
+        scalefactor <- 100
+      }
+      if(prepare_layers) {
+        path <- unzip(zip, r$Name, exdir = wc_temp_dir)
+        prepare_layer(path, outdir, layer_code, scalefactor)  
+        file.remove(path)
+      }
     }
-    
-    names(r) <- sub("[.]grd$", "", x = basename(newf))
-    crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-    writeRaster(r, lonlatf, overwrite = TRUE)
-    
-    print(lonlatf)
-    compress_file(lonlatf, outdir, overwrite=T, remove=T)
-    compress_file(sub("[.]grd$", ".gri", lonlatf), outdir, overwrite=T, remove=T)
-    
-    newf <- paste0(outdir, "/WC_", sub("[.]bil", ".grd", basename(f)))
-    
-    # out resolution
-    if (ncol(r) == 4320) {
-      eares <- 7000 ## similar number of total cells, cells have same x and y res
-    } else { error("undefined ea resolution") }
-    r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
-    r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
-    print(newf)
-    writeRaster(r, newf, overwrite=T)
-    compress_file(newf, outdir, overwrite=T, remove=T)
-    compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
+    if(is_paleo) {
+      paleo <- rbind(paleo, info[!(info$layer_code %in% paleo$layer_code),])
+    } else {
+      future <- rbind(future, info[!(info$layer_code %in% future$layer_code),])
+    }
   }
-  
-  
-  
+  write.csv2(paleo[order(paleo$dataset_code, paleo$layer_code),], "data-raw/layers_paleo.csv", row.names = FALSE)
+  write.csv2(future[order(future$dataset_code, future$layer_code),], "data-raw/layers_future.csv", row.names = FALSE)
 }
-
+prepare_worldclim_paleofuture(prepare_layers = FALSE)
 
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_deflate_9_p3.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
