@@ -321,6 +321,16 @@ prepare_future_biooracle <- function() {
 }
 # prepare_future_biooracle()
 
+prepare_biooracle2 <- function() {
+  layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
+  rasters <- list.files("D:/a/data/BioOracle2/Present 2000-2014", "[.]tif$", full.names = TRUE)
+  for (f in rasters) {
+    sub("[.]tif", "", basename(f))
+    stop("todo")
+  }
+}
+
+
 prepare_paleo_marspec <- function() {
   outdir <- "../../derived/paleo/"
   scale <- list(bathy_5m = 1,
@@ -398,6 +408,7 @@ prepare_worldclim_paleofuture <- function() {
       info <- list(lgm=list(epoch="Last Glacial Maximum", year=21000, code="lgm"), 
                    mid=list(epoch="mid-Holocene", year = 21000, code="holo"))[[paleo_code]]
       
+      stop("pleanty things to do !!!")
       # TODO: plenty of work left to finish this import, idea was to insert in csv on the fly
       # both for paleo and future
       
