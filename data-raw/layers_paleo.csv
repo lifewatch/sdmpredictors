@@ -1,139 +1,139 @@
-dataset_code;layer_code;current_layer_code;name;description;terrestrial;marine;cellsize_equalarea;cellsize_lonlat;units;primary_type;primary_spatial_resolution;primary_source;model_name;epoch;years_ago;derivation;month
-MARSPEC;MS_bathy_21kya;MS_bathy_5m;Bathymetry;Depth of the seafloor;FALSE;TRUE;7000;0,083333333;meters;;;;21kya_geophysical;Last Glacial Maximum;21000;120 meter eustatic sea level drop;NA
-MARSPEC;MS_biogeo01_aspect_EW_21kya;MS_biogeo01_aspect_EW_5m;East/West aspect;East/West Aspect (sin(aspect in radians));FALSE;TRUE;7000;0,083333333;radians;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from bathymetry (sin(aspect in radians));NA
-MARSPEC;MS_biogeo02_aspect_NS_21kya;MS_biogeo02_aspect_NS_5m;North/South Aspect;North/South Aspect (cos(aspect in radians));FALSE;TRUE;7000;0,083333333;radians;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from bathymetry (cos(aspect in radians));NA
-MARSPEC;MS_biogeo03_plan_curvature_5m_21kya;MS_biogeo03_plan_curvature_5m;Plan curvature;Plan curvature is the curvature in the direction perpendicular to the maximum slope and indicates whether flow across a surface would diverge (positive values) or converge (negative values). ;FALSE;TRUE;7000;0,083333333;unitless;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from bathmetry;NA
-MARSPEC;MS_biogeo04_profile_curvature_21kya;MS_biogeo04_profile_curvature_5m;Profile curvature;Profile curvature is the curvature in the direction parallel to the maximum slope and indicates whether flow across a surface would accelerate (positive values) or decelerate (negative values).;FALSE;TRUE;7000;0,083333333;unitless;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from bathmetry;NA
-MARSPEC;MS_biogeo05_dist_shore_21kya;MS_biogeo05_dist_shore_5m;Distance to shore;Distance to shore;FALSE;TRUE;7000;0,083333333;kilometers;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from GSHHS Coastline;NA
-MARSPEC;MS_biogeo06_bathy_slope_21kya;MS_biogeo06_bathy_slope_5m;Bathymetric slope;Bathymetric slope was measured in degrees ranging from 0º (flat surface) to 90º (vertical slope). ;FALSE;TRUE;7000;0,083333333;degrees;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from bathmetry;NA
-MARSPEC;MS_biogeo07_concavity_21kya;MS_biogeo07_concavity_5m;Concavity;Concavity is the second derivative of the bathymetry layer (or the slope of the slope) and represents whether a raster cell is on a hill (negative values) or in a valley (positive values).;FALSE;TRUE;7000;0,083333333;degrees;;;;21kya_geophysical;Last Glacial Maximum;21000;derived from bathmetry;NA
-MARSPEC;MS_biogeo08_sss_mean_21kya_noCCSM;MS_biogeo08_sss_mean_5m;Sea surface salinity (annual mean);Sea surface salinity (annual mean);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;mean;NA
-MARSPEC;MS_biogeo09_sss_min_21kya_noCCSM;MS_biogeo09_sss_min_5m;Sea surface salinity (monthly minimum);Sea surface salinity (monthly minimum);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;minimum;NA
-MARSPEC;MS_biogeo10_sss_max_21kya_noCCSM;MS_biogeo10_sss_max_5m;Sea surface salinity (monthly maximum);Sea surface salinity (monthly maximum);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;maximum;NA
-MARSPEC;MS_biogeo11_sss_range_21kya_noCCSM;MS_biogeo11_sss_range_5m;Sea surface salinity (annual range);Sea surface salinity (annual range);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;range;NA
-MARSPEC;MS_biogeo12_sss_variance_21kya_noCCSM;MS_biogeo12_sss_variance_5m;Sea surface salinity (annual variance);Sea surface salinity (annual variance);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;variance;NA
-MARSPEC;MS_biogeo13_sst_mean_21kya_noCCSM;MS_biogeo13_sst_mean_5m;Sea surface temperature (annual mean);Sea surface temperature (annual mean);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;mean;NA
-MARSPEC;MS_biogeo14_sst_min_21kya_noCCSM;MS_biogeo14_sst_min_5m;Sea surface temperature (coldest ice-free month);Sea surface temperature (coldest ice-free month);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;minimum;NA
-MARSPEC;MS_biogeo15_sst_max_21kya_noCCSM;MS_biogeo15_sst_max_5m;Sea surface temperature (warmest ice-free month);Sea surface temperature (warmest ice-free month);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;maximum;NA
-MARSPEC;MS_biogeo16_sst_range_21kya_noCCSM;MS_biogeo16_sst_range_5m;Sea surface temperature (range);Sea surface temperature (range);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;range;NA
-MARSPEC;MS_biogeo17_sst_variance_21kya_noCCSM;MS_biogeo17_sst_variance_5m;Sea surface temperature (variance);Sea surface temperature (variance);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;variance;NA
-MARSPEC;MS_biogeo08_sss_mean_21kya_adjCCSM;MS_biogeo08_sss_mean_5m;Sea surface salinity (annual mean);Sea surface salinity (annual mean);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;mean;NA
-MARSPEC;MS_biogeo09_sss_min_21kya_adjCCSM;MS_biogeo09_sss_min_5m;Sea surface salinity (monthly minimum);Sea surface salinity (monthly minimum);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;minimum;NA
-MARSPEC;MS_biogeo10_sss_max_21kya_adjCCSM;MS_biogeo10_sss_max_5m;Sea surface salinity (monthly maximum);Sea surface salinity (monthly maximum);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;maximum;NA
-MARSPEC;MS_biogeo11_sss_range_21kya_adjCCSM;MS_biogeo11_sss_range_5m;Sea surface salinity (annual range);Sea surface salinity (annual range);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;range;NA
-MARSPEC;MS_biogeo12_sss_variance_21kya_adjCCSM;MS_biogeo12_sss_variance_5m;Sea surface salinity (annual variance);Sea surface salinity (annual variance);FALSE;TRUE;7000;0,083333333;psu;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;variance;NA
-MARSPEC;MS_biogeo13_sst_mean_21kya_adjCCSM;MS_biogeo13_sst_mean_5m;Sea surface temperature (annual mean);Sea surface temperature (annual mean);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;mean;NA
-MARSPEC;MS_biogeo14_sst_min_21kya_adjCCSM;MS_biogeo14_sst_min_5m;Sea surface temperature (coldest ice-free month);Sea surface temperature (coldest ice-free month);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;minimum;NA
-MARSPEC;MS_biogeo15_sst_max_21kya_adjCCSM;MS_biogeo15_sst_max_5m;Sea surface temperature (warmest ice-free month);Sea surface temperature (warmest ice-free month);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;maximum;NA
-MARSPEC;MS_biogeo16_sst_range_21kya_adjCCSM;MS_biogeo16_sst_range_5m;Sea surface temperature (range);Sea surface temperature (range);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;range;NA
-MARSPEC;MS_biogeo17_sst_variance_21kya_adjCCSM;MS_biogeo17_sst_variance_5m;Sea surface temperature (variance);Sea surface temperature (variance);FALSE;TRUE;7000;0,083333333;Celsius;;;;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;variance;NA
-MARSPEC;MS_biogeo08_sss_mean_6kya;MS_biogeo08_sss_mean_5m;Sea surface salinity (annual mean);Sea surface salinity (annual mean);FALSE;TRUE;7000;0,083333333;psu;;;;6kya_Ensemble;mid-Holocene;6000;mean;NA
-MARSPEC;MS_biogeo09_sss_min_6kya;MS_biogeo09_sss_min_5m;Sea surface salinity (monthly minimum);Sea surface salinity (monthly minimum);FALSE;TRUE;7000;0,083333333;psu;;;;6kya_Ensemble;mid-Holocene;6000;minimum;NA
-MARSPEC;MS_biogeo10_sss_max_6kya;MS_biogeo10_sss_max_5m;Sea surface salinity (monthly maximum);Sea surface salinity (monthly maximum);FALSE;TRUE;7000;0,083333333;psu;;;;6kya_Ensemble;mid-Holocene;6000;maximum;NA
-MARSPEC;MS_biogeo11_sss_range_6kya;MS_biogeo11_sss_range_5m;Sea surface salinity (annual range);Sea surface salinity (annual range);FALSE;TRUE;7000;0,083333333;psu;;;;6kya_Ensemble;mid-Holocene;6000;range;NA
-MARSPEC;MS_biogeo12_sss_variance_6kya;MS_biogeo12_sss_variance_5m;Sea surface salinity (annual variance);Sea surface salinity (annual variance);FALSE;TRUE;7000;0,083333333;psu;;;;6kya_Ensemble;mid-Holocene;6000;variance;NA
-MARSPEC;MS_biogeo13_sst_mean_6kya;MS_biogeo13_sst_mean_5m;Sea surface temperature (annual mean);Sea surface temperature (annual mean);FALSE;TRUE;7000;0,083333333;Celsius;;;;6kya_Ensemble;mid-Holocene;6000;mean;NA
-MARSPEC;MS_biogeo14_sst_min_6kya;MS_biogeo14_sst_min_5m;Sea surface temperature (coldest ice-free month);Sea surface temperature (coldest ice-free month);FALSE;TRUE;7000;0,083333333;Celsius;;;;6kya_Ensemble;mid-Holocene;6000;minimum;NA
-MARSPEC;MS_biogeo15_sst_max_6kya;MS_biogeo15_sst_max_5m;Sea surface temperature (warmest ice-free month);Sea surface temperature (warmest ice-free month);FALSE;TRUE;7000;0,083333333;Celsius;;;;6kya_Ensemble;mid-Holocene;6000;maximum;NA
-MARSPEC;MS_biogeo16_sst_range_6kya;MS_biogeo16_sst_range_5m;Sea surface temperature (range);Sea surface temperature (range);FALSE;TRUE;7000;0,083333333;Celsius;;;;6kya_Ensemble;mid-Holocene;6000;range;NA
-MARSPEC;MS_biogeo17_sst_variance_6kya;MS_biogeo17_sst_variance_5m;Sea surface temperature (variance);Sea surface temperature (variance);FALSE;TRUE;7000;0,083333333;Celsius;;;;6kya_Ensemble;mid-Holocene;6000;variance;NA
-ENVIREM;ER_annualPET_lgm_ccsm4;ER_annualPET;Annual potential evapotranspiration;A measure of the ability of the atmosphere to remove water through evapotranspiration processes, given unlimited moisture;TRUE;FALSE;7000;0,083333333;mm/year;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_aridityIndexThornthwaite_lgm_ccsm4;ER_aridityIndexThornthwaite;Thornthwaite aridity index;Index of the degree of water deficit below water need;TRUE;FALSE;7000;0,083333333;;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_climaticMoistureIndex_lgm_ccsm4;ER_climaticMoistureIndex;Climatic moisture index;A metric of relative wetness and aridity;TRUE;FALSE;7000;0,083333333;;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_continentality_lgm_ccsm4;ER_continentality;Continentality;Average temp. of warmest month - average temp. of coldest month;TRUE;FALSE;7000;0,083333333;Celsius;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_embergerQ_lgm_ccsm4;ER_embergerQ;Emberger's pluviothermic quotient;A metric that was designed to differentiate among Mediterranean type climates;TRUE;FALSE;7000;0,083333333;;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_growingDegDays0_lgm_ccsm4;ER_growingDegDays0;Growing degree days (> 0° C);Sum of mean monthly temperature for months with mean temperature greater than 0°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_growingDegDays5_lgm_ccsm4;ER_growingDegDays5;Growing degree days (> 5° C);Sum of mean monthly temperature for months with mean temperature greater than 5°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_maxTempColdestMonth_lgm_ccsm4;ER_maxTempColdestMonth;Maximum temperature coldest month;Maximum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_minTempWarmestMonth_lgm_ccsm4;ER_minTempWarmestMonth ;Minimum temperature coldest month;Minimum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_monthCountByTemp10_lgm_ccsm4;ER_monthCountByTemp10;Month count temperature > 10°C;Count of the number of months with mean temp greater than 10?;TRUE;FALSE;7000;0,083333333;months;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_PETColdestQuarter_lgm_ccsm4;ER_PETColdestQuarter;PET coldest quarter;Mean monthly potential evapotranspiration of the coldest quarteré;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_ccsm4;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETDriestQuarter_lgm_ccsm4;ER_PETDriestQuarter;PET driest quarter;Mean monthly potential evapotranspiration of the driest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_ccsm4;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETseasonality_lgm_ccsm4;ER_PETseasonality ;PET seasonality;Monthly variability in potential evapotranspiration;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_PETWarmestQuarter_lgm_ccsm4;ER_PETWarmestQuarter;PET warmest quarter;Mean monthly potential evapotranspiration of the warmest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_ccsm4;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETWettestQuarter_lgm_ccsm4;ER_PETWettestQuarter;PET wettest quarter;Mean monthly potential evapotranspiration of the wettest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_ccsm4;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_thermInd_lgm_ccsm4;ER_thermInd;Thermicity index;Compensated thermicity index: sum of mean annual temp., min. temp. of coldest month, max. temp. of the coldest month, x 10, with compensations for better comparability across the globe;TRUE;FALSE;7000;0,083333333;Celsius;;;;lgm_ccsm4;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_tri_lgm;ER_tri;Terrain roughness index;Terrain roughness index;TRUE;FALSE;7000;0,083333333;;;;;lgm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_topoWet_lgm;ER_topoWet;Topographic wetness;SAGA-GIS topographic wetness index;TRUE;FALSE;7000;0,083333333;;;;;lgm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_annualPET_lgm_miroc_esm;ER_annualPET;Annual potential evapotranspiration;A measure of the ability of the atmosphere to remove water through evapotranspiration processes, given unlimited moisture;TRUE;FALSE;7000;0,083333333;mm/year;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_aridityIndexThornthwaite_lgm_miroc_esm;ER_aridityIndexThornthwaite;Thornthwaite aridity index;Index of the degree of water deficit below water need;TRUE;FALSE;7000;0,083333333;;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_climaticMoistureIndex_lgm_miroc_esm;ER_climaticMoistureIndex;Climatic moisture index;A metric of relative wetness and aridity;TRUE;FALSE;7000;0,083333333;;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_continentality_lgm_miroc_esm;ER_continentality;Continentality;Average temp. of warmest month - average temp. of coldest month;TRUE;FALSE;7000;0,083333333;Celsius;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_embergerQ_lgm_miroc_esm;ER_embergerQ;Emberger's pluviothermic quotient;A metric that was designed to differentiate among Mediterranean type climates;TRUE;FALSE;7000;0,083333333;;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_growingDegDays0_lgm_miroc_esm;ER_growingDegDays0;Growing degree days (> 0° C);Sum of mean monthly temperature for months with mean temperature greater than 0°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_growingDegDays5_lgm_miroc_esm;ER_growingDegDays5;Growing degree days (> 5° C);Sum of mean monthly temperature for months with mean temperature greater than 5°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_maxTempColdestMonth_lgm_miroc_esm;ER_maxTempColdestMonth;Maximum temperature coldest month;Maximum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_minTempWarmestMonth_lgm_miroc_esm;ER_minTempWarmestMonth ;Minimum temperature coldest month;Minimum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_monthCountByTemp10_lgm_miroc_esm;ER_monthCountByTemp10;Month count temperature > 10°C;Count of the number of months with mean temp greater than 10?;TRUE;FALSE;7000;0,083333333;months;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_PETColdestQuarter_lgm_miroc_esm;ER_PETColdestQuarter;PET coldest quarter;Mean monthly potential evapotranspiration of the coldest quarteré;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_miroc_esm;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETDriestQuarter_lgm_miroc_esm;ER_PETDriestQuarter;PET driest quarter;Mean monthly potential evapotranspiration of the driest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_miroc_esm;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETseasonality_lgm_miroc_esm;ER_PETseasonality ;PET seasonality;Monthly variability in potential evapotranspiration;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_PETWarmestQuarter_lgm_miroc_esm;ER_PETWarmestQuarter;PET warmest quarter;Mean monthly potential evapotranspiration of the warmest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_miroc_esm;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETWettestQuarter_lgm_miroc_esm;ER_PETWettestQuarter;PET wettest quarter;Mean monthly potential evapotranspiration of the wettest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_miroc_esm;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_thermInd_lgm_miroc_esm;ER_thermInd;Thermicity index;Compensated thermicity index: sum of mean annual temp., min. temp. of coldest month, max. temp. of the coldest month, x 10, with compensations for better comparability across the globe;TRUE;FALSE;7000;0,083333333;Celsius;;;;lgm_miroc_esm;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_annualPET_lgm_mpi_esm_p;ER_annualPET;Annual potential evapotranspiration;A measure of the ability of the atmosphere to remove water through evapotranspiration processes, given unlimited moisture;TRUE;FALSE;7000;0,083333333;mm/year;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_aridityIndexThornthwaite_lgm_mpi_esm_p;ER_aridityIndexThornthwaite;Thornthwaite aridity index;Index of the degree of water deficit below water need;TRUE;FALSE;7000;0,083333333;;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_climaticMoistureIndex_lgm_mpi_esm_p;ER_climaticMoistureIndex;Climatic moisture index;A metric of relative wetness and aridity;TRUE;FALSE;7000;0,083333333;;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_continentality_lgm_mpi_esm_p;ER_continentality;Continentality;Average temp. of warmest month - average temp. of coldest month;TRUE;FALSE;7000;0,083333333;Celsius;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_embergerQ_lgm_mpi_esm_p;ER_embergerQ;Emberger's pluviothermic quotient;A metric that was designed to differentiate among Mediterranean type climates;TRUE;FALSE;7000;0,083333333;;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_growingDegDays0_lgm_mpi_esm_p;ER_growingDegDays0;Growing degree days (> 0° C);Sum of mean monthly temperature for months with mean temperature greater than 0°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_growingDegDays5_lgm_mpi_esm_p;ER_growingDegDays5;Growing degree days (> 5° C);Sum of mean monthly temperature for months with mean temperature greater than 5°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_maxTempColdestMonth_lgm_mpi_esm_p;ER_maxTempColdestMonth;Maximum temperature coldest month;Maximum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_minTempWarmestMonth_lgm_mpi_esm_p;ER_minTempWarmestMonth ;Minimum temperature coldest month;Minimum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_monthCountByTemp10_lgm_mpi_esm_p;ER_monthCountByTemp10;Month count temperature > 10°C;Count of the number of months with mean temp greater than 10?;TRUE;FALSE;7000;0,083333333;months;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_PETColdestQuarter_lgm_mpi_esm_p;ER_PETColdestQuarter;PET coldest quarter;Mean monthly potential evapotranspiration of the coldest quarteré;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETDriestQuarter_lgm_mpi_esm_p;ER_PETDriestQuarter;PET driest quarter;Mean monthly potential evapotranspiration of the driest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETseasonality_lgm_mpi_esm_p;ER_PETseasonality ;PET seasonality;Monthly variability in potential evapotranspiration;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_PETWarmestQuarter_lgm_mpi_esm_p;ER_PETWarmestQuarter;PET warmest quarter;Mean monthly potential evapotranspiration of the warmest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_PETWettestQuarter_lgm_mpi_esm_p;ER_PETWettestQuarter;PET wettest quarter;Mean monthly potential evapotranspiration of the wettest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;mean;NA
-ENVIREM;ER_thermInd_lgm_mpi_esm_p;ER_thermInd;Thermicity index;Compensated thermicity index: sum of mean annual temp., min. temp. of coldest month, max. temp. of the coldest month, x 10, with compensations for better comparability across the globe;TRUE;FALSE;7000;0,083333333;Celsius;;;;lgm_mpi_esm_p;Last Glacial Maximum;21000;;NA
-ENVIREM;ER_annualPET_holo_ccsm4;ER_annualPET;Annual potential evapotranspiration;A measure of the ability of the atmosphere to remove water through evapotranspiration processes, given unlimited moisture;TRUE;FALSE;7000;0,083333333;mm/year;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_aridityIndexThornthwaite_holo_ccsm4;ER_aridityIndexThornthwaite;Thornthwaite aridity index;Index of the degree of water deficit below water need;TRUE;FALSE;7000;0,083333333;;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_climaticMoistureIndex_holo_ccsm4;ER_climaticMoistureIndex;Climatic moisture index;A metric of relative wetness and aridity;TRUE;FALSE;7000;0,083333333;;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_continentality_holo_ccsm4;ER_continentality;Continentality;Average temp. of warmest month - average temp. of coldest month;TRUE;FALSE;7000;0,083333333;Celsius;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_embergerQ_holo_ccsm4;ER_embergerQ;Emberger's pluviothermic quotient;A metric that was designed to differentiate among Mediterranean type climates;TRUE;FALSE;7000;0,083333333;;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_growingDegDays0_holo_ccsm4;ER_growingDegDays0;Growing degree days (> 0° C);Sum of mean monthly temperature for months with mean temperature greater than 0°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_growingDegDays5_holo_ccsm4;ER_growingDegDays5;Growing degree days (> 5° C);Sum of mean monthly temperature for months with mean temperature greater than 5°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_maxTempColdestMonth_holo_ccsm4;ER_maxTempColdestMonth;Maximum temperature coldest month;Maximum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_minTempWarmestMonth_holo_ccsm4;ER_minTempWarmestMonth ;Minimum temperature coldest month;Minimum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_monthCountByTemp10_holo_ccsm4;ER_monthCountByTemp10;Month count temperature > 10°C;Count of the number of months with mean temp greater than 10?;TRUE;FALSE;7000;0,083333333;months;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_PETColdestQuarter_holo_ccsm4;ER_PETColdestQuarter;PET coldest quarter;Mean monthly potential evapotranspiration of the coldest quarteré;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_ccsm4;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETDriestQuarter_holo_ccsm4;ER_PETDriestQuarter;PET driest quarter;Mean monthly potential evapotranspiration of the driest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_ccsm4;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETseasonality_holo_ccsm4;ER_PETseasonality ;PET seasonality;Monthly variability in potential evapotranspiration;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_PETWarmestQuarter_holo_ccsm4;ER_PETWarmestQuarter;PET warmest quarter;Mean monthly potential evapotranspiration of the warmest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_ccsm4;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETWettestQuarter_holo_ccsm4;ER_PETWettestQuarter;PET wettest quarter;Mean monthly potential evapotranspiration of the wettest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_ccsm4;mid-Holocene;6000;mean;NA
-ENVIREM;ER_thermInd_holo_ccsm4;ER_thermInd;Thermicity index;Compensated thermicity index: sum of mean annual temp., min. temp. of coldest month, max. temp. of the coldest month, x 10, with compensations for better comparability across the globe;TRUE;FALSE;7000;0,083333333;Celsius;;;;holo_ccsm4;mid-Holocene;6000;;NA
-ENVIREM;ER_tri_holo;ER_tri;Terrain roughness index;Terrain roughness index;TRUE;FALSE;7000;0,083333333;;;;;holo;mid-Holocene;6000;;NA
-ENVIREM;ER_topoWet_holo;ER_topoWet;Topographic wetness;SAGA-GIS topographic wetness index;TRUE;FALSE;7000;0,083333333;;;;;holo;mid-Holocene;6000;;NA
-ENVIREM;ER_annualPET_holo_miroc_esm;ER_annualPET;Annual potential evapotranspiration;A measure of the ability of the atmosphere to remove water through evapotranspiration processes, given unlimited moisture;TRUE;FALSE;7000;0,083333333;mm/year;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_aridityIndexThornthwaite_holo_miroc_esm;ER_aridityIndexThornthwaite;Thornthwaite aridity index;Index of the degree of water deficit below water need;TRUE;FALSE;7000;0,083333333;;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_climaticMoistureIndex_holo_miroc_esm;ER_climaticMoistureIndex;Climatic moisture index;A metric of relative wetness and aridity;TRUE;FALSE;7000;0,083333333;;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_continentality_holo_miroc_esm;ER_continentality;Continentality;Average temp. of warmest month - average temp. of coldest month;TRUE;FALSE;7000;0,083333333;Celsius;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_embergerQ_holo_miroc_esm;ER_embergerQ;Emberger's pluviothermic quotient;A metric that was designed to differentiate among Mediterranean type climates;TRUE;FALSE;7000;0,083333333;;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_growingDegDays0_holo_miroc_esm;ER_growingDegDays0;Growing degree days (> 0° C);Sum of mean monthly temperature for months with mean temperature greater than 0°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_growingDegDays5_holo_miroc_esm;ER_growingDegDays5;Growing degree days (> 5° C);Sum of mean monthly temperature for months with mean temperature greater than 5°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_maxTempColdestMonth_holo_miroc_esm;ER_maxTempColdestMonth;Maximum temperature coldest month;Maximum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_minTempWarmestMonth_holo_miroc_esm;ER_minTempWarmestMonth ;Minimum temperature coldest month;Minimum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_monthCountByTemp10_holo_miroc_esm;ER_monthCountByTemp10;Month count temperature > 10°C;Count of the number of months with mean temp greater than 10?;TRUE;FALSE;7000;0,083333333;months;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_PETColdestQuarter_holo_miroc_esm;ER_PETColdestQuarter;PET coldest quarter;Mean monthly potential evapotranspiration of the coldest quarteré;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_miroc_esm;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETDriestQuarter_holo_miroc_esm;ER_PETDriestQuarter;PET driest quarter;Mean monthly potential evapotranspiration of the driest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_miroc_esm;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETseasonality_holo_miroc_esm;ER_PETseasonality ;PET seasonality;Monthly variability in potential evapotranspiration;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_PETWarmestQuarter_holo_miroc_esm;ER_PETWarmestQuarter;PET warmest quarter;Mean monthly potential evapotranspiration of the warmest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_miroc_esm;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETWettestQuarter_holo_miroc_esm;ER_PETWettestQuarter;PET wettest quarter;Mean monthly potential evapotranspiration of the wettest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_miroc_esm;mid-Holocene;6000;mean;NA
-ENVIREM;ER_thermInd_holo_miroc_esm;ER_thermInd;Thermicity index;Compensated thermicity index: sum of mean annual temp., min. temp. of coldest month, max. temp. of the coldest month, x 10, with compensations for better comparability across the globe;TRUE;FALSE;7000;0,083333333;Celsius;;;;holo_miroc_esm;mid-Holocene;6000;;NA
-ENVIREM;ER_annualPET_holo_mpi_esm_p;ER_annualPET;Annual potential evapotranspiration;A measure of the ability of the atmosphere to remove water through evapotranspiration processes, given unlimited moisture;TRUE;FALSE;7000;0,083333333;mm/year;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_aridityIndexThornthwaite_holo_mpi_esm_p;ER_aridityIndexThornthwaite;Thornthwaite aridity index;Index of the degree of water deficit below water need;TRUE;FALSE;7000;0,083333333;;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_climaticMoistureIndex_holo_mpi_esm_p;ER_climaticMoistureIndex;Climatic moisture index;A metric of relative wetness and aridity;TRUE;FALSE;7000;0,083333333;;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_continentality_holo_mpi_esm_p;ER_continentality;Continentality;Average temp. of warmest month - average temp. of coldest month;TRUE;FALSE;7000;0,083333333;Celsius;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_embergerQ_holo_mpi_esm_p;ER_embergerQ;Emberger's pluviothermic quotient;A metric that was designed to differentiate among Mediterranean type climates;TRUE;FALSE;7000;0,083333333;;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_growingDegDays0_holo_mpi_esm_p;ER_growingDegDays0;Growing degree days (> 0° C);Sum of mean monthly temperature for months with mean temperature greater than 0°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_growingDegDays5_holo_mpi_esm_p;ER_growingDegDays5;Growing degree days (> 5° C);Sum of mean monthly temperature for months with mean temperature greater than 5°C multiplied by number of days;TRUE;FALSE;7000;0,083333333;;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_maxTempColdestMonth_holo_mpi_esm_p;ER_maxTempColdestMonth;Maximum temperature coldest month;Maximum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_minTempWarmestMonth_holo_mpi_esm_p;ER_minTempWarmestMonth ;Minimum temperature coldest month;Minimum temperature coldest month;TRUE;FALSE;7000;0,083333333;Celsius*10;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_monthCountByTemp10_holo_mpi_esm_p;ER_monthCountByTemp10;Month count temperature > 10°C;Count of the number of months with mean temp greater than 10?;TRUE;FALSE;7000;0,083333333;months;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_PETColdestQuarter_holo_mpi_esm_p;ER_PETColdestQuarter;PET coldest quarter;Mean monthly potential evapotranspiration of the coldest quarteré;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_mpi_esm_p;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETDriestQuarter_holo_mpi_esm_p;ER_PETDriestQuarter;PET driest quarter;Mean monthly potential evapotranspiration of the driest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_mpi_esm_p;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETseasonality_holo_mpi_esm_p;ER_PETseasonality ;PET seasonality;Monthly variability in potential evapotranspiration;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
-ENVIREM;ER_PETWarmestQuarter_holo_mpi_esm_p;ER_PETWarmestQuarter;PET warmest quarter;Mean monthly potential evapotranspiration of the warmest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_mpi_esm_p;mid-Holocene;6000;mean;NA
-ENVIREM;ER_PETWettestQuarter_holo_mpi_esm_p;ER_PETWettestQuarter;PET wettest quarter;Mean monthly potential evapotranspiration of the wettest quarter;TRUE;FALSE;7000;0,083333333;mm/month;;;;holo_mpi_esm_p;mid-Holocene;6000;mean;NA
-ENVIREM;ER_thermInd_holo_mpi_esm_p;ER_thermInd;Thermicity index;Compensated thermicity index: sum of mean annual temp., min. temp. of coldest month, max. temp. of the coldest month, x 10, with compensations for better comparability across the globe;TRUE;FALSE;7000;0,083333333;Celsius;;;;holo_mpi_esm_p;mid-Holocene;6000;;NA
+"dataset_code";"layer_code";"current_layer_code";"model_name";"epoch";"years_ago"
+"ENVIREM";"ER_annualPET_holo_ccsm4";"ER_annualPET";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_annualPET_holo_miroc_esm";"ER_annualPET";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_annualPET_holo_mpi_esm_p";"ER_annualPET";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_annualPET_lgm_ccsm4";"ER_annualPET";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_annualPET_lgm_miroc_esm";"ER_annualPET";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_annualPET_lgm_mpi_esm_p";"ER_annualPET";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_aridityIndexThornthwaite_holo_ccsm4";"ER_aridityIndexThornthwaite";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_aridityIndexThornthwaite_holo_miroc_esm";"ER_aridityIndexThornthwaite";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_aridityIndexThornthwaite_holo_mpi_esm_p";"ER_aridityIndexThornthwaite";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_aridityIndexThornthwaite_lgm_ccsm4";"ER_aridityIndexThornthwaite";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_aridityIndexThornthwaite_lgm_miroc_esm";"ER_aridityIndexThornthwaite";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_aridityIndexThornthwaite_lgm_mpi_esm_p";"ER_aridityIndexThornthwaite";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_climaticMoistureIndex_holo_ccsm4";"ER_climaticMoistureIndex";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_climaticMoistureIndex_holo_miroc_esm";"ER_climaticMoistureIndex";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_climaticMoistureIndex_holo_mpi_esm_p";"ER_climaticMoistureIndex";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_climaticMoistureIndex_lgm_ccsm4";"ER_climaticMoistureIndex";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_climaticMoistureIndex_lgm_miroc_esm";"ER_climaticMoistureIndex";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_climaticMoistureIndex_lgm_mpi_esm_p";"ER_climaticMoistureIndex";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_continentality_holo_ccsm4";"ER_continentality";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_continentality_holo_miroc_esm";"ER_continentality";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_continentality_holo_mpi_esm_p";"ER_continentality";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_continentality_lgm_ccsm4";"ER_continentality";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_continentality_lgm_miroc_esm";"ER_continentality";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_continentality_lgm_mpi_esm_p";"ER_continentality";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_embergerQ_holo_ccsm4";"ER_embergerQ";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_embergerQ_holo_miroc_esm";"ER_embergerQ";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_embergerQ_holo_mpi_esm_p";"ER_embergerQ";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_embergerQ_lgm_ccsm4";"ER_embergerQ";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_embergerQ_lgm_miroc_esm";"ER_embergerQ";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_embergerQ_lgm_mpi_esm_p";"ER_embergerQ";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_growingDegDays0_holo_ccsm4";"ER_growingDegDays0";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_growingDegDays0_holo_miroc_esm";"ER_growingDegDays0";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_growingDegDays0_holo_mpi_esm_p";"ER_growingDegDays0";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_growingDegDays0_lgm_ccsm4";"ER_growingDegDays0";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_growingDegDays0_lgm_miroc_esm";"ER_growingDegDays0";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_growingDegDays0_lgm_mpi_esm_p";"ER_growingDegDays0";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_growingDegDays5_holo_ccsm4";"ER_growingDegDays5";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_growingDegDays5_holo_miroc_esm";"ER_growingDegDays5";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_growingDegDays5_holo_mpi_esm_p";"ER_growingDegDays5";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_growingDegDays5_lgm_ccsm4";"ER_growingDegDays5";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_growingDegDays5_lgm_miroc_esm";"ER_growingDegDays5";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_growingDegDays5_lgm_mpi_esm_p";"ER_growingDegDays5";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_maxTempColdestMonth_holo_ccsm4";"ER_maxTempColdestMonth";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_maxTempColdestMonth_holo_miroc_esm";"ER_maxTempColdestMonth";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_maxTempColdestMonth_holo_mpi_esm_p";"ER_maxTempColdestMonth";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_maxTempColdestMonth_lgm_ccsm4";"ER_maxTempColdestMonth";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_maxTempColdestMonth_lgm_miroc_esm";"ER_maxTempColdestMonth";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_maxTempColdestMonth_lgm_mpi_esm_p";"ER_maxTempColdestMonth";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_minTempWarmestMonth_holo_ccsm4";"ER_minTempWarmestMonth ";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_minTempWarmestMonth_holo_miroc_esm";"ER_minTempWarmestMonth ";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_minTempWarmestMonth_holo_mpi_esm_p";"ER_minTempWarmestMonth ";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_minTempWarmestMonth_lgm_ccsm4";"ER_minTempWarmestMonth ";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_minTempWarmestMonth_lgm_miroc_esm";"ER_minTempWarmestMonth ";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_minTempWarmestMonth_lgm_mpi_esm_p";"ER_minTempWarmestMonth ";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_monthCountByTemp10_holo_ccsm4";"ER_monthCountByTemp10";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_monthCountByTemp10_holo_miroc_esm";"ER_monthCountByTemp10";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_monthCountByTemp10_holo_mpi_esm_p";"ER_monthCountByTemp10";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_monthCountByTemp10_lgm_ccsm4";"ER_monthCountByTemp10";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_monthCountByTemp10_lgm_miroc_esm";"ER_monthCountByTemp10";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_monthCountByTemp10_lgm_mpi_esm_p";"ER_monthCountByTemp10";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETColdestQuarter_holo_ccsm4";"ER_PETColdestQuarter";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_PETColdestQuarter_holo_miroc_esm";"ER_PETColdestQuarter";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_PETColdestQuarter_holo_mpi_esm_p";"ER_PETColdestQuarter";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_PETColdestQuarter_lgm_ccsm4";"ER_PETColdestQuarter";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETColdestQuarter_lgm_miroc_esm";"ER_PETColdestQuarter";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETColdestQuarter_lgm_mpi_esm_p";"ER_PETColdestQuarter";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETDriestQuarter_holo_ccsm4";"ER_PETDriestQuarter";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_PETDriestQuarter_holo_miroc_esm";"ER_PETDriestQuarter";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_PETDriestQuarter_holo_mpi_esm_p";"ER_PETDriestQuarter";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_PETDriestQuarter_lgm_ccsm4";"ER_PETDriestQuarter";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETDriestQuarter_lgm_miroc_esm";"ER_PETDriestQuarter";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETDriestQuarter_lgm_mpi_esm_p";"ER_PETDriestQuarter";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETseasonality_holo_ccsm4";"ER_PETseasonality ";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_PETseasonality_holo_miroc_esm";"ER_PETseasonality ";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_PETseasonality_holo_mpi_esm_p";"ER_PETseasonality ";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_PETseasonality_lgm_ccsm4";"ER_PETseasonality ";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETseasonality_lgm_miroc_esm";"ER_PETseasonality ";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETseasonality_lgm_mpi_esm_p";"ER_PETseasonality ";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETWarmestQuarter_holo_ccsm4";"ER_PETWarmestQuarter";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_PETWarmestQuarter_holo_miroc_esm";"ER_PETWarmestQuarter";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_PETWarmestQuarter_holo_mpi_esm_p";"ER_PETWarmestQuarter";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_PETWarmestQuarter_lgm_ccsm4";"ER_PETWarmestQuarter";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETWarmestQuarter_lgm_miroc_esm";"ER_PETWarmestQuarter";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETWarmestQuarter_lgm_mpi_esm_p";"ER_PETWarmestQuarter";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETWettestQuarter_holo_ccsm4";"ER_PETWettestQuarter";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_PETWettestQuarter_holo_miroc_esm";"ER_PETWettestQuarter";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_PETWettestQuarter_holo_mpi_esm_p";"ER_PETWettestQuarter";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_PETWettestQuarter_lgm_ccsm4";"ER_PETWettestQuarter";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETWettestQuarter_lgm_miroc_esm";"ER_PETWettestQuarter";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_PETWettestQuarter_lgm_mpi_esm_p";"ER_PETWettestQuarter";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_thermInd_holo_ccsm4";"ER_thermInd";"holo_ccsm4";"mid-Holocene";6000
+"ENVIREM";"ER_thermInd_holo_miroc_esm";"ER_thermInd";"holo_miroc_esm";"mid-Holocene";6000
+"ENVIREM";"ER_thermInd_holo_mpi_esm_p";"ER_thermInd";"holo_mpi_esm_p";"mid-Holocene";6000
+"ENVIREM";"ER_thermInd_lgm_ccsm4";"ER_thermInd";"lgm_ccsm4";"Last Glacial Maximum";21000
+"ENVIREM";"ER_thermInd_lgm_miroc_esm";"ER_thermInd";"lgm_miroc_esm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_thermInd_lgm_mpi_esm_p";"ER_thermInd";"lgm_mpi_esm_p";"Last Glacial Maximum";21000
+"ENVIREM";"ER_topoWet_holo";"ER_topoWet";"holo";"mid-Holocene";6000
+"ENVIREM";"ER_topoWet_lgm";"ER_topoWet";"lgm";"Last Glacial Maximum";21000
+"ENVIREM";"ER_tri_holo";"ER_tri";"holo";"mid-Holocene";6000
+"ENVIREM";"ER_tri_lgm";"ER_tri";"lgm";"Last Glacial Maximum";21000
+"MARSPEC";"MS_bathy_21kya";"MS_bathy_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo01_aspect_EW_21kya";"MS_biogeo01_aspect_EW_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo02_aspect_NS_21kya";"MS_biogeo02_aspect_NS_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo03_plan_curvature_5m_21kya";"MS_biogeo03_plan_curvature_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo04_profile_curvature_21kya";"MS_biogeo04_profile_curvature_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo05_dist_shore_21kya";"MS_biogeo05_dist_shore_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo06_bathy_slope_21kya";"MS_biogeo06_bathy_slope_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo07_concavity_21kya";"MS_biogeo07_concavity_5m";"21kya_geophysical";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo08_sss_mean_21kya_adjCCSM";"MS_biogeo08_sss_mean_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo08_sss_mean_21kya_noCCSM";"MS_biogeo08_sss_mean_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo08_sss_mean_6kya";"MS_biogeo08_sss_mean_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo09_sss_min_21kya_adjCCSM";"MS_biogeo09_sss_min_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo09_sss_min_21kya_noCCSM";"MS_biogeo09_sss_min_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo09_sss_min_6kya";"MS_biogeo09_sss_min_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo10_sss_max_21kya_adjCCSM";"MS_biogeo10_sss_max_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo10_sss_max_21kya_noCCSM";"MS_biogeo10_sss_max_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo10_sss_max_6kya";"MS_biogeo10_sss_max_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo11_sss_range_21kya_adjCCSM";"MS_biogeo11_sss_range_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo11_sss_range_21kya_noCCSM";"MS_biogeo11_sss_range_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo11_sss_range_6kya";"MS_biogeo11_sss_range_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo12_sss_variance_21kya_adjCCSM";"MS_biogeo12_sss_variance_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo12_sss_variance_21kya_noCCSM";"MS_biogeo12_sss_variance_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo12_sss_variance_6kya";"MS_biogeo12_sss_variance_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo13_sst_mean_21kya_adjCCSM";"MS_biogeo13_sst_mean_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo13_sst_mean_21kya_noCCSM";"MS_biogeo13_sst_mean_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo13_sst_mean_6kya";"MS_biogeo13_sst_mean_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo14_sst_min_21kya_adjCCSM";"MS_biogeo14_sst_min_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo14_sst_min_21kya_noCCSM";"MS_biogeo14_sst_min_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo14_sst_min_6kya";"MS_biogeo14_sst_min_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo15_sst_max_21kya_adjCCSM";"MS_biogeo15_sst_max_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo15_sst_max_21kya_noCCSM";"MS_biogeo15_sst_max_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo15_sst_max_6kya";"MS_biogeo15_sst_max_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo16_sst_range_21kya_adjCCSM";"MS_biogeo16_sst_range_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo16_sst_range_21kya_noCCSM";"MS_biogeo16_sst_range_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo16_sst_range_6kya";"MS_biogeo16_sst_range_5m";"6kya_Ensemble";"mid-Holocene";6000
+"MARSPEC";"MS_biogeo17_sst_variance_21kya_adjCCSM";"MS_biogeo17_sst_variance_5m";"21kya_ensemble_adjCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo17_sst_variance_21kya_noCCSM";"MS_biogeo17_sst_variance_5m";"21kya_ensemble_noCCSM";"Last Glacial Maximum";21000
+"MARSPEC";"MS_biogeo17_sst_variance_6kya";"MS_biogeo17_sst_variance_5m";"6kya_Ensemble";"mid-Holocene";6000
