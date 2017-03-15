@@ -3,10 +3,11 @@ library(sdmpredictors)
 context("Statistics")
 
 test_that("layer_stats without args returns all layers", {
-  layers <- list_layers()
-  layers <- layers[layers$layer_code != "WC_TODO",]
+  # layers <- list_layers()
+  # layers <- layers[layers$layer_code != "WC_TODO",]
+  layers <- get_layers_info()$common
   stats <- layer_stats()
-  expect_equal(sum(!is.na(layers$cellsize_equalarea)), nrow(stats))
+  expect_equal(length(layers$layer_code), nrow(stats))
   expect_true(all(stats$layer_code %in% layers$layer_code))
 })
 
@@ -29,62 +30,33 @@ test_that("layer_stats with non existing layercodes generates a warning", {
   expect_warning(layer_stats(c("blibli", "blabla")), "'blibli', 'blabla'")
 })
 
-test_that("layers_correlation without args returns correlations for all layers and their quadratic", {
-  ##layers_correlation(layercodes = c(), include_quadratic = TRUE)
+test_that("layers_correlation without args returns correlations for all layers", {
+  ##layers_correlation(layercodes = c())
   layers <- list_layers()
   corr <- layers_correlation()
-  expect_equal(2*nrow(layers), nrow(corr))
-  expect_equal(2*nrow(layers), ncol(corr))
-  print(iconv(colnames(corr)[NROW(corr)], toRaw = T)[[1]])
-  print(colnames(corr)[NROW(corr)])
-  print(iconv(paste0(layers$layer_code, "_quadratic")[NROW(layers)], toRaw = T)[[1]])
+  expect_equal(nrow(layers), nrow(corr))
+  expect_equal(nrow(layers), ncol(corr))
   expect_true(all(layers$layer_code %in% colnames(corr)))
-  expect_true(all(paste0(layers$layer_code, "_quadratic") %in% colnames(corr)))
-  expect_true(all(sapply(paste0(layers$layer_code, "_quadratic"), function(l) any(grepl(l, colnames(corr), fixed = T)))))
-  expect_true(all(sapply(paste0(layers$layer_code, "_quadratic"), function(l) any(grepl(l, colnames(corr))))))
-  expect_true(all(rownames(corr) %in% c(layers$layer_code, paste0(layers$layer_code, "_quadratic"))))
+  expect_true(all(layers$layer_code %in% rownames(corr)))
 })
 
-test_that("layers_correlation with one or more existing layercodes works and quadratic", {
-  corr <- layers_correlation("BO_calcite", TRUE)
-  expect_equal(nrow(corr), 2)
-  expect_true(all(c("BO_calcite","BO_calcite_quadratic") %in% colnames(corr)))
-  
-  corr <- layers_correlation(c("BO_calcite","MS_bathy_5m"), TRUE)
-  expect_equal(nrow(corr), 4)
-  expect_true(all(c("BO_calcite", "BO_calcite_quadratic", "MS_bathy_5m", "MS_bathy_5m_quadratic") %in% colnames(corr)))
-  
-  corr <- layers_correlation(data.frame(layer_code="BO_calcite"), FALSE)
-  expect_equal(nrow(corr), 1)
-  expect_equal("BO_calcite", colnames(corr))
-  
-  corr <- layers_correlation(c("BO_calcite","MS_bathy_5m"), FALSE)
+test_that("layers_correlation with one or more existing layercodes works", {
+  corr <- layers_correlation(c("BO_calcite","MS_bathy_5m"))
   expect_equal(nrow(corr), 2)
   expect_true(all(c("BO_calcite", "MS_bathy_5m") %in% colnames(corr)))
+  
+  corr <- layers_correlation(c("BO_calcite","MS_bathy_5m", "BO_sstmax"))
+  expect_equal(nrow(corr), 3)
+  expect_true(all(c("BO_calcite", "MS_bathy_5m", "BO_sstmax") %in% colnames(corr)))
 })
 
 test_that("layers_correlation with non existing layercodes generates a warning", {
   skip_on_cran()
   expect_warning(layers_correlation("abcd"), "'abcd'")
-  expect_warning(layers_correlation("blabla", TRUE), "blabla_quadratic")
-  expect_warning(layers_correlation("blabla", FALSE), "blabla")
   expect_warning(layers_correlation(c("BO_calcite", "blabla")), "'blabla'")
-  expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"))), c("BO_calcite", "BO_calcite_quadratic"))
-  expect_warning(layers_correlation(c("BO_calcite", "blabla"), FALSE), "'blabla'")
-  expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"), FALSE)), "BO_calcite")
-  expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"))), 2)
-  expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"), FALSE)), 1)
+  expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"))), "BO_calcite")
+  expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"))), 1)
   expect_warning(layers_correlation(c("blibli", "blabla")), "'blibli', 'blabla'")
-})
-
-test_that("layers_correlation quadratic false does not return quadratic and inverse", {
- corr <- layers_correlation("BO_ph", include_quadratic = FALSE) 
- expect_equal(NROW(corr), 1)
- expect_equal(NCOL(corr), 1)
- 
- corr <- layers_correlation("BO_ph", include_quadratic = TRUE) 
- expect_equal(NROW(corr), 2)
- expect_equal(NCOL(corr), 2)
 })
 
 expect_group <- function(actual, expected) {
@@ -114,20 +86,22 @@ test_that("correlation_groups return correct correlation groups", {
   expect_group(groups, list(c("a","c"), "b"))
   groups <- correlation_groups(layers_correlation, max_correlation = 0.35)
   expect_group(groups, list(c("a","b","c")))
+})
+
+test_that("plot_correlation works", {
+  skip_on_cran()
+  p <- plot_correlation(c("BO_calcite", "BO_sstmax", "MS_bathy_5m"))
+  expect_false(any(is.null(p) | is.na(p)))
   
-  # quadratic should be removed but be accounted for
-  layers_correlation <- data.frame(a=c(1,0.9,0.4), a2=c(0.9,1,0.8), b=c(0.4,0.8,1), row.names=c("a","a_quadratic","b"))
-  colnames(layers_correlation) <- c("a","a_quadratic","b")
-  groups <- correlation_groups(layers_correlation)
-  expect_group(groups, list(c("a", "b")))
-  groups <- correlation_groups(layers_correlation, max_correlation = 0.0)
-  expect_group(groups, list(c("a", "b")))
-  groups <- correlation_groups(layers_correlation, max_correlation = 0.85)
-  expect_group(groups, list("a", "b"))
+  p <- plot_correlation(c("BO_calcite", "BO_sstmax", "MS_bathy_5m"), list(BO_calcite = "calcite"))
+  expect_false(any(is.null(p) | is.na(p)))
+  
+  p <- plot_correlation(c("BO_calcite", "BO_sstmax", "MS_bathy_5m"), list(BO_calcite = "calcite"), palette = c("blue", "red", "green", "black", "white"))
+  expect_false(any(is.null(p) | is.na(p)))
 })
 
 test_that("calc_stats returns stats", {
-  s <- sdmpredictors:::calc_stats("mini_raster", raster(matrix(1:100, nrow=10, ncol=10)))
+  s <- calculate_statistics("mini_raster", raster(matrix(1:100, nrow=10, ncol=10)))
   expect_true(ncol(s) >= 11)
   expect_equal(nrow(s), 1)
 })

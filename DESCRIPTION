@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.3.9001
-Date: 2017-02-22
+Version: 0.2.4
+Date: 2017-03-16
 Depends:
     R (>= 3.2.5),
     raster (>= 2.5-8),
@@ -10,7 +10,7 @@ Depends:
 Imports:
     R.utils (>= 2.4.0),
     stats,
-    utils,
+    utils
 Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre"))
 Maintainer: Samuel Bosch <mail@samuelbosch.com>
 Description: Terrestrial and marine predictors for species distribution modelling
@@ -21,8 +21,8 @@ URL: http://www.samuelbosch.com/p/sdmpredictors.html
 BugReports: https://github.com/lifewatch/sdmpredictors/issues
 LazyData: true
 Suggests:
-    biomod2,
-    dismo,
+    ggplot2,
+    reshape2,
     testthat,
     knitr,
     rmarkdown

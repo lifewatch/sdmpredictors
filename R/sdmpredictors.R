@@ -7,15 +7,20 @@
 #' 
 #' @references WorldClim: Hijmans, R.J., S.E. Cameron, J.L. Parra, P.G. Jones 
 #'   and A. Jarvis, 2005. Very high resolution interpolated climate surfaces for
-#'   global land areas. International Journal of Climatology 25: 1965-1978.
+#'   global land areas. International Journal of Climatology 25: 1965-1978. 
 #'   (\url{http://dx.doi.org/10.1002/joc.1276})
+#'   
+#'   Title, P. O. and Bemmels, J. B. 2017. envirem : An expanded set of
+#'   bioclimatic and topographic variables increases flexibility and improves
+#'   performance of ecological niche modeling. - Ecography (Cop.). in press.
+#'   (\url{http://doi.wiley.com/10.1111/ecog.02880})
 #'   
 #'   Bio-ORACLE: Tyberghein L., Verbruggen H., Pauly K., Troupin C., Mineur F. &
 #'   De Clerck O. Bio-ORACLE: a global environmental dataset for marine species 
 #'   distribution modeling. Global Ecology and Biogeography 
 #'   (\url{http://dx.doi.org/10.1111/j.1466-8238.2011.00656.x}).
 #'   
-#'   MARSPEC: Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean climate layers
+#'   MARSPEC: Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean climate layers 
 #'   for marine spatial ecology. Ecology 94: 979. 
 #'   \url{http://dx.doi.org/10.1890/12-1358.1}
 #'   

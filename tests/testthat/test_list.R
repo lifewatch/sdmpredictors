@@ -1,5 +1,7 @@
 library(sdmpredictors)
 
+inprep <- "Bio-ORACLE2"
+
 context("List datasets/layers")
 
 options(sdmpredictors_datadir = file.path(tempdir(), "sdmpredictors"))
@@ -37,7 +39,10 @@ test_that("list_datasets type filtering works", {
 test_that("list_datasets result is same as datasets.csv", {
   skip_on_cran()
   original <- read.csv2(data_raw_file("datasets.csv"), stringsAsFactors = FALSE)
+  original <- original[!(original$dataset_code %in% inprep),]
   df <- list_datasets()
+  expect_false(any(inprep %in% df$dataset_code))
+  df <- df[!(df$dataset_code %in% inprep),]
   expect_equal(nrow(df),nrow(original))
   expect_equal(df, original)
 })
@@ -87,7 +92,9 @@ test_that("list_layers month filtering works", {
 test_that("list_layers result is same as layers.csv", {
   skip_on_cran()
   original <- read.csv2(data_raw_file("layers.csv"), stringsAsFactors = FALSE)
+  original <- original[!(original$dataset_code %in% inprep),]
   df <- list_layers()
+  expect_false(any(inprep %in% df$dataset_code))
   expect_equal(nrow(df),nrow(original))
   expect_equal(df, original)
 })

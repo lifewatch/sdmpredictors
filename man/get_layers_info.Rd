@@ -4,21 +4,22 @@
 \alias{get_layers_info}
 \title{Layer info for specific layer codes}
 \usage{
-get_layers_info(layer_codes)
+get_layers_info(layer_codes = c())
 }
 \arguments{
-\item{layer_codes}{character vector. Vector with the layer codes of the
+\item{layer_codes}{character vector. Vector with the layer codes of the 
 layers you want the full information for. This can also be a dataframe with
 as column \code{layer_code}.}
 }
 \value{
-A list with four dataframes \code{common}, \code{current},
-  \code{future} and \code{paleo}, the \code{common} dataframe contains data
-  for all shared columns in the other three dataframes. The other dataframes
+A list with four dataframes \code{common}, \code{current}, 
+  \code{future} and \code{paleo}, the \code{common} dataframe contains data 
+  for all shared columns in the other three dataframes. The other dataframes 
   contain all detailed information on the layer(s) matching the layer codes.
+  By default information for all layers is returned.
 }
 \description{
-\code{get_layers_info} returns all detailed information on the current or
+\code{get_layers_info} returns all detailed information on the current or 
 future climate layers of one or more datasets.
 }
 \examples{

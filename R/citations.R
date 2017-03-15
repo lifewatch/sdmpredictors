@@ -3,7 +3,7 @@
 #' \code{dataset_citations} returns dataset citations as text or as 
 #' "\code{\link[utils]{bibentry}}" objects.
 #' 
-#' @usage dataset_citations(datasets, astext = TRUE)
+#' @usage dataset_citations(datasets = c(), astext = TRUE)
 #'   
 #' @param datasets character vector. Code of the datasets. When no datasets are 
 #'   provided (default), then all citations are returned.
@@ -22,7 +22,7 @@
 #' print(dataset_citations("Bio-ORACLE"))
 #' 
 #' # print all citations as Bibtex
-#' print(sapply(dataset_citations(astext = FALSE), toBibtex))
+#' print(lapply(dataset_citations(astext = FALSE), toBibtex))
 #' @export
 #' @seealso \code{\link{layer_citations}}, \code{\link[utils]{bibentry}}, 
 #'   \code{\link{list_datasets}}
@@ -32,7 +32,7 @@ dataset_citations <- function(datasets = c(), astext = TRUE) {
   if(is.data.frame(datasets)) {
     datasets <- datasets$dataset_code
   } else if (is.null(datasets)) {
-    datasets <- names(bibentries)
+    datasets <- setdiff(names(bibentries), "lnk_bibentry")
   }
   if(astext) {
     as.vector(sub("\\n", " ", sapply(bibentries[datasets], format)))
@@ -46,7 +46,7 @@ dataset_citations <- function(datasets = c(), astext = TRUE) {
 #' \code{layer_citations} returns layer citations as text or as 
 #' "\code{\link[utils]{bibentry}}" objects.
 #' 
-#' @usage layer_citations(datasets, astext = TRUE)
+#' @usage layer_citations(layers = c(), astext = TRUE)
 #'   
 #' @param layers character vector. Code of the layers from past, current and future climate layers. When no layers are
 #'   provided (default), then all citations are returned.
@@ -68,7 +68,7 @@ dataset_citations <- function(datasets = c(), astext = TRUE) {
 #' print(layer_citations("MS_biogeo02_aspect_NS_21kya"))
 #' 
 #' # print all citations as Bibtex
-#' print(sapply(layer_citations(astext = FALSE), toBibtex))
+#' print(lapply(layer_citations(astext = FALSE), toBibtex))
 #' @export
 #' @seealso \code{\link{layer_citations}}, \code{\link[utils]{bibentry}}, \code{\link{list_datasets}}
 layer_citations <- function(layers = c(), astext = TRUE) {
@@ -79,11 +79,8 @@ layer_citations <- function(layers = c(), astext = TRUE) {
     layers <- layers$layer_code
   }
   if (is.null(layers)) {
-    layers <- c(sysdata$layerlist$layer_code, 
-                sysdata$layerlistfuture$layer_code,
-                sysdata$layerlistpaleo$layer_code)
+    layers <- get_layers_info()$common$layer_code
   }
-  
   current <- sysdata$layerlist[sysdata$layerlist$layer_code %in% layers,]
   future <- sysdata$layerlistfuture[sysdata$layerlistfuture$layer_code %in% layers,]
   paleo <- sysdata$layerlistpaleo[sysdata$layerlistpaleo$layer_code %in% layers,]

@@ -22,7 +22,8 @@ test_that("get_sysdata returns all expected entries", {
   expect_notnull(sysdata$layerscorrelation)
   expect_notnull(sysdata$urldata)
   expect_notnull(sysdata$urlsysdata)
-  expect_equal(length(names(sysdata)), 8)
+  expect_notnull(sysdata$bibentries)
+  expect_equal(length(names(sysdata)), 9)
 })
 
 test_that("sysdata gets downloaded", {

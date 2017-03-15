@@ -25,7 +25,7 @@ bibentries <- list(
                                  title = "Climate change impact on seaweed meadow distribution in the North Atlantic rocky intertidal", 
                                  journal = "Ecology and Evolution",
                                  year = 2013, volume = 3, number = 5, pages = "1356-1373",
-                                 doi = "", key = "Bio-ORACLE_Future"),
+                                 doi = "10.1002/ece3.541", key = "Bio-ORACLE_Future"),
   "MARSPEC" = bibentry(bibtype = "Article",
                        author = c(
                          person(c("Elizabeth", "J."), "Sbrocco"), person(c("Paul", "H."), "Barber")),
@@ -42,8 +42,9 @@ bibentries <- list(
   "ENVIREM" = bibentry(bibtype = "Article",
                        author = c(person(c("Pascal", "O."), "Title"), person(c("Jordan", "B."), "Bemmels")),
                        title = "ENVIREM: An expanded set of bioclimatic and topographic variables increases flexibility and improves performance of ecological niche modeling.",
+                       journal = "Ecography",
                        year = 2017, 
-                       journal = "Ecography", doi = "10.1111/ecog.02880", key = "ENVIREM"),
+                       doi = "10.1111/ecog.02880", key = "ENVIREM"),
   lnk_bibentry = list("future" = list("Bio-ORACLE" = "Bio-ORACLE_Future"),
                       "paleo" = list("MARSPEC" = "Paleo-MARSPEC"),
                       "layers" = list()))

@@ -327,17 +327,18 @@ get_paleo_layers <- function(current_layer_codes, model_name = NA, epoch = NA, y
 
 #' Layer info for specific layer codes
 #' 
-#' \code{get_layers_info} returns all detailed information on the current or
+#' \code{get_layers_info} returns all detailed information on the current or 
 #' future climate layers of one or more datasets.
 #' 
-#' @usage get_layers_info(layer_codes)
-#' @param layer_codes character vector. Vector with the layer codes of the
+#' @usage get_layers_info(layer_codes = c())
+#' @param layer_codes character vector. Vector with the layer codes of the 
 #'   layers you want the full information for. This can also be a dataframe with
 #'   as column \code{layer_code}.
-#' @return A list with four dataframes \code{common}, \code{current},
-#'   \code{future} and \code{paleo}, the \code{common} dataframe contains data
-#'   for all shared columns in the other three dataframes. The other dataframes
+#' @return A list with four dataframes \code{common}, \code{current}, 
+#'   \code{future} and \code{paleo}, the \code{common} dataframe contains data 
+#'   for all shared columns in the other three dataframes. The other dataframes 
 #'   contain all detailed information on the layer(s) matching the layer codes.
+#'   By default information for all layers is returned.
 #'   
 #' @examples 
 #' info <- get_layers_info(c("BO_salinity", "BO_B1_2100_salinity"))
@@ -348,17 +349,19 @@ get_paleo_layers <- function(current_layer_codes, model_name = NA, epoch = NA, y
 #' @export
 #' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
 #'   \code{\link{list_layers_paleo}}, \code{\link{load_layers}}
-get_layers_info <- function(layer_codes) {
+get_layers_info <- function(layer_codes = c()) {
   if(is.data.frame(layer_codes)) {
     layer_codes <- layer_codes$layer_code
   }
   current <- get_sysdata()$layerlist
   future <- get_sysdata()$layerlistfuture
   paleo <- get_sysdata()$layerlistpaleo
-  current <- current[current$layer_code %in% layer_codes,]
-  future <- future[future$layer_code %in% layer_codes,]
-  paleo <- paleo[paleo$layer_code %in% layer_codes,]
-  common_cols <- c("dataset_code", "layer_code", "name", "description", "terrestrial", "marine", "cellsize_equalarea", "cellsize_lonlat", "units", "derivation", "month")
+  if(!is.null(layer_codes)) {
+    current <- current[current$layer_code %in% layer_codes,]
+    future <- future[future$layer_code %in% layer_codes,]
+    paleo <- paleo[paleo$layer_code %in% layer_codes,]
+  }
+  common_cols <- c("dataset_code", "layer_code")
   common <- rbind(cbind(time=rep("current", NROW(current)), current[,common_cols]), 
                   cbind(time=rep("future", NROW(future)), future[,common_cols]), 
                   cbind(time=rep("paleo", NROW(paleo)), paleo[,common_cols]))

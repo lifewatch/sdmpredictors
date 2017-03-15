@@ -5,38 +5,32 @@
 \alias{layers_correlation}
 \title{Gives the Pearson correlation between layers}
 \usage{
-layers_correlation(layercodes = c(), include_quadratic = TRUE)
+layers_correlation(layercodes = c())
 }
 \arguments{
-\item{layercodes}{character vector or dataframe. Codes of the layers you want
-the basic statistics of as a character vector or a dataframe with a
-"layer_code" column. With the default empty vector all statistics are
-returned.}
-
-\item{include_quadratic}{logical. When \code{TRUE}, then the correlation
-coefficients of the square of the layercodes area also returned. These
-layers are indicated with the layercode with \code{"_quadratic"} as a
-suffix, for example \code{"BO_calcite"} became 
-\code{"BO_calcite_quadratic"}.}
+\item{layercodes}{character vector or dataframe. Codes of the layers, you
+want the correlation matrix of, as a character vector or a dataframe with a
+"layer_code" column. With the default empty vector the correlation between
+all layers is returned.}
 }
 \value{
 A dataframe with the Pearson product-moment correlation coefficients.
 }
 \description{
-\code{layers_correlations} returns the Pearson product-moment correlation
-coefficient (Pearson's r) for every combination of the give layercodes. The
-correlation between a terrestrial and a marine layer has been set to
+\code{layers_correlations} returns the Pearson product-moment correlation 
+coefficient (Pearson's r) for every combination of the give layercodes. The 
+correlation between a terrestrial and a marine layer has been set to 
 \code{NA}.
 }
 \examples{
 # correlation of the first 10 layers
 layers_correlation()[1:10,1:10]
 layers_correlation(c("BO_calcite", "MS_bathy_5m"))
-layers_correlation(c("BO_calcite", "MS_bathy_5m"), include_quadratic = FALSE)
+layers_correlation(c("BO_calcite", "MS_bathy_5m"))
 
 }
 \seealso{
-\code{\link{list_layers}} \code{\link{layer_stats}}
-  \code{\link{correlation_groups}}
+\code{\link{list_layers} \link{layer_stats} 
+  \link{correlation_groups} \link{plot_correlation}}
 }
 

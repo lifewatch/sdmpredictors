@@ -39,8 +39,19 @@ test_that("each dataset has at least one citation", {
 
 test_that("each layer has at least one citation", {
   layers <- list_layers()
-  for(i in 1:nrow(datasets)) {
+  for(i in 1:nrow(layers)) {
     ref <- layer_citations(layers[i,])
     testthat::expect_gt(length(ref), 0)
   }
+})
+
+test_that("citations are returned", {
+  lcitations <- layer_citations()
+  dcitations <- dataset_citations()
+  expect_gt(length(lcitations), 0)
+  expect_equal(length(lcitations), length(dcitations))
+  lcitations <- lapply(layer_citations(astext = FALSE), toBibtex)
+  dcitations <- lapply(dataset_citations(astext = FALSE), toBibtex)
+  expect_gt(length(lcitations), 0)
+  expect_equal(length(lcitations), length(dcitations))
 })

@@ -2,7 +2,7 @@
 #' 
 #' \code{layer_stats} returns basic statistics (minimum, q1, median, q3,
 #' maximum, median absolute deviation (mad), mean, standard deviation (sd))
-#' about each given layercode.
+#' for each given layercode.
 #' 
 #' @usage layer_stats(layercodes = c())
 #'   
@@ -38,22 +38,17 @@ layer_stats <- function(layercodes = c()) {
 
 #' Gives the Pearson correlation between layers
 #' 
-#' \code{layers_correlations} returns the Pearson product-moment correlation
-#' coefficient (Pearson's r) for every combination of the give layercodes. The
-#' correlation between a terrestrial and a marine layer has been set to
+#' \code{layers_correlations} returns the Pearson product-moment correlation 
+#' coefficient (Pearson's r) for every combination of the give layercodes. The 
+#' correlation between a terrestrial and a marine layer has been set to 
 #' \code{NA}.
 #' 
-#' @usage layers_correlation(layercodes = c(), include_quadratic = TRUE)
+#' @usage layers_correlation(layercodes = c())
 #'   
-#' @param layercodes character vector or dataframe. Codes of the layers you want
-#'   the basic statistics of as a character vector or a dataframe with a
-#'   "layer_code" column. With the default empty vector all statistics are
-#'   returned.
-#' @param include_quadratic logical. When \code{TRUE}, then the correlation
-#'   coefficients of the square of the layercodes area also returned. These
-#'   layers are indicated with the layercode with \code{"_quadratic"} as a
-#'   suffix, for example \code{"BO_calcite"} became 
-#'   \code{"BO_calcite_quadratic"}.
+#' @param layercodes character vector or dataframe. Codes of the layers, you
+#'   want the correlation matrix of, as a character vector or a dataframe with a
+#'   "layer_code" column. With the default empty vector the correlation between
+#'   all layers is returned.
 #'   
 #' @return A dataframe with the Pearson product-moment correlation coefficients.
 #'   
@@ -61,31 +56,25 @@ layer_stats <- function(layercodes = c()) {
 #' # correlation of the first 10 layers
 #' layers_correlation()[1:10,1:10]
 #' layers_correlation(c("BO_calcite", "MS_bathy_5m"))
-#' layers_correlation(c("BO_calcite", "MS_bathy_5m"), include_quadratic = FALSE)
+#' layers_correlation(c("BO_calcite", "MS_bathy_5m"))
 #' 
 #' @export
-#' @seealso \code{\link{list_layers}} \code{\link{layer_stats}}
-#'   \code{\link{correlation_groups}}
+#' @seealso \code{\link{list_layers} \link{layer_stats} 
+#'   \link{correlation_groups} \link{plot_correlation}}
 #' @encoding UTF-8
-layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
+layers_correlation <- function(layercodes = c()) {
   d <- get_sysdata()$layerscorrelation
   if(is.data.frame(layercodes)) {
     layercodes <- layercodes$layer_code
   }
   if(!is.null(layercodes)) {
-    if(include_quadratic) {
-      layercodes <- c(layercodes, paste0(layercodes, "_quadratic"))
-    }
+    found <- layercodes[(layercodes %in% colnames(d))]
     notfound <- layercodes[!(layercodes %in% colnames(d))]
-    d <- d[rownames(d) %in% layercodes,colnames(d) %in% layercodes, drop = FALSE]
+    d <- d[found, found, drop = FALSE]
     if(length(notfound) > 0) {
       warning(paste0("Following layercode(s) where not found: ['", 
                      paste(notfound, collapse = "', '"), "']"))
     }
-  }
-  else if(!include_quadratic) {
-    filter <- !grepl("_quadratic$", rownames(d))
-    d <- d[filter, filter, drop = FALSE]
   }
   return(d)
 }
@@ -103,7 +92,7 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #' @usage correlation_groups(layers_correlation, max_correlation=0.7)
 #'   
 #' @param layers_correlation matrix or dataframe. A square matrix with the
-#'   layers correlations  you want to group.
+#'   layers correlations you want to group.
 #' @param max_correlation number. The maximum correlation 2 layers may have
 #'   before they are put in the same correlation group.
 #'   
@@ -130,11 +119,11 @@ layers_correlation <- function(layercodes = c(), include_quadratic = TRUE) {
 #'   \link{layer_stats}}
 #' @encoding UTF-8
 correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
+  layers_correlation <- as.data.frame(layers_correlation)
   to_set <- function(i) { 
-    ## returns only non quadratic layer codes BUT makes sure to make use of the quadratic correlation value
     row <- layers_correlation[i,,drop = FALSE]
     layer_codes <- names(row)[abs(row) > max_correlation]
-    unique(sub("_quadratic$","", layer_codes))
+    layer_codes
   }
   group_count <- function (t) { sum(sapply(t, function(s) { ifelse(length(s) > 0, 1, 0) })) }
   t <- lapply(1:nrow(layers_correlation), to_set)
@@ -162,21 +151,169 @@ correlation_groups <- function(layers_correlation, max_correlation = 0.7) {
   return(t)
 }
 
+#' Plot the correlation matrix for the provided layercodes
+#' 
+#' #' \code{plot_correlation} creates a plot of the correlation between 
+#' different layers
+#' 
+#' @usage plot_correlation(layers_correlation, prettynames = list(),
+#'   palette = c("#2c7bb6", "#abd9e9", "#ffffbf", "#fdae61", "#d7191c"))
+#'   
+#' @param layers_correlation matrix or dataframe. A square matrix with the
+#'   layers correlations you want to plot as returned by 
+#'   \code{\link{layers_correlation}} or 
+#'   \code{\link{pearson_correlation_matrix}}.
+#' @param prettynames list. Optional list with as names the layercodes and as 
+#'   values the name of the layer to be used in the plot.
+#' @param palette character vector. optional vector with 5 entries for the range
+#'   of colors to be used for the correlation matrix plot.
+#'   
+#' @return A ggplot object that can be printed or saved.
+#'   
+#' @details This function requires ggplot2 and plots the correlations for the 
+#'   layers in the same order as the layercodes are provided to this function.
+#'   
+#' @examples
+#' correlation <- layers_correlation(c("BO_calcite", "BO_damin", "MS_bathy_5m"))
+#' p <- plot_correlation(correlation)
+#' print(p)
+#' 
+#' @export
+#' @seealso \code{ \link{layers_correlation} \link{pearson_correlation_matrix} 
+#'   \link{list_layers} \link{layer_stats} \link{correlation_groups}}
+#' @encoding UTF-8
+plot_correlation <- function(layers_correlation, prettynames = list(), palette = c("#2c7bb6", "#abd9e9", "#ffffbf", "#fdae61", "#d7191c")) {
+  if (!requireNamespace("ggplot2", quietly = TRUE)) {
+    stop("ggplot2 needed for the 'plot_correlation' function to work. Please install it.",
+         call. = FALSE)
+  }
+  if (!requireNamespace("reshape2", quietly = TRUE)) {
+    stop("reshape2 needed for the 'plot_correlation' function to work. Please install it.",
+         call. = FALSE)
+  }
+  stopifnot(length(palette) == 5)
+  stopifnot(colnames(cm) == rownames(cm))
+  
+  cm <- as.data.frame(layers_correlation)
+  layercodes <- colnames(cm)
+  not_found <- layercodes[sapply(prettynames[layercodes], is.null)]
+  prettynames[not_found] <- not_found
+  
+  m <- reshape2::melt(as.matrix(cm))
+  m$Var1 <- factor(as.character(m$Var1), levels=layercodes, labels=unlist(prettynames[layercodes]))
+  m$Var2 <- factor(as.character(m$Var2), levels=layercodes, labels=unlist(prettynames[layercodes]))
+  breaks <- c(-1.06, -0.7, -0.5, 0, 0.5, 0.7, 1.06)
+  
+  p <- ggplot2::ggplot(data = m, ggplot2::aes_string(x="Var1", y="Var2", fill="value")) + 
+    ggplot2::geom_tile() +
+    ggplot2::scale_fill_gradientn(colors=palette, breaks=breaks, limits=c(-1.06, 1.06), labels=c(-1,"",-0.5,0,0.5,"",1)) +
+    ggplot2::labs(x= "", y="", fill = "Correlation")  +
+    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, hjust = 1, vjust = 0, color = "black"),
+                   axis.text.y = ggplot2::element_text(color = "black"),  
+                   axis.ticks.length = ggplot2::unit(0, units="cm"),
+                   panel.background = ggplot2::element_rect(fill = "white"),  
+                   panel.border = ggplot2::element_blank(),
+                   panel.grid.major = ggplot2::element_blank(),
+                   panel.grid.minor = ggplot2::element_blank(),
+                   legend.background = ggplot2::element_rect(fill = "white"),
+                   legend.text = ggplot2::element_text(color = "black"),
+                   plot.background = ggplot2::element_rect(color = "white", fill = "white"))
+  return(p)
+}
+
+#' Calculate the Pearson correlation coefficient matrix for a rasterstack
+#' 
+#' @usage pearson_correlation_matrix(x, cachesize = 20)
+#'   
+#' @param x RasterStack. The stack of rasters you want to calculate the Pearson 
+#'   correlation coefficient matrix for. This can be obtained by calling 
+#'   \code{\link{load_layers}}.
+#' @param cachesize integer. For how many rasters should the values be kept in 
+#'   local memory. By default this is set to 20, a parameter which works 
+#'   reasonably well on a windows computer with 8GB RAM.
+#'   
+#' @return A correlation matrix.
+#'   
+#' @examples \dontrun{
+#' # calculate correlation between SST and salinity in the Baltic Sea
+#' 
+#' # warning using tempdir() implies that data will be downloaded again in the 
+#' # next R session
+#' x <- load_layers(c("BO_sstmax", "BO_salinity"), datadir = tempdir())
+#' e <- extent(13, 31, 52, 66)
+#' baltics <- crop(x, e)
+#' print(pearson_correlation_matrix(baltics))
+#' }
+#' @export
+#' @seealso \code{\link{layers_correlation} \link{plot_correlation}
+#'   \link{load_layers}}
+#' @encoding UTF-8
+pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
+  asSample <- TRUE
+  nl <- raster::nlayers(x)
+  n <- raster::ncell(x)
+  mat <- matrix(NA, nrow=nl, ncol=nl)
+  colnames(mat) <- rownames(mat) <- names(x)
+  
+  means <- c()
+  sds <- c()
+  for (i in 1:nl) {
+    vals <- raster::values(raster(x, layer=i))
+    means[i] <- mean(vals, na.rm=TRUE)
+    sds[i] <- sd(vals, na.rm=TRUE)
+  }
+  x <- x - means
+  for (i in 1:nl) {
+    mat[i,i] <- 1
+  }
+  for (i in seq(from = 0, to = nl-2, by = cachesize)) {
+    indexes <- i + 1:cachesize
+    v <- lapply(X = indexes[indexes <= nl], function(i) { raster::values(raster(x, layer=i)) })
+    
+    for( vi in 1:(length(v)-1)) {## calculate correlations for all "cached" rasters
+      for (vj in (vi+1):length(v)) {
+        mat <- pearson_correlation(mat, indexes[vi], indexes[vj], v[[vi]], v[[vj]], sds, n, asSample)
+      }
+    }
+    
+    if(max(indexes) < nl) { ## calculate correlations for the other rasters
+      for (j in (max(indexes)+1):nl) {
+        jR <- raster::values(raster(x, layer=j))
+        for(vi in 1:length(v)) {
+          mat <- pearson_correlation(mat, indexes[vi], j, v[[vi]], jR, sds, n, asSample)
+        }
+      }
+    }
+  }
+  return(mat)
+}
 
 #' Calculate statistics for a given raster.
 #' 
-#' Internal method used to calculate the statistics of the layers.
+#' Method used to calculate the statistics of all layers. It can be re-used to
+#' calculate statistics for a cropped version of the rasters.
 #' 
-#' @usage calc_stats(layercode, raster)
-#' 
-#' @param layercode character.
-#' @param raster RasterLayer.
+#' @usage calculate_statistics(layercode, raster)
+#'   
+#' @param layercode character. Name of the layer.
+#' @param raster RasterLayer. The raster you want to calculate statistics for.
 #'   
 #' @return A dataframe with the layercode and all basic statistics.
-#'   
+#' 
+#' @examples \dontrun{
+#' # calculate statistics of the SST and salinity in the Baltic Sea
+#' 
+#' # warning using tempdir() implies that data will be downloaded again in the 
+#' # next R session
+#' x <- load_layers(c("BO_sstmax", "BO_salinity"), datadir = tempdir())
+#' e <- extent(13, 31, 52, 66)
+#' baltics <- crop(x, e)
+#' View(rbind(calculate_statistics("SST Baltic Sea", raster(x, layer = 1)))
+#'            calculate_statistics("Salinity Baltic Sea", raster(x, layer = 2)))
+#' }
+#' @export
 #' @seealso \code{\link{layer_stats}}
-#' @keywords internal
-calc_stats <- function(layercode, raster) {
+calculate_statistics <- function(layercode, raster) {
   v <- raster::values(raster)
   q <- quantile(v,na.rm=TRUE)
   d <- data.frame(layer_code = layercode,
@@ -192,4 +329,22 @@ calc_stats <- function(layercode, raster) {
                   geary = raster::Geary(raster),
                   stringsAsFactors = FALSE)
   return (d)
+}
+
+#' Calculate Pearson correlation coefficient for part of a matrix
+#' @seealso \code{\link{layers_correlation} \link{pearson_correlation_matrix}}
+#' @keywords internal
+pearson_correlation <- function(mat, i, j, iR, jR, sds, n, asSample) {
+  if (i <= nrow(mat) && j <= ncol(mat)) {
+    if (i == j) {
+      mat[i,j] = 1
+    } else if (is.na(mat[i,j])) {
+      r <- (iR * jR)
+      v <- sum(r, na.rm=TRUE) / ((n - sum(is.na(r)) - asSample) * sds[i] * sds[j])
+      mat[j,i] <- mat[i,j] <- v
+    } else { 
+      print(paste0("mat[i=", i, ",j=", j, "] is not NA (",mat[i,j],")")) 
+    }
+  }
+  mat
 }

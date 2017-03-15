@@ -9,7 +9,7 @@ correlation_groups(layers_correlation, max_correlation=0.7)
 }
 \arguments{
 \item{layers_correlation}{matrix or dataframe. A square matrix with the
-layers correlations  you want to group.}
+layers correlations you want to group.}
 
 \item{max_correlation}{number. The maximum correlation 2 layers may have
 before they are put in the same correlation group.}

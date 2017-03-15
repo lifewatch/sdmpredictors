@@ -31,6 +31,7 @@ prepare_layer <- function(layerpath, outputdir, newname, scalefactor = 1)  {
 #   sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outputdir, overwrite=T, remove=T)
   write_tif(r, newname, outputdir)
 }
+
 # prepare_layer("D:/a/data/BioORACLE_bathy/shoredistance.asc", "D:/a/projects/predictors/derived", "BO_shoredistance")
 
 prepare_biooracle_bathy <- function() {
@@ -328,9 +329,25 @@ prepare_future_biooracle <- function() {
 prepare_biooracle2 <- function() {
   layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
   rasters <- list.files("D:/a/data/BioOracle2/Present 2000-2014", "[.]tif$", full.names = TRUE)
+  outdir <- "D:/a/projects/predictors/derived/biooracle2"
+  n1lookup <- list(Chlorophyll="chlo", Iron="iron", Nitrate="nitrate", Phosphate="phosphate", Phytoplankton="carbonphyto", Salinity="salinity", Silicate="silicate")
+  n2lookup <- list(Current.Velocity="curvel")
   for (f in rasters) {
-    sub("[.]tif", "", basename(f))
-    stop("todo")
+    n <- sub("[.]tif", "", basename(f))
+    parts <- strsplit(n , "[.]")[[1]]
+    n1 <- parts[1]
+    n2 <- paste(parts[1:2], collapse = ".")
+    
+    if(n1 %in% names(n1lookup)) {
+      prefix <- paste0("BO2_", n1lookup[[n1]])
+    } else if (n2 %in% names(n2lookup)){
+      prefix <- paste0("BO2_", n2lookup[[n2]])
+    } else {
+      stopifnot(n1 == "Surface")
+      
+    }
+    
+    stop("layer_code <- todo")
   }
 }
 
@@ -391,7 +408,7 @@ prepare_envirem <- function() {
 }
 # prepare_envirem()
 
-prepare_worldclim_paleofuture <- function(prepare_layers=TRUE) {
+prepare_worldclim_paleofuture <- function(prepare_layers=TRUE, file_pattern = NULL) {
   layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
   future <- read.csv2("data-raw/layers_future.csv", stringsAsFactors = FALSE)
   paleo <- read.csv2("data-raw/layers_paleo.csv", stringsAsFactors = FALSE)
@@ -406,34 +423,33 @@ prepare_worldclim_paleofuture <- function(prepare_layers=TRUE) {
                      mid=list(epoch="mid-Holocene", year = 6000, code="holo"))
   vartypes <- list(bi="bio", pr="prec", "tx"="tmax", "tn" = "tmin")
   
-  for(zip in list.files("D:/a/data/WorldClim/paleo_future", full.names = TRUE)) {
+  for(zip in list.files("D:/a/data/WorldClim/paleo_future", pattern = file_pattern, full.names = TRUE)) {
     print(zip)
     fname <- sub("_5m[.]", ".", basename(zip))
     gcm_code <- toupper(substr(fname, 1, 2))
     gcm <- gcm_lookup[[gcm_code]]
     paleo_code <- substr(fname, 3, 5)
     rasters <- unzip(zip, list = TRUE)
-    
     is_paleo <- paleo_code %in% c("lgm", "mid")
     if(is_paleo) {
       vartype <- substr(fname, 6, 7)
       info <- paleo_info[[paleo_code]]
       modelname <- paste(info$code, gcm, sep = " ")
-      info <- data.frame(dataset_code = "WorldClim", layer_code = rep(NA, length(rasters)), current_layer_code = NA, 
+      info <- data.frame(dataset_code = "WorldClim", layer_code = rep(NA, NROW(rasters)), current_layer_code = NA, 
                          model_name = modelname, epoch = info$epoch, years_ago = info$year)  
       suffix <- substr(fname, 1, 5)
     } else {
       scenario <- paste0("rcp", substr(fname, 3, 4))
       vartype <- substr(fname, 5, 6)
       year <- 2000 + as.integer(substr(fname, 7, 8))
-      info <- data.frame(dataset_code = "WorldClim", layer_code = rep(NA, length(rasters)), current_layer_code = NA, 
+      info <- data.frame(dataset_code = "WorldClim", layer_code = rep(NA, NROW(rasters)), current_layer_code = NA, 
                          model = gcm, scenario = scenario, year = year)
       suffix <- paste0(substr(fname, 1, 4), "_", year)
     }
     wc_temp_dir <- "D:/temp/worldclim"
-    for(ri in seq_along(rasters)) {
+    for(ri in 1:nrow(rasters)) {
       r <- rasters[ri,]
-      
+      print(r$Name)
       name <- sub(tools::file_path_sans_ext(fname), "", tools::file_path_sans_ext(r$Name))
       name <- paste0(vartypes[[vartype]], name)
       
@@ -449,10 +465,12 @@ prepare_worldclim_paleofuture <- function(prepare_layers=TRUE) {
       } else if(name %in% c("bio3", "bio4")) {
         scalefactor <- 100
       }
-      if(prepare_layers) {
+      outzipfile <- paste0(wc_temp_dir, "/", r$Name)
+      outfile <- paste0(outdir, "/", layer_code, "_lonlat.tif")
+      if(prepare_layers && !file.exists(outzipfile) && !file.exists(outfile)) {
         path <- unzip(zip, r$Name, exdir = wc_temp_dir)
+        on.exit(file.remove(path))
         prepare_layer(path, outdir, layer_code, scalefactor)  
-        file.remove(path)
       }
     }
     if(is_paleo) {
@@ -464,8 +482,13 @@ prepare_worldclim_paleofuture <- function(prepare_layers=TRUE) {
   write.csv2(paleo[order(paleo$dataset_code, paleo$layer_code),], "data-raw/layers_paleo.csv", row.names = FALSE)
   write.csv2(future[order(future$dataset_code, future$layer_code),], "data-raw/layers_future.csv", row.names = FALSE)
 }
-prepare_worldclim_paleofuture(prepare_layers = FALSE)
+# prepare_worldclim_paleofuture(prepare_layers = TRUE)
+## prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^cc") # all cc gcm
+# prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^mr") # all mr gcm
+# prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^me") # all me gcm
+# prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^he") # all he gcm
 
+ 
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_deflate_9_p3.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_9_p3.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)

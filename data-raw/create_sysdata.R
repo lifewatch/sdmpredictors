@@ -2,12 +2,27 @@ source("data-raw/calculate_stats.R")
 source("data-raw/bibentries.R")
 
 create_sysdata <- function() {
+  inprep <- "Bio-ORACLE2"
   datasetlist <- read.csv2("data-raw/datasets.csv", stringsAsFactors = FALSE)
+  datasetlist <- datasetlist[!(datasetlist$dataset_code %in% inprep),]
   layerlist <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
+  layerlist <- layerlist[!(layerlist$dataset_code %in% inprep),]
   layerlistfuture <- read.csv2("data-raw/layers_future.csv", stringsAsFactors = FALSE)
+  layerlistfuture <- layerlistfuture[!(layerlistfuture$dataset_code %in% inprep),]
   layerlistpaleo <- read.csv2("data-raw/layers_paleo.csv", stringsAsFactors = FALSE)
+  layerlistpaleo <- layerlistpaleo[!(layerlistpaleo$dataset_code %in% inprep),]
+  allclim_layers <- c(layerlist$layer_code, layerlistpaleo$layer_code, layerlistfuture$layer_code)
   layerstats <- get_all_layer_stats(calc=FALSE)
+  layerstats <- layerstats[layerstats$layer_code %in% allclim_layers,]
+  
+  print(allclim_layers[!allclim_layers %in% layerstats$layer_code])
+  stopifnot(all(allclim_layers %in% layerstats$layer_code))
+  
   layerscorrelation <- get_all_correlations()
+  layerscorrelation <- layerscorrelation[rownames(layerscorrelation) %in% layerlist$layer_code, 
+                                         colnames(layerscorrelation)  %in% layerlist$layer_code]
+  stopifnot(all(layerlist$layer_code %in% rownames(layerscorrelation)))
+  stopifnot(all(layerlist$layer_code %in% colnames(layerscorrelation)))
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
                 bibentries = bibentries,
@@ -20,8 +35,7 @@ create_sysdata <- function() {
   file.copy("R/sysdata.rda", 
             "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
             overwrite = TRUE)
-  stop("implement upload to VLIZ FTP")
-  #RCurl::ftpUpload("R/sysdata.rda", "ftp://User:Password@FTPServer/Destination.html")
-  stop("avoid adding the ftp password in github :-)")
+  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp_user,":",vliz_ftp_pwd,"@ftp.vliz.be/samuel/sdmpredictors/sysdata.rda"))
 }
+#layerstats <- get_all_layer_stats(calc=TRUE)
 create_sysdata()

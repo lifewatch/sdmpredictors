@@ -18,7 +18,7 @@ A dataframe with basic statistics about each given layercode.
 \description{
 \code{layer_stats} returns basic statistics (minimum, q1, median, q3,
 maximum, median absolute deviation (mad), mean, standard deviation (sd))
-about each given layercode.
+for each given layercode.
 }
 \examples{
 # layer stats for the first 10 layers

@@ -4,7 +4,7 @@
 \alias{layer_citations}
 \title{Generate citations for all layers}
 \usage{
-layer_citations(datasets, astext = TRUE)
+layer_citations(layers = c(), astext = TRUE)
 }
 \arguments{
 \item{layers}{character vector. Code of the layers from past, current and future climate layers. When no layers are
@@ -34,7 +34,7 @@ print(layer_citations("BO_salinity"))
 print(layer_citations("MS_biogeo02_aspect_NS_21kya"))
 
 # print all citations as Bibtex
-print(sapply(layer_citations(astext = FALSE), toBibtex))
+print(lapply(layer_citations(astext = FALSE), toBibtex))
 }
 \seealso{
 \code{\link{layer_citations}}, \code{\link[utils]{bibentry}}, \code{\link{list_datasets}}

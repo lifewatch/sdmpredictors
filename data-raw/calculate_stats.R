@@ -16,11 +16,11 @@ calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE) {
   calc_layer_stats <- function(layercode) {
     ## convert to behrmann first OR store data as Behrmann
     r <- load_layers(layercode, equalarea = TRUE)
-    d <- sdmpredictors:::calc_stats(layercode, raster(r,1))
+    d <- sdmpredictors:::calculate_statistics(layercode, raster(r,1))
     return (d)
   }
-  
-  for (layercode in sdmpredictors::list_layers(terrestrial = terrestrial, marine = marine)[,"layer_code"]) {
+  all_layercodes <- sdmpredictors::get_layers_info()$common$layer_code
+  for (layercode in all_layercodes) { #sdmpredictors::list_layers(terrestrial = terrestrial, marine = marine)[,"layer_code"]) {
     fname <- paste0(statsdir, "/", layercode, ".rds")
     if(layercode != "WC_TODO" & !file.exists(fname)) {
       print(layercode)
@@ -30,11 +30,13 @@ calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE) {
   }
 }
 
-new_layer_stats <- function(dir, layercode) {
-  r <- raster(file.path(dir, paste0(layercode, ".tif")))
+new_layer_stats <- function(dir, layercode, overwrite = TRUE) {
   fname <- paste0(statsdir, "/", layercode, ".rds")
-  stats <- sdmpredictors:::calc_stats(layercode, r)
-  saveRDS(stats, fname)
+  if(overwrite || !file.exists(fname)) {
+    r <- raster(file.path(dir, paste0(layercode, ".tif")))
+    stats <- sdmpredictors:::calculate_statistics(layercode, r)
+    saveRDS(stats, fname)
+  }
 }
 # new_layer_stats("D:/a/projects/predictors/derived", "BO_shoredistance")
 
@@ -48,12 +50,23 @@ stats_envirem <- function() {
     } else {
       layercode <- paste0("ER_",parts[2],"_",parts[1])
     }
-    print(newname)
+    print(layercode)
     new_layer_stats("D:/a/projects/predictors/derived/envirem", layercode)  
   }
 }
 # stats_envirem()
 
+stats_worldclim <- function(overwrite) {
+  layerpaths <- list.files("../../derived/worldclim_paleo_future", "[.]tif$", full.names = TRUE)
+  for(p in layerpaths) {
+    if(!grepl("_lonlat.tif", basename(p))) {
+      layercode <- sub("[.]tif$", "", basename(p))
+      print(layercode)
+      new_layer_stats("../../derived/worldclim_paleo_future", layercode, overwrite)  
+    }
+  }
+}
+# stats_worldclim(overwrite = FALSE)
 
 #calc_all_layer_stats(terrestrial = FALSE, marine = TRUE)
 #calc_all_layer_stats(terrestrial = TRUE, marine = FALSE)
@@ -115,11 +128,15 @@ spatial_autocorrelation_range <- function(r) {
 
 ## semi-variogram (spherical) -> range spatial-autocorrelation
 
-calc_corr_matrix_quad <- function(x, fname) {
-  stack_quad <- x ^ 2
-  names(stack_quad) <- paste0(names(x), "_quadratic")
-  corr_quad <- faster_pearson(stack(x, stack_quad))
-  saveRDS(corr_quad, paste0(statsdir, "/corr/", fname, ".rds"))
+calc_corr_matrix_quad <- function(x, fname, quad = FALSE) {
+  if(quad) {
+    stack_quad <- x ^ 2
+    names(stack_quad) <- paste0(names(x), "_quadratic")
+    corr <- faster_pearson(stack(x, stack_quad))
+  } else {
+    corr <- faster_pearson(x)
+  }
+  saveRDS(corr, paste0(statsdir, "/corr/", fname, ".rds"))
 }
 
 # for(fname in c("pearson_corr_marine_quad", "pearson_corr_terrestrial_quad")) {
@@ -130,7 +147,7 @@ calc_corr_matrix_quad <- function(x, fname) {
 # }
 
 
-calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, new_rasters = NULL) {
+calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, new_rasters = NULL, quad = FALSE) {
 #   calc_correlation_matrix <- function(rasterstack, fname) {
 #     stats <- layerStats(rasterstack, 'pearson', na.rm=TRUE)
 #     correlations <- stats$`pearson correlation coefficient`
@@ -142,7 +159,7 @@ calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, n
       marine_stack <- stack(marine_stack, new_rasters)
     }
     #calc_correlation_matrix(marine_stack, paste0(statsdir, "/pearson_corr_marine.rds"))
-    calc_corr_matrix_quad(marine_stack, "pearson_corr_marine_quad")
+    calc_corr_matrix_quad(marine_stack, "pearson_corr_marine_quad", quad)
   }
   if(terrestrial) {
     terrestrial_stack <- load_layers(list_layers(terrestrial=T,marine=F), equalarea = TRUE)
@@ -150,14 +167,16 @@ calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, n
       terrestrial_stack <- stack(terrestrial_stack, new_rasters)
     }
     #calc_correlation_matrix(terrestrial_stack, paste0(statsdir, "/pearson_corr_terrestrial_quad.rds"))
-    calc_corr_matrix_quad(terrestrial_stack, "pearson_corr_terrestrial_quad")
+    calc_corr_matrix_quad(terrestrial_stack, "pearson_corr_terrestrial_quad", quad)
   }
-  ## TODO move correlation calculation to stats.R so that people can redo it regionally
   ## TODO implement: Engler, J. O., & Rodder, D. (2012). Disentangling interpolation and extrapolation uncertainties in ecologial niche models : a novel visualization technique for the spatial variation of predictor variable colinearity. Biodiversity Informatics, 8, 30–40.
 }
 #calc_all_correlation_matrices(marine=T)
 #calc_all_correlation_matrices(terrestrial=T)
 # calc_all_correlation_matrices(marine=TRUE, new_rasters = raster("../../derived/BO_shoredistance.tif"))
+# layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
+# envirem <- stack(paste0("../../derived/envirem/", layers[layers$dataset_code=="ENVIREM","layer_code"], ".tif"))
+# calc_all_correlation_matrices(terrestrial=T, marine=F, new_rasters = envirem)
 
 combine_data_frame <- function(a, b) {
   r <- as.data.frame(a)
@@ -173,109 +192,10 @@ get_all_correlations <- function(){
   return(all)
 }
 
-inspects_correlations <- function(corr_quad) {
-  cm <- corr_quad[[1]]
-  qlen <- nrow(cm) / 2
-  for(i in 1:qlen) {
-    for (j in i:qlen) {
-      i2 <- qlen + i
-      j2 <- qlen + j
-      df <- cm[c(i,i2),c(j,j2)]
-      ref <- cm[i,j]
-      if(any(abs(ref) < abs(df)) && any(abs(df) > 0.6)) {
-        print(df)
-      }
-    }
-  }
-# SOME RELEVANT RESULTS
-#               BO_damax  BO_damax²
-#   BO_chlomin  0.5913319 0.7425718
-#   BO_chlomin² 0.2867236 0.4698473
-#   
-#               BO_damean  BO_damean²
-#   BO_chlomin  0.7182091  0.9175329
-#   BO_chlomin² 0.3702106  0.6369692
-#   
-#                BO_parmax  BO_parmax²
-#   BO_cloudmax  -0.6734533 -0.7152909
-#   BO_cloudmax² -0.6971201 -0.7388579
-#   
-#                 BO_parmax  BO_parmax²
-#   BO_cloudmean  -0.6991042 -0.7423590
-#   BO_cloudmean² -0.7223961 -0.7650004
-#   
-#                BO_parmax  BO_parmax²
-#   BO_cloudmin  -0.6514492 -0.6936771
-#   BO_cloudmin² -0.6748097 -0.7164974
-#   
-#                 MS_biogeo15_sst_max_5m  MS_biogeo15_sst_max_5m²
-#   BO_cloudmin   -0.6389953              -0.6782690
-#   BO_cloudmin²  -0.6711996              -0.7047402
-}
-
-pearson_corr <- function(mat, i, j, iR, jR, sds, n, asSample) {
-  if (i <= nrow(mat) && j <= ncol(mat)) {
-    if (i == j) {
-      mat[i,j] = 1
-    } else if (is.na(mat[i,j])) {
-      r <- (iR * jR)
-      v <- sum(r, na.rm=TRUE) / ((n - sum(is.na(r)) - asSample) * sds[i] * sds[j])
-      mat[j,i] <- mat[i,j] <- v
-    } else { 
-      print(paste0("mat[i=", i, ",j=", j, "] is not NA (",mat[i,j],")")) 
-    }
-  }
-  mat
-}
-
 faster_pearson <- function(x, cachesize=20) { ## always na.rm=TRUE
-  strt<-Sys.time()
-  asSample <- TRUE
-  nl <- nlayers(x)
-  n <- ncell(x)
-  mat <- matrix(NA, nrow=nl, ncol=nl)
-  colnames(mat) <- rownames(mat) <- names(x)
-  
-  means <- c()
-  sds <- c()
-  for (i in 1:nl) {
-    vals <- values(raster(x, layer=i))
-    means[i] <- mean(vals, na.rm=TRUE)
-    sds[i] <- sd(vals, na.rm=TRUE)
-  }
-  x <- x - means
-  print("startup pearson finished")
-  print(Sys.time()-strt)
-  strt <- Sys.time()
-  for (i in 1:nl) {
-    mat[i,i] <- 1
-  }
-  for (i in seq(from = 0, to = nl-2, by = cachesize)) {
-    loopstart <- Sys.time()  
-    indexes <- i + 1:cachesize
-    v <- lapply(X = indexes[indexes <= nl], function(i) { values(raster(x, layer=i)) })
-    
-    for( vi in 1:(length(v)-1)) {## calculate correlations for all "cached" rasters
-      for (vj in (vi+1):length(v)) {
-        mat <- pearson_corr(mat, indexes[vi], indexes[vj], v[[vi]], v[[vj]], sds, n, asSample)
-      }
-    }
-    
-    if(max(indexes) < nl) { ## calculate correlations for the other rasters
-      for (j in (max(indexes)+1):nl) {
-        jR <- values(raster(x, layer=j))
-        for(vi in 1:length(v)) {
-          mat <- pearson_corr(mat, indexes[vi], j, v[[vi]], jR, sds, n, asSample)
-        }
-      }
-    }
-    print(Sys.time()-loopstart)
-  }
+  mat <- sdmpredictors:::pearson_correlation_matrix(x, cachesize)
   covar <- list(mat)
   names(covar) <- c("pearson correlation coefficient")
-  
-  print("correlation time")
-  print(Sys.time()-strt)
   return(covar)
 }
 faster_pearson <- cmpfun(faster_pearson)
@@ -631,6 +551,23 @@ pearson_speed_experiments <- function() {
   }
   faster_pearson6 <- cmpfun(faster_pearson6)
   
+}
+
+cor_sample_test <- function() {
+  layers <- list_layers()[1:5,2]
+  truth <- layers_correlation(layers)[1:5,1:5]
+  env <- load_layers(layers, equalarea = TRUE)
+  values <- getValues(env)
+  values <- values[complete.cases(values),]
+  #values <- lapply(1:5, function(i) getValues(raster(env, )))
+  cor(values[,1], values[,2], method = "pearson")
+  for(n in c(100000)) {
+    r <- sapply(1:50, function(s) {
+      set.seed(s)
+      i <- sample(1:nrow(values), n)
+      cor(values[i,2], values[i,3], method = "pearson")})
+    print(summary(r))
+  }
 }
 
 plot_corr <- function(corr_matrix) {

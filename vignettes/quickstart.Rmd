@@ -24,7 +24,7 @@ environmental layers can be downloaded.
 
 ### list_datasets
 
-With the list_datasets function you can view all the available datasets. If you 
+With the *list_datasets* function you can view all the available datasets. If you 
 only want terrestrial datasets then you have to set the marine parameter to 
 FALSE and vice versa.
 
@@ -41,7 +41,7 @@ knitr::kable(datasets, row.names = FALSE)
 
 ### list_layers
 
-Using the list_layers we can view all layer information based on datasets, 
+Using the *list_layers* function we can view all layer information based on datasets, 
 terrestrial (TRUE/FALSE), marine (TRUE/FALSE) and/or whether it should be 
 monthly data. The table only shows the first 4 columns of the first 3 layers.
 
@@ -53,11 +53,26 @@ layers <- list_layers(datasets)
 knitr::kable(layers[1:3,1:4], row.names = FALSE)
 ```
 
+## Citing data
+
+With the *dataset_citations* and *layer_citations* functions you can fetch plain text or bibentries for the datasets and layers used, allowing for proper citation of the data.
+
+```{r}
+# print the Bio-ORACLE citation
+print(dataset_citations("Bio-ORACLE"))
+
+# print the citation for ENVIREM as Bibtex
+print(lapply(dataset_citations("WorldClim", astext = FALSE), toBibtex))
+
+# print the citation for a MARSPEC paleo layer
+print(layer_citations("MS_biogeo02_aspect_NS_21kya"))
+```
+
 ## Loading the data
 
 ### load_layers
 
-To be able to use the layers you want in R you have to call the load_layers 
+To be able to use the layers you want in R you have to call the *load_layers* 
 function with
 
 ```{r}
@@ -94,7 +109,7 @@ unique(paleo$model_name)
 Other functions related to layers metadata and future and paleo layers are:
 
 ```{r} 
-get_layers_info(c("BO_calcite","BO_B1_2100_sstmax","MS_bathy_21kya"))$common[,1:4]
+get_layers_info(c("BO_calcite","BO_B1_2100_sstmax","MS_bathy_21kya"))$common
 
 # functions to get the equivalent future layer code for a current climate layer 
 get_future_layers(c("BO_sstmax", "BO_salinity"), 
@@ -142,4 +157,7 @@ for(group in groups) {
     cat("\n")
   }
 }
+
+# plot correlations (requires ggplot2)
+plot_correlation(correlations)
 ```

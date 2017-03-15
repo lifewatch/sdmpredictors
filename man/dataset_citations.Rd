@@ -4,7 +4,7 @@
 \alias{dataset_citations}
 \title{Generate dataset citations}
 \usage{
-dataset_citations(datasets, astext = TRUE)
+dataset_citations(datasets = c(), astext = TRUE)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets. When no datasets are 
@@ -31,7 +31,7 @@ Note that in order to generate a full list of citations it is
 print(dataset_citations("Bio-ORACLE"))
 
 # print all citations as Bibtex
-print(sapply(dataset_citations(astext = FALSE), toBibtex))
+print(lapply(dataset_citations(astext = FALSE), toBibtex))
 }
 \seealso{
 \code{\link{layer_citations}}, \code{\link[utils]{bibentry}}, 

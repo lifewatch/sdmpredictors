@@ -5,10 +5,10 @@ get_sysdata <- function() {
   if(is.null(dir)) {
     dir <- file.path(tempdir(), "sdmpredictors")
   }
-  dir <- normalizePath(dir)
   if(!dir.exists(dir)) {
     dir.create(dir, recursive = TRUE)
   }
+  dir <- normalizePath(dir)
   tmp <- tempfile("sysdata_sdmpredictors", fileext = ".rda")
   outfile <- file.path(dir, fname)
   
