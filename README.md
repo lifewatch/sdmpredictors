@@ -11,12 +11,12 @@ Installation:
 
     install.packages("sdmpredictors")
     # or for the latest dev version
-    devtools::install_github("samuelbosch/sdmpredictors")
+    devtools::install_github("lifewatch/sdmpredictors")
 
 or with packrat:
 
     packrat::init()
-    devtools::install_github("samuelbosch/sdmpredictors")
+    devtools::install_github("lifewatch/sdmpredictors")
 
 
 Example 1: Create SDM for Dictyota diemensis in Australia 
