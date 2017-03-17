@@ -1,3 +1,8 @@
+# sdmpredictors 0.2.4
+
+New datasets (ENVIREM, WorldClim paleo and future)
+Added functions related to correlations
+
 # sdmpredictors 0.2.3
 
 Remove usage of ~/R/sdmpredictors from tests
