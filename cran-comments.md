@@ -1,6 +1,6 @@
 ## Test environments
 * Windows 7, R 3.2.5
-* Ubuntu 14.04 (on travis-ci), R 3.3.1
+* Ubuntu 12.04.5 LTS (on travis-ci.org), R 3.3.2
 * win-builder (devel and release)
  
 ## R CMD check results
@@ -17,16 +17,10 @@ New submission
 
 Package was archived on CRAN
 
-License components with restrictions and base license permitting such:
-  MIT + file LICENSE
-File 'LICENSE':
-  YEAR: 2016
-  COPYRIGHT HOLDER: Samuel Bosch
-
 Possibly mis-spelled words in DESCRIPTION:
   Datasets (3:49)
-  MARSPEC (13:46)
-  WorldClim (12:38)
+  MARSPEC (12:46)
+  WorldClim (11:38)
 
 ## Downstream dependencies
 
