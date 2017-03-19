@@ -11,7 +11,10 @@ Imports:
     R.utils (>= 2.4.0),
     stats,
     utils
-Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre"))
+Authors@R: c(
+    person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre", "prg", "gis")),
+    person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb", "mdc", "wst")),
+    person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb", "wst")))
 Maintainer: Samuel Bosch <mail@samuelbosch.com>
 Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim <http://www.worldclim.org/>,,
