@@ -10,9 +10,9 @@
 #'   global land areas. International Journal of Climatology 25: 1965-1978. 
 #'   (\url{http://dx.doi.org/10.1002/joc.1276})
 #'   
-#'   Title, P. O. and Bemmels, J. B. 2017. envirem : An expanded set of
+#'   ENVIREM: Title, P. O. and Bemmels, J. B. 2017. envirem: An expanded set of
 #'   bioclimatic and topographic variables increases flexibility and improves
-#'   performance of ecological niche modeling. - Ecography (Cop.). in press.
+#'   performance of ecological niche modeling. Ecography (Cop.). in press.
 #'   (\url{http://doi.wiley.com/10.1111/ecog.02880})
 #'   
 #'   Bio-ORACLE: Tyberghein L., Verbruggen H., Pauly K., Troupin C., Mineur F. &

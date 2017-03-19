@@ -14,8 +14,9 @@ Imports:
 Authors@R: person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre"))
 Maintainer: Samuel Bosch <mail@samuelbosch.com>
 Description: Terrestrial and marine predictors for species distribution modelling
-    from multiple sources, including WorldClim <http://www.worldclim.org/>, Bio-
-    ORACLE <http://www.oracle.ugent.be/> and MARSPEC <http://www.marspec.org/>.
+    from multiple sources, including WorldClim <http://www.worldclim.org/>,,
+    ENVIREM <http://envirem.github.io/>, Bio-ORACLE <http://www.oracle.ugent.be/>
+    and MARSPEC <http://www.marspec.org/>.
 License: MIT + file LICENSE
 URL: http://www.samuelbosch.com/p/sdmpredictors.html
 BugReports: https://github.com/lifewatch/sdmpredictors/issues
