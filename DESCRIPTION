@@ -1,7 +1,7 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.4
+Version: 0.2.5
 Date: 2017-03-16
 Depends:
     R (>= 3.2.5),
@@ -12,10 +12,9 @@ Imports:
     stats,
     utils
 Authors@R: c(
-    person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre", "prg", "gis")),
-    person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb", "mdc", "wst")),
-    person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb", "wst")))
-Maintainer: Samuel Bosch <mail@samuelbosch.com>
+    person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre")),
+    person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
+    person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb")))
 Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim <http://www.worldclim.org/>,,
     ENVIREM <http://envirem.github.io/>, Bio-ORACLE <http://www.oracle.ugent.be/>

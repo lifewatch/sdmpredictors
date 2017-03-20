@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.5
+
+Fix authors
+
 # sdmpredictors 0.2.4
 
 New datasets (ENVIREM, WorldClim paleo and future)
