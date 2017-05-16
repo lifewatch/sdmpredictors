@@ -326,31 +326,6 @@ prepare_future_biooracle <- function() {
 }
 # prepare_future_biooracle()
 
-prepare_biooracle2 <- function() {
-  layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
-  rasters <- list.files("D:/a/data/BioOracle2/Present 2000-2014", "[.]tif$", full.names = TRUE)
-  outdir <- "D:/a/projects/predictors/derived/biooracle2"
-  n1lookup <- list(Chlorophyll="chlo", Iron="iron", Nitrate="nitrate", Phosphate="phosphate", Phytoplankton="carbonphyto", Salinity="salinity", Silicate="silicate")
-  n2lookup <- list(Current.Velocity="curvel")
-  for (f in rasters) {
-    n <- sub("[.]tif", "", basename(f))
-    parts <- strsplit(n , "[.]")[[1]]
-    n1 <- parts[1]
-    n2 <- paste(parts[1:2], collapse = ".")
-    
-    if(n1 %in% names(n1lookup)) {
-      prefix <- paste0("BO2_", n1lookup[[n1]])
-    } else if (n2 %in% names(n2lookup)){
-      prefix <- paste0("BO2_", n2lookup[[n2]])
-    } else {
-      stopifnot(n1 == "Surface")
-      
-    }
-    
-    stop("layer_code <- todo")
-  }
-}
-
 
 prepare_paleo_marspec <- function() {
   outdir <- "../../derived/paleo/"
@@ -487,6 +462,91 @@ prepare_worldclim_paleofuture <- function(prepare_layers=TRUE, file_pattern = NU
 # prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^mr") # all mr gcm
 # prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^me") # all me gcm
 # prepare_worldclim_paleofuture(prepare_layers = TRUE, file_pattern = "^he") # all he gcm
+
+BO2_get_code <- function(f) {
+  n1lookup <- list(Chlorophyll="chlo", Iron="iron", Nitrate="nitrate", Phosphate="phosphate", 
+                   Phytoplankton="carbonphyto", Salinity="salinity", Silicate="silicate", 
+                   Temperature="temp")
+  n2lookup <- list(Current.Velocity="curvel", Dissolved.oxygen="dissox", 
+                   Light.bottom="lightbot", Primary.productivity="pp",
+                   Ice.cover="icecover", Ice.thickness="icethick")
+  middlelookup <- list(Lt.max="ltmax", Lt.min="ltmin", 
+                       Max="max", Min="min", Mean="mean", Range="range")
+  suffixdirs <- list(Benthic_Max_Depth="bdmax", Benthic_Min_Depth="bdmin", 
+                     Benthic_Mean_Depth="bdmean", Surface="ss")
+  
+  n <- sub("[.]tif", "", basename(f))
+  parts <- strsplit(n , "[.]")[[1]]
+  n1 <- parts[1]
+  n2 <- paste(parts[1:2], collapse = ".")
+  
+  if(n1 %in% names(n1lookup)) {
+    prefix <- n1lookup[[n1]]
+  } else if (n2 %in% names(n2lookup)){
+    prefix <- n2lookup[[n2]]
+  } else {
+    print(n)
+    stop("Unkown prefix")
+  }
+  middle <- c()
+  for(m in names(middlelookup)) {
+    if(grepl(m, n, fixed=TRUE)) {
+      middle <- middlelookup[[m]]
+    }
+  }
+  suffix <- suffixdirs[[basename(dirname(f))]]
+  if(is.null(suffix)) {
+    print(f)
+    stop("UNknown suffix")
+  }
+  code <- paste0(prefix,middle,"_",suffix)
+  
+}
+
+prepare_biooracle2 <- function() {
+  layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
+  rasters <- list.files("D:/a/data/BioOracle2/Present", "[.]tif$", full.names = TRUE, recursive = TRUE)
+  outdir <- "D:/a/projects/predictors/derived/biooracle2"
+  for (f in rasters) {
+    layercode <- paste0("BO2_",BO2_get_code(f))
+    if(length(list.files(outdir, layercode)) < 2 || overwrite) {
+      print(c(f,layercode))
+      if(NROW(layers[layers$layer_code==layercode,]) != 1) {
+        stop("not found in layers.csv")
+      }  
+      prepare_layer(f, outdir, layercode)
+    }
+  }
+}
+# prepare_biooracle2()
+
+prepare_biooracle2_future <- function() {
+  layers <- read.csv2("data-raw/layers_future.csv", stringsAsFactors = FALSE)
+  for(year in c(2050, 2100)) {
+    for(rcp in c("RCP26", "RCP45", "RCP60", "RCP85")) {
+      rasters <- list.files(paste0("D:/a/data/BioOracle2/",year,"AOGCM"), "[.]tif$", full.names = TRUE, recursive = TRUE)
+      outdir <- "D:/a/projects/predictors/derived/biooracle2"
+      for (f in rasters) {
+        current_layer_code <- paste0("BO2_",BO2_get_code(f))
+        layercode <- paste0("BO2_",rcp, "_", year, "_", BO2_get_code(f))
+        if(NROW(layers[layers$layer_code==layercode,]) != 1) {
+          layers <- rbind(layers, data.frame(dataset_code="Bio-ORACLE2",
+                                             layer_code=layer_code,
+                                             current_layer_code=current_layer_code,
+                                             model = "AOGCM",
+                                             scenario = rcp,
+                                             year = year))
+        }
+        if(length(list.files(outdir, layercode)) < 2 || overwrite) {
+          print(c(f,layercode))
+          prepare_layer(f, outdir, layercode)
+        }
+      }
+    }
+  }
+  write.csv2(layers, "data-raw/layers_future.csv", row.names = FALSE)
+}
+# prepare_biooracle2_future()
 
  
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
