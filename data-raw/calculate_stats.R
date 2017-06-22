@@ -40,6 +40,19 @@ new_layer_stats <- function(dir, layercode, overwrite = TRUE) {
 }
 # new_layer_stats("D:/a/projects/predictors/derived", "BO_shoredistance")
 
+
+stats_biooracle2 <- function(overwrite) {
+  layerpaths <- list.files("../../derived/biooracle2", "[.]tif", full.names = TRUE)
+  for(p in layerpaths) {
+    if(!grepl("_lonlat.tif", basename(p))) {
+      layercode <- sub("[.]tif$", "", basename(p))
+      print(layercode)
+      new_layer_stats("../../derived/biooracle2", layercode, overwrite)
+    }
+  }
+}
+# stats_biooracle2(overwrite = FALSE)
+
 stats_envirem <- function() {
   layerpaths <- list.files("D:/a/data/ENVIREM", "[.]tif$", full.names = TRUE)
   for(layerpath in layerpaths) {
@@ -177,6 +190,8 @@ calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, n
 # layers <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
 # envirem <- stack(paste0("../../derived/envirem/", layers[layers$dataset_code=="ENVIREM","layer_code"], ".tif"))
 # calc_all_correlation_matrices(terrestrial=T, marine=F, new_rasters = envirem)
+# bo2 <- stack(list.files("../../derived/biooracle2/", "[.]tif", full.names=TRUE))
+# calc_all_correlation_matrices(terrestrial=FALSE, marine=TRUE, new_rasters = bo2)
 
 combine_data_frame <- function(a, b) {
   r <- as.data.frame(a)

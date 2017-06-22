@@ -19,10 +19,19 @@ prepare_layer <- function(layerpath, outputdir, newname, scalefactor = 1)  {
 #   sdmpredictors:::compress_file(sub("[.]grd", ".gri", newf), outputdir)
   write_tif(r, paste0(newname, "_lonlat"), outputdir)
   
+  ## BEHRMANN
   if (ncol(r) == 4320 && abs(res(r)-0.0833333) < 0.001) {
     eares <- 7000 ## similar number of total cells, cells have same x and y res
   } else { stop("undefined ea resolution") }
-  r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+  r <- projectRaster(r, crs=behrmann, method="ngb", res=eares, over=TRUE)
+
+  ## Eckert IV
+  # if (ncol(r) == 4320 && abs(res(r)-0.0833333) < 0.001) {
+  #   eares <- 7500 ## similar number of total cells, cells have same x and y res
+  # } else { stop("undefined ea resolution") }
+  # EckertIV <- "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+  # r <- projectRaster(r, crs=EckertIV, method="ngb", res=eares, over=TRUE)
+  
   r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
 #   newf <- file.path(outputdir, paste0(newname, ".grd"))
 #   print(newf)
@@ -524,14 +533,14 @@ prepare_biooracle2_future <- function() {
   layers <- read.csv2("data-raw/layers_future.csv", stringsAsFactors = FALSE)
   for(year in c(2050, 2100)) {
     for(rcp in c("RCP26", "RCP45", "RCP60", "RCP85")) {
-      rasters <- list.files(paste0("D:/a/data/BioOracle2/",year,"AOGCM"), "[.]tif$", full.names = TRUE, recursive = TRUE)
+      rasters <- list.files(paste0("D:/a/data/BioOracle2/",year,"AOGCM/",rcp), "[.]tif$", full.names = TRUE, recursive = TRUE)
       outdir <- "D:/a/projects/predictors/derived/biooracle2"
       for (f in rasters) {
         current_layer_code <- paste0("BO2_",BO2_get_code(f))
         layercode <- paste0("BO2_",rcp, "_", year, "_", BO2_get_code(f))
         if(NROW(layers[layers$layer_code==layercode,]) != 1) {
           layers <- rbind(layers, data.frame(dataset_code="Bio-ORACLE2",
-                                             layer_code=layer_code,
+                                             layer_code=layercode,
                                              current_layer_code=current_layer_code,
                                              model = "AOGCM",
                                              scenario = rcp,
@@ -547,6 +556,7 @@ prepare_biooracle2_future <- function() {
   write.csv2(layers, "data-raw/layers_future.csv", row.names = FALSE)
 }
 # prepare_biooracle2_future()
+
 
  
 # writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)

@@ -249,26 +249,33 @@ plot_correlation <- function(layers_correlation, prettynames = list(), palette =
 #'   \link{load_layers}}
 #' @encoding UTF-8
 pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
+  clear_raster_values_cache()
+  on.exit(clear_raster_values_cache())
   asSample <- TRUE
   nl <- raster::nlayers(x)
   n <- raster::ncell(x)
   mat <- matrix(NA, nrow=nl, ncol=nl)
   colnames(mat) <- rownames(mat) <- names(x)
   
-  means <- c()
+  # means <- c()
+  # sds <- c()
+  # for (i in 1:nl) {
+  #   vals_sd <- raster_values(raster(x, layer=i))
+  #   means[i] <- mean(vals, na.rm=TRUE)
+  #   sds[i] <- sd(vals, na.rm=TRUE)
+  # }
+  # x <- x - means
   sds <- c()
-  for (i in 1:nl) {
-    vals <- raster::values(raster(x, layer=i))
-    means[i] <- mean(vals, na.rm=TRUE)
-    sds[i] <- sd(vals, na.rm=TRUE)
+  for(i in 1:nl) {
+    sds[i] <- preprocess_raster_values(x, i)
   }
-  x <- x - means
+  #
   for (i in 1:nl) {
     mat[i,i] <- 1
   }
   for (i in seq(from = 0, to = nl-2, by = cachesize)) {
     indexes <- i + 1:cachesize
-    v <- lapply(X = indexes[indexes <= nl], function(i) { raster::values(raster(x, layer=i)) })
+    v <- lapply(X = indexes[indexes <= nl], function(i) { raster_values(x, layer=i) })
     
     for( vi in 1:(length(v)-1)) {## calculate correlations for all "cached" rasters
       for (vj in (vi+1):length(v)) {
@@ -278,7 +285,7 @@ pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
     
     if(max(indexes) < nl) { ## calculate correlations for the other rasters
       for (j in (max(indexes)+1):nl) {
-        jR <- raster::values(raster(x, layer=j))
+        jR <- raster_values(x, layer=j)
         for(vi in 1:length(v)) {
           mat <- pearson_correlation(mat, indexes[vi], j, v[[vi]], jR, sds, n, asSample)
         }
@@ -286,6 +293,23 @@ pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
     }
   }
   return(mat)
+}
+
+preprocess_raster_values <- function(x, layer) {
+  p <- file.path(get_datadir(NULL), paste0("cache_rv_", layer, ".rds"))
+  v <- raster::values(raster(x, layer=layer))
+  m <- mean(v, na.rm=TRUE)
+  v <- v - m
+  print(p)
+  saveRDS(v, p)
+  sd(v, na.rm=TRUE)
+}
+raster_values <- function(x, layer) {
+  p <- file.path(get_datadir(NULL), paste0("cache_rv_", layer, ".rds"))
+  v <- readRDS(p)
+}
+clear_raster_values_cache <- function() {
+  sapply(list.files(get_datadir(NULL), "^cache_rv_file", full.names=TRUE), file.remove)
 }
 
 #' Calculate statistics for a given raster.
