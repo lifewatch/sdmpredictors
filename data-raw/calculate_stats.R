@@ -42,7 +42,7 @@ new_layer_stats <- function(dir, layercode, overwrite = TRUE) {
 
 
 stats_biooracle2 <- function(overwrite) {
-  layerpaths <- list.files("../../derived/biooracle2", "[.]tif", full.names = TRUE)
+  layerpaths <- list.files("../../derived/biooracle2", "[.]tif$", full.names = TRUE)
   for(p in layerpaths) {
     if(!grepl("_lonlat.tif", basename(p))) {
       layercode <- sub("[.]tif$", "", basename(p))

@@ -20,9 +20,11 @@ get_datadir <- function(datadir) {
     if(is.null(datadir)) {
       datadir <- file.path(tempdir(), "sdmpredictors")
       warning("file.path(tempdir(), \"sdmpredictors\") will be used as datadir, set options(sdmpredictors_datadir=\"<directory>\") to avoid re-downloading the data in every session or set the datadir parameter in load_layers")
+    } else {
+      datadir <- normalizePath(paste0(datadir), winslash = "/", mustWork = NA)
     }
   }
-  datadir <- normalizePath(paste0(datadir), winslash = "/", mustWork = TRUE)
+  
   if(!dir.exists(datadir)) {
     dir.create(datadir, recursive = TRUE)
   }

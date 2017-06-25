@@ -309,7 +309,7 @@ raster_values <- function(x, layer) {
   v <- readRDS(p)
 }
 clear_raster_values_cache <- function() {
-  sapply(list.files(get_datadir(NULL), "^cache_rv_file", full.names=TRUE), file.remove)
+  sapply(list.files(get_datadir(NULL), "^cache_rv_", full.names=TRUE), file.remove)
 }
 
 #' Calculate statistics for a given raster.

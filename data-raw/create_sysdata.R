@@ -2,7 +2,7 @@ source("data-raw/calculate_stats.R")
 source("data-raw/bibentries.R")
 
 create_sysdata <- function() {
-  inprep <- "Bio-ORACLE2"
+  inprep <- c() #"Bio-ORACLE2"
   datasetlist <- read.csv2("data-raw/datasets.csv", stringsAsFactors = FALSE)
   datasetlist <- datasetlist[!(datasetlist$dataset_code %in% inprep),]
   layerlist <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)
@@ -32,10 +32,10 @@ create_sysdata <- function() {
   if(!is.null(file.path(getOption("sdmpredictors_datadir")))) {
     file.copy("R/sysdata.rda", file.path(getOption("sdmpredictors_datadir"), "sysdata.rda"), overwrite = TRUE)
   }
-  file.copy("R/sysdata.rda", 
-            "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
-            overwrite = TRUE)
-  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp_user,":",vliz_ftp_pwd,"@ftp.vliz.be/samuel/sdmpredictors/sysdata.rda"))
+  # file.copy("R/sysdata.rda", 
+  #           "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
+  #           overwrite = TRUE)
+  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp_user,":",vliz_ftp_pwd,"@ftp.vliz.be/Samuel/sysdata.rda"))
 }
 #layerstats <- get_all_layer_stats(calc=TRUE)
 create_sysdata()
