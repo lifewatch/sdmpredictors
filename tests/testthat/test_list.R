@@ -89,6 +89,20 @@ test_that("list_layers month filtering works", {
   expect_gt(nrow(df[df$month %in% seq(1:12),]), 0)
 })
 
+test_that("list_layers version filtering works", {
+  df <- list_layers(version = NULL)
+  expect_gt(nrow(df),0)
+  expect_gt(length(unique(df$version)), 1)
+  
+  df <- list_layers(version = c(1,2))
+  expect_gt(nrow(df),0)
+  expect_true(all(df$version %in% c(1,2)))
+  
+  df <- list_layers(version = c(1))
+  expect_gt(nrow(df),0)
+  expect_true(all(df$version %in% c(1)))
+})
+
 test_that("list_layers result is same as layers.csv", {
   skip_on_cran()
   original <- read.csv2(data_raw_file("layers.csv"), stringsAsFactors = FALSE)
@@ -107,7 +121,7 @@ test_that("list_layers_future filters scenario", {
 
 test_that("list_layers_future filters year", {
   df <- list_layers_future(datasets = "Bio-ORACLE", year = 2100)
-  expect_equal(nrow(df),15)
+  expect_gt(nrow(df),300)
   expect_true(all(df$year == 2100))
 })
 
@@ -118,6 +132,15 @@ test_that("list_layers_future filters general", {
   expect_gt(ncol(df),0)
   df <- list_layers_future(monthly=FALSE)
   expect_gt(ncol(df),0)
+})
+
+test_that("list_layers_future filters version", {
+  df <- list_layers_future(version=1)
+  expect_gt(ncol(df),0)
+  expect_gt(nrow(df),0)
+  df <- list_layers_future(version=2)
+  expect_gt(ncol(df),0)
+  expect_gt(nrow(df),0)
 })
 
 test_that("list_layers_future result is same as layers_future.csv", {
@@ -170,6 +193,12 @@ test_that("list_layers_paleo filters general", {
   expect_gt(ncol(df),0)
   df <- list_layers_paleo(monthly=FALSE)
   expect_gt(ncol(df),0)
+})
+
+test_that("list_layers_paleo filters version", {
+  df <- list_layers_paleo(version=1)
+  expect_gt(ncol(df),0)
+  expect_gt(nrow(df),0)
 })
 
 test_that("list_layers_future result is same as layers_future.csv", {

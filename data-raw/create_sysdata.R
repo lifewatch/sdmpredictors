@@ -27,7 +27,8 @@ create_sysdata <- function() {
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
                 bibentries = bibentries,
                 urldata = "http://sdmpredictors.samuelbosch.com/", 
-                urlsysdata = "http://sdmpredictors.samuelbosch.com/")
+                urlsysdata = "http://sdmpredictors.samuelbosch.com/",
+                creation = Sys.time())
   devtools::use_data(.data, internal = TRUE, overwrite = TRUE)
   if(!is.null(file.path(getOption("sdmpredictors_datadir")))) {
     file.copy("R/sysdata.rda", file.path(getOption("sdmpredictors_datadir"), "sysdata.rda"), overwrite = TRUE)
@@ -35,7 +36,7 @@ create_sysdata <- function() {
   # file.copy("R/sysdata.rda", 
   #           "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
   #           overwrite = TRUE)
-  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp_user,":",vliz_ftp_pwd,"@ftp.vliz.be/Samuel/sysdata.rda"))
+  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp_user,":",vliz_ftp_pwd,"@ftp.vliz.be/sdmpredictors/sysdata.rda"))
 }
 #layerstats <- get_all_layer_stats(calc=TRUE)
 create_sysdata()

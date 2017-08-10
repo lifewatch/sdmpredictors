@@ -2,10 +2,10 @@
 % Please edit documentation in R/list.R
 \name{list_layers_paleo}
 \alias{list_layers_paleo}
-\title{List the future climate layers provided by one or more datasets}
+\title{List the paleo climate layers provided by one or more datasets}
 \usage{
 list_layers_paleo(datasets=c(), model_name=NA, epoch=NA, years_ago=NA,
-  terrestrial=TRUE, marine=TRUE, monthly=TRUE)
+  terrestrial=TRUE, marine=TRUE, monthly=TRUE, version=NULL)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets.}
@@ -27,17 +27,21 @@ have marine data (landmasked) are returned.}
 
 \item{monthly}{logical. When \code{FALSE}, then no monthly layers are 
 returned. All annual and monthly layers are returned by default.}
+
+\item{version}{numeric vector. When \code{NULL} then layers from all versions
+of datasets are returned (default) else layers are filtered by version
+number.}
 }
 \value{
 A dataframe with information on the supported paleo climate layers.
 }
 \description{
-\code{list_layers_paleo} returns information on the future climate layers of 
+\code{list_layers_paleo} returns information on the paleo climate layers of 
 one or more datasets.
 }
 \details{
 By default it returns all layers from all datasets, when both marine
-  and terrestrial are \code{FALSE} then only datasets without land- nor 
+  and terrestrial are \code{FALSE} then only layers without land- nor 
   seamasks are returned.
 }
 \examples{

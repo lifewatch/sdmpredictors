@@ -2,7 +2,7 @@
 % Please edit documentation in R/list.R
 \name{get_future_layers}
 \alias{get_future_layers}
-\title{Get the name of a future climate layer(s) based on the current climate
+\title{Get the name of future climate layer(s) based on the current climate
 layer(s)}
 \usage{
 get_future_layers(current_layer_codes, scenario, year)

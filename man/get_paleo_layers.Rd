@@ -2,7 +2,7 @@
 % Please edit documentation in R/list.R
 \name{get_paleo_layers}
 \alias{get_paleo_layers}
-\title{Get the name of a paleo climate layer(s) based on the current climate
+\title{Get the name of paleo climate layer(s) based on the current climate
 layer(s)}
 \usage{
 get_paleo_layers(current_layer_codes, model_name = NA, epoch = NA,

@@ -38,7 +38,8 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #' 
 #' \code{list_layers} returns information on the layers of one or more datasets.
 #' 
-#' @usage list_layers(datasets=c(), terrestrial=TRUE, marine=TRUE, monthly=TRUE)
+#' @usage list_layers(datasets=c(), terrestrial=TRUE, marine=TRUE, monthly=TRUE,
+#'   version=NULL)
 #'   
 #' @param datasets character vector. Code of the datasets.
 #' @param terrestrial logical. When \code{TRUE} (default), then datasets that 
@@ -47,10 +48,17 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #'   have marine data (landmasked) are returned.
 #' @param monthly logical. When \code{FALSE}, then no monthly layers are 
 #'   returned. All annual and monthly layers are returned by default.
+#' @param version numeric vector. When \code{NULL} then layers from all versions
+#'   of datasets are returned (default) else layers are filtered by version 
+#'   number.
 #'   
 #' @details By default it returns all layers from all datasets, when both marine
-#'   and terrestrial are \code{FALSE} then only datasets without land- nor 
-#'   seamasks are returned.
+#'   and terrestrial are \code{FALSE} then only layers from datasets without 
+#'   land- nor seamasks are returned. Layers for paleo and future climatic 
+#'   conditions can be listed with \code{\link{list_layers_paleo}} and 
+#'   \code{\link{list_layers_future}}. Available paleo and future climate layers
+#'   for a current climate layer code can be listed with the functions 
+#'   \code{\link{get_paleo_layers}} and \code{\link{get_future_layers}}.
 #'   
 #' @return A dataframe with information on the supported current climate layers.
 #'   
@@ -70,8 +78,9 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #' list_layers("MARSPEC", monthly = FALSE)
 #' @export
 #' @seealso \code{\link{load_layers}}, \code{\link{list_datasets}}, 
-#'   \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}
-list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE) {
+#'   \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}, 
+#'   \code{\link{get_future_layers}}, \code{\link{get_paleo_layers}}
+list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE, version = NULL) {
   data <- get_sysdata()$layerlist
   
   if(!terrestrial) {
@@ -89,6 +98,9 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
   if (!monthly) {
     data <- data[is.na(data$month),]
   }
+  if(is.numeric(version) & length(version) > 0) {
+    data <- data[data$version %in% version,]
+  }
   return(data)
 }
 
@@ -98,7 +110,7 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 #' one or more datasets.
 #' 
 #' @usage list_layers_future(datasets=c(), scenario=NA, year=NA,
-#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE)
+#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE, version=NULL)
 #'   
 #' @param datasets character vector. Code of the datasets.
 #' @param scenario character vector. Climate change scenario, e.g. \code{"B1", 
@@ -111,9 +123,12 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 #'   have marine data (landmasked) are returned.
 #' @param monthly logical. When \code{FALSE}, then no monthly layers are 
 #'   returned. All annual and monthly layers are returned by default.
+#' @param version numeric vector. When \code{NULL} then layers from all versions
+#'   of datasets are returned (default) else layers are filtered by version
+#'   number.
 #'   
 #' @details By default it returns all layers from all datasets, when both marine
-#'   and terrestrial are \code{FALSE} then only datasets without land- nor 
+#'   and terrestrial are \code{FALSE} then only layers without land- nor 
 #'   seamasks are returned.
 #'   
 #' @return A dataframe with information on the supported future climate layers.
@@ -127,7 +142,7 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 #' @seealso \code{\link{list_layers}}, \code{\link{list_layers_paleo}}, 
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_future <- function(datasets=c(), scenario = NA, year = NA, 
-                               terrestrial = TRUE, marine = TRUE, monthly = TRUE) {
+                               terrestrial = TRUE, marine = TRUE, monthly = TRUE, version = NULL) {
   data <- get_sysdata()$layerlistfuture
   
   if(!is.na(scenario)) {
@@ -151,11 +166,14 @@ list_layers_future <- function(datasets=c(), scenario = NA, year = NA,
   if (!monthly) {
     data <- data[is.na(data$month),]
   }
+  if(is.numeric(version) & length(version) > 0) {
+    data <- data[data$version %in% version,]
+  }
   return(data)
 }
 
 
-#' Get the name of a future climate layer(s) based on the current climate
+#' Get the name of future climate layer(s) based on the current climate
 #' layer(s)
 #' 
 #' \code{get_future_layers} returns information on the future climate layers for
@@ -202,13 +220,13 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 }
 
 
-#' List the future climate layers provided by one or more datasets
+#' List the paleo climate layers provided by one or more datasets
 #' 
-#' \code{list_layers_paleo} returns information on the future climate layers of 
+#' \code{list_layers_paleo} returns information on the paleo climate layers of 
 #' one or more datasets.
 #' 
 #' @usage list_layers_paleo(datasets=c(), model_name=NA, epoch=NA, years_ago=NA,
-#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE)
+#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE, version=NULL)
 #'   
 #' @param datasets character vector. Code of the datasets.
 #' @param model_name character vector. Paleo climate model name see the 
@@ -223,9 +241,12 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 #'   have marine data (landmasked) are returned.
 #' @param monthly logical. When \code{FALSE}, then no monthly layers are 
 #'   returned. All annual and monthly layers are returned by default.
+#' @param version numeric vector. When \code{NULL} then layers from all versions
+#'   of datasets are returned (default) else layers are filtered by version
+#'   number.
 #'   
 #' @details By default it returns all layers from all datasets, when both marine
-#'   and terrestrial are \code{FALSE} then only datasets without land- nor 
+#'   and terrestrial are \code{FALSE} then only layers without land- nor 
 #'   seamasks are returned.
 #'   
 #' @return A dataframe with information on the supported paleo climate layers.
@@ -239,7 +260,7 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 #' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_ago = NA,
-                               terrestrial = TRUE, marine = TRUE, monthly = TRUE) {
+                               terrestrial = TRUE, marine = TRUE, monthly = TRUE, version = NULL) {
   data <- get_sysdata()$layerlistpaleo
   
   if(!is.na(model_name)) {
@@ -269,7 +290,7 @@ list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_a
   return(data)
 }
 
-#' Get the name of a paleo climate layer(s) based on the current climate
+#' Get the name of paleo climate layer(s) based on the current climate
 #' layer(s)
 #' 
 #' \code{get_paleo_layers} returns information on the future climate layers for

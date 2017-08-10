@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.5.9002
-Date: 2017-03-20
+Version: 0.2.5.9003
+Date: 2017-08-10
 Depends:
     R (>= 3.2.5),
     raster (>= 2.5-8),
@@ -17,7 +17,7 @@ Authors@R: c(
     person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb")))
 Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim <http://www.worldclim.org/>,,
-    ENVIREM <http://envirem.github.io/>, Bio-ORACLE <http://www.oracle.ugent.be/>
+    ENVIREM <http://envirem.github.io/>, Bio-ORACLE <http://bio-oracle.org/>
     and MARSPEC <http://www.marspec.org/>.
 License: MIT + file LICENSE
 URL: http://www.samuelbosch.com/p/sdmpredictors.html

@@ -11,7 +11,7 @@ get_sysdata <- function() {
   dir <- normalizePath(dir)
   tmp <- tempfile("sysdata_sdmpredictors", fileext = ".rda")
   outfile <- file.path(dir, fname)
-  
+  data <- .data
   ## only download every 60 minutes
   if(!file.exists(outfile) || difftime(Sys.time(), file.mtime(outfile), units = "mins") > 24*60 || file.size(outfile) <= 0) {
     ok <- -1
@@ -19,16 +19,15 @@ get_sysdata <- function() {
       urlroot <- .data$urlsysdata
       url <- paste0(urlroot, fname)
       ok <- utils::download.file(url, tmp, quiet = TRUE)
+      if(ok == 0) {
+        e <- new.env()
+        load(tmp, envir = e)
+        if(!is.null(e$.data$creation) && e$.data$creation > .data$creation) {
+          data <- e$.data
+          file.copy(tmp, outfile, overwrite = TRUE)
+        }
+      }
     }, silent = TRUE)
-    if(ok == 0) {
-      file.copy(tmp, outfile, overwrite = TRUE)
-    }
   }
-  if(file.exists(outfile)) {
-    e <- new.env()
-    load(outfile, envir = e)
-    return(e$.data)
-  } else {
-    return(.data)
-  }
+  return(data)
 }
