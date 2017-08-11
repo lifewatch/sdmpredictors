@@ -19,15 +19,17 @@ get_sysdata <- function() {
       urlroot <- .data$urlsysdata
       url <- paste0(urlroot, fname)
       ok <- utils::download.file(url, tmp, quiet = TRUE)
-      if(ok == 0) {
-        e <- new.env()
-        load(tmp, envir = e)
-        if(!is.null(e$.data$creation) && e$.data$creation > .data$creation) {
-          data <- e$.data
-          file.copy(tmp, outfile, overwrite = TRUE)
-        }
-      }
     }, silent = TRUE)
+    if(ok == 0) {
+      file.copy(tmp, outfile, overwrite = TRUE)		
+    }		
+  }
+  if(file.exists(outfile)) {		
+    e <- new.env()		
+    load(outfile, envir = e)
+    if(!is.null(e$.data$creation) && e$.data$creation > .data$creation) {
+      data <- e$.data
+    }
   }
   return(data)
 }
