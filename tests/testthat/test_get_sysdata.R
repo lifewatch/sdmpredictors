@@ -24,7 +24,7 @@ test_that("get_sysdata returns all expected entries", {
   expect_notnull(sysdata$urlsysdata)
   expect_notnull(sysdata$bibentries)
   expect_notnull(sysdata$creation)
-  expect_equal(length(names(sysdata)), 10)
+  expect_gt(length(names(sysdata)), 9)
 })
 
 test_that("sysdata gets downloaded", {

@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.6
+
+Introduce dataset versions, fix citations
+
 # sdmpredictors 0.2.5
 
 Fix authors
