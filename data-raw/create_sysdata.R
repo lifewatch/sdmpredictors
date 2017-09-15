@@ -30,7 +30,7 @@ create_sysdata <- function() {
                 urlsysdata = "http://sdmpredictors.samuelbosch.com/",
                 creation = Sys.time())
   devtools::use_data(.data, internal = TRUE, overwrite = TRUE)
-  if(!is.null(file.path(getOption("sdmpredictors_datadir")))) {
+  if(length(file.path(getOption("sdmpredictors_datadir"))) > 0) {
     file.copy("R/sysdata.rda", file.path(getOption("sdmpredictors_datadir"), "sysdata.rda"), overwrite = TRUE)
   }
   # file.copy("R/sysdata.rda", 
