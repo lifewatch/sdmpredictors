@@ -14,3 +14,5 @@ vignettes/*.pdf
 .httr-oauth
 tests/tmp_load/*
 inst/doc
+
+**/.DS_Store

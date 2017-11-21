@@ -41,4 +41,3 @@ print(p)
 \code{ \link{layers_correlation} \link{pearson_correlation_matrix} 
   \link{list_layers} \link{layer_stats} \link{correlation_groups}}
 }
-

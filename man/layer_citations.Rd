@@ -39,4 +39,3 @@ print(lapply(layer_citations(astext = FALSE), toBibtex))
 \seealso{
 \code{\link{layer_citations}}, \code{\link[utils]{bibentry}}, \code{\link{list_datasets}}
 }
-

@@ -13,4 +13,3 @@ Calculate Pearson correlation coefficient for part of a matrix
 \code{\link{layers_correlation} \link{pearson_correlation_matrix}}
 }
 \keyword{internal}
-

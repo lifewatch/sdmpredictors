@@ -47,4 +47,3 @@ Dormann, C. F., Elith, J., Bacher, S., Buchmann, C., Carl, G.,
 \code{ \link{layers_correlation} \link{list_layers}
   \link{layer_stats}}
 }
-

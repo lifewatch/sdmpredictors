@@ -34,4 +34,3 @@ list_datasets(terrestrial=FALSE)
 \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
   \code{\link{list_layers_paleo}}
 }
-

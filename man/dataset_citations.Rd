@@ -37,4 +37,3 @@ print(lapply(dataset_citations(astext = FALSE), toBibtex))
 \code{\link{layer_citations}}, \code{\link[utils]{bibentry}}, 
   \code{\link{list_datasets}}
 }
-

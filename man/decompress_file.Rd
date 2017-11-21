@@ -28,4 +28,3 @@ the path to the result.
 \code{\link{compress_file}}
 }
 \keyword{internal}
-

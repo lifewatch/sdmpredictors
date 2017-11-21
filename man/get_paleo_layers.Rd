@@ -43,4 +43,3 @@ paleo_layers$layer_code
 \code{\link{list_layers_paleo}}, \code{\link{list_layers}},
   \code{\link{load_layers}}
 }
-

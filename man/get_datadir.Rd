@@ -24,4 +24,3 @@ Find out where the environmental data is stored
 \code{\link{load_layers}}
 }
 \keyword{internal}
-

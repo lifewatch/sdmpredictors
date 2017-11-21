@@ -14,4 +14,3 @@ Longitude/latitude coordinate reference system (EPSG:4326), used when using
 load_layers with equal_area = FALSE
 }
 \keyword{datasets}
-

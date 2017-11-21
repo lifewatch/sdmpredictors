@@ -151,24 +151,7 @@ list_layers_future <- function(datasets=c(), scenario = NA, year = NA,
   if(!is.na(year)) {
     data <- data[data$year %in% year,]
   }
-  if(!terrestrial) {
-    data <- subset(data, !terrestrial)
-  }
-  if(!marine) {
-    data <- subset(data, !marine)
-  }
-  if(is.data.frame(datasets)) {
-    datasets <- datasets$dataset_code
-  }
-  if (length(datasets) > 0) {
-    data <- data[data$dataset_code %in% datasets,]
-  }
-  if (!monthly) {
-    data <- data[is.na(data$month),]
-  }
-  if(is.numeric(version) & length(version) > 0) {
-    data <- data[data$version %in% version,]
-  }
+  data <- filter_layers(data, datasets, terrestrial, marine, monthly, version)
   return(data)
 }
 
@@ -272,21 +255,7 @@ list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_a
   if(!is.na(years_ago)) {
     data <- data[data$years_ago %in% years_ago,]
   }
-  if(!terrestrial) {
-    data <- subset(data, !terrestrial)
-  }
-  if(!marine) {
-    data <- subset(data, !marine)
-  }
-  if(is.data.frame(datasets)) {
-    datasets <- datasets$dataset_code
-  }
-  if (length(datasets) > 0) {
-    data <- data[data$dataset_code %in% datasets,]
-  }
-  if (!monthly) {
-    data <- data[is.na(data$month),]
-  }
+  data <- filter_layers(data, datasets, terrestrial, marine, monthly, version)
   return(data)
 }
 
@@ -378,13 +347,37 @@ get_layers_info <- function(layer_codes = c()) {
   future <- get_sysdata()$layerlistfuture
   paleo <- get_sysdata()$layerlistpaleo
   if(!is.null(layer_codes)) {
-    current <- current[current$layer_code %in% layer_codes,]
-    future <- future[future$layer_code %in% layer_codes,]
-    paleo <- paleo[paleo$layer_code %in% layer_codes,]
+    current <- current[na.omit(match(layer_codes, current$layer_code)),]
+    future <- future[na.omit(match(layer_codes, future$layer_code)),]
+    paleo <- paleo[na.omit(match(layer_codes, paleo$layer_code)),]
   }
   common_cols <- c("dataset_code", "layer_code")
   common <- rbind(cbind(time=rep("current", NROW(current)), current[,common_cols]), 
                   cbind(time=rep("future", NROW(future)), future[,common_cols]), 
                   cbind(time=rep("paleo", NROW(paleo)), paleo[,common_cols]))
   list(common = common, current = current, future = future, paleo = paleo)
+}
+
+filter_layers <- function(layers, datasets, terrestrial, marine, monthly, version) {
+  # filter terrestrial/marine and/or given datasets
+  datasets_filter <- list_datasets(terrestrial, marine)$dataset_code
+  if(is.data.frame(datasets)) {
+    datasets <- datasets$dataset_code
+  }
+  if (length(datasets) > 0) {
+    datasets <- datasets[datasets %in% datasets_filter]
+  } else {
+    datasets <- datasets_filter
+  }
+  layers <- layers[layers$dataset_code %in% datasets,]
+  # filter monthly
+  if (!monthly) {
+    current_layer_info <- get_layers_info(layers$current_layer_code)$current
+    layers <- layers[is.na(current_layer_info$month),]
+  }
+  # filter version
+  if(is.numeric(version) & length(version) > 0) {
+    layers <- layers[layers$version %in% version,]
+  }
+  layers
 }

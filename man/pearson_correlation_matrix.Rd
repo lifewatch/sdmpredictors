@@ -38,4 +38,3 @@ print(pearson_correlation_matrix(baltics))
 \code{\link{layers_correlation} \link{plot_correlation}
   \link{load_layers}}
 }
-

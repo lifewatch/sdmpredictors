@@ -29,4 +29,3 @@ layer_stats(c("BO_calcite", "MS_bathy_5m"))
 \seealso{
 \code{\link{list_layers}} \code{\link{layers_correlation}}
 }
-

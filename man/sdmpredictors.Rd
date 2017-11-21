@@ -31,4 +31,3 @@ WorldClim: Hijmans, R.J., S.E. Cameron, J.L. Parra, P.G. Jones
   for marine spatial ecology. Ecology 94: 979. 
   \url{http://dx.doi.org/10.1890/12-1358.1}
 }
-

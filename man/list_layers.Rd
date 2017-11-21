@@ -58,4 +58,3 @@ list_layers("MARSPEC", monthly = FALSE)
   \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}, 
   \code{\link{get_future_layers}}, \code{\link{get_paleo_layers}}
 }
-

@@ -33,4 +33,3 @@ layers_correlation(c("BO_calcite", "MS_bathy_5m"))
 \code{\link{list_layers} \link{layer_stats} 
   \link{correlation_groups} \link{plot_correlation}}
 }
-

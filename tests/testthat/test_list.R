@@ -70,23 +70,27 @@ test_that("list_layers dataset filtering works", {
 })
 
 test_that("list_layers type filtering works", {
-  df <- list_layers(terrestrial = FALSE)
-  expect_gt(nrow(df),0)
-  expect_gt(nrow(df[df$terrestrial == FALSE,]), 0)
+  df1 <- list_layers(terrestrial = FALSE)
+  expect_gt(nrow(df1),0)
+  expect_gt(nrow(df1[df1$terrestrial == FALSE,]), 0)
   
-  df <- list_layers(marine = FALSE)
-  expect_gt(nrow(df),0)
-  expect_gt(nrow(df[df$marine == FALSE,]), 0)
+  df2 <- list_layers(marine = FALSE)
+  expect_gt(nrow(df2),0)
+  expect_gt(nrow(df2[df2$marine == FALSE,]), 0)
+  
+  expect_false(nrow(df1) == nrow(df2))
 })
 
 test_that("list_layers month filtering works", {
-  df <- list_layers(monthly = F)
-  expect_gt(nrow(df),0)
-  expect_equal(nrow(df[df$month %in% seq(1:12),]), 0)
+  df1 <- list_layers(monthly = F)
+  expect_gt(nrow(df1),0)
+  expect_equal(nrow(df1[df1$month %in% seq(1:12),]), 0)
   
-  df <- list_layers(monthly = T)
-  expect_gt(nrow(df),0)
-  expect_gt(nrow(df[df$month %in% seq(1:12),]), 0)
+  df2 <- list_layers(monthly = T)
+  expect_gt(nrow(df2),0)
+  expect_gt(nrow(df2[df2$month %in% seq(1:12),]), 0)
+  
+  expect_false(nrow(df1) == nrow(df2))
 })
 
 test_that("list_layers version filtering works", {
@@ -101,6 +105,9 @@ test_that("list_layers version filtering works", {
   df <- list_layers(version = c(1))
   expect_gt(nrow(df),0)
   expect_true(all(df$version %in% c(1)))
+  
+  df <- list_layers(version=1234567890)
+  expect_equal(nrow(df), 0)
 })
 
 test_that("list_layers result is same as layers.csv", {
@@ -126,12 +133,15 @@ test_that("list_layers_future filters year", {
 })
 
 test_that("list_layers_future filters general", {
-  df <- list_layers_future(terrestrial=FALSE)
-  expect_gt(ncol(df),0)
-  df <- list_layers_future(marine=FALSE)
-  expect_gt(ncol(df),0)
+  dft <- list_layers_future(terrestrial=FALSE)
+  expect_gt(nrow(dft),0)
+  dfm <- list_layers_future(marine=FALSE)
+  expect_gt(nrow(dfm),0)
+  expect_false(nrow(dft) == nrow(dfm))
   df <- list_layers_future(monthly=FALSE)
-  expect_gt(ncol(df),0)
+  expect_gt(nrow(df),0)
+  df <- list_layers_future(terrestrial = FALSE, marine=FALSE)
+  expect_equal(nrow(df), 0)
 })
 
 test_that("list_layers_future filters version", {
@@ -141,6 +151,8 @@ test_that("list_layers_future filters version", {
   df <- list_layers_future(version=2)
   expect_gt(ncol(df),0)
   expect_gt(nrow(df),0)
+  df <- list_layers_future(version=1234567890)
+  expect_equal(nrow(df),0)
 })
 
 test_that("list_layers_future result is same as layers_future.csv", {
@@ -187,18 +199,23 @@ test_that("list_layers_paleo filters years_ago", {
 })
 
 test_that("list_layers_paleo filters general", {
-  df <- list_layers_paleo(terrestrial=FALSE)
-  expect_gt(ncol(df),0)
-  df <- list_layers_paleo(marine=FALSE)
-  expect_gt(ncol(df),0)
+  dft <- list_layers_paleo(terrestrial=FALSE)
+  expect_gt(nrow(dft),0)
+  dfm <- list_layers_paleo(marine=FALSE)
+  expect_gt(nrow(dfm),0)
+  expect_false(nrow(dft) == nrow(dfm))
   df <- list_layers_paleo(monthly=FALSE)
-  expect_gt(ncol(df),0)
+  expect_gt(nrow(df),0)
+  df <- list_layers_paleo(terrestrial = FALSE, marine=FALSE)
+  expect_equal(nrow(df),0)
 })
 
 test_that("list_layers_paleo filters version", {
   df <- list_layers_paleo(version=1)
   expect_gt(ncol(df),0)
   expect_gt(nrow(df),0)
+  df <- list_layers_paleo(version=1234567890)
+  expect_equal(nrow(df),0)
 })
 
 test_that("list_layers_future result is same as layers_future.csv", {
@@ -219,10 +236,13 @@ test_that("get_paleo_layers stops with wrong layer code", {
 })
 
 test_that("get_layers_info returns info", {
-  l <- get_layers_info(c("BO_salinity", "BO_B1_2100_salinity"))
-  expect_equal(nrow(l$current), 1)
+  lc <- c("BO_bathymin", "BO_salinity", "BO_B1_2100_salinity")
+  l <- get_layers_info(lc)
+  expect_equal(nrow(l$current), 2)
+  expect_equal(l$current$layer_code, lc[1:2])
   expect_equal(nrow(l$future), 1)
   expect_equal(nrow(l$paleo), 0)
-  expect_equal(nrow(l$common), 2)
+  expect_equal(nrow(l$common), 3)
+  expect_equal(l$common$layer_code, lc)
 })
 

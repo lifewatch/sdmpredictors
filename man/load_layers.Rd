@@ -42,4 +42,3 @@ env <- load_layers("BO_calcite", datadir = tempdir())
 \code{\link{list_layers}}, \code{\link{layer_stats}}, 
   \code{\link{layers_correlation}}
 }
-

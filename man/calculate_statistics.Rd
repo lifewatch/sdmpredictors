@@ -34,4 +34,3 @@ View(rbind(calculate_statistics("SST Baltic Sea", raster(x, layer = 1)))
 \seealso{
 \code{\link{layer_stats}}
 }
-

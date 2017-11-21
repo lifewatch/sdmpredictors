@@ -51,4 +51,3 @@ list_layers_future("Bio-ORACLE", scenario = "B1", year = 2100)$layer_code
 \code{\link{list_layers}}, \code{\link{list_layers_paleo}}, 
   \code{\link{list_datasets}}, \code{\link{load_layers}}
 }
-
