@@ -601,3 +601,45 @@ bench <- function(layer) {
 # t <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif")
 # t <- bench("D:/temp/BO_salinity_A1B_2100_zip_p3_z6.tif")
 
+check_bathy <- function() {
+  x <- load_layers(c('BO2_tempmean_ss', 'BO2_chlomean_ss', 'BO_bathymean', 'BO2_carbonphytomean_ss', 'BO2_ppmean_ss', 'BO2_salinitymean_ss'))
+  bathy <- raster(x, layer=3)
+  sst <- raster(x, layer=1)
+  bathyna <- is.na(values(bathy))
+  sstna <- is.na(values(sst))
+  nobathy <- bathyna & !sstna
+  nosst <- sstna & !bathyna
+  sum(nosst)
+  sum(nobathy)
+}
+
+generate_shoredistance <- function() {
+  # min, mean, max
+  # distance to the four corners, middle point 
+  
+  template <- raster(sdmpredictors::load_layers('BO2_tempmean_ss'), layer=1)
+  template[!is.na(values(template))] <- 32768
+  cells <- which(!is.na(values(template)))
+  center<- cbind(raster::xyFromCell(template, cells), cell=cells)
+  halfres <- res(template)/2
+  corners <- rbind(cbind(x=center[,1] - halfres, y=center[,2] + halfres, cell=cells),
+                   cbind(x=center[,1] - halfres, y=center[,2] - halfres, cell=cells),
+                   cbind(x=center[,1] + halfres, y=center[,2] + halfres, cell=cells),
+                   cbind(x=center[,1] + halfres, y=center[,2] - halfres, cell=cells))
+  corners[,1] <- round(corners[,1], digits=8)
+  corners[,2] <- round(corners[,2], digits=8)
+  xy <- rbind(center, corners)
+  names(xy) <- c('decimalLongitude', 'decimalLatitude', 'cell')
+  
+  TODO SET TO LOCAL xylookup
+  opt <- options(obistools_xylookup_url="http://api.iobis.org/xylookup/")
+  on.exit(options(opt))
+  
+  shoredist <- obistools::lookup_xy(xy, shoredistance = TRUE, grids=FALSE, areas = FALSE)
+  library(dplyr)
+  minmaxmean <- cbind(cell=xy[,'cell'], shoredist) %>% 
+    group_by(cell) %>% summarise(min(shoredistance), mean(shoredistance), max(shoredistance))
+  
+  
+}
+
