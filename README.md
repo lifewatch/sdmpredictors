@@ -9,21 +9,19 @@ An R package to improve the usability of datasets with predictors for species di
 
 Installation:
 
-    install.packages("sdmpredictors")
+```R
+    install.packages("sdmpredictors")
     # or for the latest dev version
     devtools::install_github("lifewatch/sdmpredictors")
-
-or with packrat:
-
-    packrat::init()
-    devtools::install_github("lifewatch/sdmpredictors")
-
+```
 
 Example 1: Create SDM for Dictyota diemensis in Australia 
-Note that this requires the ZOON, *ggplot2*, *cowplot* and *marinespeed* packages to be installed.
+Note that this requires the *ZOON*, *ggplot2*, *cowplot* and *marinespeed* packages to be installed.
 
+```R
     library(sdmpredictors)
     library(zoon)
+    
     # Inspect the available datasets and layers
     datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
     View(datasets)
@@ -66,9 +64,11 @@ Note that this requires the ZOON, *ggplot2*, *cowplot* and *marinespeed* package
       output = PrintMap)
     # Layer citations
     print(layer_citations(layercodes))
+```
 
 Example 2: view marine datasets, layers and load a few of them by name
 
+```R
     library(sdmpredictors)
     
     # exploring the marine datasets
@@ -82,9 +82,11 @@ Example 2: view marine datasets, layers and load a few of them by name
     
     # download specific layers to the current directory
     rasters <- load_layers(c("BO_calcite", "BO_chlomean", "MS_bathy_5m"), datadir = ".")
-    
+```
+
 Example 3: looking up statistics and correlations for marine annual layers:
-    
+
+```R
     datasets <- list_datasets(terrestrial = FALSE, marine = TRUE)
     layers <- list_layers(datasets)
     
@@ -118,7 +120,10 @@ Example 3: looking up statistics and correlations for marine annual layers:
         print(group_correlation)
       }
     }
-    
+```
+
 See the quickstart vignette for more information
 
+```R
     vignette("quickstart", package = "sdmpredictors")
+```
