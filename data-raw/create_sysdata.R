@@ -2,7 +2,7 @@ source("data-raw/calculate_stats.R")
 source("data-raw/bibentries.R")
 
 create_sysdata <- function() {
-  inprep <- c() #"Bio-ORACLE2"
+  inprep <- c('Freshwater') #"Bio-ORACLE2"
   datasetlist <- read.csv2("data-raw/datasets.csv", stringsAsFactors = FALSE)
   datasetlist <- datasetlist[!(datasetlist$dataset_code %in% inprep),]
   layerlist <- read.csv2("data-raw/layers.csv", stringsAsFactors = FALSE)

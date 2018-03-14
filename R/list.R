@@ -1,36 +1,33 @@
 #' Lists the supported datasets
-#' 
+#'
 #' \code{list_datasets} returns information on the supported datasets.
-#' 
+#'
 #' @usage list_datasets(terrestrial=TRUE, marine=TRUE)
-#'   
+#'
 #' @param terrestrial logical. When \code{TRUE}, then datasets that only have
 #'   terrestrial data (seamasked) are returned.
 #' @param marine logical. When \code{TRUE}, then datasets that only have marine
 #'   data (landmasked) are returned.
-#'   
-#' @details By default it returns all datasets, when both \code{marine} and
+#' @param freshwater logical. When \code{TRUE}, then datasets that only have
+#'   freshwater data are returned.
+#'
+#' @details By default it returns all datasets, when both \code{marine}, \code{freshwater} and
 #'   \code{terrestrial} are \code{FALSE} then only datasets without land- nor
 #'   seamasks are returned.
-#'   
+#'
 #' @return A dataframe with information on the supported datasets.
-#'   
+#'
 #' @examples
 #' list_datasets()
-#' list_datasets(marine=FALSE)
-#' list_datasets(terrestrial=FALSE)
-#' 
+#' list_datasets(marine=TRUE)
+#' list_datasets(terrestrial=TRUE)
+#'
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
+#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}},
 #'   \code{\link{list_layers_paleo}}
-list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
+list_datasets <- function(terrestrial = NA, marine = NA, freshwater = NA) {
   data <- get_sysdata()$datasetlist
-  if(!terrestrial) {
-    data <- subset(data, !terrestrial)
-  }
-  if(!marine) {
-    data <- subset(data, !marine)
-  }
+  data <- filterbydatatype(data, terrestrial, marine, freshwater)
   return(data)  
 }
 
@@ -46,6 +43,8 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #'   only have terrestrial data (seamasked) are returned.
 #' @param marine logical. When \code{TRUE} (default), then datasets that only 
 #'   have marine data (landmasked) are returned.
+#' @param freshwater logical. When \code{TRUE}, then datasets that only have
+#'   freshwater data are returned.
 #' @param monthly logical. When \code{FALSE}, then no monthly layers are 
 #'   returned. All annual and monthly layers are returned by default.
 #' @param version numeric vector. When \code{NULL} then layers from all versions
@@ -80,15 +79,10 @@ list_datasets <- function(terrestrial = TRUE, marine = TRUE) {
 #' @seealso \code{\link{load_layers}}, \code{\link{list_datasets}}, 
 #'   \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}, 
 #'   \code{\link{get_future_layers}}, \code{\link{get_paleo_layers}}
-list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly = TRUE, version = NULL) {
+list_layers <- function(datasets=c(), terrestrial = NA, marine = NA, freshwater = NA, monthly = TRUE, version = NULL) {
   data <- get_sysdata()$layerlist
+  data <- filterbydatatype(data, terrestrial, marine, freshwater)
   
-  if(!terrestrial) {
-    data <- subset(data, !terrestrial)
-  }
-  if(!marine) {
-    data <- subset(data, !marine)
-  }
   if(is.data.frame(datasets)) {
     datasets <- datasets$dataset_code
   }
@@ -121,6 +115,8 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 #'   only have terrestrial data (seamasked) are returned.
 #' @param marine logical. When \code{TRUE} (default), then datasets that only 
 #'   have marine data (landmasked) are returned.
+#' @param freshwater logical. When \code{TRUE}, then datasets that only have
+#'   freshwater data are returned.
 #' @param monthly logical. When \code{FALSE}, then no monthly layers are 
 #'   returned. All annual and monthly layers are returned by default.
 #' @param version numeric vector. When \code{NULL} then layers from all versions
@@ -142,7 +138,7 @@ list_layers <- function(datasets=c(), terrestrial = TRUE, marine = TRUE, monthly
 #' @seealso \code{\link{list_layers}}, \code{\link{list_layers_paleo}}, 
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_future <- function(datasets=c(), scenario = NA, year = NA, 
-                               terrestrial = TRUE, marine = TRUE, monthly = TRUE, version = NULL) {
+                               terrestrial = NA, marine = NA, freshwater = NA, monthly = TRUE, version = NULL) {
   data <- get_sysdata()$layerlistfuture
   
   if(!is.na(scenario)) {
@@ -151,7 +147,7 @@ list_layers_future <- function(datasets=c(), scenario = NA, year = NA,
   if(!is.na(year)) {
     data <- data[data$year %in% year,]
   }
-  data <- filter_layers(data, datasets, terrestrial, marine, monthly, version)
+  data <- filter_layers(data, datasets, terrestrial, marine, freshwater, monthly, version)
   return(data)
 }
 
@@ -222,6 +218,8 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 #'   only have terrestrial data (seamasked) are returned.
 #' @param marine logical. When \code{TRUE} (default), then datasets that only 
 #'   have marine data (landmasked) are returned.
+#' @param freshwater logical. When \code{TRUE}, then datasets that only have
+#'   freshwater data are returned.
 #' @param monthly logical. When \code{FALSE}, then no monthly layers are 
 #'   returned. All annual and monthly layers are returned by default.
 #' @param version numeric vector. When \code{NULL} then layers from all versions
@@ -243,7 +241,7 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 #' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_ago = NA,
-                               terrestrial = TRUE, marine = TRUE, monthly = TRUE, version = NULL) {
+                               terrestrial = NA, marine = NA, freshwater = NA, monthly = TRUE, version = NULL) {
   data <- get_sysdata()$layerlistpaleo
   
   if(!is.na(model_name)) {
@@ -255,7 +253,7 @@ list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_a
   if(!is.na(years_ago)) {
     data <- data[data$years_ago %in% years_ago,]
   }
-  data <- filter_layers(data, datasets, terrestrial, marine, monthly, version)
+  data <- filter_layers(data, datasets, terrestrial, marine, freshwater, monthly, version)
   return(data)
 }
 
@@ -358,9 +356,9 @@ get_layers_info <- function(layer_codes = c()) {
   list(common = common, current = current, future = future, paleo = paleo)
 }
 
-filter_layers <- function(layers, datasets, terrestrial, marine, monthly, version) {
+filter_layers <- function(layers, datasets, terrestrial, marine, freshwater, monthly, version) {
   # filter terrestrial/marine and/or given datasets
-  datasets_filter <- list_datasets(terrestrial, marine)$dataset_code
+  datasets_filter <- list_datasets(terrestrial, marine, freshwater)$dataset_code
   if(is.data.frame(datasets)) {
     datasets <- datasets$dataset_code
   }
@@ -380,4 +378,24 @@ filter_layers <- function(layers, datasets, terrestrial, marine, monthly, versio
     layers <- layers[layers$version %in% version,]
   }
   layers
+}
+
+filterbydatatype <- function(data, terrestrial, marine, freshwater) {
+  if(isTRUE(marine) | isTRUE(freshwater)) {
+    terrestrial <- isTRUE(terrestrial)
+  } else if(isTRUE(terrestrial) | isTRUE(freshwater)) {
+    marine <- isTRUE(marine)
+  } else if(isTRUE(terrestrial) | isTRUE(marine)) {
+    freshwater <- isTRUE(freshwater)
+  }
+  if(!is.na(terrestrial) && !terrestrial) {
+    data <- subset(data, !terrestrial)
+  }
+  if(!is.na(marine) && !marine) {
+    data <- subset(data, !marine)
+  }
+  if(!is.na(freshwater) && !freshwater) {
+    data <- subset(data, !freshwater)
+  }
+  data
 }

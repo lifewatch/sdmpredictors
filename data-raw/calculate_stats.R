@@ -12,7 +12,7 @@ statsdir <- "data-raw/stats"
 
 # TODO define WorldClim layer codes, copy compressed to phycology site, then calc all terrestrial layer stats and all terrestrial correlations
 
-calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE) {
+calc_all_layer_stats <- function(terrestrial = FALSE, marine = FALSE, freshwater = FALSE) {
   calc_layer_stats <- function(layercode) {
     ## convert to behrmann first OR store data as Behrmann
     r <- load_layers(layercode, equalarea = TRUE)
@@ -160,7 +160,7 @@ calc_corr_matrix_quad <- function(x, fname, quad = FALSE) {
 # }
 
 
-calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, new_rasters = NULL, quad = FALSE) {
+calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, freshwater = FALSE, new_rasters = NULL, quad = FALSE) {
 #   calc_correlation_matrix <- function(rasterstack, fname) {
 #     stats <- layerStats(rasterstack, 'pearson', na.rm=TRUE)
 #     correlations <- stats$`pearson correlation coefficient`
@@ -181,6 +181,14 @@ calc_all_correlation_matrices <- function(terrestrial = FALSE, marine = FALSE, n
     }
     #calc_correlation_matrix(terrestrial_stack, paste0(statsdir, "/pearson_corr_terrestrial_quad.rds"))
     calc_corr_matrix_quad(terrestrial_stack, "pearson_corr_terrestrial_quad", quad)
+  }
+  if(freshwater) {
+    freshwater_stack <- load_layers(list_layers(terrestrial=F,marine=F, freshwater=T), equalarea = TRUE)
+    if(!is.null(new_rasters)){
+      freshwater_stack <- stack(freshwater_stack, new_rasters)
+    }
+    #calc_correlation_matrix(terrestrial_stack, paste0(statsdir, "/pearson_corr_terrestrial_quad.rds"))
+    calc_corr_matrix_quad(freshwater_stack, "pearson_corr_freshwater_quad", quad)
   }
   ## TODO implement: Engler, J. O., & Rodder, D. (2012). Disentangling interpolation and extrapolation uncertainties in ecologial niche models : a novel visualization technique for the spatial variation of predictor variable colinearity. Biodiversity Informatics, 8, 30–40.
 }

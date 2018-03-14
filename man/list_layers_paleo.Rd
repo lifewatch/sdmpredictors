@@ -25,6 +25,9 @@ only have terrestrial data (seamasked) are returned.}
 \item{marine}{logical. When \code{TRUE} (default), then datasets that only 
 have marine data (landmasked) are returned.}
 
+\item{freshwater}{logical. When \code{TRUE}, then datasets that only have
+freshwater data are returned.}
+
 \item{monthly}{logical. When \code{FALSE}, then no monthly layers are 
 returned. All annual and monthly layers are returned by default.}
 

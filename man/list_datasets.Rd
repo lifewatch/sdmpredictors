@@ -12,6 +12,9 @@ terrestrial data (seamasked) are returned.}
 
 \item{marine}{logical. When \code{TRUE}, then datasets that only have marine
 data (landmasked) are returned.}
+
+\item{freshwater}{logical. When \code{TRUE}, then datasets that only have
+freshwater data are returned.}
 }
 \value{
 A dataframe with information on the supported datasets.
@@ -20,17 +23,17 @@ A dataframe with information on the supported datasets.
 \code{list_datasets} returns information on the supported datasets.
 }
 \details{
-By default it returns all datasets, when both \code{marine} and
+By default it returns all datasets, when both \code{marine}, \code{freshwater} and
   \code{terrestrial} are \code{FALSE} then only datasets without land- nor
   seamasks are returned.
 }
 \examples{
 list_datasets()
-list_datasets(marine=FALSE)
-list_datasets(terrestrial=FALSE)
+list_datasets(marine=TRUE)
+list_datasets(terrestrial=TRUE)
 
 }
 \seealso{
-\code{\link{list_layers}}, \code{\link{list_layers_future}}, 
+\code{\link{list_layers}}, \code{\link{list_layers_future}},
   \code{\link{list_layers_paleo}}
 }

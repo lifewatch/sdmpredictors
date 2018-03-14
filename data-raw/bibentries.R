@@ -1,3 +1,5 @@
+TODO ADD BIO_ORACLE 2
+
 bibentries <- list(
   "WorldClim" = bibentry(bibtype = "Article",
                          author = c(
@@ -45,6 +47,15 @@ bibentries <- list(
                        journal = "Ecography",
                        year = 2017, 
                        doi = "10.1111/ecog.02880", key = "ENVIREM"),
+  "Freshwater" = bibentry(bibtype = "Article",
+                          author = c(person("S.", "Domisch"), person("G.", "Amutelli"), person("W.", "Jetz")),
+                          title = "Near-global freshwater-specific environmental variables for biodiversity analyses in 1 km resolution",
+                          journal = "Scientific Data",
+                          year = 2015,
+                          doi = "10.1038/sdata.2015.73", key = "Freshwater"))
+  
+  #. Scientific Data 2:150073 doi: 10.1038/sdata.2015.73. Data available online at http://www.earthenv.org/.
+  
   lnk_bibentry = list("future" = list("Bio-ORACLE" = "Bio-ORACLE_Future"),
                       "paleo" = list("MARSPEC" = "Paleo-MARSPEC"),
                       "layers" = list()))

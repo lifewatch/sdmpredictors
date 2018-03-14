@@ -339,7 +339,10 @@ clear_raster_values_cache <- function() {
 #' @seealso \code{\link{layer_stats}}
 calculate_statistics <- function(layercode, raster) {
   v <- raster::values(raster)
-  q <- quantile(v,na.rm=TRUE)
+  v <- v[!is.na(v)]
+  q <- quantile(v,na.rm = TRUE)
+  mean <- mean(v, na.rm = TRUE)
+  mg <- moran_geary(raster, mean)
   d <- data.frame(layer_code = layercode,
                   minimum = q[1],
                   q1 = q[2],
@@ -352,8 +355,41 @@ calculate_statistics <- function(layercode, raster) {
                   moran = raster::Moran(raster),
                   geary = raster::Geary(raster),
                   stringsAsFactors = FALSE)
+  raster::removeTmpFiles(h=0)
   return (d)
 }
+
+moran_geary <- function(raster, mean) {
+  rows <- 1:nrow(raster)
+  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
+  
+  Eij <- 0
+  wZiZj <- 0
+  z2 <- 0
+  n <- 0
+  W <- 0
+  gz <- 0
+  for(chunk in row_chunks) {
+    rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
+    center <- rowfocals[,5]
+    z <- center - mean
+    rowfocals[,5] <- NA
+    wZiZj <- wZiZj + sum(rowSums(rowfocals - mean, na.rm = TRUE) * z, na.rm = TRUE)
+    z2 <- z2 + sum(z * z, na.rm = TRUE)
+    n <- n + sum(!is.na(z))
+    W <- W + sum(!is.na(rowfocals))
+    Eij <- Eij + sum((rowfocals - center) ^ 2, na.rm=TRUE)
+    gz <- gz + sum(z ^ 2, na.rm=TRUE)
+  }
+  # Moran's I
+  NS0 <- n / W
+  mI <- NS0 * wZiZj/z2
+  # Geary's C
+  gz <- 2 * W * gz
+  gC <- ((n - 1) * Eij/gz)
+  list(Moran=mI, Geary=gC)
+}
+
 
 #' Calculate Pearson correlation coefficient for part of a matrix
 #' @seealso \code{\link{layers_correlation} \link{pearson_correlation_matrix}}
