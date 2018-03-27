@@ -967,15 +967,32 @@ pointinpolygon <- function() {
   redisClose()
 }
 
-fresh_corr <- readRDS('/Users/samuel/a/projects/sdmpredictors/data-raw/stats/corr/pearson_corr_freshwater_quad.rds')
-cols <- colnames(fresh_corr)
-rows <- rownames(fresh_corr)
+# old fix row/col names
+# fresh_corr <- readRDS('/Users/samuel/a/projects/sdmpredictors/data-raw/stats/corr/pearson_corr_freshwater_quad.rds')
+# cols <- colnames(fresh_corr)
+# rows <- rownames(fresh_corr)
+# 
+# for (i in 1:9) {
+#   cols <- sub(paste0('[_]', i, '$'), paste0('_0', i), cols)
+#   rows <- sub(paste0('[_]', i, '$'), paste0('_0', i), rows)
+# }
+# cbind(new=cols[!cols %in% colnames(fresh_corr)],
+# old=colnames(fresh_corr)[!cols %in% colnames(fresh_corr)])
+# 
+# 
+# cbind(new=rows[!rows %in% rownames(fresh_corr)],
+#       old=rownames(fresh_corr)[!rows %in% rownames(fresh_corr)])
+# 
+# colnames(fresh_corr) <- cols
+# rownames(fresh_corr) <- rows
+# saveRDS(fresh_corr, '/Users/samuel/a/projects/sdmpredictors/data-raw/stats/corr/pearson_corr_freshwater_quad.rds')
 
-for (i in 1:9) {
-  cols <- sub(paste0('[_]', i, '$'), paste0('_0', i), cols)
-  rows <- sub(paste0('[_]', i, '$'), paste0('_0', i), rows)
-}
-cbind(new=cols[!cols %in% colnames(fresh_corr)],
-old=colnames(fresh_corr)[!cols %in% colnames(fresh_corr)])
-
-
+# files <- list.files('data-raw/stats', 'FW[_].*?[.]rds', full.names = TRUE)
+# for (f in files) {
+#   stats <- readRDS(f)
+#   fname <- sub('[.]rds$', '', basename(f))
+#   if(stats$layer_code != fname) {
+#     stats$layer_code <- fname
+#     saveRDS(stats, f)
+#   }
+# }

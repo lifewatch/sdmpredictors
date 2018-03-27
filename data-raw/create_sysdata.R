@@ -21,6 +21,8 @@ create_sysdata <- function() {
   layerscorrelation <- get_all_correlations()
   layerscorrelation <- layerscorrelation[rownames(layerscorrelation) %in% layerlist$layer_code, 
                                          colnames(layerscorrelation)  %in% layerlist$layer_code]
+  
+  print(layerlist$layer_code[!layerlist$layer_code %in% rownames(layerscorrelation)])
   stopifnot(all(layerlist$layer_code %in% rownames(layerscorrelation)))
   stopifnot(all(layerlist$layer_code %in% colnames(layerscorrelation)))
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,

@@ -211,7 +211,9 @@ combine_data_frame <- function(a, b) {
 get_all_correlations <- function(){
   marine_correlations <- readRDS( paste0(statsdir, "/corr/pearson_corr_marine_quad.rds"))[[1]]
   terrestrial_correlations <- readRDS( paste0(statsdir, "/corr/pearson_corr_terrestrial_quad.rds"))[[1]]
+  freshwater_correlations <- readRDS( paste0(statsdir, "/corr/pearson_corr_freshwater_quad.rds"))
   all <- combine_data_frame(marine_correlations, terrestrial_correlations)
+  all <- combine_data_frame(all, freshwater_correlations)
   return(all)
 }
 
