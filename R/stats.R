@@ -222,22 +222,23 @@ plot_correlation <- function(layers_correlation, prettynames = list(), palette =
 }
 
 #' Calculate the Pearson correlation coefficient matrix for a rasterstack
-#' 
+#'
 #' @usage pearson_correlation_matrix(x, cachesize = 20)
-#'   
-#' @param x RasterStack. The stack of rasters you want to calculate the Pearson 
-#'   correlation coefficient matrix for. This can be obtained by calling 
+#'
+#' @param x RasterStack. The stack of rasters you want to calculate the Pearson
+#'   correlation coefficient matrix for. This can be obtained by calling
 #'   \code{\link{load_layers}}.
-#' @param cachesize integer. For how many rasters should the values be kept in 
-#'   local memory. By default this is set to 20, a parameter which works 
+#' @param cachesize integer. For how many rasters should the values be kept in
+#'   local memory. By default this is set to 20, a parameter which works
 #'   reasonably well on a windows computer with 8GB RAM.
-#'   
+#' @param same_mask logical. Whether we can assume that the mask is the same
+#'   for all layers (same NA values), default is \code{FALSE}.
 #' @return A correlation matrix.
-#'   
+#'
 #' @examples \dontrun{
 #' # calculate correlation between SST and salinity in the Baltic Sea
-#' 
-#' # warning using tempdir() implies that data will be downloaded again in the 
+#'
+#' # warning using tempdir() implies that data will be downloaded again in the
 #' # next R session
 #' x <- load_layers(c("BO_sstmax", "BO_salinity"), datadir = tempdir())
 #' e <- extent(13, 31, 52, 66)
@@ -248,7 +249,7 @@ plot_correlation <- function(layers_correlation, prettynames = list(), palette =
 #' @seealso \code{\link{layers_correlation} \link{plot_correlation}
 #'   \link{load_layers}}
 #' @encoding UTF-8
-pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
+pearson_correlation_matrix <- function(x, cachesize = 20, same_mask = FALSE) {
   clear_raster_values_cache()
   on.exit(clear_raster_values_cache())
   asSample <- TRUE
@@ -257,19 +258,14 @@ pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
   mat <- matrix(NA, nrow=nl, ncol=nl)
   colnames(mat) <- rownames(mat) <- names(x)
   
-  # means <- c()
-  # sds <- c()
-  # for (i in 1:nl) {
-  #   vals_sd <- raster_values(raster(x, layer=i))
-  #   means[i] <- mean(vals, na.rm=TRUE)
-  #   sds[i] <- sd(vals, na.rm=TRUE)
-  # }
-  # x <- x - means
   sds <- c()
+  mask <- NULL
   for(i in 1:nl) {
-    sds[i] <- preprocess_raster_values(x, i)
+    if(same_mask && i == 1) {
+      mask <- is.na(raster::values(raster(x, layer=1)))
+    }
+    sds[i] <- preprocess_raster_values(x, i, mask)
   }
-  #
   for (i in 1:nl) {
     mat[i,i] <- 1
   }
@@ -277,7 +273,7 @@ pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
     indexes <- i + 1:cachesize
     v <- lapply(X = indexes[indexes <= nl], function(i) { raster_values(x, layer=i) })
     
-    for( vi in 1:(length(v)-1)) {## calculate correlations for all "cached" rasters
+    for( vi in 1:(length(v)-1)) { ## calculate correlations for all "cached" rasters
       for (vj in (vi+1):length(v)) {
         mat <- pearson_correlation(mat, indexes[vi], indexes[vj], v[[vi]], v[[vj]], sds, n, asSample)
       }
@@ -295,12 +291,17 @@ pearson_correlation_matrix <- function(x, cachesize = 20) { ## always na.rm=TRUE
   return(mat)
 }
 
-preprocess_raster_values <- function(x, layer) {
+preprocess_raster_values <- function(x, layer, mask) {
   p <- file.path(get_datadir(NULL), paste0("cache_rv_", layer, ".rds"))
   v <- raster::values(raster(x, layer=layer))
+  if(!is.null(mask)) {
+    vna <- is.na(v)
+    stopifnot(all(mask == vna)) # NA values are not the same as the mask
+    v <- v[!vna]
+  }
   m <- mean(v, na.rm=TRUE)
   v <- v - m
-  print(p)
+  print(paste0("Temporary cache file: ", p))
   saveRDS(v, p)
   sd(v, na.rm=TRUE)
 }
@@ -339,9 +340,10 @@ clear_raster_values_cache <- function() {
 #' @seealso \code{\link{layer_stats}}
 calculate_statistics <- function(layercode, raster) {
   v <- raster::values(raster)
-  v <- v[!is.na(v)]
-  q <- quantile(v,na.rm = TRUE)
-  mean <- mean(v, na.rm = TRUE)
+  nav <- is.na(v)
+  v <- v[!nav]
+  q <- quantile(v)
+  mean <- mean(v)
   mg <- moran_geary(raster, mean)
   d <- data.frame(layer_code = layercode,
                   minimum = q[1],
@@ -349,11 +351,11 @@ calculate_statistics <- function(layercode, raster) {
                   median = q[3],
                   q3 = q[4],
                   maximum = q[5],
-                  mad = mad(v, center = q[3], na.rm = TRUE),
-                  mean = mean(v, na.rm = TRUE),
-                  sd = sd(v, na.rm = TRUE),
-                  moran = raster::Moran(raster),
-                  geary = raster::Geary(raster),
+                  mad = mad(v, center = q[3]),
+                  mean = mean,
+                  sd = sd(v),
+                  moran = mg$Moran,
+                  geary = mg$Geary,
                   stringsAsFactors = FALSE)
   raster::removeTmpFiles(h=0)
   return (d)
@@ -361,7 +363,7 @@ calculate_statistics <- function(layercode, raster) {
 
 moran_geary <- function(raster, mean) {
   rows <- 1:nrow(raster)
-  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
+  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),1000)))
   
   Eij <- 0
   wZiZj <- 0

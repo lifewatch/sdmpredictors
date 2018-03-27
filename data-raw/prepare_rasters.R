@@ -3,7 +3,7 @@ library(sdmpredictors)
 
 #options(sdmpredictors_datadir = "D:/a/projects/predictors/results")
 
-compress_file <- ?sdmpredictors:::compress_file
+compress_file <- sdmpredictors:::compress_file
 
 prepare_layer <- function(layerpath, outputdir, newname, scalefactor = 1)  {
   r <- raster(layerpath)
@@ -627,167 +627,6 @@ rename_file <- function(path, prefix, suffix = NULL) {
   tofile
 }
 
-moran_fast <- function(raster, mean) {
-  rows <- 1:nrow(raster)
-  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
-  
-  wZiZj <- 0
-  z2 <- 0
-  n <- 0
-  W <- 0
-  
-  for(chunk in row_chunks) {
-    rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
-    rowfocals <- rowfocals - mean
-    z <- rowfocals[,5] #- mean
-
-    rowfocals[,5] <- NA
-    wZiZj <- wZiZj + sum(rowSums(rowfocals, na.rm = TRUE) * z, na.rm = TRUE)
-    z2 <- z2 + sum(z * z, na.rm = TRUE)
-    n <- n + sum(!is.na(z))
-    W <- W + sum(!is.na(rowfocals))
-  }
-  NS0 <- n / W
-  mI <- NS0 * wZiZj/z2
-  l1 <- list(NS0=NS0, wZiZj=wZiZj, z2=z2, W=W, n=n)
-  print(l1)
-  mI
-}
-
-geary_fast <- function(raster, mean) {
-  rows <- 1:nrow(raster)
-  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
-  
-  Eij <- 0
-  n <- 0
-  W <- 0
-  z <- 0
-  for(chunk in row_chunks) {
-    rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
-    center <- rowfocals[,5]
-    Eij <- Eij + sum((rowfocals - center) ^ 2, na.rm=TRUE)
-    n <- n + sum(!is.na(center))
-    W <- W + sum(!is.na(rowfocals)) - nrow(rowfocals)
-    z <- z + sum((center - mean) ^ 2, na.rm=TRUE)
-  }
-  z <- 2 * W * z
-  ((n - 1) * Eij/z)
-}
-
-moran_geary <- function(raster, mean) {
-  rows <- 1:nrow(raster)
-  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
-  
-  Eij <- 0
-  wZiZj <- 0
-  z2 <- 0
-  n <- 0
-  W <- 0
-  gz <- 0
-  for(chunk in row_chunks) {
-    rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
-    center <- rowfocals[,5]
-    z <- center - mean
-    rowfocals[,5] <- NA
-    wZiZj <- wZiZj + sum(rowSums(rowfocals - mean, na.rm = TRUE) * z, na.rm = TRUE)
-    z2 <- z2 + sum(z * z, na.rm = TRUE)
-    n <- n + sum(!is.na(z))
-    W <- W + sum(!is.na(rowfocals))
-    Eij <- Eij + sum((rowfocals - center) ^ 2, na.rm=TRUE)
-    gz <- gz + sum(z ^ 2, na.rm=TRUE)
-  }
-  # Moran's I
-  NS0 <- n / W
-  mI <- NS0 * wZiZj/z2
-  # Geary's C
-  gz <- 2 * W * gz
-  gC <- ((n - 1) * Eij/gz)
-  list(Moran=mI, Geary=gC)
-}
-
-# system.time({moran_fast(raster, mean(getValues(raster), na.rm=T))})
-# system.time({Moran(raster)})
-
-# system.time({geary_fast(raster, mean(getValues(raster), na.rm=T))})
-# system.time({Geary(raster)})
-# system.time({p1 <- moran_geary(raster, mean(getValues(raster), na.rm=T))})
-# system.time({p2 <- list(Moran(raster), Geary(raster))})
-
-geary_slow <- function() {
-  profvis::profvis({
-    w <- matrix(c(1, 1, 1, 1, 0, 1, 1, 1, 1), 3, 3)
-    w <- raster:::.getFilter(w, warn = FALSE)
-    i <- trunc(length(w)/2) + 1
-    n <- ncell(x) - cellStats(x, "countNA")
-    
-    fun <- function(x, ...) sum(w * (x - x[i])^2, ...)
-    w2 <- w
-    w2[] <- 1
-    Eij <- cellStats(focal(x, w = w2, fun = fun, na.rm = TRUE, 
-                           pad = TRUE), sum)
-    
-    w[w == 0] <- NA
-    W <- focal(x, w = w, fun = function(x, ...) {
-      sum(!is.na(x))
-    }, pad = TRUE)
-    
-    z <- 2 * cellStats(W, sum) * cellStats((x - cellStats(x, base::mean))^2, sum)
-    (n - 1) * Eij/z
-    l2 <- list(n=n, z=z, Eij=Eij)
-  })
-}
-
-moran <- function(raster, mean) {
-  
-   rowfocals <- getValuesFocal(raster, row=1, nrows=1000, ngb=3)
-   
-   x <- rowfocals[,5]
-   z <- x - mean
-   
-   r <- raster(nr=5, nc=5, crs='+proj=utm +zone=12')
-   r[] <- 1:25
-   as.matrix(r)
-  
-  rowfocals <- getValuesFocal(r, row=1, nrows=5, ngb=3, names=TRUE)
-  
-  x <- rowfocals[,5]
-  z <- x - mean
-  rowfocals[,5] <- NA
-  wZiZj <- sum(rowSums(rowfocals, na.rm = TRUE) * z, na.rm = TRUE)
-  z2 <- sum(z * z, na.rm = TRUE)
-  n <- sum(!is.na(x))
-  W <- sum(!is.na(rowfocals))
-  
-  NS0 <- n / W
-  mI <- NS0 * wZiZj/z2
-  mI
-  
-  # v <- getValues(x)
-  library(profvis)
-  profvis({
-    w = matrix(c(1, 1, 1, 1, 0, 1, 1, 1, 1), 3, 3)
-    z <- x - mean
-    
-    wZiZj <- focal(z, w = w, fun = "sum", na.rm = TRUE, pad = TRUE)
-    wZiZj <- overlay(wZiZj, z, fun = function(x, y) {
-      x * y
-    })
-    wZiZj <- cellStats(wZiZj, sum)
-    z2 <- cellStats(z * z, sum)
-    n <- ncell(z) - cellStats(z, "countNA")
-    
-    w2 <- w
-    w2[w2 == 0] <- NA
-    W <- focal(z, w = w2, fun = function(x, ...) { as.double(sum(!is.na(x)))}, pad = TRUE)
-    
-    NS0 <- n/cellStats(W, sum)
-    mI <- NS0 * wZiZj/z2
-    l2 <- list(NS0=NS0, wZiZj=wZiZj, z2=z2, W=cellStats(W, sum), n=n)
-  })
-  return(mI)
-}
-
-
 prepare_streams <- function() {
   dir <- '~/a/projects/sdmpredictors_dataprep/streams'
   wgs84dir <- paste0(dir, '/wgs84')
@@ -818,18 +657,6 @@ prepare_streams <- function() {
     if(!file.exists(fname)) {
       stats <- sdmpredictors:::calculate_statistics(layercode, raster(path))
       
-      v <- raster::values(raster)
-      v <- v[!is.na(v)]
-      q <- quantile(v,na.rm=TRUE)
-      moran <- raster::Moran(raster)
-      geary <- raster::Geary(raster)
-      d <- data.frame(layer_code = layercode,
-                      minimum = q[1], q1 = q[2], median = q[3], q3 = q[4], maximum = q[5],
-                      mad = mad(v, center = q[3], na.rm = TRUE), mean = mean(v, na.rm = TRUE), sd = sd(v, na.rm = TRUE),
-                      moran = moran, geary = geary,
-                      stringsAsFactors = FALSE)
-      
-      
       saveRDS(stats, fname)
     }
   }
@@ -837,7 +664,7 @@ prepare_streams <- function() {
   corrfile <- paste0(statsdir, "/corr/pearson_corr_freshwater_quad.rds")
   if(!file.exists(corrfile)) {
     x <- raster::stack(equalareafiles)
-    corr <- sdmpredictors::pearson_correlation_matrix(x, 10)
+    corr <- sdmpredictors::pearson_correlation_matrix(x, 10, same_mask = TRUE)
     saveRDS(corr, corrfile)
   }
 }
@@ -885,3 +712,270 @@ generate_shoredistance <- function() {
   
   # TODO CONTINUE HERE
 }
+
+
+moran_stream <- function(raster, mean) {
+  rv <- raster::values(raster)
+  wz <- numeric(ncell(rv))
+  nav <- !is.na(rv)
+  cv <- rv[nav]
+  
+  n <- length(cv)
+  W <- n / 8
+  
+  # wZiZj : sum of neighbour * middle
+  
+  ## loop over rows, 3 rows at a time to (rolling window of rows in order to calculate wZiZj and Eij)
+  
+  
+}
+
+moran_fast <- function(raster, mean) {
+  rows <- 1:nrow(raster)
+  row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
+  
+  wZiZj <- 0
+  z2 <- 0
+  n <- 0
+  W <- 0
+  
+  for(chunk in row_chunks) {
+    rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
+    rowfocals <- rowfocals - mean
+    z <- rowfocals[,5] #- mean
+    
+    rowfocals[,5] <- NA
+    wZiZj <- wZiZj + sum(rowSums(rowfocals, na.rm = TRUE) * z, na.rm = TRUE)
+    z2 <- z2 + sum(z * z, na.rm = TRUE)
+    n <- n + sum(!is.na(z))
+    W <- W + sum(!is.na(rowfocals))
+  }
+  NS0 <- n / W
+  mI <- NS0 * wZiZj/z2
+  l1 <- list(NS0=NS0, wZiZj=wZiZj, z2=z2, W=W, n=n)
+  print(l1)
+  mI
+}
+
+# geary_fast <- function(raster, mean) {
+#   rows <- 1:nrow(raster)
+#   row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
+#   
+#   Eij <- 0
+#   n <- 0
+#   W <- 0
+#   z <- 0
+#   for(chunk in row_chunks) {
+#     rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
+#     center <- rowfocals[,5]
+#     Eij <- Eij + sum((rowfocals - center) ^ 2, na.rm=TRUE)
+#     n <- n + sum(!is.na(center))
+#     W <- W + sum(!is.na(rowfocals)) - nrow(rowfocals)
+#     z <- z + sum((center - mean) ^ 2, na.rm=TRUE)
+#   }
+#   z <- 2 * W * z
+#   ((n - 1) * Eij/z)
+# }
+
+# moran_geary <- function(raster, mean) {
+#   rows <- 1:nrow(raster)
+#   row_chunks <- split(rows, ceiling(seq_along(rows)/min(nrow(raster),2000)))
+#   
+#   Eij <- 0
+#   wZiZj <- 0
+#   z2 <- 0
+#   n <- 0
+#   W <- 0
+#   gz <- 0
+#   for(chunk in row_chunks) {
+#     rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
+#     center <- rowfocals[,5]
+#     z <- center - mean
+#     rowfocals[,5] <- NA
+#     wZiZj <- wZiZj + sum(rowSums(rowfocals - mean, na.rm = TRUE) * z, na.rm = TRUE)
+#     z2 <- z2 + sum(z * z, na.rm = TRUE)
+#     n <- n + sum(!is.na(z))
+#     W <- W + sum(!is.na(rowfocals))
+#     Eij <- Eij + sum((rowfocals - center) ^ 2, na.rm=TRUE)
+#     gz <- gz + sum(z ^ 2, na.rm=TRUE)
+#   }
+#   # Moran's I
+#   NS0 <- n / W
+#   mI <- NS0 * wZiZj/z2
+#   # Geary's C
+#   gz <- 2 * W * gz
+#   gC <- ((n - 1) * Eij/gz)
+#   list(Moran=mI, Geary=gC)
+# }
+
+# system.time({moran_fast(raster, mean(getValues(raster), na.rm=T))})
+# system.time({Moran(raster)})
+
+# system.time({geary_fast(raster, mean(getValues(raster), na.rm=T))})
+# system.time({Geary(raster)})
+# system.time({p1 <- moran_geary(raster, mean(getValues(raster), na.rm=T))})
+# system.time({p2 <- list(Moran(raster), Geary(raster))})
+
+# geary_slow <- function() {
+#   profvis::profvis({
+#     w <- matrix(c(1, 1, 1, 1, 0, 1, 1, 1, 1), 3, 3)
+#     w <- raster:::.getFilter(w, warn = FALSE)
+#     i <- trunc(length(w)/2) + 1
+#     n <- ncell(x) - cellStats(x, "countNA")
+#     
+#     fun <- function(x, ...) sum(w * (x - x[i])^2, ...)
+#     w2 <- w
+#     w2[] <- 1
+#     Eij <- cellStats(focal(x, w = w2, fun = fun, na.rm = TRUE, 
+#                            pad = TRUE), sum)
+#     
+#     w[w == 0] <- NA
+#     W <- focal(x, w = w, fun = function(x, ...) {
+#       sum(!is.na(x))
+#     }, pad = TRUE)
+#     
+#     z <- 2 * cellStats(W, sum) * cellStats((x - cellStats(x, base::mean))^2, sum)
+#     (n - 1) * Eij/z
+#     l2 <- list(n=n, z=z, Eij=Eij)
+#   })
+# }
+
+# moran <- function(raster, mean) {
+#   
+#   rowfocals <- getValuesFocal(raster, row=1, nrows=1000, ngb=3)
+#   
+#   x <- rowfocals[,5]
+#   z <- x - mean
+#   
+#   r <- raster(nr=5, nc=5, crs='+proj=utm +zone=12')
+#   r[] <- 1:25
+#   as.matrix(r)
+#   
+#   rowfocals <- getValuesFocal(r, row=1, nrows=5, ngb=3, names=TRUE)
+#   
+#   x <- rowfocals[,5]
+#   z <- x - mean
+#   rowfocals[,5] <- NA
+#   wZiZj <- sum(rowSums(rowfocals, na.rm = TRUE) * z, na.rm = TRUE)
+#   z2 <- sum(z * z, na.rm = TRUE)
+#   n <- sum(!is.na(x))
+#   W <- sum(!is.na(rowfocals))
+#   
+#   NS0 <- n / W
+#   mI <- NS0 * wZiZj/z2
+#   mI
+#   
+#   # v <- getValues(x)
+#   library(profvis)
+#   profvis({
+#     w = matrix(c(1, 1, 1, 1, 0, 1, 1, 1, 1), 3, 3)
+#     z <- x - mean
+#     
+#     wZiZj <- focal(z, w = w, fun = "sum", na.rm = TRUE, pad = TRUE)
+#     wZiZj <- overlay(wZiZj, z, fun = function(x, y) {
+#       x * y
+#     })
+#     wZiZj <- cellStats(wZiZj, sum)
+#     z2 <- cellStats(z * z, sum)
+#     n <- ncell(z) - cellStats(z, "countNA")
+#     
+#     w2 <- w
+#     w2[w2 == 0] <- NA
+#     W <- focal(z, w = w2, fun = function(x, ...) { as.double(sum(!is.na(x)))}, pad = TRUE)
+#     
+#     NS0 <- n/cellStats(W, sum)
+#     mI <- NS0 * wZiZj/z2
+#     l2 <- list(NS0=NS0, wZiZj=wZiZj, z2=z2, W=cellStats(W, sum), n=n)
+#   })
+#   return(mI)
+# }
+
+
+pointinpolygon <- function() {
+  # def load_points(cur, points):
+  #   tmptable = "tmp" + str(uuid.uuid4()).replace("-", "")
+  #   cur.execute("""CREATE TABLE {0}(id INTEGER);
+  #               SELECT AddGeometryColumn('{0}', 'geom', 4326, 'POINT', 2);
+  #               CREATE INDEX {0}_geom_gist ON {0} USING gist(geom);""".format(tmptable))
+  #   f = points_to_file(points)
+  #   cur.copy_from(f, tmptable, columns = ('id', 'geom'))
+  #   return tmptable
+  library(RPostgreSQL)
+  library(readr)
+  library(tibble)
+  conn <- dbConnect(dbDriver("PostgreSQL"), dbname = 'xylookup', host='localhost', user = 'postgres', password = 'postgres')
+  dbExecute(conn, paste0("DROP TABLE IF EXISTS test_jorge;"))
+  dbExecute(conn, paste0("CREATE TABLE test_jorge (id INTEGER); ", 
+                         "SELECT AddGeometryColumn('test_jorge', 'geom', 4326, 'POINT', 2);",
+                         "CREATE INDEX test_jorge_geom_gist ON test_jorge USING gist(geom);"))
+  
+  # txt = "\n".join(["{}\tSRID=4326;POINT({} {})'".format(idx, xy[0], xy[1]) for idx, xy in enumerate(points)])
+  points <- data_frame(id=1:1000000, wkt=paste0('SRID=4326;POINT(', runif(1000000, -12, -8), ' ', runif(1000000, 36, 42), ')'))
+  # tmp <- tempfile('jorgepoints', fileext = '.txt')
+  tmp <- '/Users/samuel/Public/jorgepoints.txt'
+  write_delim(points, tmp, delim = '\t', col_names=FALSE)
+  # system(paste0('chmod a+r ', tmp))
+  
+  dbSendQuery(conn, paste0("COPY test_jorge FROM '", tmp, "';"))
+  
+  
+  #system.time({ onland <- dbGetQuery(conn, "SELECT pts.id FROM test_jorge pts LEFT JOIN water_polygons0_00005 all_water ON ST_Intersects(all_water.geom, pts.geom) WHERE all_water.geom IS NULL") })
+  #system.time({ onland2 <- dbGetQuery(conn, "SELECT pts.id FROM test_jorge pts LEFT JOIN water_polygons0_00005 all_water ON ST_DWithin(all_water.geom, pts.geom, 0) WHERE all_water.geom IS NULL") })
+  #system.time({ onland3 <- dbGetQuery(conn, "SELECT pts.id FROM test_jorge pts LEFT JOIN water_polygons0_00005 all_water ON ST_Within(all_water.geom, pts.geom) WHERE all_water.geom IS NULL") })
+  
+  
+  # l <- st_read("PG:'dbname=xylookup host=localhost port=5432 user=postgres password=postgres'", "water_polygons0_00005")
+  
+  # pgsql2shp -f "/Users/samuel/Public/waterpoly4326" -h localhost -u postgres -P postgres xylookup water_polygons0_00005
+  
+  # pgsql2shp -f "/Users/samuel/Public/waterpoly3857" -h localhost -u postgres -P postgres xylookup "SELECT id, st_transform(geom, 3857) as geom, fid FROM water_polygons0_00005"
+  
+  
+  # install.packages('rredis')
+   
+  
+  # Tile 38
+  
+  # p1 = st_point(c(7,52))
+  # p2 = st_point(c(-30,20))
+  # sfc = st_sfc(p1, p2, crs = 4326)
+  
+  # tile38-server -d /usr/local/var/tile38/data
+  # Connect tile38-cli
+  
+  
+  
+  # water <- sf::st_read("/Users/samuel/Public/waterpoly3857.shp")
+  # water_geoms <- st_combine(water$geometry)
+  # sf::st_write(water_geoms, "/Users/samuel/Public/water_multi.geojson")
+  # water_geojson <- geojsonio::geojson_json(water_geoms)
+  
+  land <- sf::st_read("/Users/samuel/Public/GSHHS_3857.shp")
+  #land_geojson <- geojsonio::geojson_json(land)
+  
+  
+  library(rredis)
+  redisConnect(host='127.0.0.1', port = 9851, nodelay = FALSE)
+  
+  #result = client.execute_command('SET' SET fleet truck POINT 33.32 115.423')
+  
+  redisCmd('WITHIN', 'fleet', 'FENCE', 'OBJECT', water_geojson)
+  
+  redisCmd('SET', 'fleet', 'p1', 'point', '33.5122', '-112.2692')
+  
+  
+  redisClose()
+}
+
+fresh_corr <- readRDS('/Users/samuel/a/projects/sdmpredictors/data-raw/stats/corr/pearson_corr_freshwater_quad.rds')
+cols <- colnames(fresh_corr)
+rows <- rownames(fresh_corr)
+
+for (i in 1:9) {
+  cols <- sub(paste0('[_]', i, '$'), paste0('_0', i), cols)
+  rows <- sub(paste0('[_]', i, '$'), paste0('_0', i), rows)
+}
+cbind(new=cols[!cols %in% colnames(fresh_corr)],
+old=colnames(fresh_corr)[!cols %in% colnames(fresh_corr)])
+
+

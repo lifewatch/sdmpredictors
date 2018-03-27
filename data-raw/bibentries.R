@@ -1,4 +1,3 @@
-TODO ADD BIO_ORACLE 2
 
 bibentries <- list(
   "WorldClim" = bibentry(bibtype = "Article",
@@ -10,15 +9,25 @@ bibentries <- list(
                          journal = "International Journal of Climatology",
                          year = 2005, volume = 25, number = 15, pages = "1965-1978",
                          doi = "10.1002/joc.1276", key = "WorldClim"),
-  "Bio-ORACLE" = bibentry(bibtype = "Article",
-                          author = c(
-                            person("Lennert", "Tyberghein"), person("Verbruggen", "Heroen"),
-                            person("Klaas", "Pauly"), person("Charles", "Troupin"),
-                            person("Frederic", "Mineur"), person("Olivier", "De Clerck")),
-                          title = "Bio-ORACLE: a global environmental dataset for marine species distribution modelling",
-                          journal = "Global Ecology and Biogeography",
-                          year = 2012, volume = 21, number = 2, pages = "272-281",
-                          doi = "10.1111/j.1466-8238.2011.00656.x", key = "Bio-ORACLE"),
+  "Bio-ORACLE" = c(bibentry(bibtype = "Article",
+                            author = c(
+                              person("Jorge", "Assis"), person("Lennert", "Tyberghein"),
+                              person("Samuel", "Bosch"), person("Verbruggen", "Heroen"), 
+                              person("Ester A.", "Serrão"), person("Olivier", "De Clerck"), 
+                              person("Derek", "Tittensor")),
+                            title = "Bio‐ORACLE v2.0: Extending marine data layers for bioclimatic modelling",
+                            journal = "Global Ecology and Biogeography",
+                            year = 2018, volume = 27, number = 3, pages = "277-284",
+                            doi = "10.1111/geb.12693", key = "Bio-ORACLEv2"),
+                   bibentry(bibtype = "Article",
+                            author = c(
+                              person("Lennert", "Tyberghein"), person("Verbruggen", "Heroen"),
+                              person("Klaas", "Pauly"), person("Charles", "Troupin"),
+                              person("Frederic", "Mineur"), person("Olivier", "De Clerck")),
+                            title = "Bio-ORACLE: a global environmental dataset for marine species distribution modelling",
+                            journal = "Global Ecology and Biogeography",
+                            year = 2012, volume = 21, number = 2, pages = "272-281",
+                            doi = "10.1111/j.1466-8238.2011.00656.x", key = "Bio-ORACLE")),
   "Bio-ORACLE_Future" = bibentry(bibtype = "Article",
                                  author = c(
                                    person("Alexander", "Jueterbock"), person("Lennert", "Tyberghein"), 
@@ -54,10 +63,8 @@ bibentries <- list(
                           year = 2015,
                           doi = "10.1038/sdata.2015.73", key = "Freshwater"))
   
-  #. Scientific Data 2:150073 doi: 10.1038/sdata.2015.73. Data available online at http://www.earthenv.org/.
-  
   lnk_bibentry = list("future" = list("Bio-ORACLE" = "Bio-ORACLE_Future"),
                       "paleo" = list("MARSPEC" = "Paleo-MARSPEC"),
-                      "layers" = list()))
+                      "layers" = list())
 
 
