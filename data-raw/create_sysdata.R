@@ -26,17 +26,12 @@ create_sysdata <- function() {
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
                 bibentries = bibentries,
-                urldata = "http://sdmpredictors.samuelbosch.com/", 
-                urlsysdata = "http://sdmpredictors.samuelbosch.com/",
+                urldata = "http://www.lifewatch.be/sdmpredictors/", 
+                urlsysdata = "http://www.lifewatch.be/sdmpredictors/",
                 creation = Sys.time())
   devtools::use_data(.data, internal = TRUE, overwrite = TRUE)
   if(length(file.path(getOption("sdmpredictors_datadir"))) > 0) {
     file.copy("R/sysdata.rda", file.path(getOption("sdmpredictors_datadir"), "sysdata.rda"), overwrite = TRUE)
   }
-  # file.copy("R/sysdata.rda", 
-  #           "\\\\files.ugent.be/swbosch/www/shares/phycology/WWW/research/sdmpredictors/sysdata.rda",
-  #           overwrite = TRUE)
-  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp_user,":",vliz_ftp_pwd,"@ftp.vliz.be/sdmpredictors/sysdata.rda"))
 }
-#layerstats <- get_all_layer_stats(calc=TRUE)
 create_sysdata()
