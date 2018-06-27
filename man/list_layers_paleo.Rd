@@ -4,31 +4,32 @@
 \alias{list_layers_paleo}
 \title{List the paleo climate layers provided by one or more datasets}
 \usage{
-list_layers_paleo(datasets=c(), model_name=NA, epoch=NA, years_ago=NA,
-  terrestrial=TRUE, marine=TRUE, monthly=TRUE, version=NULL)
+list_layers_paleo(datasets = c(), model_name = NA, epoch = NA,
+  years_ago = NA, terrestrial = NA, marine = NA, freshwater = NA, monthly =
+  TRUE, version = NULL)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets.}
 
-\item{model_name}{character vector. Paleo climate model name see the 
+\item{model_name}{character vector. Paleo climate model name see the
 \code{model_name} column in the result.}
 
 \item{epoch}{character vector. Epoch for which you want the paleo layer, e.g.
 \code{"mid-Holocene", "Last Glacial Maximum"}.}
 
-\item{years_ago}{integer. Years for which you want the paleo layer, e.g. 
+\item{years_ago}{integer. Years for which you want the paleo layer, e.g.
 \code{6000, 21000}.}
 
-\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that 
+\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that
 only have terrestrial data (seamasked) are returned.}
 
-\item{marine}{logical. When \code{TRUE} (default), then datasets that only 
+\item{marine}{logical. When \code{TRUE} (default), then datasets that only
 have marine data (landmasked) are returned.}
 
 \item{freshwater}{logical. When \code{TRUE}, then datasets that only have
 freshwater data are returned.}
 
-\item{monthly}{logical. When \code{FALSE}, then no monthly layers are 
+\item{monthly}{logical. When \code{FALSE}, then no monthly layers are
 returned. All annual and monthly layers are returned by default.}
 
 \item{version}{numeric vector. When \code{NULL} then layers from all versions
@@ -39,12 +40,12 @@ number.}
 A dataframe with information on the supported paleo climate layers.
 }
 \description{
-\code{list_layers_paleo} returns information on the paleo climate layers of 
+\code{list_layers_paleo} returns information on the paleo climate layers of
 one or more datasets.
 }
 \details{
 By default it returns all layers from all datasets, when both marine
-  and terrestrial are \code{FALSE} then only layers without land- nor 
+  and terrestrial are \code{FALSE} then only layers without land- nor
   seamasks are returned.
 }
 \examples{
@@ -54,6 +55,6 @@ list_layers_paleo()[1:5,]
 list_layers_paleo("MARSPEC", epoch = "mid-Holocene")$layer_code
 }
 \seealso{
-\code{\link{list_layers}}, \code{\link{list_layers_future}}, 
+\code{\link{list_layers}}, \code{\link{list_layers_future}},
   \code{\link{list_datasets}}, \code{\link{load_layers}}
 }

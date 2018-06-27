@@ -88,9 +88,9 @@ layer_citations <- function(layers = c(), astext = TRUE) {
   bibkeys <- unique(c(current$dataset_code, 
                       future$dataset_code, 
                       paleo$dataset_code,
-                      unlist(bibentries$lnk_bibentry$future[unique(future$dataset_code)]),
-                      unlist(bibentries$lnk_bibentry$paleo[unique(paleo$dataset_code)]),
-                      unlist(bibentries$lnk_bibentry$layers[layers])))
+                      unlist(sysdata$lnk_bibentry$future[unique(future$dataset_code)]),
+                      unlist(sysdata$lnk_bibentry$paleo[unique(paleo$dataset_code)]),
+                      unlist(sysdata$lnk_bibentry$layers[layers])))
   
   entries <- bibentries[bibkeys]
   

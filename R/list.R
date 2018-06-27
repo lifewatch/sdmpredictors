@@ -200,45 +200,46 @@ get_future_layers <- function(current_layer_codes, scenario, year) {
 
 
 #' List the paleo climate layers provided by one or more datasets
-#' 
-#' \code{list_layers_paleo} returns information on the paleo climate layers of 
+#'
+#' \code{list_layers_paleo} returns information on the paleo climate layers of
 #' one or more datasets.
-#' 
-#' @usage list_layers_paleo(datasets=c(), model_name=NA, epoch=NA, years_ago=NA,
-#'   terrestrial=TRUE, marine=TRUE, monthly=TRUE, version=NULL)
-#'   
+#'
+#' @usage list_layers_paleo(datasets = c(), model_name = NA, epoch = NA,
+#'   years_ago = NA, terrestrial = NA, marine = NA, freshwater = NA, monthly =
+#'   TRUE, version = NULL)
+#'
 #' @param datasets character vector. Code of the datasets.
-#' @param model_name character vector. Paleo climate model name see the 
+#' @param model_name character vector. Paleo climate model name see the
 #'   \code{model_name} column in the result.
 #' @param epoch character vector. Epoch for which you want the paleo layer, e.g.
 #'   \code{"mid-Holocene", "Last Glacial Maximum"}.
-#' @param years_ago integer. Years for which you want the paleo layer, e.g. 
+#' @param years_ago integer. Years for which you want the paleo layer, e.g.
 #'   \code{6000, 21000}.
-#' @param terrestrial logical. When \code{TRUE} (default), then datasets that 
+#' @param terrestrial logical. When \code{TRUE} (default), then datasets that
 #'   only have terrestrial data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE} (default), then datasets that only 
+#' @param marine logical. When \code{TRUE} (default), then datasets that only
 #'   have marine data (landmasked) are returned.
 #' @param freshwater logical. When \code{TRUE}, then datasets that only have
 #'   freshwater data are returned.
-#' @param monthly logical. When \code{FALSE}, then no monthly layers are 
+#' @param monthly logical. When \code{FALSE}, then no monthly layers are
 #'   returned. All annual and monthly layers are returned by default.
 #' @param version numeric vector. When \code{NULL} then layers from all versions
 #'   of datasets are returned (default) else layers are filtered by version
 #'   number.
-#'   
+#'
 #' @details By default it returns all layers from all datasets, when both marine
-#'   and terrestrial are \code{FALSE} then only layers without land- nor 
+#'   and terrestrial are \code{FALSE} then only layers without land- nor
 #'   seamasks are returned.
-#'   
+#'
 #' @return A dataframe with information on the supported paleo climate layers.
-#'   
+#'
 #' @examples
 #' # list the first 5 layers
 #' list_layers_paleo()[1:5,]
 #' # list layer codes for MARSPEC for the mid-Holocene
 #' list_layers_paleo("MARSPEC", epoch = "mid-Holocene")$layer_code
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}}, 
+#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_future}},
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_paleo <- function(datasets=c(), model_name = NA, epoch = NA, years_ago = NA,
                                terrestrial = NA, marine = NA, freshwater = NA, monthly = TRUE, version = NULL) {

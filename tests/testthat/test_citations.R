@@ -4,19 +4,19 @@ context("Citations")
 
 test_that("layer_citations returns expected citations", {
   ref <- layer_citations("BO_salinity")
-  expect_equal(length(ref), 1)
-  expect_true(grepl("Bio-ORACLE", ref))
+  expect_equal(length(ref), 2)
+  expect_true(all(grepl("ORACLE", ref)))
   
   ref <- layer_citations("BO_A1B_2100_salinity")
   expect_equal(length(ref), 2)
   expect_true(all(grepl("Tyberghein", ref)))
   
   ref <- layer_citations("MS_biogeo02_aspect_NS_21kya")
-  expect_equal(length(ref), 2)
+  expect_equal(length(ref), 1)
   expect_true(all(grepl("MARSPEC", ref)))
   
   refs <- sapply(layer_citations(astext = FALSE), toBibtex)
-  expect_gt(length(refs), 2)
+  expect_gt(length(refs), 3)
   expect_true(all(sapply(refs, function(r) class(r) == "Bibtex")))
 })
 

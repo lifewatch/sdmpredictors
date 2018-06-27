@@ -27,7 +27,7 @@ create_sysdata <- function() {
   stopifnot(all(layerlist$layer_code %in% colnames(layerscorrelation)))
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
-                bibentries = bibentries,
+                bibentries = bibentries, lnk_bibentry = lnk_bibentry,
                 urldata = "http://www.lifewatch.be/sdmpredictors/", 
                 urlsysdata = "http://www.lifewatch.be/sdmpredictors/",
                 creation = Sys.time())
