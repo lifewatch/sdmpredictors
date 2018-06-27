@@ -5,16 +5,19 @@
 \alias{pearson_correlation_matrix}
 \title{Calculate the Pearson correlation coefficient matrix for a rasterstack}
 \usage{
-pearson_correlation_matrix(x, cachesize = 20)
+pearson_correlation_matrix(x, cachesize = 20, same_mask = FALSE)
 }
 \arguments{
-\item{x}{RasterStack. The stack of rasters you want to calculate the Pearson 
-correlation coefficient matrix for. This can be obtained by calling 
+\item{x}{RasterStack. The stack of rasters you want to calculate the Pearson
+correlation coefficient matrix for. This can be obtained by calling
 \code{\link{load_layers}}.}
 
-\item{cachesize}{integer. For how many rasters should the values be kept in 
-local memory. By default this is set to 20, a parameter which works 
+\item{cachesize}{integer. For how many rasters should the values be kept in
+local memory. By default this is set to 20, a parameter which works
 reasonably well on a windows computer with 8GB RAM.}
+
+\item{same_mask}{logical. Whether we can assume that the mask is the same
+for all layers (same NA values), default is \code{FALSE}.}
 }
 \value{
 A correlation matrix.
@@ -26,7 +29,7 @@ Calculate the Pearson correlation coefficient matrix for a rasterstack
 \dontrun{
 # calculate correlation between SST and salinity in the Baltic Sea
 
-# warning using tempdir() implies that data will be downloaded again in the 
+# warning using tempdir() implies that data will be downloaded again in the
 # next R session
 x <- load_layers(c("BO_sstmax", "BO_salinity"), datadir = tempdir())
 e <- extent(13, 31, 52, 66)

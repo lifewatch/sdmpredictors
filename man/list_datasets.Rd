@@ -4,7 +4,7 @@
 \alias{list_datasets}
 \title{Lists the supported datasets}
 \usage{
-list_datasets(terrestrial=TRUE, marine=TRUE)
+list_datasets(terrestrial = NA, marine = NA, freshwater = NA)
 }
 \arguments{
 \item{terrestrial}{logical. When \code{TRUE}, then datasets that only have

@@ -4,8 +4,8 @@
 \alias{list_layers_future}
 \title{List the future climate layers provided by one or more datasets}
 \usage{
-list_layers_future(datasets=c(), scenario=NA, year=NA,
-  terrestrial=TRUE, marine=TRUE, monthly=TRUE, version=NULL)
+list_layers_future(datasets = c(), scenario = NA, year = NA,
+  terrestrial = NA, marine = NA, freshwater = NA, version = NULL)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets.}

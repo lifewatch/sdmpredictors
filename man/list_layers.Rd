@@ -4,26 +4,26 @@
 \alias{list_layers}
 \title{List the current climate layers provided by one or more datasets}
 \usage{
-list_layers(datasets=c(), terrestrial=TRUE, marine=TRUE, monthly=TRUE,
-  version=NULL)
+list_layers(datasets=c(), terrestrial = NA, marine = NA, freshwater =
+  NA, monthly = TRUE, version = NULL)
 }
 \arguments{
 \item{datasets}{character vector. Code of the datasets.}
 
-\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that 
+\item{terrestrial}{logical. When \code{TRUE} (default), then datasets that
 only have terrestrial data (seamasked) are returned.}
 
-\item{marine}{logical. When \code{TRUE} (default), then datasets that only 
+\item{marine}{logical. When \code{TRUE} (default), then datasets that only
 have marine data (landmasked) are returned.}
 
 \item{freshwater}{logical. When \code{TRUE}, then datasets that only have
 freshwater data are returned.}
 
-\item{monthly}{logical. When \code{FALSE}, then no monthly layers are 
+\item{monthly}{logical. When \code{FALSE}, then no monthly layers are
 returned. All annual and monthly layers are returned by default.}
 
 \item{version}{numeric vector. When \code{NULL} then layers from all versions
-of datasets are returned (default) else layers are filtered by version 
+of datasets are returned (default) else layers are filtered by version
 number.}
 }
 \value{
@@ -34,11 +34,11 @@ A dataframe with information on the supported current climate layers.
 }
 \details{
 By default it returns all layers from all datasets, when both marine
-  and terrestrial are \code{FALSE} then only layers from datasets without 
-  land- nor seamasks are returned. Layers for paleo and future climatic 
-  conditions can be listed with \code{\link{list_layers_paleo}} and 
+  and terrestrial are \code{FALSE} then only layers from datasets without
+  land- nor seamasks are returned. Layers for paleo and future climatic
+  conditions can be listed with \code{\link{list_layers_paleo}} and
   \code{\link{list_layers_future}}. Available paleo and future climate layers
-  for a current climate layer code can be listed with the functions 
+  for a current climate layer code can be listed with the functions
   \code{\link{get_paleo_layers}} and \code{\link{get_future_layers}}.
 }
 \examples{
@@ -57,7 +57,7 @@ list_layers(terrestrial=FALSE)[1:5,]
 list_layers("MARSPEC", monthly = FALSE)
 }
 \seealso{
-\code{\link{load_layers}}, \code{\link{list_datasets}}, 
-  \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}}, 
+\code{\link{load_layers}}, \code{\link{list_datasets}},
+  \code{\link{list_layers_future}}, \code{\link{list_layers_paleo}},
   \code{\link{get_future_layers}}, \code{\link{get_paleo_layers}}
 }

@@ -223,7 +223,7 @@ plot_correlation <- function(layers_correlation, prettynames = list(), palette =
 
 #' Calculate the Pearson correlation coefficient matrix for a rasterstack
 #'
-#' @usage pearson_correlation_matrix(x, cachesize = 20)
+#' @usage pearson_correlation_matrix(x, cachesize = 20, same_mask = FALSE)
 #'
 #' @param x RasterStack. The stack of rasters you want to calculate the Pearson
 #'   correlation coefficient matrix for. This can be obtained by calling
