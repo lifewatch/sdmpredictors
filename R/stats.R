@@ -372,7 +372,7 @@ moran_geary <- function(raster, mean) {
   W <- 0
   gz <- 0
   for(chunk in row_chunks) {
-    rowfocals <- getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
+    rowfocals <- raster::getValuesFocal(raster, row=min(chunk), nrows=length(chunk), ngb=3, names=FALSE)
     center <- rowfocals[,5]
     z <- center - mean
     rowfocals[,5] <- NA

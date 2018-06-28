@@ -99,43 +99,44 @@ list_layers <- function(datasets=c(), terrestrial = NA, marine = NA, freshwater 
 }
 
 #' List the future climate layers provided by one or more datasets
-#' 
+#'
 #' \code{list_layers_future} returns information on the future climate layers of
 #' one or more datasets.
-#' 
+#'
 #' @usage list_layers_future(datasets = c(), scenario = NA, year = NA,
-#'   terrestrial = NA, marine = NA, freshwater = NA, version = NULL)
-#'   
+#'   terrestrial = NA, marine = NA, freshwater = NA, monthly = TRUE, version =
+#'   NULL)
+#'
 #' @param datasets character vector. Code of the datasets.
-#' @param scenario character vector. Climate change scenario, e.g. \code{"B1", 
+#' @param scenario character vector. Climate change scenario, e.g. \code{"B1",
 #'   "A1B", "A2"}.
-#' @param year integer. Year for which you want the climate change prediction, 
+#' @param year integer. Year for which you want the climate change prediction,
 #'   e.g. \code{2100, 2200}.
-#' @param terrestrial logical. When \code{TRUE} (default), then datasets that 
+#' @param terrestrial logical. When \code{TRUE} (default), then datasets that
 #'   only have terrestrial data (seamasked) are returned.
-#' @param marine logical. When \code{TRUE} (default), then datasets that only 
+#' @param marine logical. When \code{TRUE} (default), then datasets that only
 #'   have marine data (landmasked) are returned.
 #' @param freshwater logical. When \code{TRUE}, then datasets that only have
 #'   freshwater data are returned.
-#' @param monthly logical. When \code{FALSE}, then no monthly layers are 
+#' @param monthly logical. When \code{FALSE}, then no monthly layers are
 #'   returned. All annual and monthly layers are returned by default.
 #' @param version numeric vector. When \code{NULL} then layers from all versions
 #'   of datasets are returned (default) else layers are filtered by version
 #'   number.
-#'   
+#'
 #' @details By default it returns all layers from all datasets, when both marine
-#'   and terrestrial are \code{FALSE} then only layers without land- nor 
+#'   and terrestrial are \code{FALSE} then only layers without land- nor
 #'   seamasks are returned.
-#'   
+#'
 #' @return A dataframe with information on the supported future climate layers.
-#'   
+#'
 #' @examples
 #' # list the first 5 layers
 #' list_layers_future()[1:5,]
 #' # list layer codes for Bio-ORACLE with scenario B1 and year 2100
 #' list_layers_future("Bio-ORACLE", scenario = "B1", year = 2100)$layer_code
 #' @export
-#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_paleo}}, 
+#' @seealso \code{\link{list_layers}}, \code{\link{list_layers_paleo}},
 #'   \code{\link{list_datasets}}, \code{\link{load_layers}}
 list_layers_future <- function(datasets=c(), scenario = NA, year = NA, 
                                terrestrial = NA, marine = NA, freshwater = NA, monthly = TRUE, version = NULL) {
