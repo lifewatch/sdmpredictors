@@ -12,7 +12,7 @@ test_that("layer_citations returns expected citations", {
   expect_true(all(grepl("Tyberghein", ref)))
   
   ref <- layer_citations("MS_biogeo02_aspect_NS_21kya")
-  expect_equal(length(ref), 1)
+  expect_equal(length(ref), 2)
   expect_true(all(grepl("MARSPEC", ref)))
   
   refs <- sapply(layer_citations(astext = FALSE), toBibtex)
