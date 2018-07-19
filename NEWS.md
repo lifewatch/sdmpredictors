@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.8
+
+Decrease test duration
+
 # sdmpredictors 0.2.7
 
 Add freshwater data

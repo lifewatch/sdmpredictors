@@ -25,7 +25,7 @@ test_that("layer_citations returns layer specific citations", {
   testthat::skip_on_cran()
   
   if(length(sdmpredictors:::get_sysdata()$bibentries$lnk_bibentry$layers) > 0) {
-    fail(message = "IMPLEMENT THIS TEST when there are layer specific bibentries is added to bibentry")
+    fail(message = "IMPLEMENT THIS TEST when there are layer specific bibentries added to bibentry")
   }
 })
 
@@ -38,6 +38,7 @@ test_that("each dataset has at least one citation", {
 })
 
 test_that("each layer has at least one citation", {
+  testthat::skip_on_cran()
   layers <- list_layers()
   for(i in 1:nrow(layers)) {
     ref <- layer_citations(layers[i,])
