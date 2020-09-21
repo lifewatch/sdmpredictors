@@ -3,8 +3,8 @@
 [![Coverage Status](http://codecov.io/github/lifewatch/sdmpredictors/coverage.svg?branch=master)](http://codecov.io/github/lifewatch/sdmpredictors?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sdmpredictors)](https://CRAN.R-project.org/package=sdmpredictors)
 
+> The new version 2.1 of the Bio-Oracle dataset is now available to the sdmpredictors package (2020-09-21). [Click here](https://bio-oracle.org/release-notes-2-1.php) to see the release notes.
 
-:warning: Note that we are currently working on an update of the Bio-ORACLE layers. A new release (v2.1) will be available by the end of August, and the sdmpredictors package will incorporate these new layers. :warning:
 
 # sdmpredictors: a compilation of species distribution modelling predictors data
 
