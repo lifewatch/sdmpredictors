@@ -5,7 +5,7 @@ test_dir <- file.path(tempdir(), "sdmpredictors")
 options(sdmpredictors_datadir = test_dir)
 
 check_skip <- function() {
- # skip("skip today")
+  # skip("skip today")
   skip_on_cran()
 }
 
@@ -160,6 +160,16 @@ test_that("load_layer equal area TRUE/FALSE works", {
   is_equalarea(rs_equalarea)
   is_lonlat(rs_default)
   is_lonlat(rs_lonlat)
+})
+
+test_that("A sample of 500 layers is available on http://www.lifewatch.be/sdmpredictors/", {
+  check_skip()
+  url <- c(list_layers()$layer_code, list_layers_future()$layer_code, list_layers_paleo()$layer_code)
+  url <- paste0("http://www.lifewatch.be/sdmpredictors/", url, ".tif")
+  url <- sample(url, 500)
+  for (url_i in url){
+      expect_true(RCurl::url.exists(url_i, useragent="https://github.com/lifewatch/sdmpredictors"))
+  }
 })
 
 unlink(load_tmp_dir, recursive=TRUE)

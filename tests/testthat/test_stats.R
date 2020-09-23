@@ -2,6 +2,12 @@ library(sdmpredictors)
 
 context("Statistics")
 
+skip_version <- function(layers, dataset_code, version){
+  layer_skip <- subset(layers$layer_code, layers$dataset_code == dataset_code & layers$version == version)
+  layers <- subset(layers, !(layers$layer_code %in% layer_skip))
+  return(layers)
+}
+
 test_that("layer_stats without args returns all layers", {
   # layers <- list_layers()
   # layers <- layers[layers$layer_code != "WC_TODO",]
@@ -32,7 +38,7 @@ test_that("layer_stats with non existing layercodes generates a warning", {
 
 test_that("layers_correlation without args returns correlations for all layers", {
   ##layers_correlation(layercodes = c())
-  layers <- list_layers()
+  layers <- skip_version(list_layers(), "Bio-ORACLE", 2.1)
   corr <- layers_correlation()
   expect_equal(nrow(layers), nrow(corr))
   expect_equal(nrow(layers), ncol(corr))
