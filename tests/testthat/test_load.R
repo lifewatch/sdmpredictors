@@ -7,6 +7,7 @@ options(sdmpredictors_datadir = test_dir)
 check_skip <- function() {
   # skip("skip today")
   skip_on_cran()
+  skip_on_travis()
 }
 
 context("Load layers")
@@ -133,6 +134,7 @@ test_that("load_layer for multiple mixed previously downloaded layers works", {
 })
 
 test_that("load_layer handles special cases", {
+  check_skip()
   expect_error(load_layers("blabla"))
   expect_error(load_layers("BO_ph", equalarea = NA))
   expect_error(load_layers(c("BO_ph", "BO_calcite"), equalarea = c(T,F)))
