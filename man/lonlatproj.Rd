@@ -5,7 +5,9 @@
 \alias{lonlatproj}
 \title{Longitude/latitude coordinate reference system (EPSG:4326), used when using
 load_layers with equal_area = FALSE}
-\format{An object of class \code{CRS} of length 1.}
+\format{
+An object of class \code{CRS} of length 1.
+}
 \usage{
 lonlatproj
 }

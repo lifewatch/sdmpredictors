@@ -102,12 +102,24 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
   paths <- sapply(layercodes, get_layerpath)
   if(rasterstack) {
     st <- raster::stack(paths)
-    names(st) <- sub("_lonlat$", "", names(st))
+    
+    if("layer" %in% names(st)){
+      names(st) <- layercodes
+    }else(
+      names(st) <- sub("_lonlat$", "", names(st))
+    )
+    
     return(st)
   } else {
     return(lapply(paths, function(path) { 
       r <- raster::raster(path) 
-      names(r) <- sub("_lonlat$", "", names(r))
+      
+      if("layer" %in% names(r)){
+        names(r) <- layercodes
+      }else(
+        names(r) <- sub("_lonlat$", "", names(r))
+      )
+      
       r}))
   }
 }
@@ -115,9 +127,9 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
 #' Longitude/latitude coordinate reference system (EPSG:4326), used when using
 #' load_layers with equal_area = FALSE
 #' @export
-lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs")
 
 #' World Behrmann equal area coordinate reference system (ESRI:54017), used when
 #' using load_layers with equal_area = TRUE
 #' @export
-equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0")
+equalareaproj <- sp::CRS("+proj=cea +lat_ts=30 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs")

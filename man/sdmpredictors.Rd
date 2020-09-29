@@ -3,7 +3,6 @@
 \docType{package}
 \name{sdmpredictors}
 \alias{sdmpredictors}
-\alias{sdmpredictors-package}
 \title{sdmpredictors: Species Distribution Modeling Predictor Datasets}
 \description{
 Terrestrial and marine predictors for species distribution modeling from 

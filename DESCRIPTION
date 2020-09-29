@@ -10,7 +10,8 @@ Depends:
 Imports:
     R.utils (>= 2.4.0),
     stats,
-    utils
+    utils,
+    RCurl
 Authors@R: c(
     person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre")),
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
@@ -29,5 +30,5 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr

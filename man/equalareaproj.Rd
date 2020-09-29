@@ -5,7 +5,9 @@
 \alias{equalareaproj}
 \title{World Behrmann equal area coordinate reference system (ESRI:54017), used when
 using load_layers with equal_area = TRUE}
-\format{An object of class \code{CRS} of length 1.}
+\format{
+An object of class \code{CRS} of length 1.
+}
 \usage{
 equalareaproj
 }
