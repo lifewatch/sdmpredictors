@@ -1,7 +1,7 @@
 #' sdmpredictors: Species Distribution Modeling Predictor Datasets
 #' 
 #' Terrestrial and marine predictors for species distribution modeling from 
-#' multiple sources, including WorldClim (\url{http://www.worldclim.org/}), 
+#' multiple sources, including WorldClim (\url{https://www.worldclim.org/}), 
 #' Bio-ORACLE (\url{http://www.oracle.ugent.be/}) and MARSPEC 
 #' (\url{http://www.marspec.org/}).
 #' 

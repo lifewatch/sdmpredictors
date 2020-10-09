@@ -19,11 +19,11 @@ Authors@R: c(
     person("Salvador", "Fernandez", email = "salvador.fernandez@vliz.be", role = c("ctb", "cre")),
     person("Lennert", "Schepers", email = "lennert.schepers@vliz.be", role = c("ctb")))
 Description: Terrestrial and marine predictors for species distribution modelling
-    from multiple sources, including WorldClim <http://www.worldclim.org/>,,
-    ENVIREM <http://envirem.github.io/>, Bio-ORACLE <http://bio-oracle.org/>
+    from multiple sources, including WorldClim <https://www.worldclim.org/>,,
+    ENVIREM <https://envirem.github.io/>, Bio-ORACLE <https://bio-oracle.org/>
     and MARSPEC <http://www.marspec.org/>.
 License: MIT + file LICENSE
-URL: http://www.samuelbosch.com/p/sdmpredictors.html
+URL: https://www.samuelbosch.com/p/sdmpredictors.html
 BugReports: https://github.com/lifewatch/sdmpredictors/issues
 LazyData: true
 Suggests:
