@@ -1,12 +1,16 @@
 ## Test environments
-* Windows 7, R 3.2.5
-* Ubuntu 14.04.5 LTS (on travis-ci.org), R 3.4.1
+* Windows 10, R 4.0.2
+* Ubuntu 16.04.6 LTS (on travis-ci.org), R 4.0.2
 * win-builder (devel and release)
  
 ## R CMD check results
 
-There were no ERRORs, WARNINGs and NOTEs.
+There were no ERRORs, WARNINGs or NOTEs.
 
 ## Downstream dependencies
 
-No downstream dependencies
+There are currently no downstream dependencies for this package.
+
+## Other notes
+
+This is a re-submission. The package was adapted to download new layers from Bio-Oracle, which caused some tests to fail. These issues are solved now. 

@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.9
+
+Add bio-oracle v2.1
+
 # sdmpredictors 0.2.8
 
 Decrease test duration
