@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.10
+
+Behrmann equal areas projection is now created on the fly from the original WGS84 layer
+
 # sdmpredictors 0.2.9
 
 Add bio-oracle v2.1

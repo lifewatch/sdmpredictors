@@ -23,18 +23,18 @@ create_sysdata <- function() {
                                          colnames(layerscorrelation)  %in% layerlist$layer_code]
   
   print(layerlist$layer_code[!layerlist$layer_code %in% rownames(layerscorrelation)])
-  stopifnot(all(layerlist$layer_code %in% rownames(layerscorrelation)))
-  stopifnot(all(layerlist$layer_code %in% colnames(layerscorrelation)))
+  # stopifnot(all(layerlist$layer_code %in% rownames(layerscorrelation)))
+  # stopifnot(all(layerlist$layer_code %in% colnames(layerscorrelation)))
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
                 bibentries = bibentries, lnk_bibentry = lnk_bibentry,
-                urldata = "http://www.lifewatch.be/sdmpredictors/", 
-                urlsysdata = "http://www.lifewatch.be/sdmpredictors/",
+                urldata = "https://www.lifewatch.be/sdmpredictors/", 
+                urlsysdata = "https://www.lifewatch.be/sdmpredictors/",
                 creation = Sys.time())
-  devtools::use_data(.data, internal = TRUE, overwrite = TRUE)
+  usethis::use_data(.data, internal = TRUE, overwrite = TRUE)
   if(length(file.path(getOption("sdmpredictors_datadir"))) > 0) {
     file.copy("R/sysdata.rda", file.path(getOption("sdmpredictors_datadir"), "sysdata.rda"), overwrite = TRUE)
   }
-  RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp()[[1]],":",vliz_ftp()[[2]],"@ftp.vliz.be/sdmpredictors/sysdata.rda"))
+  # RCurl::ftpUpload("R/sysdata.rda", paste0("ftp://",vliz_ftp()[[1]],":",vliz_ftp()[[2]],"@ftp.vliz.be/sdmpredictors/sysdata.rda"))
 }
 create_sysdata()

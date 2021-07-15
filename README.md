@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/github/license/samuelbosch/blogbits.svg)](https://github.com/lifewatch/sdmpredictors/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.org/lifewatch/sdmpredictors.svg?branch=master)](https://travis-ci.org/lifewatch/sdmpredictors)
-[![Coverage Status](http://codecov.io/github/lifewatch/sdmpredictors/coverage.svg?branch=master)](http://codecov.io/github/lifewatch/sdmpredictors?branch=master)
+[![Coverage Status](https://codecov.io/github/lifewatch/sdmpredictors?branch=master)](https://codecov.io/github/lifewatch/sdmpredictors?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sdmpredictors)](https://CRAN.R-project.org/package=sdmpredictors)
 
 > The new version 2.1 of the Bio-Oracle dataset is now available to the sdmpredictors package (2020-09-21). [Click here](https://bio-oracle.org/release-notes-2-1.php) to see the release notes.

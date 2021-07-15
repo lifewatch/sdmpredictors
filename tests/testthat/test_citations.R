@@ -24,7 +24,10 @@ test_that("layer_citations returns layer specific citations", {
   testthat::skip_on_travis()
   testthat::skip_on_cran()
   
-  if(length(sdmpredictors:::get_sysdata()$bibentries$lnk_bibentry$layers) > 0) {
+  lyr_cit <- sdmpredictors:::get_sysdata()$bibentries$lnk_bibentry$layers
+  expect_null(lyr_cit)
+
+  if(length(lyr_cit) > 0) {
     fail(message = "IMPLEMENT THIS TEST when there are layer specific bibentries added to bibentry")
   }
 })

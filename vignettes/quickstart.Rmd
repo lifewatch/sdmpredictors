@@ -75,7 +75,7 @@ print(layer_citations("MS_biogeo02_aspect_NS_21kya"))
 To be able to use the layers you want in R you have to call the *load_layers* 
 function with
 
-```{r}
+```{r, eval = FALSE}
 # download pH and Salinity to the temporary directory
 load_layers(layers[layers$name %in% c("pH", "Salinity") & 
                      layers$dataset_code == "Bio-ORACLE",], datadir = tempdir())

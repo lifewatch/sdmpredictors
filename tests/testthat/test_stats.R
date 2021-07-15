@@ -33,7 +33,7 @@ test_that("layer_stats with non existing layercodes generates a warning", {
   
   expect_warning(layer_stats("blabla"), "'blabla'")
   expect_warning(layer_stats(c("BO_calcite", "blabla")), "'blabla'")
-  expect_equal(nrow(layer_stats(c("BO_calcite", "blabla"))), 1)
+  expect_equal(suppressMessages(nrow(layer_stats(c("BO_calcite", "blabla")))), 1)
   expect_warning(layer_stats(c("blibli", "blabla")), "'blibli', 'blabla'")
 })
 
@@ -63,8 +63,8 @@ test_that("layers_correlation with non existing layercodes generates a warning",
   
   expect_warning(layers_correlation("abcd"), "'abcd'")
   expect_warning(layers_correlation(c("BO_calcite", "blabla")), "'blabla'")
-  expect_equal(colnames(layers_correlation(c("BO_calcite", "blabla"))), "BO_calcite")
-  expect_equal(nrow(layers_correlation(c("BO_calcite", "blabla"))), 1)
+  expect_equal(suppressWarnings(colnames(layers_correlation(c("BO_calcite", "blabla")))), "BO_calcite")
+  expect_equal(suppressWarnings(nrow(layers_correlation(c("BO_calcite", "blabla")))), 1)
   expect_warning(layers_correlation(c("blibli", "blabla")), "'blibli', 'blabla'")
 })
 
@@ -112,7 +112,7 @@ test_that("plot_correlation works", {
 })
 
 test_that("calc_stats returns stats", {
-  s <- calculate_statistics("mini_raster", raster(matrix(1:100, nrow=10, ncol=10)))
+  s <- suppressWarnings(calculate_statistics("mini_raster", raster(matrix(1:100, nrow=10, ncol=10))))
   expect_true(ncol(s) >= 11)
   expect_equal(nrow(s), 1)
 })

@@ -31,6 +31,26 @@ get_datadir <- function(datadir) {
   datadir
 }
 
+#' Project and saves a layer from WGS84 (EPGS:4326) to Behrmann Equal Area (ESRI:54017) coordinate reference system
+#'
+#' @usage equalarea_project(path)
+#'
+#' @param path the path to the WGS84 layer
+#'
+#' @return the path to the Behrmann Equal Area layer
+#' @seealso  \code{\link{load_layers}}
+#' @keywords internal
+equalarea_project <- function(path){
+  out_path <- gsub("_lonlat.tif", ".tif", path, fixed = TRUE)
+  if(!file.exists(out_path)){
+    r <- raster::raster(path)
+    message(paste0("Projecting ", path, " from native WGS84 to Behrmann Equal Areas..."))
+    out <- raster::projectRaster(r, crs = sdmpredictors::equalareaproj, method = "ngb", res = 7000)
+    raster::writeRaster(out, out_path)
+  }
+  return(out_path)
+}
+
 #' Load layers
 #' 
 #' Method to load rasters from disk or from the internet. By default a 
@@ -83,7 +103,7 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
   datadir <- get_datadir(datadir)
   urlroot <- get_sysdata()$urldata
   get_layerpath <- function(layercode) {
-    suffix <- ifelse(equalarea, "", "_lonlat")
+    suffix <- "_lonlat"
     path <- paste0(datadir, "/", layercode, suffix, ".tif")
     if(!file.exists(path)) {
       url <- paste0(urlroot, layercode, suffix, ".tif")
@@ -98,28 +118,27 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
     }
     ifelse(file.exists(path), path, NA)
   }
-  
   paths <- sapply(layercodes, get_layerpath)
+  if(equalarea){
+    customSupressWarning <- function(w){if(any(grepl( "point", w))){invokeRestart( "muffleWarning")}} 
+    paths <- withCallingHandlers(sapply(paths, equalarea_project), warning = customSupressWarning)
+  }
   if(rasterstack) {
     st <- raster::stack(paths)
-    
     if("layer" %in% names(st)){
       names(st) <- layercodes
     }else(
       names(st) <- sub("_lonlat$", "", names(st))
     )
-    
     return(st)
   } else {
     return(lapply(paths, function(path) { 
       r <- raster::raster(path) 
-      
       if("layer" %in% names(r)){
         names(r) <- layercodes
       }else(
         names(r) <- sub("_lonlat$", "", names(r))
       )
-      
       r}))
   }
 }
@@ -132,4 +151,4 @@ lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs")
 #' World Behrmann equal area coordinate reference system (ESRI:54017), used when
 #' using load_layers with equal_area = TRUE
 #' @export
-equalareaproj <- sp::CRS("+proj=cea +lat_ts=30 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs")
+equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs")
