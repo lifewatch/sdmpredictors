@@ -7,7 +7,7 @@ options(sdmpredictors_datadir = test_dir)
 check_skip <- function() {
   # skip("skip today")
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
 }
 
 context("Load layers")

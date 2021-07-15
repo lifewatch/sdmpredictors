@@ -29,6 +29,7 @@ test_that("get_sysdata returns all expected entries", {
 
 test_that("sysdata gets downloaded", {
   skip_on_cran()
+  skip_on_ci()
   gets_downloaded <- function(outfile) {
     if(file.exists(outfile)) {
       file.remove(outfile)
