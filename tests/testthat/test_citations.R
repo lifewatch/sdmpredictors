@@ -21,7 +21,7 @@ test_that("layer_citations returns expected citations", {
 })
 
 test_that("layer_citations returns layer specific citations", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
   testthat::skip_on_cran()
   
   lyr_cit <- sdmpredictors:::get_sysdata()$bibentries$lnk_bibentry$layers

@@ -23,8 +23,7 @@ setup <- function() {
 load_tmp_dir <- setup()
 
 load_BO_ph_test <- function(asdataframe=FALSE, rasterstack=TRUE, equalarea = F) {
-  skip_on_cran()
-  skip_on_travis()
+  check_skip()
   if (asdataframe) { 
     layercodes <- data.frame(layer_code="BO_ph", stringsAsFactors = FALSE)
   } else {

@@ -29,7 +29,7 @@ test_that("layer_stats with one or more existing layercodes works", {
 
 test_that("layer_stats with non existing layercodes generates a warning", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   
   expect_warning(layer_stats("blabla"), "'blabla'")
   expect_warning(layer_stats(c("BO_calcite", "blabla")), "'blabla'")
@@ -59,7 +59,7 @@ test_that("layers_correlation with one or more existing layercodes works", {
 
 test_that("layers_correlation with non existing layercodes generates a warning", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   
   expect_warning(layers_correlation("abcd"), "'abcd'")
   expect_warning(layers_correlation(c("BO_calcite", "blabla")), "'blabla'")
@@ -99,7 +99,7 @@ test_that("correlation_groups return correct correlation groups", {
 
 test_that("plot_correlation works", {
   skip_on_cran()
-  skip_on_travis()
+  skip_on_ci()
   
   p <- plot_correlation(c("BO_calcite", "BO_sstmax", "MS_bathy_5m"))
   expect_false(any(is.null(p) | is.na(p)))

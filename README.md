@@ -1,5 +1,4 @@
 [![MIT License](https://img.shields.io/github/license/samuelbosch/blogbits.svg)](https://github.com/lifewatch/sdmpredictors/blob/master/LICENSE.md)
-[![Build Status](https://travis-ci.org/lifewatch/sdmpredictors.svg?branch=master)](https://travis-ci.org/lifewatch/sdmpredictors)
 [![R-CMD-check](https://github.com/lifewatch/sdmpredictors/workflows/R-CMD-check/badge.svg)](https://github.com/lifewatch/sdmpredictors/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sdmpredictors)](https://CRAN.R-project.org/package=sdmpredictors)
 
