@@ -9,3 +9,4 @@
 ^tests/tmp_load$
 ^tests/data$
 ^cran-comments.md
+^\.github$
