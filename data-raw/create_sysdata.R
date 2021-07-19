@@ -16,7 +16,7 @@ create_sysdata <- function() {
   layerstats <- layerstats[layerstats$layer_code %in% allclim_layers,]
   
   print(allclim_layers[!allclim_layers %in% layerstats$layer_code])
-  stopifnot(all(allclim_layers %in% layerstats$layer_code))
+  # stopifnot(all(allclim_layers %in% layerstats$layer_code))
   
   layerscorrelation <- get_all_correlations()
   layerscorrelation <- layerscorrelation[rownames(layerscorrelation) %in% layerlist$layer_code, 
@@ -28,8 +28,8 @@ create_sysdata <- function() {
   .data <- list(datasetlist = datasetlist, layerlist = layerlist, layerlistfuture = layerlistfuture,
                 layerlistpaleo = layerlistpaleo, layerstats = layerstats, layerscorrelation = layerscorrelation,
                 bibentries = bibentries, lnk_bibentry = lnk_bibentry,
-                urldata = "https://www.lifewatch.be/sdmpredictors/", 
-                urlsysdata = "https://www.lifewatch.be/sdmpredictors/",
+                urldata = c("https://www.lifewatch.be/sdmpredictors/", "https://bio-oracle.org/data/"), 
+                urlsysdata = c("https://www.lifewatch.be/sdmpredictors/", "https://bio-oracle.org/data/"),
                 creation = Sys.time())
   usethis::use_data(.data, internal = TRUE, overwrite = TRUE)
   if(length(file.path(getOption("sdmpredictors_datadir"))) > 0) {

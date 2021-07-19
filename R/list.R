@@ -351,7 +351,7 @@ get_layers_info <- function(layer_codes = c()) {
     future <- future[na.omit(match(layer_codes, future$layer_code)),]
     paleo <- paleo[na.omit(match(layer_codes, paleo$layer_code)),]
   }
-  common_cols <- c("dataset_code", "layer_code")
+  common_cols <- c("dataset_code", "layer_code", "layer_url")
   common <- rbind(cbind(time=rep("current", NROW(current)), current[,common_cols]), 
                   cbind(time=rep("future", NROW(future)), future[,common_cols]), 
                   cbind(time=rep("paleo", NROW(paleo)), paleo[,common_cols]))

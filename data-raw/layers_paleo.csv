@@ -1,469 +1,469 @@
-dataset_code;layer_code;current_layer_code;model_name;epoch;years_ago;version
-ENVIREM;ER_annualPET_holo_ccsm4;ER_annualPET;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_annualPET_holo_miroc_esm;ER_annualPET;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_annualPET_holo_mpi_esm_p;ER_annualPET;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_annualPET_lgm_ccsm4;ER_annualPET;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_annualPET_lgm_miroc_esm;ER_annualPET;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_annualPET_lgm_mpi_esm_p;ER_annualPET;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_aridityIndexThornthwaite_holo_ccsm4;ER_aridityIndexThornthwaite;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_aridityIndexThornthwaite_holo_miroc_esm;ER_aridityIndexThornthwaite;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_aridityIndexThornthwaite_holo_mpi_esm_p;ER_aridityIndexThornthwaite;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_aridityIndexThornthwaite_lgm_ccsm4;ER_aridityIndexThornthwaite;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_aridityIndexThornthwaite_lgm_miroc_esm;ER_aridityIndexThornthwaite;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_aridityIndexThornthwaite_lgm_mpi_esm_p;ER_aridityIndexThornthwaite;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_climaticMoistureIndex_holo_ccsm4;ER_climaticMoistureIndex;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_climaticMoistureIndex_holo_miroc_esm;ER_climaticMoistureIndex;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_climaticMoistureIndex_holo_mpi_esm_p;ER_climaticMoistureIndex;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_climaticMoistureIndex_lgm_ccsm4;ER_climaticMoistureIndex;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_climaticMoistureIndex_lgm_miroc_esm;ER_climaticMoistureIndex;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_climaticMoistureIndex_lgm_mpi_esm_p;ER_climaticMoistureIndex;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_continentality_holo_ccsm4;ER_continentality;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_continentality_holo_miroc_esm;ER_continentality;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_continentality_holo_mpi_esm_p;ER_continentality;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_continentality_lgm_ccsm4;ER_continentality;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_continentality_lgm_miroc_esm;ER_continentality;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_continentality_lgm_mpi_esm_p;ER_continentality;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_embergerQ_holo_ccsm4;ER_embergerQ;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_embergerQ_holo_miroc_esm;ER_embergerQ;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_embergerQ_holo_mpi_esm_p;ER_embergerQ;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_embergerQ_lgm_ccsm4;ER_embergerQ;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_embergerQ_lgm_miroc_esm;ER_embergerQ;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_embergerQ_lgm_mpi_esm_p;ER_embergerQ;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_growingDegDays0_holo_ccsm4;ER_growingDegDays0;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_growingDegDays0_holo_miroc_esm;ER_growingDegDays0;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_growingDegDays0_holo_mpi_esm_p;ER_growingDegDays0;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_growingDegDays0_lgm_ccsm4;ER_growingDegDays0;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_growingDegDays0_lgm_miroc_esm;ER_growingDegDays0;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_growingDegDays0_lgm_mpi_esm_p;ER_growingDegDays0;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_growingDegDays5_holo_ccsm4;ER_growingDegDays5;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_growingDegDays5_holo_miroc_esm;ER_growingDegDays5;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_growingDegDays5_holo_mpi_esm_p;ER_growingDegDays5;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_growingDegDays5_lgm_ccsm4;ER_growingDegDays5;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_growingDegDays5_lgm_miroc_esm;ER_growingDegDays5;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_growingDegDays5_lgm_mpi_esm_p;ER_growingDegDays5;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_maxTempColdest_holo_ccsm4;ER_maxTempColdest;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_maxTempColdest_holo_miroc_esm;ER_maxTempColdest;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_maxTempColdest_holo_mpi_esm_p;ER_maxTempColdest;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_maxTempColdest_lgm_ccsm4;ER_maxTempColdest;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_maxTempColdest_lgm_miroc_esm;ER_maxTempColdest;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_maxTempColdest_lgm_mpi_esm_p;ER_maxTempColdest;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_minTempWarmest_holo_ccsm4;ER_minTempWarmest;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_minTempWarmest_holo_miroc_esm;ER_minTempWarmest;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_minTempWarmest_holo_mpi_esm_p;ER_minTempWarmest;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_minTempWarmest_lgm_ccsm4;ER_minTempWarmest;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_minTempWarmest_lgm_miroc_esm;ER_minTempWarmest;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_minTempWarmest_lgm_mpi_esm_p;ER_minTempWarmest;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_monthCountByTemp10_holo_ccsm4;ER_monthCountByTemp10;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_monthCountByTemp10_holo_miroc_esm;ER_monthCountByTemp10;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_monthCountByTemp10_holo_mpi_esm_p;ER_monthCountByTemp10;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_monthCountByTemp10_lgm_ccsm4;ER_monthCountByTemp10;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_monthCountByTemp10_lgm_miroc_esm;ER_monthCountByTemp10;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_monthCountByTemp10_lgm_mpi_esm_p;ER_monthCountByTemp10;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETColdestQuarter_holo_ccsm4;ER_PETColdestQuarter;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_PETColdestQuarter_holo_miroc_esm;ER_PETColdestQuarter;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_PETColdestQuarter_holo_mpi_esm_p;ER_PETColdestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_PETColdestQuarter_lgm_ccsm4;ER_PETColdestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETColdestQuarter_lgm_miroc_esm;ER_PETColdestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETColdestQuarter_lgm_mpi_esm_p;ER_PETColdestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETDriestQuarter_holo_ccsm4;ER_PETDriestQuarter;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_PETDriestQuarter_holo_miroc_esm;ER_PETDriestQuarter;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_PETDriestQuarter_holo_mpi_esm_p;ER_PETDriestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_PETDriestQuarter_lgm_ccsm4;ER_PETDriestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETDriestQuarter_lgm_miroc_esm;ER_PETDriestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETDriestQuarter_lgm_mpi_esm_p;ER_PETDriestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETseasonality_holo_ccsm4;ER_PETseasonality;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_PETseasonality_holo_miroc_esm;ER_PETseasonality;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_PETseasonality_holo_mpi_esm_p;ER_PETseasonality;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_PETseasonality_lgm_ccsm4;ER_PETseasonality;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETseasonality_lgm_miroc_esm;ER_PETseasonality;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETseasonality_lgm_mpi_esm_p;ER_PETseasonality;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETWarmestQuarter_holo_ccsm4;ER_PETWarmestQuarter;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_PETWarmestQuarter_holo_miroc_esm;ER_PETWarmestQuarter;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_PETWarmestQuarter_holo_mpi_esm_p;ER_PETWarmestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_PETWarmestQuarter_lgm_ccsm4;ER_PETWarmestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETWarmestQuarter_lgm_miroc_esm;ER_PETWarmestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETWarmestQuarter_lgm_mpi_esm_p;ER_PETWarmestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETWettestQuarter_holo_ccsm4;ER_PETWettestQuarter;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_PETWettestQuarter_holo_miroc_esm;ER_PETWettestQuarter;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_PETWettestQuarter_holo_mpi_esm_p;ER_PETWettestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_PETWettestQuarter_lgm_ccsm4;ER_PETWettestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETWettestQuarter_lgm_miroc_esm;ER_PETWettestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_PETWettestQuarter_lgm_mpi_esm_p;ER_PETWettestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_thermicityIndex_holo_ccsm4;ER_thermicityIndex;holo_ccsm4;mid-Holocene;6000;1
-ENVIREM;ER_thermicityIndex_holo_miroc_esm;ER_thermicityIndex;holo_miroc_esm;mid-Holocene;6000;1
-ENVIREM;ER_thermicityIndex_holo_mpi_esm_p;ER_thermicityIndex;holo_mpi_esm_p;mid-Holocene;6000;1
-ENVIREM;ER_thermicityIndex_lgm_ccsm4;ER_thermicityIndex;lgm_ccsm4;Last Glacial Maximum;21000;1
-ENVIREM;ER_thermicityIndex_lgm_miroc_esm;ER_thermicityIndex;lgm_miroc_esm;Last Glacial Maximum;21000;1
-ENVIREM;ER_thermicityIndex_lgm_mpi_esm_p;ER_thermicityIndex;lgm_mpi_esm_p;Last Glacial Maximum;21000;1
-ENVIREM;ER_topoWet_holo;ER_topoWet;holo;mid-Holocene;6000;1
-ENVIREM;ER_topoWet_lgm;ER_topoWet;lgm;Last Glacial Maximum;21000;1
-ENVIREM;ER_tri_holo;ER_tri;holo;mid-Holocene;6000;1
-ENVIREM;ER_tri_lgm;ER_tri;lgm;Last Glacial Maximum;21000;1
-MARSPEC;MS_bathy_21kya;MS_bathy_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo01_aspect_EW_21kya;MS_biogeo01_aspect_EW_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo02_aspect_NS_21kya;MS_biogeo02_aspect_NS_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo03_plan_curvature_21kya;MS_biogeo03_plan_curvature_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo04_profile_curvature_21kya;MS_biogeo04_profile_curvature_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo05_dist_shore_21kya;MS_biogeo05_dist_shore_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo06_bathy_slope_21kya;MS_biogeo06_bathy_slope_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo07_concavity_21kya;MS_biogeo07_concavity_5m;21kya_geophysical;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo08_sss_mean_21kya_adjCCSM;MS_biogeo08_sss_mean_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo08_sss_mean_21kya_noCCSM;MS_biogeo08_sss_mean_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo08_sss_mean_6kya;MS_biogeo08_sss_mean_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo09_sss_min_21kya_adjCCSM;MS_biogeo09_sss_min_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo09_sss_min_21kya_noCCSM;MS_biogeo09_sss_min_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo09_sss_min_6kya;MS_biogeo09_sss_min_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo10_sss_max_21kya_adjCCSM;MS_biogeo10_sss_max_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo10_sss_max_21kya_noCCSM;MS_biogeo10_sss_max_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo10_sss_max_6kya;MS_biogeo10_sss_max_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo11_sss_range_21kya_adjCCSM;MS_biogeo11_sss_range_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo11_sss_range_21kya_noCCSM;MS_biogeo11_sss_range_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo11_sss_range_6kya;MS_biogeo11_sss_range_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo12_sss_variance_21kya_adjCCSM;MS_biogeo12_sss_variance_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo12_sss_variance_21kya_noCCSM;MS_biogeo12_sss_variance_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo12_sss_variance_6kya;MS_biogeo12_sss_variance_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo13_sst_mean_21kya_adjCCSM;MS_biogeo13_sst_mean_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo13_sst_mean_21kya_noCCSM;MS_biogeo13_sst_mean_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo13_sst_mean_6kya;MS_biogeo13_sst_mean_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo14_sst_min_21kya_adjCCSM;MS_biogeo14_sst_min_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo14_sst_min_21kya_noCCSM;MS_biogeo14_sst_min_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo14_sst_min_6kya;MS_biogeo14_sst_min_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo15_sst_max_21kya_adjCCSM;MS_biogeo15_sst_max_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo15_sst_max_21kya_noCCSM;MS_biogeo15_sst_max_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo15_sst_max_6kya;MS_biogeo15_sst_max_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo16_sst_range_21kya_adjCCSM;MS_biogeo16_sst_range_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo16_sst_range_21kya_noCCSM;MS_biogeo16_sst_range_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo16_sst_range_6kya;MS_biogeo16_sst_range_5m;6kya_Ensemble;mid-Holocene;6000;1
-MARSPEC;MS_biogeo17_sst_variance_21kya_adjCCSM;MS_biogeo17_sst_variance_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo17_sst_variance_21kya_noCCSM;MS_biogeo17_sst_variance_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1
-MARSPEC;MS_biogeo17_sst_variance_6kya;MS_biogeo17_sst_variance_5m;6kya_Ensemble;mid-Holocene;6000;1
-WorldClim;WC_bio1_cclgm;WC_bio1;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio1_ccmid;WC_bio1;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio1_melgm;WC_bio1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio1_memid;WC_bio1;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio1_mrlgm;WC_bio1;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio1_mrmid;WC_bio1;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio10_cclgm;WC_bio10;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio10_ccmid;WC_bio10;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio10_melgm;WC_bio10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio10_memid;WC_bio10;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio10_mrlgm;WC_bio10;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio10_mrmid;WC_bio10;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio11_cclgm;WC_bio11;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio11_ccmid;WC_bio11;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio11_melgm;WC_bio11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio11_memid;WC_bio11;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio11_mrlgm;WC_bio11;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio11_mrmid;WC_bio11;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio12_cclgm;WC_bio12;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio12_ccmid;WC_bio12;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio12_melgm;WC_bio12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio12_memid;WC_bio12;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio12_mrlgm;WC_bio12;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio12_mrmid;WC_bio12;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio13_cclgm;WC_bio13;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio13_ccmid;WC_bio13;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio13_melgm;WC_bio13;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio13_memid;WC_bio13;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio13_mrlgm;WC_bio13;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio13_mrmid;WC_bio13;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio14_cclgm;WC_bio14;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio14_ccmid;WC_bio14;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio14_melgm;WC_bio14;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio14_memid;WC_bio14;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio14_mrlgm;WC_bio14;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio14_mrmid;WC_bio14;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio15_cclgm;WC_bio15;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio15_ccmid;WC_bio15;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio15_melgm;WC_bio15;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio15_memid;WC_bio15;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio15_mrlgm;WC_bio15;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio15_mrmid;WC_bio15;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio16_cclgm;WC_bio16;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio16_ccmid;WC_bio16;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio16_melgm;WC_bio16;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio16_memid;WC_bio16;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio16_mrlgm;WC_bio16;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio16_mrmid;WC_bio16;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio17_cclgm;WC_bio17;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio17_ccmid;WC_bio17;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio17_melgm;WC_bio17;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio17_memid;WC_bio17;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio17_mrlgm;WC_bio17;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio17_mrmid;WC_bio17;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio18_cclgm;WC_bio18;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio18_ccmid;WC_bio18;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio18_melgm;WC_bio18;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio18_memid;WC_bio18;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio18_mrlgm;WC_bio18;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio18_mrmid;WC_bio18;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio19_cclgm;WC_bio19;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio19_ccmid;WC_bio19;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio19_melgm;WC_bio19;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio19_memid;WC_bio19;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio19_mrlgm;WC_bio19;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio19_mrmid;WC_bio19;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio2_cclgm;WC_bio2;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio2_ccmid;WC_bio2;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio2_melgm;WC_bio2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio2_memid;WC_bio2;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio2_mrlgm;WC_bio2;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio2_mrmid;WC_bio2;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio3_cclgm;WC_bio3;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio3_ccmid;WC_bio3;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio3_melgm;WC_bio3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio3_memid;WC_bio3;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio3_mrlgm;WC_bio3;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio3_mrmid;WC_bio3;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio4_cclgm;WC_bio4;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio4_ccmid;WC_bio4;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio4_melgm;WC_bio4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio4_memid;WC_bio4;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio4_mrlgm;WC_bio4;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio4_mrmid;WC_bio4;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio5_cclgm;WC_bio5;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio5_ccmid;WC_bio5;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio5_melgm;WC_bio5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio5_memid;WC_bio5;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio5_mrlgm;WC_bio5;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio5_mrmid;WC_bio5;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio6_cclgm;WC_bio6;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio6_ccmid;WC_bio6;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio6_melgm;WC_bio6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio6_memid;WC_bio6;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio6_mrlgm;WC_bio6;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio6_mrmid;WC_bio6;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio7_cclgm;WC_bio7;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio7_ccmid;WC_bio7;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio7_melgm;WC_bio7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio7_memid;WC_bio7;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio7_mrlgm;WC_bio7;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio7_mrmid;WC_bio7;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio8_cclgm;WC_bio8;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio8_ccmid;WC_bio8;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio8_melgm;WC_bio8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio8_memid;WC_bio8;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio8_mrlgm;WC_bio8;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio8_mrmid;WC_bio8;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_bio9_cclgm;WC_bio9;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_bio9_ccmid;WC_bio9;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_bio9_melgm;WC_bio9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_bio9_memid;WC_bio9;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_bio9_mrlgm;WC_bio9;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_bio9_mrmid;WC_bio9;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec1_cclgm;WC_prec1;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec1_ccmid;WC_prec1;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec1_melgm;WC_prec1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec1_memid;WC_prec1;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec1_mrlgm;WC_prec1;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec1_mrmid;WC_prec1;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec10_cclgm;WC_prec10;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec10_ccmid;WC_prec10;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec10_melgm;WC_prec10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec10_memid;WC_prec10;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec10_mrlgm;WC_prec10;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec10_mrmid;WC_prec10;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec11_cclgm;WC_prec11;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec11_ccmid;WC_prec11;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec11_melgm;WC_prec11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec11_memid;WC_prec11;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec11_mrlgm;WC_prec11;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec11_mrmid;WC_prec11;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec12_cclgm;WC_prec12;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec12_ccmid;WC_prec12;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec12_melgm;WC_prec12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec12_memid;WC_prec12;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec12_mrlgm;WC_prec12;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec12_mrmid;WC_prec12;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec2_cclgm;WC_prec2;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec2_ccmid;WC_prec2;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec2_melgm;WC_prec2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec2_memid;WC_prec2;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec2_mrlgm;WC_prec2;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec2_mrmid;WC_prec2;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec3_cclgm;WC_prec3;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec3_ccmid;WC_prec3;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec3_melgm;WC_prec3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec3_memid;WC_prec3;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec3_mrlgm;WC_prec3;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec3_mrmid;WC_prec3;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec4_cclgm;WC_prec4;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec4_ccmid;WC_prec4;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec4_melgm;WC_prec4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec4_memid;WC_prec4;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec4_mrlgm;WC_prec4;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec4_mrmid;WC_prec4;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec5_cclgm;WC_prec5;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec5_ccmid;WC_prec5;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec5_melgm;WC_prec5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec5_memid;WC_prec5;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec5_mrlgm;WC_prec5;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec5_mrmid;WC_prec5;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec6_cclgm;WC_prec6;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec6_ccmid;WC_prec6;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec6_melgm;WC_prec6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec6_memid;WC_prec6;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec6_mrlgm;WC_prec6;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec6_mrmid;WC_prec6;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec7_cclgm;WC_prec7;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec7_ccmid;WC_prec7;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec7_melgm;WC_prec7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec7_memid;WC_prec7;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec7_mrlgm;WC_prec7;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec7_mrmid;WC_prec7;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec8_cclgm;WC_prec8;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec8_ccmid;WC_prec8;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec8_melgm;WC_prec8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec8_memid;WC_prec8;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec8_mrlgm;WC_prec8;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec8_mrmid;WC_prec8;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_prec9_cclgm;WC_prec9;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_prec9_ccmid;WC_prec9;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_prec9_melgm;WC_prec9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_prec9_memid;WC_prec9;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_prec9_mrlgm;WC_prec9;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_prec9_mrmid;WC_prec9;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax1_cclgm;WC_tmax1;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax1_ccmid;WC_tmax1;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax1_melgm;WC_tmax1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax1_memid;WC_tmax1;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax1_mrlgm;WC_tmax1;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax1_mrmid;WC_tmax1;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax10_cclgm;WC_tmax10;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax10_ccmid;WC_tmax10;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax10_melgm;WC_tmax10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax10_memid;WC_tmax10;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax10_mrlgm;WC_tmax10;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax10_mrmid;WC_tmax10;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax11_cclgm;WC_tmax11;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax11_ccmid;WC_tmax11;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax11_melgm;WC_tmax11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax11_memid;WC_tmax11;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax11_mrlgm;WC_tmax11;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax11_mrmid;WC_tmax11;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax12_cclgm;WC_tmax12;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax12_ccmid;WC_tmax12;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax12_melgm;WC_tmax12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax12_memid;WC_tmax12;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax12_mrlgm;WC_tmax12;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax12_mrmid;WC_tmax12;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax2_cclgm;WC_tmax2;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax2_ccmid;WC_tmax2;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax2_melgm;WC_tmax2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax2_memid;WC_tmax2;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax2_mrlgm;WC_tmax2;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax2_mrmid;WC_tmax2;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax3_cclgm;WC_tmax3;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax3_ccmid;WC_tmax3;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax3_melgm;WC_tmax3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax3_memid;WC_tmax3;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax3_mrlgm;WC_tmax3;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax3_mrmid;WC_tmax3;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax4_cclgm;WC_tmax4;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax4_ccmid;WC_tmax4;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax4_melgm;WC_tmax4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax4_memid;WC_tmax4;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax4_mrlgm;WC_tmax4;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax4_mrmid;WC_tmax4;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax5_cclgm;WC_tmax5;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax5_ccmid;WC_tmax5;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax5_melgm;WC_tmax5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax5_memid;WC_tmax5;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax5_mrlgm;WC_tmax5;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax5_mrmid;WC_tmax5;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax6_cclgm;WC_tmax6;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax6_ccmid;WC_tmax6;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax6_melgm;WC_tmax6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax6_memid;WC_tmax6;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax6_mrlgm;WC_tmax6;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax6_mrmid;WC_tmax6;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax7_cclgm;WC_tmax7;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax7_ccmid;WC_tmax7;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax7_melgm;WC_tmax7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax7_memid;WC_tmax7;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax7_mrlgm;WC_tmax7;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax7_mrmid;WC_tmax7;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax8_cclgm;WC_tmax8;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax8_ccmid;WC_tmax8;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax8_melgm;WC_tmax8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax8_memid;WC_tmax8;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax8_mrlgm;WC_tmax8;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax8_mrmid;WC_tmax8;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmax9_cclgm;WC_tmax9;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax9_ccmid;WC_tmax9;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmax9_melgm;WC_tmax9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax9_memid;WC_tmax9;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmax9_mrlgm;WC_tmax9;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmax9_mrmid;WC_tmax9;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin1_cclgm;WC_tmin1;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin1_ccmid;WC_tmin1;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin1_melgm;WC_tmin1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin1_memid;WC_tmin1;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin1_mrlgm;WC_tmin1;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin1_mrmid;WC_tmin1;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin10_cclgm;WC_tmin10;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin10_ccmid;WC_tmin10;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin10_melgm;WC_tmin10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin10_memid;WC_tmin10;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin10_mrlgm;WC_tmin10;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin10_mrmid;WC_tmin10;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin11_cclgm;WC_tmin11;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin11_ccmid;WC_tmin11;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin11_melgm;WC_tmin11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin11_memid;WC_tmin11;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin11_mrlgm;WC_tmin11;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin11_mrmid;WC_tmin11;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin12_cclgm;WC_tmin12;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin12_ccmid;WC_tmin12;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin12_melgm;WC_tmin12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin12_memid;WC_tmin12;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin12_mrlgm;WC_tmin12;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin12_mrmid;WC_tmin12;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin2_cclgm;WC_tmin2;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin2_ccmid;WC_tmin2;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin2_melgm;WC_tmin2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin2_memid;WC_tmin2;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin2_mrlgm;WC_tmin2;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin2_mrmid;WC_tmin2;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin3_cclgm;WC_tmin3;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin3_ccmid;WC_tmin3;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin3_melgm;WC_tmin3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin3_memid;WC_tmin3;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin3_mrlgm;WC_tmin3;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin3_mrmid;WC_tmin3;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin4_cclgm;WC_tmin4;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin4_ccmid;WC_tmin4;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin4_melgm;WC_tmin4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin4_memid;WC_tmin4;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin4_mrlgm;WC_tmin4;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin4_mrmid;WC_tmin4;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin5_cclgm;WC_tmin5;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin5_ccmid;WC_tmin5;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin5_melgm;WC_tmin5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin5_memid;WC_tmin5;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin5_mrlgm;WC_tmin5;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin5_mrmid;WC_tmin5;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin6_cclgm;WC_tmin6;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin6_ccmid;WC_tmin6;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin6_melgm;WC_tmin6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin6_memid;WC_tmin6;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin6_mrlgm;WC_tmin6;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin6_mrmid;WC_tmin6;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin7_cclgm;WC_tmin7;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin7_ccmid;WC_tmin7;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin7_melgm;WC_tmin7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin7_memid;WC_tmin7;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin7_mrlgm;WC_tmin7;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin7_mrmid;WC_tmin7;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin8_cclgm;WC_tmin8;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin8_ccmid;WC_tmin8;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin8_melgm;WC_tmin8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin8_memid;WC_tmin8;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin8_mrlgm;WC_tmin8;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin8_mrmid;WC_tmin8;holo MIROC-ESM;mid-Holocene;6000;1
-WorldClim;WC_tmin9_cclgm;WC_tmin9;lgm CCSM4;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin9_ccmid;WC_tmin9;holo CCSM4;mid-Holocene;6000;1
-WorldClim;WC_tmin9_melgm;WC_tmin9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin9_memid;WC_tmin9;holo MPI-ESM-P;mid-Holocene;6000;1
-WorldClim;WC_tmin9_mrlgm;WC_tmin9;lgm MIROC-ESM;Last Glacial Maximum;21000;1
-WorldClim;WC_tmin9_mrmid;WC_tmin9;holo MIROC-ESM;mid-Holocene;6000;1
+dataset_code;layer_code;current_layer_code;model_name;epoch;years_ago;version;layer_url
+ENVIREM;ER_annualPET_holo_ccsm4;ER_annualPET;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_ccsm4_lonlat.tif
+ENVIREM;ER_annualPET_holo_miroc_esm;ER_annualPET;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_annualPET_holo_mpi_esm_p;ER_annualPET;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_annualPET_lgm_ccsm4;ER_annualPET;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_annualPET_lgm_miroc_esm;ER_annualPET;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_annualPET_lgm_mpi_esm_p;ER_annualPET;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_aridityIndexThornthwaite_holo_ccsm4;ER_aridityIndexThornthwaite;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_aridityIndexThornthwaite_holo_ccsm4_lonlat.tif
+ENVIREM;ER_aridityIndexThornthwaite_holo_miroc_esm;ER_aridityIndexThornthwaite;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_aridityIndexThornthwaite_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_aridityIndexThornthwaite_holo_mpi_esm_p;ER_aridityIndexThornthwaite;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_aridityIndexThornthwaite_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_aridityIndexThornthwaite_lgm_ccsm4;ER_aridityIndexThornthwaite;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_aridityIndexThornthwaite_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_aridityIndexThornthwaite_lgm_miroc_esm;ER_aridityIndexThornthwaite;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_aridityIndexThornthwaite_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_aridityIndexThornthwaite_lgm_mpi_esm_p;ER_aridityIndexThornthwaite;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_aridityIndexThornthwaite_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_climaticMoistureIndex_holo_ccsm4;ER_climaticMoistureIndex;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_climaticMoistureIndex_holo_ccsm4_lonlat.tif
+ENVIREM;ER_climaticMoistureIndex_holo_miroc_esm;ER_climaticMoistureIndex;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_climaticMoistureIndex_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_climaticMoistureIndex_holo_mpi_esm_p;ER_climaticMoistureIndex;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_climaticMoistureIndex_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_climaticMoistureIndex_lgm_ccsm4;ER_climaticMoistureIndex;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_climaticMoistureIndex_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_climaticMoistureIndex_lgm_miroc_esm;ER_climaticMoistureIndex;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_climaticMoistureIndex_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_climaticMoistureIndex_lgm_mpi_esm_p;ER_climaticMoistureIndex;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_climaticMoistureIndex_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_continentality_holo_ccsm4;ER_continentality;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_continentality_holo_ccsm4_lonlat.tif
+ENVIREM;ER_continentality_holo_miroc_esm;ER_continentality;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_continentality_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_continentality_holo_mpi_esm_p;ER_continentality;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_continentality_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_continentality_lgm_ccsm4;ER_continentality;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_continentality_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_continentality_lgm_miroc_esm;ER_continentality;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_continentality_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_continentality_lgm_mpi_esm_p;ER_continentality;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_continentality_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_embergerQ_holo_ccsm4;ER_embergerQ;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_embergerQ_holo_ccsm4_lonlat.tif
+ENVIREM;ER_embergerQ_holo_miroc_esm;ER_embergerQ;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_embergerQ_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_embergerQ_holo_mpi_esm_p;ER_embergerQ;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_embergerQ_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_embergerQ_lgm_ccsm4;ER_embergerQ;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_embergerQ_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_embergerQ_lgm_miroc_esm;ER_embergerQ;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_embergerQ_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_embergerQ_lgm_mpi_esm_p;ER_embergerQ;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_embergerQ_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_growingDegDays0_holo_ccsm4;ER_growingDegDays0;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays0_holo_ccsm4_lonlat.tif
+ENVIREM;ER_growingDegDays0_holo_miroc_esm;ER_growingDegDays0;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays0_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_growingDegDays0_holo_mpi_esm_p;ER_growingDegDays0;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays0_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_growingDegDays0_lgm_ccsm4;ER_growingDegDays0;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays0_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_growingDegDays0_lgm_miroc_esm;ER_growingDegDays0;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays0_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_growingDegDays0_lgm_mpi_esm_p;ER_growingDegDays0;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays0_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_growingDegDays5_holo_ccsm4;ER_growingDegDays5;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays5_holo_ccsm4_lonlat.tif
+ENVIREM;ER_growingDegDays5_holo_miroc_esm;ER_growingDegDays5;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays5_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_growingDegDays5_holo_mpi_esm_p;ER_growingDegDays5;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays5_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_growingDegDays5_lgm_ccsm4;ER_growingDegDays5;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays5_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_growingDegDays5_lgm_miroc_esm;ER_growingDegDays5;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays5_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_growingDegDays5_lgm_mpi_esm_p;ER_growingDegDays5;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_growingDegDays5_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_maxTempColdest_holo_ccsm4;ER_maxTempColdest;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_maxTempColdest_holo_ccsm4_lonlat.tif
+ENVIREM;ER_maxTempColdest_holo_miroc_esm;ER_maxTempColdest;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_maxTempColdest_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_maxTempColdest_holo_mpi_esm_p;ER_maxTempColdest;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_maxTempColdest_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_maxTempColdest_lgm_ccsm4;ER_maxTempColdest;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_maxTempColdest_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_maxTempColdest_lgm_miroc_esm;ER_maxTempColdest;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_maxTempColdest_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_maxTempColdest_lgm_mpi_esm_p;ER_maxTempColdest;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_maxTempColdest_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_minTempWarmest_holo_ccsm4;ER_minTempWarmest;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_minTempWarmest_holo_ccsm4_lonlat.tif
+ENVIREM;ER_minTempWarmest_holo_miroc_esm;ER_minTempWarmest;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_minTempWarmest_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_minTempWarmest_holo_mpi_esm_p;ER_minTempWarmest;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_minTempWarmest_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_minTempWarmest_lgm_ccsm4;ER_minTempWarmest;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_minTempWarmest_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_minTempWarmest_lgm_miroc_esm;ER_minTempWarmest;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_minTempWarmest_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_minTempWarmest_lgm_mpi_esm_p;ER_minTempWarmest;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_minTempWarmest_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_monthCountByTemp10_holo_ccsm4;ER_monthCountByTemp10;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_monthCountByTemp10_holo_ccsm4_lonlat.tif
+ENVIREM;ER_monthCountByTemp10_holo_miroc_esm;ER_monthCountByTemp10;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_monthCountByTemp10_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_monthCountByTemp10_holo_mpi_esm_p;ER_monthCountByTemp10;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_monthCountByTemp10_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_monthCountByTemp10_lgm_ccsm4;ER_monthCountByTemp10;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_monthCountByTemp10_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_monthCountByTemp10_lgm_miroc_esm;ER_monthCountByTemp10;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_monthCountByTemp10_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_monthCountByTemp10_lgm_mpi_esm_p;ER_monthCountByTemp10;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_monthCountByTemp10_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETColdestQuarter_holo_ccsm4;ER_PETColdestQuarter;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETColdestQuarter_holo_ccsm4_lonlat.tif
+ENVIREM;ER_PETColdestQuarter_holo_miroc_esm;ER_PETColdestQuarter;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETColdestQuarter_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_PETColdestQuarter_holo_mpi_esm_p;ER_PETColdestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETColdestQuarter_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETColdestQuarter_lgm_ccsm4;ER_PETColdestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETColdestQuarter_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_PETColdestQuarter_lgm_miroc_esm;ER_PETColdestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETColdestQuarter_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_PETColdestQuarter_lgm_mpi_esm_p;ER_PETColdestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETColdestQuarter_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETDriestQuarter_holo_ccsm4;ER_PETDriestQuarter;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETDriestQuarter_holo_ccsm4_lonlat.tif
+ENVIREM;ER_PETDriestQuarter_holo_miroc_esm;ER_PETDriestQuarter;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETDriestQuarter_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_PETDriestQuarter_holo_mpi_esm_p;ER_PETDriestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETDriestQuarter_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETDriestQuarter_lgm_ccsm4;ER_PETDriestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETDriestQuarter_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_PETDriestQuarter_lgm_miroc_esm;ER_PETDriestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETDriestQuarter_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_PETDriestQuarter_lgm_mpi_esm_p;ER_PETDriestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETDriestQuarter_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETseasonality_holo_ccsm4;ER_PETseasonality;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETseasonality_holo_ccsm4_lonlat.tif
+ENVIREM;ER_PETseasonality_holo_miroc_esm;ER_PETseasonality;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETseasonality_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_PETseasonality_holo_mpi_esm_p;ER_PETseasonality;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETseasonality_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETseasonality_lgm_ccsm4;ER_PETseasonality;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETseasonality_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_PETseasonality_lgm_miroc_esm;ER_PETseasonality;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETseasonality_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_PETseasonality_lgm_mpi_esm_p;ER_PETseasonality;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETseasonality_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETWarmestQuarter_holo_ccsm4;ER_PETWarmestQuarter;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWarmestQuarter_holo_ccsm4_lonlat.tif
+ENVIREM;ER_PETWarmestQuarter_holo_miroc_esm;ER_PETWarmestQuarter;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWarmestQuarter_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_PETWarmestQuarter_holo_mpi_esm_p;ER_PETWarmestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWarmestQuarter_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETWarmestQuarter_lgm_ccsm4;ER_PETWarmestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWarmestQuarter_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_PETWarmestQuarter_lgm_miroc_esm;ER_PETWarmestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWarmestQuarter_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_PETWarmestQuarter_lgm_mpi_esm_p;ER_PETWarmestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWarmestQuarter_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETWettestQuarter_holo_ccsm4;ER_PETWettestQuarter;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWettestQuarter_holo_ccsm4_lonlat.tif
+ENVIREM;ER_PETWettestQuarter_holo_miroc_esm;ER_PETWettestQuarter;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWettestQuarter_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_PETWettestQuarter_holo_mpi_esm_p;ER_PETWettestQuarter;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWettestQuarter_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_PETWettestQuarter_lgm_ccsm4;ER_PETWettestQuarter;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWettestQuarter_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_PETWettestQuarter_lgm_miroc_esm;ER_PETWettestQuarter;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWettestQuarter_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_PETWettestQuarter_lgm_mpi_esm_p;ER_PETWettestQuarter;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_PETWettestQuarter_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_thermicityIndex_holo_ccsm4;ER_thermicityIndex;holo_ccsm4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_thermicityIndex_holo_ccsm4_lonlat.tif
+ENVIREM;ER_thermicityIndex_holo_miroc_esm;ER_thermicityIndex;holo_miroc_esm;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_thermicityIndex_holo_miroc_esm_lonlat.tif
+ENVIREM;ER_thermicityIndex_holo_mpi_esm_p;ER_thermicityIndex;holo_mpi_esm_p;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_thermicityIndex_holo_mpi_esm_p_lonlat.tif
+ENVIREM;ER_thermicityIndex_lgm_ccsm4;ER_thermicityIndex;lgm_ccsm4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_thermicityIndex_lgm_ccsm4_lonlat.tif
+ENVIREM;ER_thermicityIndex_lgm_miroc_esm;ER_thermicityIndex;lgm_miroc_esm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_thermicityIndex_lgm_miroc_esm_lonlat.tif
+ENVIREM;ER_thermicityIndex_lgm_mpi_esm_p;ER_thermicityIndex;lgm_mpi_esm_p;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_thermicityIndex_lgm_mpi_esm_p_lonlat.tif
+ENVIREM;ER_topoWet_holo;ER_topoWet;holo;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_topoWet_holo_lonlat.tif
+ENVIREM;ER_topoWet_lgm;ER_topoWet;lgm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_topoWet_lgm_lonlat.tif
+ENVIREM;ER_tri_holo;ER_tri;holo;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/ER_tri_holo_lonlat.tif
+ENVIREM;ER_tri_lgm;ER_tri;lgm;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/ER_tri_lgm_lonlat.tif
+MARSPEC;MS_bathy_21kya;MS_bathy_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_bathy_21kya_lonlat.tif
+MARSPEC;MS_biogeo01_aspect_EW_21kya;MS_biogeo01_aspect_EW_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo01_aspect_EW_21kya_lonlat.tif
+MARSPEC;MS_biogeo02_aspect_NS_21kya;MS_biogeo02_aspect_NS_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo02_aspect_NS_21kya_lonlat.tif
+MARSPEC;MS_biogeo03_plan_curvature_21kya;MS_biogeo03_plan_curvature_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo03_plan_curvature_21kya_lonlat.tif
+MARSPEC;MS_biogeo04_profile_curvature_21kya;MS_biogeo04_profile_curvature_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo04_profile_curvature_21kya_lonlat.tif
+MARSPEC;MS_biogeo05_dist_shore_21kya;MS_biogeo05_dist_shore_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo05_dist_shore_21kya_lonlat.tif
+MARSPEC;MS_biogeo06_bathy_slope_21kya;MS_biogeo06_bathy_slope_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo06_bathy_slope_21kya_lonlat.tif
+MARSPEC;MS_biogeo07_concavity_21kya;MS_biogeo07_concavity_5m;21kya_geophysical;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo07_concavity_21kya_lonlat.tif
+MARSPEC;MS_biogeo08_sss_mean_21kya_adjCCSM;MS_biogeo08_sss_mean_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo08_sss_mean_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo08_sss_mean_21kya_noCCSM;MS_biogeo08_sss_mean_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo08_sss_mean_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo08_sss_mean_6kya;MS_biogeo08_sss_mean_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo08_sss_mean_6kya_lonlat.tif
+MARSPEC;MS_biogeo09_sss_min_21kya_adjCCSM;MS_biogeo09_sss_min_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo09_sss_min_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo09_sss_min_21kya_noCCSM;MS_biogeo09_sss_min_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo09_sss_min_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo09_sss_min_6kya;MS_biogeo09_sss_min_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo09_sss_min_6kya_lonlat.tif
+MARSPEC;MS_biogeo10_sss_max_21kya_adjCCSM;MS_biogeo10_sss_max_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo10_sss_max_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo10_sss_max_21kya_noCCSM;MS_biogeo10_sss_max_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo10_sss_max_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo10_sss_max_6kya;MS_biogeo10_sss_max_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo10_sss_max_6kya_lonlat.tif
+MARSPEC;MS_biogeo11_sss_range_21kya_adjCCSM;MS_biogeo11_sss_range_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo11_sss_range_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo11_sss_range_21kya_noCCSM;MS_biogeo11_sss_range_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo11_sss_range_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo11_sss_range_6kya;MS_biogeo11_sss_range_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo11_sss_range_6kya_lonlat.tif
+MARSPEC;MS_biogeo12_sss_variance_21kya_adjCCSM;MS_biogeo12_sss_variance_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo12_sss_variance_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo12_sss_variance_21kya_noCCSM;MS_biogeo12_sss_variance_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo12_sss_variance_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo12_sss_variance_6kya;MS_biogeo12_sss_variance_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo12_sss_variance_6kya_lonlat.tif
+MARSPEC;MS_biogeo13_sst_mean_21kya_adjCCSM;MS_biogeo13_sst_mean_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo13_sst_mean_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo13_sst_mean_21kya_noCCSM;MS_biogeo13_sst_mean_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo13_sst_mean_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo13_sst_mean_6kya;MS_biogeo13_sst_mean_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo13_sst_mean_6kya_lonlat.tif
+MARSPEC;MS_biogeo14_sst_min_21kya_adjCCSM;MS_biogeo14_sst_min_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo14_sst_min_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo14_sst_min_21kya_noCCSM;MS_biogeo14_sst_min_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo14_sst_min_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo14_sst_min_6kya;MS_biogeo14_sst_min_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo14_sst_min_6kya_lonlat.tif
+MARSPEC;MS_biogeo15_sst_max_21kya_adjCCSM;MS_biogeo15_sst_max_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo15_sst_max_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo15_sst_max_21kya_noCCSM;MS_biogeo15_sst_max_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo15_sst_max_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo15_sst_max_6kya;MS_biogeo15_sst_max_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo15_sst_max_6kya_lonlat.tif
+MARSPEC;MS_biogeo16_sst_range_21kya_adjCCSM;MS_biogeo16_sst_range_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo16_sst_range_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo16_sst_range_21kya_noCCSM;MS_biogeo16_sst_range_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo16_sst_range_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo16_sst_range_6kya;MS_biogeo16_sst_range_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo16_sst_range_6kya_lonlat.tif
+MARSPEC;MS_biogeo17_sst_variance_21kya_adjCCSM;MS_biogeo17_sst_variance_5m;21kya_ensemble_adjCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo17_sst_variance_21kya_adjCCSM_lonlat.tif
+MARSPEC;MS_biogeo17_sst_variance_21kya_noCCSM;MS_biogeo17_sst_variance_5m;21kya_ensemble_noCCSM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo17_sst_variance_21kya_noCCSM_lonlat.tif
+MARSPEC;MS_biogeo17_sst_variance_6kya;MS_biogeo17_sst_variance_5m;6kya_Ensemble;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/MS_biogeo17_sst_variance_6kya_lonlat.tif
+WorldClim;WC_bio1_cclgm;WC_bio1;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio1_cclgm_lonlat.tif
+WorldClim;WC_bio1_ccmid;WC_bio1;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio1_ccmid_lonlat.tif
+WorldClim;WC_bio1_melgm;WC_bio1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio1_melgm_lonlat.tif
+WorldClim;WC_bio1_memid;WC_bio1;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio1_memid_lonlat.tif
+WorldClim;WC_bio1_mrlgm;WC_bio1;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio1_mrlgm_lonlat.tif
+WorldClim;WC_bio1_mrmid;WC_bio1;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio1_mrmid_lonlat.tif
+WorldClim;WC_bio10_cclgm;WC_bio10;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio10_cclgm_lonlat.tif
+WorldClim;WC_bio10_ccmid;WC_bio10;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio10_ccmid_lonlat.tif
+WorldClim;WC_bio10_melgm;WC_bio10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio10_melgm_lonlat.tif
+WorldClim;WC_bio10_memid;WC_bio10;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio10_memid_lonlat.tif
+WorldClim;WC_bio10_mrlgm;WC_bio10;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio10_mrlgm_lonlat.tif
+WorldClim;WC_bio10_mrmid;WC_bio10;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio10_mrmid_lonlat.tif
+WorldClim;WC_bio11_cclgm;WC_bio11;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio11_cclgm_lonlat.tif
+WorldClim;WC_bio11_ccmid;WC_bio11;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio11_ccmid_lonlat.tif
+WorldClim;WC_bio11_melgm;WC_bio11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio11_melgm_lonlat.tif
+WorldClim;WC_bio11_memid;WC_bio11;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio11_memid_lonlat.tif
+WorldClim;WC_bio11_mrlgm;WC_bio11;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio11_mrlgm_lonlat.tif
+WorldClim;WC_bio11_mrmid;WC_bio11;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio11_mrmid_lonlat.tif
+WorldClim;WC_bio12_cclgm;WC_bio12;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio12_cclgm_lonlat.tif
+WorldClim;WC_bio12_ccmid;WC_bio12;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio12_ccmid_lonlat.tif
+WorldClim;WC_bio12_melgm;WC_bio12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio12_melgm_lonlat.tif
+WorldClim;WC_bio12_memid;WC_bio12;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio12_memid_lonlat.tif
+WorldClim;WC_bio12_mrlgm;WC_bio12;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio12_mrlgm_lonlat.tif
+WorldClim;WC_bio12_mrmid;WC_bio12;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio12_mrmid_lonlat.tif
+WorldClim;WC_bio13_cclgm;WC_bio13;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio13_cclgm_lonlat.tif
+WorldClim;WC_bio13_ccmid;WC_bio13;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio13_ccmid_lonlat.tif
+WorldClim;WC_bio13_melgm;WC_bio13;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio13_melgm_lonlat.tif
+WorldClim;WC_bio13_memid;WC_bio13;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio13_memid_lonlat.tif
+WorldClim;WC_bio13_mrlgm;WC_bio13;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio13_mrlgm_lonlat.tif
+WorldClim;WC_bio13_mrmid;WC_bio13;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio13_mrmid_lonlat.tif
+WorldClim;WC_bio14_cclgm;WC_bio14;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio14_cclgm_lonlat.tif
+WorldClim;WC_bio14_ccmid;WC_bio14;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio14_ccmid_lonlat.tif
+WorldClim;WC_bio14_melgm;WC_bio14;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio14_melgm_lonlat.tif
+WorldClim;WC_bio14_memid;WC_bio14;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio14_memid_lonlat.tif
+WorldClim;WC_bio14_mrlgm;WC_bio14;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio14_mrlgm_lonlat.tif
+WorldClim;WC_bio14_mrmid;WC_bio14;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio14_mrmid_lonlat.tif
+WorldClim;WC_bio15_cclgm;WC_bio15;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio15_cclgm_lonlat.tif
+WorldClim;WC_bio15_ccmid;WC_bio15;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio15_ccmid_lonlat.tif
+WorldClim;WC_bio15_melgm;WC_bio15;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio15_melgm_lonlat.tif
+WorldClim;WC_bio15_memid;WC_bio15;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio15_memid_lonlat.tif
+WorldClim;WC_bio15_mrlgm;WC_bio15;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio15_mrlgm_lonlat.tif
+WorldClim;WC_bio15_mrmid;WC_bio15;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio15_mrmid_lonlat.tif
+WorldClim;WC_bio16_cclgm;WC_bio16;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio16_cclgm_lonlat.tif
+WorldClim;WC_bio16_ccmid;WC_bio16;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio16_ccmid_lonlat.tif
+WorldClim;WC_bio16_melgm;WC_bio16;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio16_melgm_lonlat.tif
+WorldClim;WC_bio16_memid;WC_bio16;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio16_memid_lonlat.tif
+WorldClim;WC_bio16_mrlgm;WC_bio16;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio16_mrlgm_lonlat.tif
+WorldClim;WC_bio16_mrmid;WC_bio16;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio16_mrmid_lonlat.tif
+WorldClim;WC_bio17_cclgm;WC_bio17;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio17_cclgm_lonlat.tif
+WorldClim;WC_bio17_ccmid;WC_bio17;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio17_ccmid_lonlat.tif
+WorldClim;WC_bio17_melgm;WC_bio17;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio17_melgm_lonlat.tif
+WorldClim;WC_bio17_memid;WC_bio17;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio17_memid_lonlat.tif
+WorldClim;WC_bio17_mrlgm;WC_bio17;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio17_mrlgm_lonlat.tif
+WorldClim;WC_bio17_mrmid;WC_bio17;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio17_mrmid_lonlat.tif
+WorldClim;WC_bio18_cclgm;WC_bio18;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio18_cclgm_lonlat.tif
+WorldClim;WC_bio18_ccmid;WC_bio18;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio18_ccmid_lonlat.tif
+WorldClim;WC_bio18_melgm;WC_bio18;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio18_melgm_lonlat.tif
+WorldClim;WC_bio18_memid;WC_bio18;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio18_memid_lonlat.tif
+WorldClim;WC_bio18_mrlgm;WC_bio18;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio18_mrlgm_lonlat.tif
+WorldClim;WC_bio18_mrmid;WC_bio18;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio18_mrmid_lonlat.tif
+WorldClim;WC_bio19_cclgm;WC_bio19;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio19_cclgm_lonlat.tif
+WorldClim;WC_bio19_ccmid;WC_bio19;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio19_ccmid_lonlat.tif
+WorldClim;WC_bio19_melgm;WC_bio19;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio19_melgm_lonlat.tif
+WorldClim;WC_bio19_memid;WC_bio19;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio19_memid_lonlat.tif
+WorldClim;WC_bio19_mrlgm;WC_bio19;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio19_mrlgm_lonlat.tif
+WorldClim;WC_bio19_mrmid;WC_bio19;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio19_mrmid_lonlat.tif
+WorldClim;WC_bio2_cclgm;WC_bio2;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio2_cclgm_lonlat.tif
+WorldClim;WC_bio2_ccmid;WC_bio2;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio2_ccmid_lonlat.tif
+WorldClim;WC_bio2_melgm;WC_bio2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio2_melgm_lonlat.tif
+WorldClim;WC_bio2_memid;WC_bio2;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio2_memid_lonlat.tif
+WorldClim;WC_bio2_mrlgm;WC_bio2;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio2_mrlgm_lonlat.tif
+WorldClim;WC_bio2_mrmid;WC_bio2;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio2_mrmid_lonlat.tif
+WorldClim;WC_bio3_cclgm;WC_bio3;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio3_cclgm_lonlat.tif
+WorldClim;WC_bio3_ccmid;WC_bio3;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio3_ccmid_lonlat.tif
+WorldClim;WC_bio3_melgm;WC_bio3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio3_melgm_lonlat.tif
+WorldClim;WC_bio3_memid;WC_bio3;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio3_memid_lonlat.tif
+WorldClim;WC_bio3_mrlgm;WC_bio3;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio3_mrlgm_lonlat.tif
+WorldClim;WC_bio3_mrmid;WC_bio3;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio3_mrmid_lonlat.tif
+WorldClim;WC_bio4_cclgm;WC_bio4;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio4_cclgm_lonlat.tif
+WorldClim;WC_bio4_ccmid;WC_bio4;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio4_ccmid_lonlat.tif
+WorldClim;WC_bio4_melgm;WC_bio4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio4_melgm_lonlat.tif
+WorldClim;WC_bio4_memid;WC_bio4;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio4_memid_lonlat.tif
+WorldClim;WC_bio4_mrlgm;WC_bio4;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio4_mrlgm_lonlat.tif
+WorldClim;WC_bio4_mrmid;WC_bio4;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio4_mrmid_lonlat.tif
+WorldClim;WC_bio5_cclgm;WC_bio5;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio5_cclgm_lonlat.tif
+WorldClim;WC_bio5_ccmid;WC_bio5;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio5_ccmid_lonlat.tif
+WorldClim;WC_bio5_melgm;WC_bio5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio5_melgm_lonlat.tif
+WorldClim;WC_bio5_memid;WC_bio5;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio5_memid_lonlat.tif
+WorldClim;WC_bio5_mrlgm;WC_bio5;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio5_mrlgm_lonlat.tif
+WorldClim;WC_bio5_mrmid;WC_bio5;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio5_mrmid_lonlat.tif
+WorldClim;WC_bio6_cclgm;WC_bio6;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio6_cclgm_lonlat.tif
+WorldClim;WC_bio6_ccmid;WC_bio6;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio6_ccmid_lonlat.tif
+WorldClim;WC_bio6_melgm;WC_bio6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio6_melgm_lonlat.tif
+WorldClim;WC_bio6_memid;WC_bio6;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio6_memid_lonlat.tif
+WorldClim;WC_bio6_mrlgm;WC_bio6;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio6_mrlgm_lonlat.tif
+WorldClim;WC_bio6_mrmid;WC_bio6;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio6_mrmid_lonlat.tif
+WorldClim;WC_bio7_cclgm;WC_bio7;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio7_cclgm_lonlat.tif
+WorldClim;WC_bio7_ccmid;WC_bio7;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio7_ccmid_lonlat.tif
+WorldClim;WC_bio7_melgm;WC_bio7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio7_melgm_lonlat.tif
+WorldClim;WC_bio7_memid;WC_bio7;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio7_memid_lonlat.tif
+WorldClim;WC_bio7_mrlgm;WC_bio7;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio7_mrlgm_lonlat.tif
+WorldClim;WC_bio7_mrmid;WC_bio7;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio7_mrmid_lonlat.tif
+WorldClim;WC_bio8_cclgm;WC_bio8;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio8_cclgm_lonlat.tif
+WorldClim;WC_bio8_ccmid;WC_bio8;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio8_ccmid_lonlat.tif
+WorldClim;WC_bio8_melgm;WC_bio8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio8_melgm_lonlat.tif
+WorldClim;WC_bio8_memid;WC_bio8;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio8_memid_lonlat.tif
+WorldClim;WC_bio8_mrlgm;WC_bio8;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio8_mrlgm_lonlat.tif
+WorldClim;WC_bio8_mrmid;WC_bio8;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio8_mrmid_lonlat.tif
+WorldClim;WC_bio9_cclgm;WC_bio9;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio9_cclgm_lonlat.tif
+WorldClim;WC_bio9_ccmid;WC_bio9;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio9_ccmid_lonlat.tif
+WorldClim;WC_bio9_melgm;WC_bio9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio9_melgm_lonlat.tif
+WorldClim;WC_bio9_memid;WC_bio9;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio9_memid_lonlat.tif
+WorldClim;WC_bio9_mrlgm;WC_bio9;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_bio9_mrlgm_lonlat.tif
+WorldClim;WC_bio9_mrmid;WC_bio9;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_bio9_mrmid_lonlat.tif
+WorldClim;WC_prec1_cclgm;WC_prec1;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec1_cclgm_lonlat.tif
+WorldClim;WC_prec1_ccmid;WC_prec1;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec1_ccmid_lonlat.tif
+WorldClim;WC_prec1_melgm;WC_prec1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec1_melgm_lonlat.tif
+WorldClim;WC_prec1_memid;WC_prec1;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec1_memid_lonlat.tif
+WorldClim;WC_prec1_mrlgm;WC_prec1;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec1_mrlgm_lonlat.tif
+WorldClim;WC_prec1_mrmid;WC_prec1;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec1_mrmid_lonlat.tif
+WorldClim;WC_prec10_cclgm;WC_prec10;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec10_cclgm_lonlat.tif
+WorldClim;WC_prec10_ccmid;WC_prec10;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec10_ccmid_lonlat.tif
+WorldClim;WC_prec10_melgm;WC_prec10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec10_melgm_lonlat.tif
+WorldClim;WC_prec10_memid;WC_prec10;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec10_memid_lonlat.tif
+WorldClim;WC_prec10_mrlgm;WC_prec10;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec10_mrlgm_lonlat.tif
+WorldClim;WC_prec10_mrmid;WC_prec10;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec10_mrmid_lonlat.tif
+WorldClim;WC_prec11_cclgm;WC_prec11;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec11_cclgm_lonlat.tif
+WorldClim;WC_prec11_ccmid;WC_prec11;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec11_ccmid_lonlat.tif
+WorldClim;WC_prec11_melgm;WC_prec11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec11_melgm_lonlat.tif
+WorldClim;WC_prec11_memid;WC_prec11;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec11_memid_lonlat.tif
+WorldClim;WC_prec11_mrlgm;WC_prec11;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec11_mrlgm_lonlat.tif
+WorldClim;WC_prec11_mrmid;WC_prec11;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec11_mrmid_lonlat.tif
+WorldClim;WC_prec12_cclgm;WC_prec12;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec12_cclgm_lonlat.tif
+WorldClim;WC_prec12_ccmid;WC_prec12;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec12_ccmid_lonlat.tif
+WorldClim;WC_prec12_melgm;WC_prec12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec12_melgm_lonlat.tif
+WorldClim;WC_prec12_memid;WC_prec12;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec12_memid_lonlat.tif
+WorldClim;WC_prec12_mrlgm;WC_prec12;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec12_mrlgm_lonlat.tif
+WorldClim;WC_prec12_mrmid;WC_prec12;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec12_mrmid_lonlat.tif
+WorldClim;WC_prec2_cclgm;WC_prec2;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec2_cclgm_lonlat.tif
+WorldClim;WC_prec2_ccmid;WC_prec2;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec2_ccmid_lonlat.tif
+WorldClim;WC_prec2_melgm;WC_prec2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec2_melgm_lonlat.tif
+WorldClim;WC_prec2_memid;WC_prec2;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec2_memid_lonlat.tif
+WorldClim;WC_prec2_mrlgm;WC_prec2;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec2_mrlgm_lonlat.tif
+WorldClim;WC_prec2_mrmid;WC_prec2;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec2_mrmid_lonlat.tif
+WorldClim;WC_prec3_cclgm;WC_prec3;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec3_cclgm_lonlat.tif
+WorldClim;WC_prec3_ccmid;WC_prec3;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec3_ccmid_lonlat.tif
+WorldClim;WC_prec3_melgm;WC_prec3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec3_melgm_lonlat.tif
+WorldClim;WC_prec3_memid;WC_prec3;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec3_memid_lonlat.tif
+WorldClim;WC_prec3_mrlgm;WC_prec3;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec3_mrlgm_lonlat.tif
+WorldClim;WC_prec3_mrmid;WC_prec3;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec3_mrmid_lonlat.tif
+WorldClim;WC_prec4_cclgm;WC_prec4;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec4_cclgm_lonlat.tif
+WorldClim;WC_prec4_ccmid;WC_prec4;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec4_ccmid_lonlat.tif
+WorldClim;WC_prec4_melgm;WC_prec4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec4_melgm_lonlat.tif
+WorldClim;WC_prec4_memid;WC_prec4;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec4_memid_lonlat.tif
+WorldClim;WC_prec4_mrlgm;WC_prec4;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec4_mrlgm_lonlat.tif
+WorldClim;WC_prec4_mrmid;WC_prec4;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec4_mrmid_lonlat.tif
+WorldClim;WC_prec5_cclgm;WC_prec5;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec5_cclgm_lonlat.tif
+WorldClim;WC_prec5_ccmid;WC_prec5;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec5_ccmid_lonlat.tif
+WorldClim;WC_prec5_melgm;WC_prec5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec5_melgm_lonlat.tif
+WorldClim;WC_prec5_memid;WC_prec5;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec5_memid_lonlat.tif
+WorldClim;WC_prec5_mrlgm;WC_prec5;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec5_mrlgm_lonlat.tif
+WorldClim;WC_prec5_mrmid;WC_prec5;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec5_mrmid_lonlat.tif
+WorldClim;WC_prec6_cclgm;WC_prec6;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec6_cclgm_lonlat.tif
+WorldClim;WC_prec6_ccmid;WC_prec6;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec6_ccmid_lonlat.tif
+WorldClim;WC_prec6_melgm;WC_prec6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec6_melgm_lonlat.tif
+WorldClim;WC_prec6_memid;WC_prec6;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec6_memid_lonlat.tif
+WorldClim;WC_prec6_mrlgm;WC_prec6;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec6_mrlgm_lonlat.tif
+WorldClim;WC_prec6_mrmid;WC_prec6;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec6_mrmid_lonlat.tif
+WorldClim;WC_prec7_cclgm;WC_prec7;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec7_cclgm_lonlat.tif
+WorldClim;WC_prec7_ccmid;WC_prec7;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec7_ccmid_lonlat.tif
+WorldClim;WC_prec7_melgm;WC_prec7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec7_melgm_lonlat.tif
+WorldClim;WC_prec7_memid;WC_prec7;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec7_memid_lonlat.tif
+WorldClim;WC_prec7_mrlgm;WC_prec7;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec7_mrlgm_lonlat.tif
+WorldClim;WC_prec7_mrmid;WC_prec7;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec7_mrmid_lonlat.tif
+WorldClim;WC_prec8_cclgm;WC_prec8;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec8_cclgm_lonlat.tif
+WorldClim;WC_prec8_ccmid;WC_prec8;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec8_ccmid_lonlat.tif
+WorldClim;WC_prec8_melgm;WC_prec8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec8_melgm_lonlat.tif
+WorldClim;WC_prec8_memid;WC_prec8;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec8_memid_lonlat.tif
+WorldClim;WC_prec8_mrlgm;WC_prec8;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec8_mrlgm_lonlat.tif
+WorldClim;WC_prec8_mrmid;WC_prec8;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec8_mrmid_lonlat.tif
+WorldClim;WC_prec9_cclgm;WC_prec9;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec9_cclgm_lonlat.tif
+WorldClim;WC_prec9_ccmid;WC_prec9;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec9_ccmid_lonlat.tif
+WorldClim;WC_prec9_melgm;WC_prec9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec9_melgm_lonlat.tif
+WorldClim;WC_prec9_memid;WC_prec9;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec9_memid_lonlat.tif
+WorldClim;WC_prec9_mrlgm;WC_prec9;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_prec9_mrlgm_lonlat.tif
+WorldClim;WC_prec9_mrmid;WC_prec9;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_prec9_mrmid_lonlat.tif
+WorldClim;WC_tmax1_cclgm;WC_tmax1;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax1_cclgm_lonlat.tif
+WorldClim;WC_tmax1_ccmid;WC_tmax1;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax1_ccmid_lonlat.tif
+WorldClim;WC_tmax1_melgm;WC_tmax1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax1_melgm_lonlat.tif
+WorldClim;WC_tmax1_memid;WC_tmax1;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax1_memid_lonlat.tif
+WorldClim;WC_tmax1_mrlgm;WC_tmax1;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax1_mrlgm_lonlat.tif
+WorldClim;WC_tmax1_mrmid;WC_tmax1;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax1_mrmid_lonlat.tif
+WorldClim;WC_tmax10_cclgm;WC_tmax10;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax10_cclgm_lonlat.tif
+WorldClim;WC_tmax10_ccmid;WC_tmax10;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax10_ccmid_lonlat.tif
+WorldClim;WC_tmax10_melgm;WC_tmax10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax10_melgm_lonlat.tif
+WorldClim;WC_tmax10_memid;WC_tmax10;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax10_memid_lonlat.tif
+WorldClim;WC_tmax10_mrlgm;WC_tmax10;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax10_mrlgm_lonlat.tif
+WorldClim;WC_tmax10_mrmid;WC_tmax10;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax10_mrmid_lonlat.tif
+WorldClim;WC_tmax11_cclgm;WC_tmax11;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax11_cclgm_lonlat.tif
+WorldClim;WC_tmax11_ccmid;WC_tmax11;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax11_ccmid_lonlat.tif
+WorldClim;WC_tmax11_melgm;WC_tmax11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax11_melgm_lonlat.tif
+WorldClim;WC_tmax11_memid;WC_tmax11;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax11_memid_lonlat.tif
+WorldClim;WC_tmax11_mrlgm;WC_tmax11;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax11_mrlgm_lonlat.tif
+WorldClim;WC_tmax11_mrmid;WC_tmax11;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax11_mrmid_lonlat.tif
+WorldClim;WC_tmax12_cclgm;WC_tmax12;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax12_cclgm_lonlat.tif
+WorldClim;WC_tmax12_ccmid;WC_tmax12;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax12_ccmid_lonlat.tif
+WorldClim;WC_tmax12_melgm;WC_tmax12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax12_melgm_lonlat.tif
+WorldClim;WC_tmax12_memid;WC_tmax12;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax12_memid_lonlat.tif
+WorldClim;WC_tmax12_mrlgm;WC_tmax12;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax12_mrlgm_lonlat.tif
+WorldClim;WC_tmax12_mrmid;WC_tmax12;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax12_mrmid_lonlat.tif
+WorldClim;WC_tmax2_cclgm;WC_tmax2;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax2_cclgm_lonlat.tif
+WorldClim;WC_tmax2_ccmid;WC_tmax2;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax2_ccmid_lonlat.tif
+WorldClim;WC_tmax2_melgm;WC_tmax2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax2_melgm_lonlat.tif
+WorldClim;WC_tmax2_memid;WC_tmax2;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax2_memid_lonlat.tif
+WorldClim;WC_tmax2_mrlgm;WC_tmax2;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax2_mrlgm_lonlat.tif
+WorldClim;WC_tmax2_mrmid;WC_tmax2;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax2_mrmid_lonlat.tif
+WorldClim;WC_tmax3_cclgm;WC_tmax3;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax3_cclgm_lonlat.tif
+WorldClim;WC_tmax3_ccmid;WC_tmax3;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax3_ccmid_lonlat.tif
+WorldClim;WC_tmax3_melgm;WC_tmax3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax3_melgm_lonlat.tif
+WorldClim;WC_tmax3_memid;WC_tmax3;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax3_memid_lonlat.tif
+WorldClim;WC_tmax3_mrlgm;WC_tmax3;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax3_mrlgm_lonlat.tif
+WorldClim;WC_tmax3_mrmid;WC_tmax3;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax3_mrmid_lonlat.tif
+WorldClim;WC_tmax4_cclgm;WC_tmax4;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax4_cclgm_lonlat.tif
+WorldClim;WC_tmax4_ccmid;WC_tmax4;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax4_ccmid_lonlat.tif
+WorldClim;WC_tmax4_melgm;WC_tmax4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax4_melgm_lonlat.tif
+WorldClim;WC_tmax4_memid;WC_tmax4;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax4_memid_lonlat.tif
+WorldClim;WC_tmax4_mrlgm;WC_tmax4;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax4_mrlgm_lonlat.tif
+WorldClim;WC_tmax4_mrmid;WC_tmax4;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax4_mrmid_lonlat.tif
+WorldClim;WC_tmax5_cclgm;WC_tmax5;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax5_cclgm_lonlat.tif
+WorldClim;WC_tmax5_ccmid;WC_tmax5;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax5_ccmid_lonlat.tif
+WorldClim;WC_tmax5_melgm;WC_tmax5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax5_melgm_lonlat.tif
+WorldClim;WC_tmax5_memid;WC_tmax5;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax5_memid_lonlat.tif
+WorldClim;WC_tmax5_mrlgm;WC_tmax5;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax5_mrlgm_lonlat.tif
+WorldClim;WC_tmax5_mrmid;WC_tmax5;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax5_mrmid_lonlat.tif
+WorldClim;WC_tmax6_cclgm;WC_tmax6;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax6_cclgm_lonlat.tif
+WorldClim;WC_tmax6_ccmid;WC_tmax6;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax6_ccmid_lonlat.tif
+WorldClim;WC_tmax6_melgm;WC_tmax6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax6_melgm_lonlat.tif
+WorldClim;WC_tmax6_memid;WC_tmax6;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax6_memid_lonlat.tif
+WorldClim;WC_tmax6_mrlgm;WC_tmax6;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax6_mrlgm_lonlat.tif
+WorldClim;WC_tmax6_mrmid;WC_tmax6;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax6_mrmid_lonlat.tif
+WorldClim;WC_tmax7_cclgm;WC_tmax7;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax7_cclgm_lonlat.tif
+WorldClim;WC_tmax7_ccmid;WC_tmax7;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax7_ccmid_lonlat.tif
+WorldClim;WC_tmax7_melgm;WC_tmax7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax7_melgm_lonlat.tif
+WorldClim;WC_tmax7_memid;WC_tmax7;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax7_memid_lonlat.tif
+WorldClim;WC_tmax7_mrlgm;WC_tmax7;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax7_mrlgm_lonlat.tif
+WorldClim;WC_tmax7_mrmid;WC_tmax7;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax7_mrmid_lonlat.tif
+WorldClim;WC_tmax8_cclgm;WC_tmax8;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax8_cclgm_lonlat.tif
+WorldClim;WC_tmax8_ccmid;WC_tmax8;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax8_ccmid_lonlat.tif
+WorldClim;WC_tmax8_melgm;WC_tmax8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax8_melgm_lonlat.tif
+WorldClim;WC_tmax8_memid;WC_tmax8;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax8_memid_lonlat.tif
+WorldClim;WC_tmax8_mrlgm;WC_tmax8;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax8_mrlgm_lonlat.tif
+WorldClim;WC_tmax8_mrmid;WC_tmax8;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax8_mrmid_lonlat.tif
+WorldClim;WC_tmax9_cclgm;WC_tmax9;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax9_cclgm_lonlat.tif
+WorldClim;WC_tmax9_ccmid;WC_tmax9;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax9_ccmid_lonlat.tif
+WorldClim;WC_tmax9_melgm;WC_tmax9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax9_melgm_lonlat.tif
+WorldClim;WC_tmax9_memid;WC_tmax9;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax9_memid_lonlat.tif
+WorldClim;WC_tmax9_mrlgm;WC_tmax9;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax9_mrlgm_lonlat.tif
+WorldClim;WC_tmax9_mrmid;WC_tmax9;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmax9_mrmid_lonlat.tif
+WorldClim;WC_tmin1_cclgm;WC_tmin1;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin1_cclgm_lonlat.tif
+WorldClim;WC_tmin1_ccmid;WC_tmin1;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin1_ccmid_lonlat.tif
+WorldClim;WC_tmin1_melgm;WC_tmin1;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin1_melgm_lonlat.tif
+WorldClim;WC_tmin1_memid;WC_tmin1;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin1_memid_lonlat.tif
+WorldClim;WC_tmin1_mrlgm;WC_tmin1;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin1_mrlgm_lonlat.tif
+WorldClim;WC_tmin1_mrmid;WC_tmin1;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin1_mrmid_lonlat.tif
+WorldClim;WC_tmin10_cclgm;WC_tmin10;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin10_cclgm_lonlat.tif
+WorldClim;WC_tmin10_ccmid;WC_tmin10;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin10_ccmid_lonlat.tif
+WorldClim;WC_tmin10_melgm;WC_tmin10;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin10_melgm_lonlat.tif
+WorldClim;WC_tmin10_memid;WC_tmin10;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin10_memid_lonlat.tif
+WorldClim;WC_tmin10_mrlgm;WC_tmin10;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin10_mrlgm_lonlat.tif
+WorldClim;WC_tmin10_mrmid;WC_tmin10;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin10_mrmid_lonlat.tif
+WorldClim;WC_tmin11_cclgm;WC_tmin11;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin11_cclgm_lonlat.tif
+WorldClim;WC_tmin11_ccmid;WC_tmin11;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin11_ccmid_lonlat.tif
+WorldClim;WC_tmin11_melgm;WC_tmin11;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin11_melgm_lonlat.tif
+WorldClim;WC_tmin11_memid;WC_tmin11;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin11_memid_lonlat.tif
+WorldClim;WC_tmin11_mrlgm;WC_tmin11;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin11_mrlgm_lonlat.tif
+WorldClim;WC_tmin11_mrmid;WC_tmin11;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin11_mrmid_lonlat.tif
+WorldClim;WC_tmin12_cclgm;WC_tmin12;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin12_cclgm_lonlat.tif
+WorldClim;WC_tmin12_ccmid;WC_tmin12;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin12_ccmid_lonlat.tif
+WorldClim;WC_tmin12_melgm;WC_tmin12;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin12_melgm_lonlat.tif
+WorldClim;WC_tmin12_memid;WC_tmin12;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin12_memid_lonlat.tif
+WorldClim;WC_tmin12_mrlgm;WC_tmin12;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin12_mrlgm_lonlat.tif
+WorldClim;WC_tmin12_mrmid;WC_tmin12;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin12_mrmid_lonlat.tif
+WorldClim;WC_tmin2_cclgm;WC_tmin2;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin2_cclgm_lonlat.tif
+WorldClim;WC_tmin2_ccmid;WC_tmin2;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin2_ccmid_lonlat.tif
+WorldClim;WC_tmin2_melgm;WC_tmin2;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin2_melgm_lonlat.tif
+WorldClim;WC_tmin2_memid;WC_tmin2;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin2_memid_lonlat.tif
+WorldClim;WC_tmin2_mrlgm;WC_tmin2;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin2_mrlgm_lonlat.tif
+WorldClim;WC_tmin2_mrmid;WC_tmin2;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin2_mrmid_lonlat.tif
+WorldClim;WC_tmin3_cclgm;WC_tmin3;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin3_cclgm_lonlat.tif
+WorldClim;WC_tmin3_ccmid;WC_tmin3;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin3_ccmid_lonlat.tif
+WorldClim;WC_tmin3_melgm;WC_tmin3;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin3_melgm_lonlat.tif
+WorldClim;WC_tmin3_memid;WC_tmin3;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin3_memid_lonlat.tif
+WorldClim;WC_tmin3_mrlgm;WC_tmin3;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin3_mrlgm_lonlat.tif
+WorldClim;WC_tmin3_mrmid;WC_tmin3;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin3_mrmid_lonlat.tif
+WorldClim;WC_tmin4_cclgm;WC_tmin4;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin4_cclgm_lonlat.tif
+WorldClim;WC_tmin4_ccmid;WC_tmin4;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin4_ccmid_lonlat.tif
+WorldClim;WC_tmin4_melgm;WC_tmin4;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin4_melgm_lonlat.tif
+WorldClim;WC_tmin4_memid;WC_tmin4;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin4_memid_lonlat.tif
+WorldClim;WC_tmin4_mrlgm;WC_tmin4;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin4_mrlgm_lonlat.tif
+WorldClim;WC_tmin4_mrmid;WC_tmin4;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin4_mrmid_lonlat.tif
+WorldClim;WC_tmin5_cclgm;WC_tmin5;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin5_cclgm_lonlat.tif
+WorldClim;WC_tmin5_ccmid;WC_tmin5;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin5_ccmid_lonlat.tif
+WorldClim;WC_tmin5_melgm;WC_tmin5;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin5_melgm_lonlat.tif
+WorldClim;WC_tmin5_memid;WC_tmin5;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin5_memid_lonlat.tif
+WorldClim;WC_tmin5_mrlgm;WC_tmin5;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin5_mrlgm_lonlat.tif
+WorldClim;WC_tmin5_mrmid;WC_tmin5;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin5_mrmid_lonlat.tif
+WorldClim;WC_tmin6_cclgm;WC_tmin6;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin6_cclgm_lonlat.tif
+WorldClim;WC_tmin6_ccmid;WC_tmin6;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin6_ccmid_lonlat.tif
+WorldClim;WC_tmin6_melgm;WC_tmin6;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin6_melgm_lonlat.tif
+WorldClim;WC_tmin6_memid;WC_tmin6;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin6_memid_lonlat.tif
+WorldClim;WC_tmin6_mrlgm;WC_tmin6;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin6_mrlgm_lonlat.tif
+WorldClim;WC_tmin6_mrmid;WC_tmin6;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin6_mrmid_lonlat.tif
+WorldClim;WC_tmin7_cclgm;WC_tmin7;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin7_cclgm_lonlat.tif
+WorldClim;WC_tmin7_ccmid;WC_tmin7;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin7_ccmid_lonlat.tif
+WorldClim;WC_tmin7_melgm;WC_tmin7;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin7_melgm_lonlat.tif
+WorldClim;WC_tmin7_memid;WC_tmin7;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin7_memid_lonlat.tif
+WorldClim;WC_tmin7_mrlgm;WC_tmin7;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin7_mrlgm_lonlat.tif
+WorldClim;WC_tmin7_mrmid;WC_tmin7;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin7_mrmid_lonlat.tif
+WorldClim;WC_tmin8_cclgm;WC_tmin8;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin8_cclgm_lonlat.tif
+WorldClim;WC_tmin8_ccmid;WC_tmin8;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin8_ccmid_lonlat.tif
+WorldClim;WC_tmin8_melgm;WC_tmin8;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin8_melgm_lonlat.tif
+WorldClim;WC_tmin8_memid;WC_tmin8;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin8_memid_lonlat.tif
+WorldClim;WC_tmin8_mrlgm;WC_tmin8;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin8_mrlgm_lonlat.tif
+WorldClim;WC_tmin8_mrmid;WC_tmin8;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin8_mrmid_lonlat.tif
+WorldClim;WC_tmin9_cclgm;WC_tmin9;lgm CCSM4;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin9_cclgm_lonlat.tif
+WorldClim;WC_tmin9_ccmid;WC_tmin9;holo CCSM4;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin9_ccmid_lonlat.tif
+WorldClim;WC_tmin9_melgm;WC_tmin9;lgm MPI-ESM-P;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin9_melgm_lonlat.tif
+WorldClim;WC_tmin9_memid;WC_tmin9;holo MPI-ESM-P;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin9_memid_lonlat.tif
+WorldClim;WC_tmin9_mrlgm;WC_tmin9;lgm MIROC-ESM;Last Glacial Maximum;21000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin9_mrlgm_lonlat.tif
+WorldClim;WC_tmin9_mrmid;WC_tmin9;holo MIROC-ESM;mid-Holocene;6000;1;https://www.lifewatch.be/sdmpredictors/WC_tmin9_mrmid_lonlat.tif

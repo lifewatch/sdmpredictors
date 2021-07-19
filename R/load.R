@@ -41,9 +41,15 @@ get_datadir <- function(datadir) {
 #' @seealso  \code{\link{load_layers}}
 #' @keywords internal
 equalarea_project <- function(path){
-  out_path <- gsub("_lonlat.tif", ".tif", path, fixed = TRUE)
+  if(grepl(".zip", path, fixed = TRUE)){
+    vsizip <- "/vsizip/"
+    out_path <- gsub(".zip", ".tif", path, fixed = TRUE)
+  }else{
+    vsizip <- ""
+    out_path <- gsub("_lonlat.tif", ".tif", path, fixed = TRUE)
+  }
   if(!file.exists(out_path)){
-    r <- raster::raster(path)
+    r <- raster::raster(paste0(vsizip, path))
     message(paste0("Projecting ", path, " from native WGS84 to Behrmann Equal Areas..."))
     if(grepl("/FW_", path, ignore.case = FALSE, fixed = TRUE)){res = 815}else{res = 7000} # Quickfix. Ideally: get res from .data
     out <- raster::projectRaster(r, crs = sdmpredictors::equalareaproj, method = "ngb", res = res)
@@ -102,12 +108,14 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
     warning("Layers from different eras (current, future, paleo) are being loaded together")
   }
   datadir <- get_datadir(datadir)
-  urlroot <- get_sysdata()$urldata
+  # urlroot <- get_sysdata()$urldata
   get_layerpath <- function(layercode) {
-    suffix <- "_lonlat"
-    path <- paste0(datadir, "/", layercode, suffix, ".tif")
+    layer_url <- subset(info$common, info$common$layer_code == layercode)$layer_url
+    if(grepl(".zip", layer_url, ignore.case = FALSE, fixed = TRUE)){
+      ext <- ".zip"
+    }else{ext <- ".tif"}
+    path <- paste0(datadir, "/", layercode, ext)
     if(!file.exists(path)) {
-      url <- paste0(urlroot, layercode, suffix, ".tif")
       ok <- -1
       # clean up of download failed
       on.exit({
@@ -115,7 +123,7 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
           file.remove(path)
         }
       })
-      ok <- utils::download.file(url, path, method = "auto", quiet = FALSE, mode = "wb")  
+      ok <- utils::download.file(layer_url, path, method = "auto", quiet = FALSE, mode = "wb")  
     }
     ifelse(file.exists(path), path, NA)
   }
@@ -125,16 +133,31 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
     paths <- withCallingHandlers(sapply(paths, equalarea_project), warning = customSupressWarning)
   }
   if(rasterstack) {
-    st <- raster::stack(paths)
-    if("layer" %in% names(st)){
-      names(st) <- layercodes
-    }else(
-      names(st) <- sub("_lonlat$", "", names(st))
-    )
-    return(st)
+    logical_zip <- grepl(".zip", paths, fixed = TRUE)
+    if(all(logical_zip) | !any(logical_zip)){
+      if(all(logical_zip)){
+        vsizip <- "/vsizip/"
+      }else if(!any(logical_zip)){
+        vsizip <- ""
+      }
+      st <- raster::stack(paste0(vsizip, paths))
+      if("layer" %in% names(st)){
+        names(st) <- layercodes
+      }else(
+        names(st) <- sub("_lonlat$", "", names(st))
+      )
+      return(st)
+    }else{
+      stop("Rasterstack for zipped and non-zipped files not supported. Try `rasterstack = FALSE`")
+    }
   } else {
     return(lapply(paths, function(path) { 
-      r <- raster::raster(path) 
+      if(grepl(".zip", path, fixed = TRUE)){
+        vsizip <- "/vsizip/"
+      }else{
+        vsizip <- ""
+      }
+      r <- raster::raster(paste0(vsizip, path))
       if("layer" %in% names(r)){
         names(r) <- layercodes
       }else(
