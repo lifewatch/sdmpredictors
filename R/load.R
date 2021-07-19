@@ -45,7 +45,8 @@ equalarea_project <- function(path){
   if(!file.exists(out_path)){
     r <- raster::raster(path)
     message(paste0("Projecting ", path, " from native WGS84 to Behrmann Equal Areas..."))
-    out <- raster::projectRaster(r, crs = sdmpredictors::equalareaproj, method = "ngb", res = 7000)
+    if(grepl("/FW_", path, ignore.case = FALSE, fixed = TRUE)){res = 815}else{res = 7000} # Quickfix. Ideally: get res from .data
+    out <- raster::projectRaster(r, crs = sdmpredictors::equalareaproj, method = "ngb", res = res)
     raster::writeRaster(out, out_path)
   }
   return(out_path)
