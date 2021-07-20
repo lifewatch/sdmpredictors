@@ -16,7 +16,7 @@ get_sysdata <- function() {
   if(!file.exists(outfile) || difftime(Sys.time(), file.mtime(outfile), units = "mins") > 24*60 || file.size(outfile) <= 0) {
     ok <- -1
     try({
-      urlroot <- .data$urlsysdata
+      urlroot <- .data$urlsysdata[1]
       url <- paste0(urlroot, fname)
       ok <- utils::download.file(url, tmp, quiet = TRUE)
     }, silent = TRUE)

@@ -48,13 +48,15 @@ equalarea_project <- function(path){
     vsizip <- ""
     out_path <- gsub("_lonlat.tif", ".tif", path, fixed = TRUE)
   }
+  stopifnot(out_path != path)
   if(!file.exists(out_path)){
     r <- raster::raster(paste0(vsizip, path))
-    message(paste0("Projecting ", path, " from native WGS84 to Behrmann Equal Areas..."))
+    message(paste0("Projecting ", path, " from native WGS84 to Behrmann Equal Areas. This might take a few minutes."))
     if(grepl("/FW_", path, ignore.case = FALSE, fixed = TRUE)){res = 815}else{res = 7000} # Quickfix. Ideally: get res from .data
     out <- raster::projectRaster(r, crs = sdmpredictors::equalareaproj, method = "ngb", res = res)
     raster::writeRaster(out, out_path)
   }
+  stopifnot(as.character(raster(out_path)@crs) == as.character(sdmpredictors::equalareaproj))
   return(out_path)
 }
 
@@ -107,13 +109,15 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
   if(max(counts) != NROW(layercodes)) {
     warning("Layers from different eras (current, future, paleo) are being loaded together")
   }
+  if(!rgdal::GDALis3ormore()){
+    warning("GDAL is lower than version 3. Consider updating GDAL to avoid errors.")
+  }
   datadir <- get_datadir(datadir)
-  # urlroot <- get_sysdata()$urldata
   get_layerpath <- function(layercode) {
     layer_url <- subset(info$common, info$common$layer_code == layercode)$layer_url
     if(grepl(".zip", layer_url, ignore.case = FALSE, fixed = TRUE)){
-      ext <- ".zip"
-    }else{ext <- ".tif"}
+      ext <- "_lonlat.zip"
+    }else{ext <- "_lonlat.tif"}
     path <- paste0(datadir, "/", layercode, ext)
     if(!file.exists(path)) {
       ok <- -1

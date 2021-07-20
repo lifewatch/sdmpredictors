@@ -33,7 +33,7 @@ test_that("layer_stats with non existing layercodes generates a warning", {
   
   expect_warning(layer_stats("blabla"), "'blabla'")
   expect_warning(layer_stats(c("BO_calcite", "blabla")), "'blabla'")
-  expect_equal(suppressMessages(nrow(layer_stats(c("BO_calcite", "blabla")))), 1)
+  expect_equal(suppressWarnings(nrow(layer_stats(c("BO_calcite", "blabla")))), 1)
   expect_warning(layer_stats(c("blibli", "blabla")), "'blibli', 'blabla'")
 })
 

@@ -40,14 +40,15 @@ test_that("each dataset has at least one citation", {
   }
 })
 
-test_that("each layer has at least one citation", {
-  testthat::skip_on_cran()
-  layers <- list_layers()
-  for(i in 1:nrow(layers)) {
-    ref <- layer_citations(layers[i,])
-    testthat::expect_gt(length(ref), 0)
-  }
-})
+# Run only once, no need to test more than 1000 layers everytime
+# test_that("each layer has at least one citation", {
+#   testthat::skip_on_cran()
+#   layers <- list_layers()
+#   for(i in 1:nrow(layers)) {
+#     ref <- layer_citations(layers[i,])
+#     testthat::expect_gt(length(ref), 0)
+#   }
+# })
 
 test_that("citations are returned", {
   lcitations <- layer_citations()
