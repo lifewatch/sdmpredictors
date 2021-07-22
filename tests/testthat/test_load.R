@@ -166,6 +166,17 @@ test_that("load_layer equal area TRUE/FALSE works", {
   is_lonlat(rs_lonlat)
 })
 
+test_that("GDAL virtual file system works to read zipped raster files", {
+  skip_if_offline()
+  skip_on_cran()
+  
+  url <- "/vsizip//vsicurl/https://bio-oracle.org/data/2.0/Present.Surface.Iron.Max.tif.zip"
+  rs <- raster::raster(url)
+  
+  expect_equal(class(rs)[1], "RasterLayer")
+  expect_true(rgdal::GDALis3ormore())
+})
+
 
 # # This test might be implemented or updated later
 #
