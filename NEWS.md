@@ -1,6 +1,7 @@
 # sdmpredictors 0.2.10
 
 Behrmann equal areas projection is now created on the fly from the original WGS84 layer
+Bio-Oracle layers are downloaded from bio-oracle.org instad of lifewatch.be
 
 # sdmpredictors 0.2.9
 
