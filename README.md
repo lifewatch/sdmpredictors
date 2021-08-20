@@ -1,6 +1,8 @@
 [![MIT License](https://img.shields.io/github/license/samuelbosch/blogbits.svg)](https://github.com/lifewatch/sdmpredictors/blob/master/LICENSE.md)
 [![R-CMD-check](https://github.com/lifewatch/sdmpredictors/workflows/R-CMD-check/badge.svg)](https://github.com/lifewatch/sdmpredictors/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sdmpredictors)](https://CRAN.R-project.org/package=sdmpredictors)
+[![CRAN Downloads per month](http://cranlogs.r-pkg.org/badges/sdmpredictors)](https://cran.r-project.org/package=sdmpredictors)
+[![CRAN total downloads](http://cranlogs.r-pkg.org/badges/grand-total/sdmpredictors?color=lightgrey)](https://cran.r-project.org/package=sdmpredictors)
 
 
 # sdmpredictors: a compilation of species distribution modelling predictors data
