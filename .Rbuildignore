@@ -10,3 +10,5 @@
 ^tests/data$
 ^cran-comments.md
 ^\.github$
+^doc$
+^Meta$

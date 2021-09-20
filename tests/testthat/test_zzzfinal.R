@@ -6,6 +6,8 @@ test_that("tmp_load does not exist", {
 
 test_that("~/R/sdmpredictors was not created", {
   if(dir.exists("~/R/sdmpredictors")) {
+    skip_on_cran()
+    skip_on_ci()
     creation_time <- file.info("~/R/sdmpredictors")[1,"ctime"]
     modified_time <- file.info("~/R/sdmpredictors")[1,"mtime"]
     expect_gt(as.double(difftime(Sys.time(), creation_time, units = "mins")), 20)

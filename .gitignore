@@ -21,3 +21,5 @@ CRAN-RELEASE
 
 # pkgdown files
 docs/*
+/doc/
+/Meta/
