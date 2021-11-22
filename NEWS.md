@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.11
+
+get_sysdata has been deprecated: sysdata.rda comes now uniquely from the package and is not downloaded from lifewatch.be
+
 # sdmpredictors 0.2.10
 
 Behrmann equal areas projection is now created on the fly from the original WGS84 layer
