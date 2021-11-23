@@ -14,7 +14,7 @@ prepare_layer <- function(layerpath, outputdir, newname, scalefactor = 1)  {
   crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
 #   newf <- file.path(outputdir, paste0(newname, "_lonlat.grd"))
 #   print(newf)
-#   writeRaster(r, newf, overwrite=T)
+#   raster::writeRaster(r, newf, overwrite=T)
 #   sdmpredictors:::compress_file(newf, outputdir)
 #   sdmpredictors:::compress_file(sub("[.]grd", ".gri", newf), outputdir)
   write_tif(r, paste0(newname, "_lonlat"), outputdir)
@@ -23,19 +23,19 @@ prepare_layer <- function(layerpath, outputdir, newname, scalefactor = 1)  {
   if (ncol(r) == 4320 && abs(res(r)-0.0833333) < 0.001) {
     eares <- 7000 ## similar number of total cells, cells have same x and y res
   } else { stop("undefined ea resolution") }
-  r <- projectRaster(r, crs=behrmann, method="ngb", res=eares, over=TRUE)
+  r <- raster::projectRaster(r, crs=behrmann, method="ngb", res=eares, over=TRUE)
 
   ## Eckert IV
   # if (ncol(r) == 4320 && abs(res(r)-0.0833333) < 0.001) {
   #   eares <- 7500 ## similar number of total cells, cells have same x and y res
   # } else { stop("undefined ea resolution") }
   # EckertIV <- "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
-  # r <- projectRaster(r, crs=EckertIV, method="ngb", res=eares, over=TRUE)
+  # r <- raster::projectRaster(r, crs=EckertIV, method="ngb", res=eares, over=TRUE)
   
   r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
 #   newf <- file.path(outputdir, paste0(newname, ".grd"))
 #   print(newf)
-#   writeRaster(r, newf, overwrite=T)
+#   raster::writeRaster(r, newf, overwrite=T)
 #   sdmpredictors:::compress_file(newf, outputdir, overwrite=T, remove=T)
 #   sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outputdir, overwrite=T, remove=T)
   write_tif(r, newname, outputdir)
@@ -61,7 +61,7 @@ prepare <- function() {
     print(newf)
     r <- raster(f)
     crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-    writeRaster(r, newf, overwrite=T)
+    raster::writeRaster(r, newf, overwrite=T)
     compress_file(newf, "D:/a/projects/predictors/derived/Bio-ORACLE")
     compress_file(sub("[.]grd", ".gri", newf), "D:/a/projects/predictors/derived/Bio-ORACLE")
   }
@@ -74,7 +74,7 @@ prepare <- function() {
     file.rename(f, newf)
     #r <- raster(f)
     #crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-    #writeRaster(r, newf, overwrite=T)
+    #raster::writeRaster(r, newf, overwrite=T)
     compress_file(newf, "D:/a/projects/predictors/derived/")
     #compress_file(sub("[.]grd", ".gri", newf), "D:/a/projects/predictors/derived/MARSPEC")
   }
@@ -95,7 +95,7 @@ prepare <- function() {
     correction <- 10000.0
     }
     print(correction)
-    writeRaster(r / correction, newf, overwrite=T)
+    raster::writeRaster(r / correction, newf, overwrite=T)
     compress_file(newf, "D:/a/projects/predictors/derived/MARSPEC/real_values")
     compress_file(sub("[.]grd", ".gri", newf), "D:/a/projects/predictors/derived/MARSPEC/real_values")
   }
@@ -110,7 +110,7 @@ marspec_monthly <- function() {
     print(newf)
     r <- raster(f) / 100 ## apply correction
     crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-    writeRaster(r, newf, overwrite=T)
+    raster::writeRaster(r, newf, overwrite=T)
     
     compress_file(newf, outd)
     compress_file(sub("[.]grd", ".gri", newf), outd)
@@ -135,7 +135,7 @@ project_equalarea <- function() {
     names(r) <- layername
     
     lonlatf <- sub("[.]grd$", "_lonlat.grd", newf)
-    writeRaster(r, lonlatf, overwrite=T)
+    raster::writeRaster(r, lonlatf, overwrite=T)
     print(lonlatf)
     compress_file(lonlatf, newd, overwrite=T, remove=T)
     compress_file(sub("[.]grd$", ".gri", lonlatf), newd, overwrite=T, remove=T)
@@ -145,10 +145,10 @@ project_equalarea <- function() {
     if (nrow(r) == 2160 && ncol(r) == 4320) {
       eares <- 7000 ## similar number of total cells, cells have same x and y res
     } else { error("undefined ea resolution") }
-    r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+    r <- raster::projectRaster(r, crs=behrmann, method="ngb", res=eares)
     r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
     print(newf)
-    writeRaster(r, newf, overwrite=T)
+    raster::writeRaster(r, newf, overwrite=T)
     compress_file(newf, newd, overwrite=T, remove=T)
     compress_file(sub("[.]grd$", ".gri", newf), newd, overwrite=T, remove=T)
   }
@@ -156,7 +156,7 @@ project_equalarea <- function() {
 #project_equalarea()
 
 # rea <- raster("D:\\a\\projects\\predictors\\derived\\new_version\\BO_chlomax_ea.grd")
-# #writeRaster(rea, "D:\\a\\projects\\predictors\\derived\\new_version\\BO_chlomax_ea.asc")
+# #raster::writeRaster(rea, "D:\\a\\projects\\predictors\\derived\\new_version\\BO_chlomax_ea.asc")
 # #as.matrix(rea)
 # write.table(signif(as.matrix(rea), digits = 6), "D:\\a\\projects\\predictors\\derived\\new_version\\BO_chlomax_ea.csv", 
 #             sep = ";", row.names = F, col.names = F, na="")
@@ -201,7 +201,7 @@ worldclim <- function() {
     
     names(r) <- sub("[.]grd$", "", x = basename(newf))
     crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-    writeRaster(r, lonlatf, overwrite = TRUE)
+    raster::writeRaster(r, lonlatf, overwrite = TRUE)
     
     print(lonlatf)
     compress_file(lonlatf, outdir, overwrite=T, remove=T)
@@ -213,10 +213,10 @@ worldclim <- function() {
     if (ncol(r) == 4320) {
       eares <- 7000 ## similar number of total cells, cells have same x and y res
     } else { error("undefined ea resolution") }
-    r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+    r <- raster::projectRaster(r, crs=behrmann, method="ngb", res=eares)
     r[] <- signif(getValues(r), digits = 6) ## limit number of digits to improve compression rate
     print(newf)
-    writeRaster(r, newf, overwrite=T)
+    raster::writeRaster(r, newf, overwrite=T)
     compress_file(newf, outdir, overwrite=T, remove=T)
     compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
   }
@@ -235,7 +235,7 @@ worldclim <- function() {
 #       
 #       r <- (r - cellStats(r, "mean")) / cellStats(r, "sd")
 #       
-#       writeRaster(r, newf, overwrite=T)
+#       raster::writeRaster(r, newf, overwrite=T)
 #       sdmpredictors:::compress_file(newf, outdir, overwrite=T, remove=T)
 #       sdmpredictors:::compress_file(sub("[.]grd$", ".gri", newf), outdir, overwrite=T, remove=T)
 #     }
@@ -307,14 +307,14 @@ write_tif <- function(r, name, outdir) {
   newf <- file.path(outdir, paste0(name, ".tif"))
   print(newf)
   tifoptions <- c("COMPRESS=DEFLATE", predictor, "ZLEVEL=9", "NUM_THREADS=3")
-  writeRaster(r, newf, options = tifoptions, datatype = datatype, overwrite = FALSE)
+  raster::writeRaster(r, newf, options = tifoptions, datatype = datatype, overwrite = FALSE)
 }
 
 project_raster <- function(r, name, outdir) {
   if (nrow(r) == 2160 && ncol(r) == 4320) {
     eares <- 7000 ## similar number of total cells, cells have same x and y res
   } else { error("undefined ea resolution") }
-  r <- projectRaster(r, crs=behrmann, method="ngb", res=eares)
+  r <- raster::projectRaster(r, crs=behrmann, method="ngb", res=eares)
   r[] <- signif(getValues(r), digits = 5) ## limit number of digits to improve compression rate
   write_tif(r, name, outdir)
 }
@@ -560,20 +560,20 @@ prepare_biooracle2_future <- function() {
 
 
  
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_deflate_9_p3.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_9_p3.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_packbits.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z6_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=6", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z6_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=6", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z9_tiled.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=2", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z6.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=6", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z6.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=6", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=9", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_packbits.tif", options = c("COMPRESS=PACKBITS"), datatype = "FLT4S", overwrite = FALSE)
-# writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_p3_z9_tiled.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_jpeg.tif", options = c("COMPRESS=JPEG", "JPEG_QUALITY=100"), overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_deflate_9_p3.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_9_p3.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_packbits.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=3", "ZLEVEL=9", "NUM_THREADS=3"), overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z9_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z6_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=6", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z6_tiled.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=6", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z9_tiled.tif", options = c("COMPRESS=PACKBITS", "PREDICTOR=2", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p3_z6.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=3", "ZLEVEL=6", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z6.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=6", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_p2_z9.tif", options = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=9", "TILED=NO"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_zip_packbits.tif", options = c("COMPRESS=PACKBITS"), datatype = "FLT4S", overwrite = FALSE)
+# raster::writeRaster(r, "D:/temp/BO_salinity_A1B_2100_lzw_p3_z9_tiled.tif", options = c("COMPRESS=LZW", "PREDICTOR=3", "ZLEVEL=9", "TILED=YES"), datatype = "FLT4S", overwrite = FALSE)
 
 
 # prepare_paleo_marspec()

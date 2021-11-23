@@ -1,17 +1,17 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.10
-Date: 2021-09-20
+Version: 0.2.11
+Date: 2021-11-23
 Depends:
-    R (>= 3.2.5),
-    raster (>= 2.5-8),
-    rgdal (>= 1.1-10)
+    R (>= 3.2.5)
 Imports:
     R.utils (>= 2.4.0),
     stats,
     utils,
-    RCurl
+    RCurl,
+    raster,
+    rgdal
 Authors@R: c(
     person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut")),
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
