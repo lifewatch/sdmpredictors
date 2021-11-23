@@ -11,7 +11,8 @@ Imports:
     R.utils (>= 2.4.0),
     stats,
     utils,
-    RCurl
+    RCurl,
+    terra
 Authors@R: c(
     person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut")),
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
