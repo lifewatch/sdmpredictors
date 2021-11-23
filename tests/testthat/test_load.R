@@ -61,7 +61,7 @@ test_that("load_layer works with different datadir options", {
     normalizePath(paste0(p,"/"), winslash = "/", mustWork = TRUE)
   }
   rpath <- function(rs) {
-    path <- gsub("/vsizip/", "", dirname(raster(rs,1)@file@name), fixed = TRUE)
+    path <- gsub("/vsizip/", "", dirname(raster::raster(rs,1)@file@name), fixed = TRUE)
     normalize(path)
   }
   skip_on_cran()

@@ -114,7 +114,7 @@ test_that("plot_correlation works", {
 })
 
 test_that("calc_stats returns stats", {
-  s <- suppressWarnings(calculate_statistics("mini_raster", raster(matrix(1:100, nrow=10, ncol=10))))
+  s <- suppressWarnings(calculate_statistics("mini_raster", raster::raster(matrix(1:100, nrow=10, ncol=10))))
   expect_true(ncol(s) >= 11)
   expect_equal(nrow(s), 1)
 })

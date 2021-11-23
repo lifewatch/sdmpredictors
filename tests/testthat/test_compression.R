@@ -11,9 +11,9 @@ get_test_file <- function() {
   }
   path <- "../data/test_compress.grd"
   if(!file.exists(path)) {
-    r <- raster(nrows=180, ncols=360, xmn=-180, xmx=180, ymn=-90, ymx=90, 
+    r <- raster::raster(nrows=180, ncols=360, xmn=-180, xmx=180, ymn=-90, ymx=90, 
            crs=lonlatproj, vals=runif(180*360))
-    writeRaster(r, path)
+    raster::writeRaster(r, path)
   }
   path
 }
