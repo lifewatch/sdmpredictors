@@ -77,7 +77,7 @@ returned." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -179,22 +179,24 @@ before they are put in the same correlation group.</p></td>
   <a href='layer_stats.html'>layer_stats</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='va'>corr</span> <span class='op'>&lt;-</span> <span class='fu'><a href='layers_correlation.html'>layers_correlation</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"BO_damin"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>corr</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;             BO_calcite  BO_damin MS_bathy_5m
-#&gt; BO_calcite   1.0000000 0.6214034   0.2485496
-#&gt; BO_damin     0.6214034 1.0000000   0.4670088
-#&gt; MS_bathy_5m  0.2485496 0.4670088   1.0000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>correlation_groups</span><span class='op'>(</span><span class='va'>corr</span>, max_correlation<span class='op'>=</span><span class='fl'>0.6</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [[1]]
-#&gt;   BO_calcite     BO_damin 
-#&gt; "BO_calcite"   "BO_damin" 
-#&gt; 
-#&gt; [[2]]
-#&gt;   MS_bathy_5m 
-#&gt; "MS_bathy_5m" 
-#&gt; </div><div class='input'>
-</div></pre>
+    <pre class="examples"><span class='r-in'></span>
+<span class='r-in'><span class='va'>corr</span> <span class='op'>&lt;-</span> <span class='fu'><a href='layers_correlation.html'>layers_correlation</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"BO_damin"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>corr</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             BO_calcite  BO_damin MS_bathy_5m</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_calcite   1.0000000 0.6214034   0.2485496</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_damin     0.6214034 1.0000000   0.4670088</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> MS_bathy_5m  0.2485496 0.4670088   1.0000000</span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>correlation_groups</span><span class='op'>(</span><span class='va'>corr</span>, max_correlation<span class='op'>=</span><span class='fl'>0.6</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [[1]]</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   BO_calcite     BO_damin </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "BO_calcite"   "BO_damin" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [[2]]</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   MS_bathy_5m </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "MS_bathy_5m" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

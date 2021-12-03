@@ -73,7 +73,7 @@ one or more datasets." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -197,23 +197,25 @@ number.</p></td>
   <code><a href='list_datasets.html'>list_datasets</a></code>, <code><a href='load_layers.html'>load_layers</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># list the first 5 layers</span>
-<span class='fu'>list_layers_future</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,<span class='op'>]</span>
-</div><div class='output co'>#&gt;   dataset_code           layer_code current_layer_code       model scenario
-#&gt; 1   Bio-ORACLE BO_A1B_2100_salinity        BO_salinity UKMO-HadCM3      A1B
-#&gt; 2   Bio-ORACLE   BO_A1B_2100_sstmax          BO_sstmax UKMO-HadCM3      A1B
-#&gt; 3   Bio-ORACLE  BO_A1B_2100_sstmean         BO_sstmean UKMO-HadCM3      A1B
-#&gt; 4   Bio-ORACLE   BO_A1B_2100_sstmin          BO_sstmin UKMO-HadCM3      A1B
-#&gt; 5   Bio-ORACLE BO_A1B_2100_sstrange        BO_sstrange UKMO-HadCM3      A1B
-#&gt;   year version                                                layer_url
-#&gt; 1 2100       1 https://bio-oracle.org/data/1.0/BO_A1B_2100_salinity.zip
-#&gt; 2 2100       1   https://bio-oracle.org/data/1.0/BO_A1B_2100_sstmax.zip
-#&gt; 3 2100       1  https://bio-oracle.org/data/1.0/BO_A1B_2100_sstmean.zip
-#&gt; 4 2100       1   https://bio-oracle.org/data/1.0/BO_A1B_2100_sstmin.zip
-#&gt; 5 2100       1 https://bio-oracle.org/data/1.0/BO_A1B_2100_sstrange.zip</div><div class='input'><span class='co'># list layer codes for Bio-ORACLE with scenario B1 and year 2100</span>
-<span class='fu'>list_layers_future</span><span class='op'>(</span><span class='st'>"Bio-ORACLE"</span>, scenario <span class='op'>=</span> <span class='st'>"B1"</span>, year <span class='op'>=</span> <span class='fl'>2100</span><span class='op'>)</span><span class='op'>$</span><span class='va'>layer_code</span>
-</div><div class='output co'>#&gt; [1] "BO_B1_2100_salinity" "BO_B1_2100_sstmax"   "BO_B1_2100_sstmean" 
-#&gt; [4] "BO_B1_2100_sstmin"   "BO_B1_2100_sstrange"</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># list the first 5 layers</span></span>
+<span class='r-in'><span class='fu'>list_layers_future</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,<span class='op'>]</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   dataset_code           layer_code current_layer_code       model scenario</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1   Bio-ORACLE BO_A1B_2100_salinity        BO_salinity UKMO-HadCM3      A1B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2   Bio-ORACLE   BO_A1B_2100_sstmax          BO_sstmax UKMO-HadCM3      A1B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3   Bio-ORACLE  BO_A1B_2100_sstmean         BO_sstmean UKMO-HadCM3      A1B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4   Bio-ORACLE   BO_A1B_2100_sstmin          BO_sstmin UKMO-HadCM3      A1B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5   Bio-ORACLE BO_A1B_2100_sstrange        BO_sstrange UKMO-HadCM3      A1B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year version                                                layer_url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 2100       1 https://bio-oracle.org/data/1.0/BO_A1B_2100_salinity.zip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 2100       1   https://bio-oracle.org/data/1.0/BO_A1B_2100_sstmax.zip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 2100       1  https://bio-oracle.org/data/1.0/BO_A1B_2100_sstmean.zip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4 2100       1   https://bio-oracle.org/data/1.0/BO_A1B_2100_sstmin.zip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5 2100       1 https://bio-oracle.org/data/1.0/BO_A1B_2100_sstrange.zip</span>
+<span class='r-in'><span class='co'># list layer codes for Bio-ORACLE with scenario B1 and year 2100</span></span>
+<span class='r-in'><span class='fu'>list_layers_future</span><span class='op'>(</span><span class='st'>"Bio-ORACLE"</span>, scenario <span class='op'>=</span> <span class='st'>"B1"</span>, year <span class='op'>=</span> <span class='fl'>2100</span><span class='op'>)</span><span class='op'>$</span><span class='va'>layer_code</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "BO_B1_2100_salinity" "BO_B1_2100_sstmax"   "BO_B1_2100_sstmean" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [4] "BO_B1_2100_sstmin"   "BO_B1_2100_sstrange"</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

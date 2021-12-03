@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -97,7 +97,7 @@
 <p>Example 1: Create SDM for Dictyota diemensis in Australia Note that this requires the <em>ZOON</em>, <em>ggplot2</em>, <em>cowplot</em> and <em>marinespeed</em> packages to be installed.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R">    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/">sdmpredictors</a></span><span class="op">)</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">zoon</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/zoonproject/zoon">zoon</a></span><span class="op">)</span>
     
     <span class="co"># Inspect the available datasets and layers</span>
     <span class="va">datasets</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_datasets.html">list_datasets</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span>, marine <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
@@ -178,7 +178,7 @@
     <span class="co"># heatmap plot for larger groups (if gplots library is installed)</span>
     <span class="kw">for</span><span class="op">(</span><span class="va">group</span> <span class="kw">in</span> <span class="va">groups</span><span class="op">)</span> <span class="op">{</span>
       <span class="va">group_correlation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">correlations</span><span class="op">[</span><span class="va">group</span>, <span class="va">group</span>, drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span><span class="op">)</span>
-      <span class="kw">if</span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va">gplots</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">4</span><span class="op">)</span><span class="op">{</span>
+      <span class="kw">if</span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots">gplots</a></span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">4</span><span class="op">)</span><span class="op">{</span>
         <span class="fu">heatmap.2</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">group_correlation</span><span class="op">)</span>
                  ,main <span class="op">=</span> <span class="st">"Correlation"</span>
                  ,col <span class="op">=</span> <span class="st">"rainbow"</span>      

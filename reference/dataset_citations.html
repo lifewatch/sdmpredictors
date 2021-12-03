@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -166,101 +166,103 @@ returned as text otherwise they are returned as
   <code><a href='list_datasets.html'>list_datasets</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># print the Bio-ORACLE citation</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>dataset_citations</span><span class='op'>(</span><span class='st'>"Bio-ORACLE"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "Assis J, Tyberghein L, Bosch S, Heroen V, Serrão E, De Clerck O, Tittensor D (2018). “Bio‐ORACLE v2.0: Extending marine data layers for\nbioclimatic modelling.” _Global Ecology and Biogeography_, *27*(3),\n277-284. doi: 10.1111/geb.12693 (URL:\nhttps://doi.org/10.1111/geb.12693)."                                
-#&gt; [2] "Tyberghein L, Heroen V, Pauly K, Troupin C, Mineur F, De Clerck O (2012). “Bio-ORACLE: a global environmental dataset for marine species\ndistribution modelling.” _Global Ecology and Biogeography_, *21*(2),\n272-281. doi: 10.1111/j.1466-8238.2011.00656.x (URL:\nhttps://doi.org/10.1111/j.1466-8238.2011.00656.x)."</div><div class='input'>
-<span class='co'># print all citations as Bibtex</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='fu'>dataset_citations</span><span class='op'>(</span>astext <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>, <span class='va'>toBibtex</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $WorldClim
-#&gt; @Article{WorldClim,
-#&gt;   author = {Robert J. Hijmans and Susan E. Cameron and Juan L. Parra and Peter G. Jones and Andy Jarvis},
-#&gt;   title = {Very high resolution interpolated climate surfaces for global land areas.},
-#&gt;   journal = {International Journal of Climatology},
-#&gt;   year = {2005},
-#&gt;   volume = {25},
-#&gt;   number = {15},
-#&gt;   pages = {1965-1978},
-#&gt;   doi = {10.1002/joc.1276},
-#&gt; }
-#&gt; 
-#&gt; $`Bio-ORACLE`
-#&gt; @Article{Bio-ORACLEv2,
-#&gt;   author = {Jorge Assis and Lennert Tyberghein and Samuel Bosch and Verbruggen Heroen and Ester A. Serrão and Olivier {De Clerck} and Derek Tittensor},
-#&gt;   title = {Bio‐ORACLE v2.0: Extending marine data layers for bioclimatic modelling},
-#&gt;   journal = {Global Ecology and Biogeography},
-#&gt;   year = {2018},
-#&gt;   volume = {27},
-#&gt;   number = {3},
-#&gt;   pages = {277-284},
-#&gt;   doi = {10.1111/geb.12693},
-#&gt; }
-#&gt; 
-#&gt; @Article{Bio-ORACLE,
-#&gt;   author = {Lennert Tyberghein and Verbruggen Heroen and Klaas Pauly and Charles Troupin and Frederic Mineur and Olivier {De Clerck}},
-#&gt;   title = {Bio-ORACLE: a global environmental dataset for marine species distribution modelling},
-#&gt;   journal = {Global Ecology and Biogeography},
-#&gt;   year = {2012},
-#&gt;   volume = {21},
-#&gt;   number = {2},
-#&gt;   pages = {272-281},
-#&gt;   doi = {10.1111/j.1466-8238.2011.00656.x},
-#&gt; }
-#&gt; 
-#&gt; $`Bio-ORACLE_Future`
-#&gt; @Article{Bio-ORACLE_Future,
-#&gt;   author = {Alexander Jueterbock and Lennert Tyberghein and Verbruggen Heroen and James A. Coyer and Jeanine L. Olsen and Galice Hoarau},
-#&gt;   title = {Climate change impact on seaweed meadow distribution in the North Atlantic rocky intertidal},
-#&gt;   journal = {Ecology and Evolution},
-#&gt;   year = {2013},
-#&gt;   volume = {3},
-#&gt;   number = {5},
-#&gt;   pages = {1356-1373},
-#&gt;   doi = {10.1002/ece3.541},
-#&gt; }
-#&gt; 
-#&gt; $MARSPEC
-#&gt; @Article{MARSPEC,
-#&gt;   author = {Elizabeth J. Sbrocco and Paul H. Barber},
-#&gt;   title = {MARSPEC: ocean climate layers for marine spatial ecology},
-#&gt;   year = {2013},
-#&gt;   volume = {94},
-#&gt;   number = {4},
-#&gt;   pages = {979},
-#&gt;   journal = {Ecology},
-#&gt;   doi = {10.1890/12-1358.1},
-#&gt; }
-#&gt; 
-#&gt; $`Paleo-MARSPEC`
-#&gt; @Article{Paleo-MARSPEC,
-#&gt;   author = {Elizabeth J. Sbrocco},
-#&gt;   title = {Paleo-MARSPEC: gridded ocean climate layers for the mid-Holocene and Last Glacial Maximum},
-#&gt;   journal = {Ecology},
-#&gt;   year = {2014},
-#&gt;   volume = {95},
-#&gt;   number = {6},
-#&gt;   pages = {1710},
-#&gt;   doi = {10.1890/14-0443.1},
-#&gt; }
-#&gt; 
-#&gt; $ENVIREM
-#&gt; @Article{ENVIREM,
-#&gt;   author = {Pascal O. Title and Jordan B. Bemmels},
-#&gt;   title = {ENVIREM: An expanded set of bioclimatic and topographic variables increases flexibility and improves performance of ecological niche modeling.},
-#&gt;   journal = {Ecography},
-#&gt;   year = {2017},
-#&gt;   doi = {10.1111/ecog.02880},
-#&gt; }
-#&gt; 
-#&gt; $Freshwater
-#&gt; @Article{Freshwater,
-#&gt;   author = {S. Domisch and G. Amutelli and W. Jetz},
-#&gt;   title = {Near-global freshwater-specific environmental variables for biodiversity analyses in 1 km resolution},
-#&gt;   journal = {Scientific Data},
-#&gt;   year = {2015},
-#&gt;   doi = {10.1038/sdata.2015.73},
-#&gt; }
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># print the Bio-ORACLE citation</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>dataset_citations</span><span class='op'>(</span><span class='st'>"Bio-ORACLE"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Assis J, Tyberghein L, Bosch S, Heroen V, Serrão E, De Clerck O, Tittensor D (2018). “Bio‐ORACLE v2.0: Extending marine data layers for\nbioclimatic modelling.” _Global Ecology and Biogeography_, *27*(3),\n277-284. doi: 10.1111/geb.12693 (URL:\nhttps://doi.org/10.1111/geb.12693)."                                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2] "Tyberghein L, Heroen V, Pauly K, Troupin C, Mineur F, De Clerck O (2012). “Bio-ORACLE: a global environmental dataset for marine species\ndistribution modelling.” _Global Ecology and Biogeography_, *21*(2),\n272-281. doi: 10.1111/j.1466-8238.2011.00656.x (URL:\nhttps://doi.org/10.1111/j.1466-8238.2011.00656.x)."</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># print all citations as Bibtex</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='fu'>dataset_citations</span><span class='op'>(</span>astext <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>, <span class='va'>toBibtex</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $WorldClim</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{WorldClim,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Robert J. Hijmans and Susan E. Cameron and Juan L. Parra and Peter G. Jones and Andy Jarvis},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {Very high resolution interpolated climate surfaces for global land areas.},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {International Journal of Climatology},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2005},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   volume = {25},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   number = {15},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   pages = {1965-1978},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1002/joc.1276},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $`Bio-ORACLE`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{Bio-ORACLEv2,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Jorge Assis and Lennert Tyberghein and Samuel Bosch and Verbruggen Heroen and Ester A. Serrão and Olivier {De Clerck} and Derek Tittensor},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {Bio‐ORACLE v2.0: Extending marine data layers for bioclimatic modelling},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Global Ecology and Biogeography},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2018},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   volume = {27},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   number = {3},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   pages = {277-284},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1111/geb.12693},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{Bio-ORACLE,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Lennert Tyberghein and Verbruggen Heroen and Klaas Pauly and Charles Troupin and Frederic Mineur and Olivier {De Clerck}},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {Bio-ORACLE: a global environmental dataset for marine species distribution modelling},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Global Ecology and Biogeography},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2012},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   volume = {21},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   number = {2},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   pages = {272-281},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1111/j.1466-8238.2011.00656.x},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $`Bio-ORACLE_Future`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{Bio-ORACLE_Future,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Alexander Jueterbock and Lennert Tyberghein and Verbruggen Heroen and James A. Coyer and Jeanine L. Olsen and Galice Hoarau},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {Climate change impact on seaweed meadow distribution in the North Atlantic rocky intertidal},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Ecology and Evolution},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2013},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   volume = {3},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   number = {5},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   pages = {1356-1373},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1002/ece3.541},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $MARSPEC</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{MARSPEC,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Elizabeth J. Sbrocco and Paul H. Barber},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {MARSPEC: ocean climate layers for marine spatial ecology},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2013},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   volume = {94},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   number = {4},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   pages = {979},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Ecology},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1890/12-1358.1},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $`Paleo-MARSPEC`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{Paleo-MARSPEC,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Elizabeth J. Sbrocco},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {Paleo-MARSPEC: gridded ocean climate layers for the mid-Holocene and Last Glacial Maximum},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Ecology},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2014},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   volume = {95},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   number = {6},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   pages = {1710},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1890/14-0443.1},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $ENVIREM</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{ENVIREM,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {Pascal O. Title and Jordan B. Bemmels},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {ENVIREM: An expanded set of bioclimatic and topographic variables increases flexibility and improves performance of ecological niche modeling.},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Ecography},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2017},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1111/ecog.02880},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $Freshwater</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> @Article{Freshwater,</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   author = {S. Domisch and G. Amutelli and W. Jetz},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   title = {Near-global freshwater-specific environmental variables for biodiversity analyses in 1 km resolution},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   journal = {Scientific Data},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   year = {2015},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   doi = {10.1038/sdata.2015.73},</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> }</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

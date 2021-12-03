@@ -75,7 +75,7 @@ NA." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -161,37 +161,40 @@ all layers is returned.</p></td>
   <a href='correlation_groups.html'>correlation_groups</a> <a href='plot_correlation.html'>plot_correlation</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># correlation of the first 10 layers</span>
-<span class='fu'>layers_correlation</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>,<span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>
-</div><div class='output co'>#&gt;               BO_calcite   BO_chlomax  BO_chlomean  BO_chlomin BO_chlorange
-#&gt; BO_calcite    1.00000000  0.396639051  0.461932611  0.47908017   0.27472469
-#&gt; BO_chlomax    0.39663905  1.000000000  0.912505114  0.71757426   0.93753070
-#&gt; BO_chlomean   0.46193261  0.912505114  1.000000000  0.91075416   0.72764396
-#&gt; BO_chlomin    0.47908017  0.717574261  0.910754165  1.00000000   0.43044004
-#&gt; BO_chlorange  0.27472469  0.937530703  0.727643957  0.43044004   1.00000000
-#&gt; BO_cloudmax   0.01186976  0.062216689  0.047982923  0.02447058   0.06840751
-#&gt; BO_cloudmean -0.03459517  0.008067028  0.004488046 -0.00619996   0.01355159
-#&gt; BO_cloudmin  -0.05677585 -0.027173265 -0.024417737 -0.02605302  -0.02220186
-#&gt; BO_damax      0.45886642  0.843088069  0.764031226  0.59133188   0.79723753
-#&gt; BO_damean     0.55272492  0.827089496  0.839946041  0.71820912   0.71312691
-#&gt;              BO_cloudmax BO_cloudmean BO_cloudmin   BO_damax  BO_damean
-#&gt; BO_calcite    0.01186976 -0.034595166 -0.05677585 0.45886642 0.55272492
-#&gt; BO_chlomax    0.06221669  0.008067028 -0.02717326 0.84308807 0.82708950
-#&gt; BO_chlomean   0.04798292  0.004488046 -0.02441774 0.76403123 0.83994604
-#&gt; BO_chlomin    0.02447058 -0.006199960 -0.02605302 0.59133188 0.71820912
-#&gt; BO_chlorange  0.06840751  0.013551587 -0.02220186 0.79723753 0.71312691
-#&gt; BO_cloudmax   1.00000000  0.915586672  0.77631593 0.22998205 0.18412390
-#&gt; BO_cloudmean  0.91558667  1.000000000  0.94594660 0.13893701 0.09882120
-#&gt; BO_cloudmin   0.77631593  0.945946600  1.00000000 0.06319287 0.02937793
-#&gt; BO_damax      0.22998205  0.138937009  0.06319287 1.00000000 0.95694561
-#&gt; BO_damean     0.18412390  0.098821204  0.02937793 0.95694561 1.00000000</div><div class='input'><span class='fu'>layers_correlation</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;             BO_calcite MS_bathy_5m
-#&gt; BO_calcite   1.0000000   0.2485496
-#&gt; MS_bathy_5m  0.2485496   1.0000000</div><div class='input'><span class='fu'>layers_correlation</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;             BO_calcite MS_bathy_5m
-#&gt; BO_calcite   1.0000000   0.2485496
-#&gt; MS_bathy_5m  0.2485496   1.0000000</div><div class='input'>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># correlation of the first 10 layers</span></span>
+<span class='r-in'><span class='fu'>layers_correlation</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>,<span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>               BO_calcite   BO_chlomax  BO_chlomean  BO_chlomin BO_chlorange</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_calcite    1.00000000  0.396639051  0.461932611  0.47908017   0.27472469</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlomax    0.39663905  1.000000000  0.912505114  0.71757426   0.93753070</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlomean   0.46193261  0.912505114  1.000000000  0.91075416   0.72764396</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlomin    0.47908017  0.717574261  0.910754165  1.00000000   0.43044004</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlorange  0.27472469  0.937530703  0.727643957  0.43044004   1.00000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_cloudmax   0.01186976  0.062216689  0.047982923  0.02447058   0.06840751</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_cloudmean -0.03459517  0.008067028  0.004488046 -0.00619996   0.01355159</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_cloudmin  -0.05677585 -0.027173265 -0.024417737 -0.02605302  -0.02220186</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_damax      0.45886642  0.843088069  0.764031226  0.59133188   0.79723753</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_damean     0.55272492  0.827089496  0.839946041  0.71820912   0.71312691</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>              BO_cloudmax BO_cloudmean BO_cloudmin   BO_damax  BO_damean</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_calcite    0.01186976 -0.034595166 -0.05677585 0.45886642 0.55272492</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlomax    0.06221669  0.008067028 -0.02717326 0.84308807 0.82708950</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlomean   0.04798292  0.004488046 -0.02441774 0.76403123 0.83994604</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlomin    0.02447058 -0.006199960 -0.02605302 0.59133188 0.71820912</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_chlorange  0.06840751  0.013551587 -0.02220186 0.79723753 0.71312691</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_cloudmax   1.00000000  0.915586672  0.77631593 0.22998205 0.18412390</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_cloudmean  0.91558667  1.000000000  0.94594660 0.13893701 0.09882120</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_cloudmin   0.77631593  0.945946600  1.00000000 0.06319287 0.02937793</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_damax      0.22998205  0.138937009  0.06319287 1.00000000 0.95694561</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_damean     0.18412390  0.098821204  0.02937793 0.95694561 1.00000000</span>
+<span class='r-in'><span class='fu'>layers_correlation</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             BO_calcite MS_bathy_5m</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_calcite   1.0000000   0.2485496</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> MS_bathy_5m  0.2485496   1.0000000</span>
+<span class='r-in'><span class='fu'>layers_correlation</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             BO_calcite MS_bathy_5m</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> BO_calcite   1.0000000   0.2485496</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> MS_bathy_5m  0.2485496   1.0000000</span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

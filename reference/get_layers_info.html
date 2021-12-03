@@ -73,7 +73,7 @@ future climate layers of one or more datasets." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -160,37 +160,41 @@ as column <code>layer_code</code>.</p></td>
   <code><a href='list_layers_paleo.html'>list_layers_paleo</a></code>, <code><a href='load_layers.html'>load_layers</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>info</span> <span class='op'>&lt;-</span> <span class='fu'>get_layers_info</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_salinity"</span>, <span class='st'>"BO_B1_2100_salinity"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>info</span><span class='op'>$</span><span class='va'>common</span>
-</div><div class='output co'>#&gt;       time dataset_code          layer_code
-#&gt; 86 current   Bio-ORACLE         BO_salinity
-#&gt; 16  future   Bio-ORACLE BO_B1_2100_salinity
-#&gt;                                                  layer_url
-#&gt; 86         https://bio-oracle.org/data/1.0/BO_salinity.zip
-#&gt; 16 https://bio-oracle.org/data/1.0/BO_B1_2100_salinity.zip</div><div class='input'><span class='va'>info</span><span class='op'>$</span><span class='va'>current</span>
-</div><div class='output co'>#&gt;    dataset_code  layer_code     name
-#&gt; 86   Bio-ORACLE BO_salinity Salinity
-#&gt;                                                    description terrestrial
-#&gt; 86 Salinity indicates the dissolved salt content in the ocean.       FALSE
-#&gt;    marine freshwater cellsize_equalarea cellsize_lonlat units
-#&gt; 86   TRUE      FALSE               7000      0.08333333   PSS
-#&gt;           primary_type primary_spatial_resolution
-#&gt; 86 in situ measurement                         ''
-#&gt;                                                                               primary_source
-#&gt; 86 World Ocean Database (2009) Reference: (Boyer et al. 2009) URL: http://www.nodc.noaa.gov/
-#&gt;    start_year start_month start_day end_year end_month end_day
-#&gt; 86       1961           1         1     2009        12      31
-#&gt;                                 derivation month is_surface version
-#&gt; 86 DIVA interpolation (532377 data points)    NA       TRUE       1
-#&gt;                                          layer_url
-#&gt; 86 https://bio-oracle.org/data/1.0/BO_salinity.zip</div><div class='input'><span class='va'>info</span><span class='op'>$</span><span class='va'>future</span>
-</div><div class='output co'>#&gt;    dataset_code          layer_code current_layer_code       model scenario
-#&gt; 16   Bio-ORACLE BO_B1_2100_salinity        BO_salinity UKMO-HadCM3       B1
-#&gt;    year version                                               layer_url
-#&gt; 16 2100       1 https://bio-oracle.org/data/1.0/BO_B1_2100_salinity.zip</div><div class='input'><span class='va'>info</span><span class='op'>$</span><span class='va'>paleo</span>
-</div><div class='output co'>#&gt; [1] dataset_code       layer_code         current_layer_code model_name        
-#&gt; [5] epoch              years_ago          version            layer_url         
-#&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
+    <pre class="examples"><span class='r-in'><span class='va'>info</span> <span class='op'>&lt;-</span> <span class='fu'>get_layers_info</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_salinity"</span>, <span class='st'>"BO_B1_2100_salinity"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>info</span><span class='op'>$</span><span class='va'>common</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       time dataset_code          layer_code</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86 current   Bio-ORACLE         BO_salinity</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16  future   Bio-ORACLE BO_B1_2100_salinity</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                  layer_url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86         https://bio-oracle.org/data/1.0/BO_salinity.zip</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16 https://bio-oracle.org/data/1.0/BO_B1_2100_salinity.zip</span>
+<span class='r-in'><span class='va'>info</span><span class='op'>$</span><span class='va'>current</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    dataset_code  layer_code     name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86   Bio-ORACLE BO_salinity Salinity</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                    description terrestrial</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86 Salinity indicates the dissolved salt content in the ocean.       FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    marine freshwater cellsize_equalarea cellsize_lonlat units</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86   TRUE      FALSE               7000      0.08333333   PSS</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>           primary_type primary_spatial_resolution</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86 in situ measurement                         ''</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                               primary_source</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86 World Ocean Database (2009) Reference: (Boyer et al. 2009) URL: http://www.nodc.noaa.gov/</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    start_year start_month start_day end_year end_month end_day</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86       1961           1         1     2009        12      31</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                 derivation month is_surface version</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86 DIVA interpolation (532377 data points)    NA       TRUE       1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                          layer_url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 86 https://bio-oracle.org/data/1.0/BO_salinity.zip</span>
+<span class='r-in'><span class='va'>info</span><span class='op'>$</span><span class='va'>future</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    dataset_code          layer_code current_layer_code       model scenario</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16   Bio-ORACLE BO_B1_2100_salinity        BO_salinity UKMO-HadCM3       B1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    year version                                               layer_url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16 2100       1 https://bio-oracle.org/data/1.0/BO_B1_2100_salinity.zip</span>
+<span class='r-in'><span class='va'>info</span><span class='op'>$</span><span class='va'>paleo</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] dataset_code       layer_code         current_layer_code model_name        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [5] epoch              years_ago          version            layer_url         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> &lt;0 rows&gt; (or 0-length row.names)</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

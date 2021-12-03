@@ -74,7 +74,7 @@ for each given layercode." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -158,37 +158,39 @@ returned.</p></td>
     <div class='dont-index'><p><code><a href='list_layers.html'>list_layers</a></code> <code><a href='layers_correlation.html'>layers_correlation</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># layer stats for the first 10 layers</span>
-<span class='fu'>layer_stats</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>,<span class='op'>]</span>
-</div><div class='output co'>#&gt;              layer_code minimum     q1  median     q3 maximum       mad
-#&gt; 1  BO_A1B_2100_salinity   0.000 33.061 33.6320 34.555  45.000  1.132706
-#&gt; 2    BO_A1B_2100_sstmax  -1.030 16.398 27.9700 32.147  41.650  7.518266
-#&gt; 3   BO_A1B_2100_sstmean  -1.610 11.756 23.4620 29.258  35.342 10.367822
-#&gt; 4    BO_A1B_2100_sstmin  -1.807  8.609 19.9210 26.416  32.846 11.478290
-#&gt; 5  BO_A1B_2100_sstrange   0.767  4.477  6.0940  8.235  33.487  2.722054
-#&gt; 6  BO_A1B_2200_salinity   0.000 32.856 33.4700 34.414  45.000  1.183115
-#&gt; 7    BO_A1B_2200_sstmax  -0.401 17.804 28.7400 32.797  42.752  7.288459
-#&gt; 8   BO_A1B_2200_sstmean  -1.523 12.851 24.1270 29.825  36.705 10.221043
-#&gt; 9    BO_A1B_2200_sstmin  -1.810  9.556 20.4845 26.898  33.148 11.283328
-#&gt; 10 BO_A1B_2200_sstrange   1.399  4.602  6.2310  8.660  32.117  2.902931
-#&gt;         mean        sd     moran        geary
-#&gt; 1  33.581528  3.062836 0.9659977 7.967063e-04
-#&gt; 2  24.008438  9.946540 0.9906802 3.888232e-05
-#&gt; 3  20.332794 10.295028 0.9902515 2.269467e-05
-#&gt; 4  17.349216 10.309791 0.9906726 3.242276e-05
-#&gt; 5   6.659221  3.064490 0.9900109 4.131083e-04
-#&gt; 6  33.424420  3.125564 0.9664247 7.847520e-04
-#&gt; 7  24.811906  9.908373 0.9906745 4.283967e-05
-#&gt; 8  21.009479 10.251172 0.9900848 2.335164e-05
-#&gt; 9  17.922208 10.262336 0.9902781 3.550761e-05
-#&gt; 10  6.889698  3.165707 0.9903447 4.372453e-04</div><div class='input'><span class='fu'>layer_stats</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;       layer_code     minimum         q1     median         q3   maximum
-#&gt; 29    BO_calcite  5.0000e-05  6.600e-05  9.400e-05  1.860e-04  0.055976
-#&gt; 2425 MS_bathy_5m -1.0493e+04 -4.865e+03 -4.082e+03 -2.984e+03 -1.000000
-#&gt;               mad          mean           sd     moran       geary
-#&gt; 29   5.337360e-05  4.247966e-04 2.640947e-03 0.8130786 0.074806796
-#&gt; 2425 1.313584e+03 -3.661049e+03 1.644869e+03 0.9728919 0.009697763</div><div class='input'>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># layer stats for the first 10 layers</span></span>
+<span class='r-in'><span class='fu'>layer_stats</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>,<span class='op'>]</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>              layer_code minimum     q1  median     q3 maximum       mad</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  BO_A1B_2100_salinity   0.000 33.061 33.6320 34.555  45.000  1.132706</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2    BO_A1B_2100_sstmax  -1.030 16.398 27.9700 32.147  41.650  7.518266</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3   BO_A1B_2100_sstmean  -1.610 11.756 23.4620 29.258  35.342 10.367822</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    BO_A1B_2100_sstmin  -1.807  8.609 19.9210 26.416  32.846 11.478290</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  BO_A1B_2100_sstrange   0.767  4.477  6.0940  8.235  33.487  2.722054</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  BO_A1B_2200_salinity   0.000 32.856 33.4700 34.414  45.000  1.183115</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7    BO_A1B_2200_sstmax  -0.401 17.804 28.7400 32.797  42.752  7.288459</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8   BO_A1B_2200_sstmean  -1.523 12.851 24.1270 29.825  36.705 10.221043</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9    BO_A1B_2200_sstmin  -1.810  9.556 20.4845 26.898  33.148 11.283328</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 BO_A1B_2200_sstrange   1.399  4.602  6.2310  8.660  32.117  2.902931</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         mean        sd     moran        geary</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  33.581528  3.062836 0.9659977 7.967063e-04</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  24.008438  9.946540 0.9906802 3.888232e-05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  20.332794 10.295028 0.9902515 2.269467e-05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  17.349216 10.309791 0.9906726 3.242276e-05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5   6.659221  3.064490 0.9900109 4.131083e-04</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  33.424420  3.125564 0.9664247 7.847520e-04</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  24.811906  9.908373 0.9906745 4.283967e-05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  21.009479 10.251172 0.9900848 2.335164e-05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  17.922208 10.262336 0.9902781 3.550761e-05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10  6.889698  3.165707 0.9903447 4.372453e-04</span>
+<span class='r-in'><span class='fu'>layer_stats</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, <span class='st'>"MS_bathy_5m"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       layer_code     minimum         q1     median         q3   maximum</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29    BO_calcite  5.0000e-05  6.600e-05  9.400e-05  1.860e-04  0.055976</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2425 MS_bathy_5m -1.0493e+04 -4.865e+03 -4.082e+03 -2.984e+03 -1.000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>               mad          mean           sd     moran       geary</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29   5.337360e-05  4.247966e-04 2.640947e-03 0.8130786 0.074806796</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2425 1.313584e+03 -3.661049e+03 1.644869e+03 0.9728919 0.009697763</span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

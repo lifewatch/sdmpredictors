@@ -75,7 +75,7 @@ the matching current climate layers." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -174,10 +174,11 @@ e.g. <code>2100, 2200</code>.</p></td>
   <code><a href='load_layers.html'>load_layers</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>future_layers</span> <span class='op'>&lt;-</span> <span class='fu'>get_future_layers</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_salinity"</span>, <span class='st'>"BO_sstmean"</span><span class='op'>)</span>, 
-                                   scenario <span class='op'>=</span> <span class='st'>"B1"</span>, year <span class='op'>=</span> <span class='fl'>2100</span><span class='op'>)</span>
-<span class='va'>future_layers</span><span class='op'>$</span><span class='va'>layer_code</span>
-</div><div class='output co'>#&gt; [1] "BO_B1_2100_salinity" "BO_B1_2100_sstmean" </div></pre>
+    <pre class="examples"><span class='r-in'><span class='va'>future_layers</span> <span class='op'>&lt;-</span> <span class='fu'>get_future_layers</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"BO_salinity"</span>, <span class='st'>"BO_sstmean"</span><span class='op'>)</span>, </span>
+<span class='r-in'>                                   scenario <span class='op'>=</span> <span class='st'>"B1"</span>, year <span class='op'>=</span> <span class='fl'>2100</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>future_layers</span><span class='op'>$</span><span class='va'>layer_code</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "BO_B1_2100_salinity" "BO_B1_2100_sstmean" </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

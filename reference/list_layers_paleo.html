@@ -73,7 +73,7 @@ one or more datasets." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -202,32 +202,34 @@ number.</p></td>
   <code><a href='list_datasets.html'>list_datasets</a></code>, <code><a href='load_layers.html'>load_layers</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># list the first 5 layers</span>
-<span class='fu'>list_layers_paleo</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,<span class='op'>]</span>
-</div><div class='output co'>#&gt;   dataset_code                  layer_code current_layer_code     model_name
-#&gt; 1      ENVIREM     ER_annualPET_holo_ccsm4       ER_annualPET     holo_ccsm4
-#&gt; 2      ENVIREM ER_annualPET_holo_miroc_esm       ER_annualPET holo_miroc_esm
-#&gt; 3      ENVIREM ER_annualPET_holo_mpi_esm_p       ER_annualPET holo_mpi_esm_p
-#&gt; 4      ENVIREM      ER_annualPET_lgm_ccsm4       ER_annualPET      lgm_ccsm4
-#&gt; 5      ENVIREM  ER_annualPET_lgm_miroc_esm       ER_annualPET  lgm_miroc_esm
-#&gt;                  epoch years_ago version
-#&gt; 1         mid-Holocene      6000       1
-#&gt; 2         mid-Holocene      6000       1
-#&gt; 3         mid-Holocene      6000       1
-#&gt; 4 Last Glacial Maximum     21000       1
-#&gt; 5 Last Glacial Maximum     21000       1
-#&gt;                                                                       layer_url
-#&gt; 1     https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_ccsm4_lonlat.tif
-#&gt; 2 https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_miroc_esm_lonlat.tif
-#&gt; 3 https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_mpi_esm_p_lonlat.tif
-#&gt; 4      https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_ccsm4_lonlat.tif
-#&gt; 5  https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_miroc_esm_lonlat.tif</div><div class='input'><span class='co'># list layer codes for MARSPEC for the mid-Holocene</span>
-<span class='fu'>list_layers_paleo</span><span class='op'>(</span><span class='st'>"MARSPEC"</span>, epoch <span class='op'>=</span> <span class='st'>"mid-Holocene"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>layer_code</span>
-</div><div class='output co'>#&gt;  [1] "MS_biogeo08_sss_mean_6kya"     "MS_biogeo09_sss_min_6kya"     
-#&gt;  [3] "MS_biogeo10_sss_max_6kya"      "MS_biogeo11_sss_range_6kya"   
-#&gt;  [5] "MS_biogeo12_sss_variance_6kya" "MS_biogeo13_sst_mean_6kya"    
-#&gt;  [7] "MS_biogeo14_sst_min_6kya"      "MS_biogeo15_sst_max_6kya"     
-#&gt;  [9] "MS_biogeo16_sst_range_6kya"    "MS_biogeo17_sst_variance_6kya"</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># list the first 5 layers</span></span>
+<span class='r-in'><span class='fu'>list_layers_paleo</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,<span class='op'>]</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   dataset_code                  layer_code current_layer_code     model_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      ENVIREM     ER_annualPET_holo_ccsm4       ER_annualPET     holo_ccsm4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2      ENVIREM ER_annualPET_holo_miroc_esm       ER_annualPET holo_miroc_esm</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3      ENVIREM ER_annualPET_holo_mpi_esm_p       ER_annualPET holo_mpi_esm_p</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4      ENVIREM      ER_annualPET_lgm_ccsm4       ER_annualPET      lgm_ccsm4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5      ENVIREM  ER_annualPET_lgm_miroc_esm       ER_annualPET  lgm_miroc_esm</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                  epoch years_ago version</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1         mid-Holocene      6000       1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2         mid-Holocene      6000       1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3         mid-Holocene      6000       1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4 Last Glacial Maximum     21000       1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5 Last Glacial Maximum     21000       1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                       layer_url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1     https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_ccsm4_lonlat.tif</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_miroc_esm_lonlat.tif</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 https://www.lifewatch.be/sdmpredictors/ER_annualPET_holo_mpi_esm_p_lonlat.tif</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4      https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_ccsm4_lonlat.tif</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  https://www.lifewatch.be/sdmpredictors/ER_annualPET_lgm_miroc_esm_lonlat.tif</span>
+<span class='r-in'><span class='co'># list layer codes for MARSPEC for the mid-Holocene</span></span>
+<span class='r-in'><span class='fu'>list_layers_paleo</span><span class='op'>(</span><span class='st'>"MARSPEC"</span>, epoch <span class='op'>=</span> <span class='st'>"mid-Holocene"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>layer_code</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1] "MS_biogeo08_sss_mean_6kya"     "MS_biogeo09_sss_min_6kya"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [3] "MS_biogeo10_sss_max_6kya"      "MS_biogeo11_sss_range_6kya"   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [5] "MS_biogeo12_sss_variance_6kya" "MS_biogeo13_sst_mean_6kya"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [7] "MS_biogeo14_sst_min_6kya"      "MS_biogeo15_sst_max_6kya"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [9] "MS_biogeo16_sst_range_6kya"    "MS_biogeo17_sst_variance_6kya"</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

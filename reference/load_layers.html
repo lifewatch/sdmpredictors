@@ -74,7 +74,7 @@ same spatial extent and resolution." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
       </span>
     </div>
 
@@ -162,8 +162,8 @@ a <code><a href='https://rdrr.io/pkg/raster/man/stack.html'>stack</a></code> oth
       <th>datadir</th>
       <td><p>character. Directory where you want to store the data. If 
 <code>NULL</code> is passed (default) then the <code>sdmpredictors_datadir</code> 
-option is read. To set this run <code><a href='https://rdrr.io/r/base/options.html'>options(sdmpredictors_datadir="&lt;your 
-preferred directory&gt;")</a></code> in every session or add it to your .RProfile.</p></td>
+option is read. To set this run <code>options(sdmpredictors_datadir="&lt;your 
+preferred directory&gt;")</code> in every session or add it to your .RProfile.</p></td>
     </tr>
     </table>
 
@@ -176,12 +176,12 @@ preferred directory&gt;")</a></code> in every session or add it to your .RProfil
   <code><a href='layers_correlation.html'>layers_correlation</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'># warning using tempdir() implies that data will be downloaded again in the </span>
-<span class='co'># next R session</span>
-<span class='va'>env</span> <span class='op'>&lt;-</span> <span class='fu'>load_layers</span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, datadir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='co'># warning using tempdir() implies that data will be downloaded again in the </span></span>
+<span class='r-in'><span class='co'># next R session</span></span>
+<span class='r-in'><span class='va'>env</span> <span class='op'>&lt;-</span> <span class='fu'>load_layers</span><span class='op'>(</span><span class='st'>"BO_calcite"</span>, datadir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
