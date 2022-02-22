@@ -29,6 +29,7 @@ Suggests:
     reshape2,
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    httr
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
