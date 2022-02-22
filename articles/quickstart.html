@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.11</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -64,7 +60,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/lifewatch/sdmpredictors/">
+  <a href="https://github.com/lifewatch/sdmpredictors/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -83,11 +79,11 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>sdmpredictors quickstart guide</h1>
-                        <h4 class="author">Samuel Bosch</h4>
+                        <h4 data-toc-skip class="author">Samuel Bosch</h4>
             
-            <h4 class="date">2021-12-03</h4>
+            <h4 data-toc-skip class="date">2022-02-22</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/lifewatch/sdmpredictors/blob/master/vignettes/quickstart.Rmd"><code>vignettes/quickstart.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/lifewatch/sdmpredictors/blob/HEAD/vignettes/quickstart.Rmd" class="external-link"><code>vignettes/quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>quickstart.Rmd</code></div>
 
     </div>
@@ -95,20 +91,20 @@
     
     
 <p>The goal of sdmpredictors is to make environmental data, commonly used for species distribution modelling (SDM), also called ecological niche modelling (ENM) or habitat suitability modelling, easy to use in R. It contains methods for getting metadata about the available environmental data for the current climate but also for future and paleo climatic conditions. A way to download the rasters and load them into R and some general statistics about the different layers.</p>
-<div id="getting-the-metadata" class="section level2">
-<h2 class="hasAnchor">
-<a href="#getting-the-metadata" class="anchor"></a>Getting the metadata</h2>
+<div class="section level2">
+<h2 id="getting-the-metadata">Getting the metadata<a class="anchor" aria-label="anchor" href="#getting-the-metadata"></a>
+</h2>
 <p>Different list_* functions are available in order to find out which datasets and environmental layers can be downloaded.</p>
-<div id="list_datasets" class="section level3">
-<h3 class="hasAnchor">
-<a href="#list_datasets" class="anchor"></a>list_datasets</h3>
+<div class="section level3">
+<h3 id="list_datasets">list_datasets<a class="anchor" aria-label="anchor" href="#list_datasets"></a>
+</h3>
 <p>With the <em>list_datasets</em> function you can view all the available datasets. If you only want terrestrial datasets then you have to set the marine parameter to FALSE and vice versa.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/">sdmpredictors</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/" class="external-link">sdmpredictors</a></span><span class="op">)</span>
 
 <span class="co"># exploring the marine datasets </span>
 <span class="va">datasets</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_datasets.html">list_datasets</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span>, marine <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<table style="width:100%;" class="table">
 <colgroup>
 <col width="1%">
 <col width="1%">
@@ -132,24 +128,24 @@
 <td align="left">TRUE</td>
 <td align="left">hhtp://bio-oracle.org/</td>
 <td align="left">Bio-ORACLE is a set of GIS rasters providing geophysical, biotic and environmental data for surface and benthic marine realms at a spatial resolution 5 arcmin (9.2 km) in the ESRI ascii and tif format.</td>
-<td align="left">Tyberghein L., Verbruggen H., Pauly K., Troupin C., Mineur F. &amp; De Clerck O. Bio-ORACLE: a global environmental dataset for marine species distribution modeling. Global Ecology and Biogeography. <a href="http://dx.doi.org/10.1111/j.1466-8238.2011.00656.x" class="uri">http://dx.doi.org/10.1111/j.1466-8238.2011.00656.x</a>
+<td align="left">Tyberghein L., Verbruggen H., Pauly K., Troupin C., Mineur F. &amp; De Clerck O. Bio-ORACLE: a global environmental dataset for marine species distribution modeling. Global Ecology and Biogeography. <a href="http://dx.doi.org/10.1111/j.1466-8238.2011.00656.x" class="external-link uri">http://dx.doi.org/10.1111/j.1466-8238.2011.00656.x</a>
 </td>
 </tr>
 <tr class="even">
 <td align="left">MARSPEC</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="left"><a href="http://marspec.org/" class="uri">http://marspec.org/</a></td>
+<td align="left"><a href="http://marspec.org/" class="external-link uri">http://marspec.org/</a></td>
 <td align="left">MARSPEC is a set of high resolution climatic and geophysical GIS data layers for the world ocean. Seven geophysical variables were derived from the SRTM30_PLUS high resolution bathymetry dataset. These layers characterize the horizontal orientation (aspect), slope, and curvature of the seafloor and the distance from shore. Ten “bioclimatic” variables were derived from NOAA’s World Ocean Atlas and NASA’s MODIS satellite imagery and characterize the inter-annual means, extremes, and variances in sea surface temperature and salinity. These variables will be useful to those interested in the spatial ecology of marine shallow-water and surface-associated pelagic organisms across the globe. Note that, in contrary to the original MARSPEC, all layers have unscaled values.</td>
-<td align="left">Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean climate layers for marine spatial ecology. Ecology 94: 979. <a href="http://dx.doi.org/10.1890/12-1358.1" class="uri">http://dx.doi.org/10.1890/12-1358.1</a>
+<td align="left">Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean climate layers for marine spatial ecology. Ecology 94: 979. <a href="http://dx.doi.org/10.1890/12-1358.1" class="external-link uri">http://dx.doi.org/10.1890/12-1358.1</a>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="list_layers" class="section level3">
-<h3 class="hasAnchor">
-<a href="#list_layers" class="anchor"></a>list_layers</h3>
+<div class="section level3">
+<h3 id="list_layers">list_layers<a class="anchor" aria-label="anchor" href="#list_layers"></a>
+</h3>
 <p>Using the <em>list_layers</em> function we can view all layer information based on datasets, terrestrial (TRUE/FALSE), marine (TRUE/FALSE) and/or whether it should be monthly data. The table only shows the first 4 columns of the first 3 layers.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># exploring the marine layers </span>
@@ -190,105 +186,105 @@
 </table>
 </div>
 </div>
-<div id="citing-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citing-data" class="anchor"></a>Citing data</h2>
+<div class="section level2">
+<h2 id="citing-data">Citing data<a class="anchor" aria-label="anchor" href="#citing-data"></a>
+</h2>
 <p>With the <em>dataset_citations</em> and <em>layer_citations</em> functions you can fetch plain text or bibentries for the datasets and layers used, allowing for proper citation of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># print the Bio-ORACLE citation</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dataset_citations.html">dataset_citations</a></span><span class="op">(</span><span class="st">"Bio-ORACLE"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "Assis J, Tyberghein L, Bosch S, Heroen V, Serrão E, De Clerck O, Tittensor D (2018). \"Bio‐ORACLE v2.0: Extending marine data layers for\nbioclimatic modelling.\" _Global Ecology and Biogeography_, *27*(3),\n277-284. doi: 10.1111/geb.12693 (URL:\nhttps://doi.org/10.1111/geb.12693)."                                
-## [2] "Tyberghein L, Heroen V, Pauly K, Troupin C, Mineur F, De Clerck O (2012). \"Bio-ORACLE: a global environmental dataset for marine species\ndistribution modelling.\" _Global Ecology and Biogeography_, *21*(2),\n272-281. doi: 10.1111/j.1466-8238.2011.00656.x (URL:\nhttps://doi.org/10.1111/j.1466-8238.2011.00656.x)."</code></pre>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dataset_citations.html">dataset_citations</a></span><span class="op">(</span><span class="st">"Bio-ORACLE"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## [1] "Assis J, Tyberghein L, Bosch S, Heroen V, Serrão E, De Clerck O, Tittensor D (2018). \"Bio‐ORACLE v2.0: Extending marine data layers for\nbioclimatic modelling.\" _Global Ecology and Biogeography_, *27*(3),\n277-284. doi: 10.1111/geb.12693 (URL:\nhttps://doi.org/10.1111/geb.12693)."                                </span>
+<span class="co">## [2] "Tyberghein L, Heroen V, Pauly K, Troupin C, Mineur F, De Clerck O (2012). \"Bio-ORACLE: a global environmental dataset for marine species\ndistribution modelling.\" _Global Ecology and Biogeography_, *21*(2),\n272-281. doi: 10.1111/j.1466-8238.2011.00656.x (URL:\nhttps://doi.org/10.1111/j.1466-8238.2011.00656.x)."</span></code></pre>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># print the citation for ENVIREM as Bibtex</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="../reference/dataset_citations.html">dataset_citations</a></span><span class="op">(</span><span class="st">"WorldClim"</span>, astext <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>, <span class="va">toBibtex</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## $WorldClim
-## @Article{WorldClim,
-##   author = {Robert J. Hijmans and Susan E. Cameron and Juan L. Parra and Peter G. Jones and Andy Jarvis},
-##   title = {Very high resolution interpolated climate surfaces for global land areas.},
-##   journal = {International Journal of Climatology},
-##   year = {2005},
-##   volume = {25},
-##   number = {15},
-##   pages = {1965-1978},
-##   doi = {10.1002/joc.1276},
-## }</code></pre>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="../reference/dataset_citations.html">dataset_citations</a></span><span class="op">(</span><span class="st">"WorldClim"</span>, astext <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>, <span class="va">toBibtex</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## $WorldClim</span>
+<span class="co">## @Article{WorldClim,</span>
+<span class="co">##   author = {Robert J. Hijmans and Susan E. Cameron and Juan L. Parra and Peter G. Jones and Andy Jarvis},</span>
+<span class="co">##   title = {Very high resolution interpolated climate surfaces for global land areas.},</span>
+<span class="co">##   journal = {International Journal of Climatology},</span>
+<span class="co">##   year = {2005},</span>
+<span class="co">##   volume = {25},</span>
+<span class="co">##   number = {15},</span>
+<span class="co">##   pages = {1965-1978},</span>
+<span class="co">##   doi = {10.1002/joc.1276},</span>
+<span class="co">## }</span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># print the citation for a MARSPEC paleo layer</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/layer_citations.html">layer_citations</a></span><span class="op">(</span><span class="st">"MS_biogeo02_aspect_NS_21kya"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "Sbrocco EJ, Barber PH (2013). \"MARSPEC: ocean climate layers for marine spatial ecology.\" _Ecology_, *94*(4), 979. doi: 10.1890/12-1358.1 (URL:\nhttps://doi.org/10.1890/12-1358.1)."                       
-## [2] "Sbrocco EJ (2014). \"Paleo-MARSPEC: gridded ocean climate layers for the mid-Holocene and Last Glacial Maximum.\" _Ecology_, *95*(6), 1710. doi:\n10.1890/14-0443.1 (URL: https://doi.org/10.1890/14-0443.1)."</code></pre>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/layer_citations.html">layer_citations</a></span><span class="op">(</span><span class="st">"MS_biogeo02_aspect_NS_21kya"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## [1] "Sbrocco EJ, Barber PH (2013). \"MARSPEC: ocean climate layers for marine spatial ecology.\" _Ecology_, *94*(4), 979. doi: 10.1890/12-1358.1 (URL:\nhttps://doi.org/10.1890/12-1358.1)."                       </span>
+<span class="co">## [2] "Sbrocco EJ (2014). \"Paleo-MARSPEC: gridded ocean climate layers for the mid-Holocene and Last Glacial Maximum.\" _Ecology_, *95*(6), 1710. doi:\n10.1890/14-0443.1 (URL: https://doi.org/10.1890/14-0443.1)."</span></code></pre>
 </div>
-<div id="loading-the-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#loading-the-data" class="anchor"></a>Loading the data</h2>
-<div id="load_layers" class="section level3">
-<h3 class="hasAnchor">
-<a href="#load_layers" class="anchor"></a>load_layers</h3>
+<div class="section level2">
+<h2 id="loading-the-data">Loading the data<a class="anchor" aria-label="anchor" href="#loading-the-data"></a>
+</h2>
+<div class="section level3">
+<h3 id="load_layers">load_layers<a class="anchor" aria-label="anchor" href="#load_layers"></a>
+</h3>
 <p>To be able to use the layers you want in R you have to call the <em>load_layers</em> function with</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># download pH and Salinity to the temporary directory</span>
-<span class="fu"><a href="../reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="va">layers</span><span class="op">[</span><span class="va">layers</span><span class="op">$</span><span class="va">name</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"pH"</span>, <span class="st">"Salinity"</span><span class="op">)</span> <span class="op">&amp;</span> 
-                     <span class="va">layers</span><span class="op">$</span><span class="va">dataset_code</span> <span class="op">==</span> <span class="st">"Bio-ORACLE"</span>,<span class="op">]</span>, datadir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="../reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="va">layers</span><span class="op">[</span><span class="va">layers</span><span class="op">$</span><span class="va">name</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pH"</span>, <span class="st">"Salinity"</span><span class="op">)</span> <span class="op">&amp;</span> 
+                     <span class="va">layers</span><span class="op">$</span><span class="va">dataset_code</span> <span class="op">==</span> <span class="st">"Bio-ORACLE"</span>,<span class="op">]</span>, datadir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># set a default datadir, preferably something different from tempdir()</span>
-<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>sdmpredictors_datadir<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>sdmpredictors_datadir<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># (down)load specific layers </span>
-<span class="va">specific</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BO_ph"</span>, <span class="st">"BO_salinity"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">specific</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_ph"</span>, <span class="st">"BO_salinity"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># equal area data (Behrmann equal area projection) </span>
 <span class="va">equalarea</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="st">"BO_ph"</span>, equalarea <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="loading-future-and-paleo-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#loading-future-and-paleo-data" class="anchor"></a>Loading future and paleo data</h2>
+<div class="section level2">
+<h2 id="loading-future-and-paleo-data">Loading future and paleo data<a class="anchor" aria-label="anchor" href="#loading-future-and-paleo-data"></a>
+</h2>
 <p>Similarly to the current climate layers</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># exploring the available future marine layers </span>
 <span class="va">future</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_layers_future.html">list_layers_future</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> 
 <span class="co"># available scenarios </span>
-<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">future</span><span class="op">$</span><span class="va">scenario</span><span class="op">)</span> </code></pre></div>
-<pre><code>## [1] "A1B"   "A2"    "B1"    "RCP26" "RCP45" "RCP60" "RCP85"</code></pre>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">future</span><span class="op">$</span><span class="va">scenario</span><span class="op">)</span> </code></pre></div>
+<pre><code><span class="co">## [1] "A1B"   "A2"    "B1"    "RCP26" "RCP45" "RCP60" "RCP85"</span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">future</span><span class="op">$</span><span class="va">year</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 2100 2200 2050</code></pre>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">future</span><span class="op">$</span><span class="va">year</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## [1] 2100 2200 2050</span></code></pre>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">paleo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_layers_paleo.html">list_layers_paleo</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">paleo</span><span class="op">$</span><span class="va">epoch</span><span class="op">)</span> </code></pre></div>
-<pre><code>## [1] "Last Glacial Maximum" "mid-Holocene"</code></pre>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">paleo</span><span class="op">$</span><span class="va">epoch</span><span class="op">)</span> </code></pre></div>
+<pre><code><span class="co">## [1] "Last Glacial Maximum" "mid-Holocene"</span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">paleo</span><span class="op">$</span><span class="va">model_name</span><span class="op">)</span> </code></pre></div>
-<pre><code>## [1] "21kya_geophysical"      "21kya_ensemble_adjCCSM" "21kya_ensemble_noCCSM" 
-## [4] "6kya_Ensemble"</code></pre>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">paleo</span><span class="op">$</span><span class="va">model_name</span><span class="op">)</span> </code></pre></div>
+<pre><code><span class="co">## [1] "21kya_geophysical"      "21kya_ensemble_adjCCSM" "21kya_ensemble_noCCSM" </span>
+<span class="co">## [4] "6kya_Ensemble"</span></code></pre>
 <p>Other functions related to layers metadata and future and paleo layers are:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/get_layers_info.html">get_layers_info</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BO_calcite"</span>,<span class="st">"BO_B1_2100_sstmax"</span>,<span class="st">"MS_bathy_21kya"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">common</span></code></pre></div>
-<pre><code>##        time dataset_code        layer_code
-## 69  current   Bio-ORACLE        BO_calcite
-## 17   future   Bio-ORACLE BO_B1_2100_sstmax
-## 101   paleo      MARSPEC    MS_bathy_21kya
-##                                                            layer_url
-## 69                    https://bio-oracle.org/data/1.0/BO_calcite.zip
-## 17             https://bio-oracle.org/data/1.0/BO_B1_2100_sstmax.zip
-## 101 https://www.lifewatch.be/sdmpredictors/MS_bathy_21kya_lonlat.tif</code></pre>
+<code class="sourceCode R"><span class="fu"><a href="../reference/get_layers_info.html">get_layers_info</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_calcite"</span>,<span class="st">"BO_B1_2100_sstmax"</span>,<span class="st">"MS_bathy_21kya"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">common</span></code></pre></div>
+<pre><code><span class="co">##        time dataset_code        layer_code</span>
+<span class="co">## 69  current   Bio-ORACLE        BO_calcite</span>
+<span class="co">## 17   future   Bio-ORACLE BO_B1_2100_sstmax</span>
+<span class="co">## 101   paleo      MARSPEC    MS_bathy_21kya</span>
+<span class="co">##                                                            layer_url</span>
+<span class="co">## 69                    https://bio-oracle.org/data/1.0/BO_calcite.zip</span>
+<span class="co">## 17             https://bio-oracle.org/data/1.0/BO_B1_2100_sstmax.zip</span>
+<span class="co">## 101 https://www.lifewatch.be/sdmpredictors/MS_bathy_21kya_lonlat.tif</span></code></pre>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># functions to get the equivalent future layer code for a current climate layer </span>
-<span class="fu"><a href="../reference/get_future_layers.html">get_future_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BO_sstmax"</span>, <span class="st">"BO_salinity"</span><span class="op">)</span>, 
+<span class="fu"><a href="../reference/get_future_layers.html">get_future_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_sstmax"</span>, <span class="st">"BO_salinity"</span><span class="op">)</span>, 
                   scenario <span class="op">=</span> <span class="st">"B1"</span>, 
                   year <span class="op">=</span> <span class="fl">2100</span><span class="op">)</span><span class="op">$</span><span class="va">layer_code</span> </code></pre></div>
-<pre><code>## [1] "BO_B1_2100_salinity" "BO_B1_2100_sstmax"</code></pre>
+<pre><code><span class="co">## [1] "BO_B1_2100_salinity" "BO_B1_2100_sstmax"</span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># functions to get the equivalent paleo layer code for a current climate layer </span>
-<span class="fu"><a href="../reference/get_paleo_layers.html">get_paleo_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"MS_bathy_5m"</span>, <span class="st">"MS_biogeo13_sst_mean_5m"</span><span class="op">)</span>, 
-                 model_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"21kya_geophysical"</span>, <span class="st">"21kya_ensemble_adjCCSM"</span><span class="op">)</span>, 
+<span class="fu"><a href="../reference/get_paleo_layers.html">get_paleo_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"MS_bathy_5m"</span>, <span class="st">"MS_biogeo13_sst_mean_5m"</span><span class="op">)</span>, 
+                 model_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"21kya_geophysical"</span>, <span class="st">"21kya_ensemble_adjCCSM"</span><span class="op">)</span>, 
                  years_ago <span class="op">=</span> <span class="fl">21000</span><span class="op">)</span><span class="op">$</span><span class="va">layer_code</span> </code></pre></div>
-<pre><code>## [1] "MS_bathy_21kya"                     "MS_biogeo13_sst_mean_21kya_adjCCSM"</code></pre>
+<pre><code><span class="co">## [1] "MS_bathy_21kya"                     "MS_biogeo13_sst_mean_21kya_adjCCSM"</span></code></pre>
 </div>
-<div id="statistics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#statistics" class="anchor"></a>Statistics</h2>
+<div class="section level2">
+<h2 id="statistics">Statistics<a class="anchor" aria-label="anchor" href="#statistics"></a>
+</h2>
 <p>Two types of statistics are available for the current climate layers:</p>
 <ul>
 <li>individual layer statistics
@@ -305,15 +301,15 @@
 <span class="va">layers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_layers.html">list_layers</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
 
 <span class="co"># filter out monthly layers</span>
-<span class="va">layers</span> <span class="op">&lt;-</span> <span class="va">layers</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">layers</span><span class="op">$</span><span class="va">month</span><span class="op">)</span>,<span class="op">]</span>
+<span class="va">layers</span> <span class="op">&lt;-</span> <span class="va">layers</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">layers</span><span class="op">$</span><span class="va">month</span><span class="op">)</span>,<span class="op">]</span>
 
 <span class="fu"><a href="../reference/layer_stats.html">layer_stats</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,<span class="op">]</span></code></pre></div>
-<pre><code>##      layer_code minimum    q1 median    q3 maximum      mad      mean       sd
-## 26  BO_bathymax   -9906 -4748  -3948 -2784    2361 1361.027 -3525.239 1651.386
-## 27 BO_bathymean  -10494 -4876  -4098 -3005    1721 1307.653 -3675.429 1645.478
-##        moran      geary
-## 26 0.9670128 0.01461685
-## 27 0.9706400 0.01073758</code></pre>
+<pre><code><span class="co">##      layer_code minimum    q1 median    q3 maximum      mad      mean       sd</span>
+<span class="co">## 26  BO_bathymax   -9906 -4748  -3948 -2784    2361 1361.027 -3525.239 1651.386</span>
+<span class="co">## 27 BO_bathymean  -10494 -4876  -4098 -3005    1721 1307.653 -3675.429 1645.478</span>
+<span class="co">##        moran      geary</span>
+<span class="co">## 26 0.9670128 0.01461685</span>
+<span class="co">## 27 0.9706400 0.01073758</span></code></pre>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">correlations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/layers_correlation.html">layers_correlation</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
 
@@ -322,35 +318,33 @@
 <span class="va">groups</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/correlation_groups.html">correlation_groups</a></span><span class="op">(</span><span class="va">correlations</span>, max_correlation<span class="op">=</span><span class="fl">0.7</span><span class="op">)</span>
 
 <span class="co"># group lengths</span>
-<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">groups</span>, <span class="va">length</span><span class="op">)</span></code></pre></div>
-<pre><code>##  [1]  1 34 42  1 24  4  4  1  1  1  2  1  1  2 18 60  9 24  6  3 12 17  2  2  2
-## [26]  2</code></pre>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">groups</span>, <span class="va">length</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">##  [1]  1 34 57  1 24  4  4  1  1  1  2  1  1  2 18 60  9 24  6  3 12  2  2  2  2</span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">for</span><span class="op">(</span><span class="va">group</span> <span class="kw">in</span> <span class="va">groups</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">group</span>, collapse <span class="op">=</span><span class="st">", "</span><span class="op">)</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span>
+  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">group</span>, collapse <span class="op">=</span><span class="st">", "</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span>
   <span class="op">}</span>
 <span class="op">}</span></code></pre></div>
-<pre><code>## BO_chlomax, BO_chlomean, BO_chlomin, BO_chlorange, BO_damax, BO_damean, BO_damin, BO2_ironmax_bdmax, BO2_ironmax_bdmean, BO2_ironmax_bdmin, BO2_ironmean_bdmax, BO2_ironmean_bdmean, BO2_ironmean_bdmin, BO2_ironmin_bdmax, BO2_ironmin_bdmean, BO2_ironmin_bdmin, BO2_ironrange_bdmax, BO2_ironrange_bdmean, BO2_ironrange_bdmin, BO2_ironltmax_bdmax, BO2_ironltmax_bdmean, BO2_ironltmax_bdmin, BO2_ironltmin_bdmax, BO2_ironltmin_bdmean, BO2_ironltmin_bdmin, BO2_carbonphytomax_bdmax, BO2_salinityrange_bdmean, BO2_salinityrange_bdmin, BO2_ironmax_ss, BO2_ironmean_ss, BO2_ironmin_ss, BO2_ironltmax_ss, BO2_ironltmin_ss, BO2_ironrange_ss
-## BO_cloudmax, BO_cloudmean, BO_cloudmin, BO_dissox, BO_nitrate, BO_parmax, BO_parmean, BO_phosphate, BO_sstmax, BO_sstmean, BO_sstmin, MS_biogeo13_sst_mean_5m, MS_biogeo14_sst_min_5m, MS_biogeo15_sst_max_5m, BO2_templtmax_ss, BO2_templtmin_ss, BO2_tempmax_ss, BO2_tempmean_ss, BO2_tempmin_ss, BO2_dissoxmax_ss, BO2_dissoxmean_ss, BO2_dissoxmin_ss, BO2_dissoxltmax_ss, BO2_dissoxltmin_ss, BO2_nitratemax_ss, BO2_nitratemean_ss, BO2_nitrateltmax_ss, BO_silicate, BO2_dissoxrange_ss, BO2_phosphatemax_ss, BO2_phosphatemean_ss, BO2_phosphatemin_ss, BO2_phosphateltmax_ss, BO2_phosphateltmin_ss, BO2_nitratemin_ss, BO2_nitrateltmin_ss, BO2_silicatemax_ss, BO2_silicatemean_ss, BO2_silicatemin_ss, BO2_silicaterange_ss, BO2_silicateltmax_ss, BO2_silicateltmin_ss
-## BO_salinity, MS_biogeo08_sss_mean_5m, MS_biogeo09_sss_min_5m, MS_biogeo10_sss_max_5m, BO2_salinitymax_bdmax, BO2_salinitymax_bdmean, BO2_salinitymax_bdmin, BO2_salinitymean_bdmax, BO2_salinitymean_bdmean, BO2_salinitymean_bdmin, BO2_salinitymin_bdmax, BO2_salinitymin_bdmean, BO2_salinitymin_bdmin, BO2_salinityltmax_bdmax, BO2_salinityltmax_bdmean, BO2_salinityltmax_bdmin, BO2_salinityltmin_bdmax, BO2_salinityltmin_bdmean, BO2_salinityltmin_bdmin, BO2_salinitymax_ss, BO2_salinitymean_ss, BO2_salinitymin_ss, BO2_salinityltmax_ss, BO2_salinityltmin_ss
-## BO_sstrange, MS_biogeo16_sst_range_5m, MS_biogeo17_sst_variance_5m, BO2_temprange_ss
-## BO_bathymin, BO_bathymax, BO_bathymean, MS_bathy_5m
-## MS_biogeo04_profile_curvature_5m, MS_biogeo07_concavity_5m
-## MS_biogeo11_sss_range_5m, MS_biogeo12_sss_variance_5m
-## BO2_curvelmax_bdmax, BO2_curvelmax_bdmean, BO2_curvelmax_bdmin, BO2_curvelmin_bdmax, BO2_curvelmin_bdmean, BO2_curvelltmax_bdmax, BO2_curvelltmax_bdmean, BO2_curvelltmax_bdmin, BO2_curvelltmin_bdmax, BO2_curvelmean_bdmean, BO2_curvelmean_bdmin, BO2_curvelmin_bdmin, BO2_curvelltmin_bdmean, BO2_curvelltmin_bdmin, BO2_curvelmean_bdmax, BO2_curvelrange_bdmax, BO2_curvelrange_bdmean, BO2_curvelrange_bdmin
-## BO2_dissoxmax_bdmax, BO2_dissoxmax_bdmean, BO2_dissoxmax_bdmin, BO2_dissoxmean_bdmax, BO2_dissoxmean_bdmean, BO2_dissoxmean_bdmin, BO2_dissoxmin_bdmax, BO2_dissoxmin_bdmean, BO2_dissoxmin_bdmin, BO2_dissoxltmax_bdmax, BO2_dissoxltmax_bdmean, BO2_dissoxltmax_bdmin, BO2_dissoxltmin_bdmax, BO2_dissoxltmin_bdmean, BO2_dissoxltmin_bdmin, BO2_phosphatemax_bdmax, BO2_phosphatemax_bdmean, BO2_phosphatemax_bdmin, BO2_phosphatemean_bdmax, BO2_phosphatemean_bdmean, BO2_phosphatemean_bdmin, BO2_phosphatemin_bdmax, BO2_phosphatemin_bdmean, BO2_phosphatemin_bdmin, BO2_phosphateltmax_bdmax, BO2_phosphateltmax_bdmean, BO2_phosphateltmax_bdmin, BO2_phosphateltmin_bdmax, BO2_phosphateltmin_bdmean, BO2_phosphateltmin_bdmin, BO2_nitratemax_bdmax, BO2_nitratemax_bdmean, BO2_nitratemax_bdmin, BO2_nitratemean_bdmax, BO2_nitratemean_bdmean, BO2_nitratemean_bdmin, BO2_nitratemin_bdmax, BO2_nitratemin_bdmean, BO2_nitratemin_bdmin, BO2_nitrateltmax_bdmax, BO2_nitrateltmax_bdmean, BO2_nitrateltmax_bdmin, BO2_nitrateltmin_bdmax, BO2_nitrateltmin_bdmean, BO2_nitrateltmin_bdmin, BO2_silicatemax_bdmax, BO2_silicatemax_bdmean, BO2_silicatemax_bdmin, BO2_silicatemean_bdmax, BO2_silicatemean_bdmean, BO2_silicatemean_bdmin, BO2_silicatemin_bdmax, BO2_silicatemin_bdmean, BO2_silicatemin_bdmin, BO2_silicateltmax_bdmax, BO2_silicateltmax_bdmean, BO2_silicateltmax_bdmin, BO2_silicateltmin_bdmax, BO2_silicateltmin_bdmean, BO2_silicateltmin_bdmin
-## BO2_dissoxrange_bdmax, BO2_dissoxrange_bdmean, BO2_dissoxrange_bdmin, BO2_phosphaterange_bdmax, BO2_phosphaterange_bdmean, BO2_phosphaterange_bdmin, BO2_nitraterange_bdmax, BO2_nitraterange_bdmean, BO2_nitraterange_bdmin
-## BO2_lightbotmax_bdmax, BO2_lightbotmean_bdmax, BO2_lightbotmean_bdmean, BO2_lightbotmin_bdmax, BO2_lightbotrange_bdmax, BO2_lightbotltmax_bdmax, BO2_lightbotltmax_bdmean, BO2_lightbotltmin_bdmax, BO2_tempmax_bdmax, BO2_tempmax_bdmean, BO2_tempmax_bdmin, BO2_tempmean_bdmax, BO2_tempmean_bdmean, BO2_tempmean_bdmin, BO2_tempmin_bdmax, BO2_tempmin_bdmean, BO2_tempmin_bdmin, BO2_templtmax_bdmax, BO2_templtmax_bdmean, BO2_templtmax_bdmin, BO2_templtmin_bdmax, BO2_templtmin_bdmean, BO2_templtmin_bdmin, BO2_carbonphytomin_bdmin
-## BO2_lightbotmax_bdmin, BO2_lightbotmean_bdmin, BO2_lightbotrange_bdmin, BO2_lightbotltmax_bdmin, BO2_lightbotltmin_bdmin, BO2_lightbotmin_bdmin
-## BO2_silicaterange_bdmax, BO2_silicaterange_bdmean, BO2_silicaterange_bdmin
-## BO2_icecoverltmax_ss, BO2_icecovermax_ss, BO2_icecovermean_ss, BO2_icecoverrange_ss, BO2_icethickltmax_ss, BO2_icethickmax_ss, BO2_icethickrange_ss, BO2_icecoverltmin_ss, BO2_icethickmean_ss, BO2_icecovermin_ss, BO2_icethickltmin_ss, BO2_icethickmin_ss
-## BO2_chlomax_ss, BO2_chlomean_ss, BO2_chlorange_ss, BO2_chloltmax_ss, BO2_chloltmin_ss, BO2_carbonphytomax_ss, BO2_carbonphytomean_ss, BO2_carbonphytorange_ss, BO2_carbonphytoltmax_ss, BO2_ppltmax_ss, BO2_ppmax_ss, BO2_ppmean_ss, BO2_pprange_ss, BO2_carbonphytomin_ss, BO2_carbonphytoltmin_ss, BO2_ppmin_ss, BO2_ppltmin_ss
-## BO2_curvelmax_ss, BO2_curvelltmax_ss
-## BO2_curvelmean_ss, BO2_curvelrange_ss
-## BO2_curvelmin_ss, BO2_curvelltmin_ss
-## BO2_phosphaterange_ss, BO2_nitraterange_ss</code></pre>
+<pre><code><span class="co">## BO_chlomax, BO_chlomean, BO_chlomin, BO_chlorange, BO_damax, BO_damean, BO_damin, BO2_ironmax_bdmax, BO2_ironmax_bdmean, BO2_ironmax_bdmin, BO2_ironmean_bdmax, BO2_ironmean_bdmean, BO2_ironmean_bdmin, BO2_ironmin_bdmax, BO2_ironmin_bdmean, BO2_ironmin_bdmin, BO2_ironrange_bdmax, BO2_ironrange_bdmean, BO2_ironrange_bdmin, BO2_ironltmax_bdmax, BO2_ironltmax_bdmean, BO2_ironltmax_bdmin, BO2_ironltmin_bdmax, BO2_ironltmin_bdmean, BO2_ironltmin_bdmin, BO2_carbonphytomax_bdmax, BO2_salinityrange_bdmean, BO2_salinityrange_bdmin, BO2_ironmax_ss, BO2_ironmean_ss, BO2_ironmin_ss, BO2_ironltmax_ss, BO2_ironltmin_ss, BO2_ironrange_ss</span>
+<span class="co">## BO_cloudmean, BO_cloudmin, BO_parmean, BO_dissox, BO_nitrate, BO_phosphate, BO_silicate, BO_sstmax, BO_sstmean, BO_sstmin, MS_biogeo13_sst_mean_5m, MS_biogeo14_sst_min_5m, MS_biogeo15_sst_max_5m, BO2_templtmax_ss, BO2_templtmin_ss, BO2_tempmax_ss, BO2_tempmean_ss, BO2_tempmin_ss, BO2_dissoxmax_ss, BO2_dissoxmean_ss, BO2_dissoxmin_ss, BO2_dissoxltmax_ss, BO2_dissoxltmin_ss, BO2_phosphatemax_ss, BO2_phosphatemean_ss, BO2_phosphatemin_ss, BO2_phosphateltmax_ss, BO2_phosphateltmin_ss, BO2_nitratemax_ss, BO2_nitratemean_ss, BO2_nitratemin_ss, BO2_nitrateltmax_ss, BO2_nitrateltmin_ss, BO2_silicatemax_ss, BO2_silicatemean_ss, BO2_silicatemin_ss, BO2_silicaterange_ss, BO2_silicateltmax_ss, BO2_silicateltmin_ss, BO2_chlomax_ss, BO2_chlomean_ss, BO2_chlorange_ss, BO2_chloltmax_ss, BO2_carbonphytomax_ss, BO2_carbonphytorange_ss, BO2_carbonphytoltmax_ss, BO2_carbonphytomean_ss, BO2_ppmax_ss, BO2_ppmean_ss, BO2_pprange_ss, BO2_ppltmax_ss, BO2_chlomin_ss, BO2_chloltmin_ss, BO2_carbonphytomin_ss, BO2_carbonphytoltmin_ss, BO2_ppmin_ss, BO2_ppltmin_ss</span>
+<span class="co">## BO_salinity, MS_biogeo08_sss_mean_5m, MS_biogeo09_sss_min_5m, MS_biogeo10_sss_max_5m, BO2_salinitymax_bdmax, BO2_salinitymax_bdmean, BO2_salinitymax_bdmin, BO2_salinitymean_bdmax, BO2_salinitymean_bdmean, BO2_salinitymean_bdmin, BO2_salinitymin_bdmax, BO2_salinitymin_bdmean, BO2_salinitymin_bdmin, BO2_salinityltmax_bdmax, BO2_salinityltmax_bdmean, BO2_salinityltmax_bdmin, BO2_salinityltmin_bdmax, BO2_salinityltmin_bdmean, BO2_salinityltmin_bdmin, BO2_salinitymax_ss, BO2_salinitymean_ss, BO2_salinitymin_ss, BO2_salinityltmax_ss, BO2_salinityltmin_ss</span>
+<span class="co">## BO_sstrange, MS_biogeo16_sst_range_5m, MS_biogeo17_sst_variance_5m, BO2_temprange_ss</span>
+<span class="co">## BO_bathymin, BO_bathymax, BO_bathymean, MS_bathy_5m</span>
+<span class="co">## MS_biogeo04_profile_curvature_5m, MS_biogeo07_concavity_5m</span>
+<span class="co">## MS_biogeo11_sss_range_5m, MS_biogeo12_sss_variance_5m</span>
+<span class="co">## BO2_curvelmax_bdmax, BO2_curvelmax_bdmean, BO2_curvelmax_bdmin, BO2_curvelmin_bdmax, BO2_curvelmin_bdmean, BO2_curvelltmax_bdmax, BO2_curvelltmax_bdmean, BO2_curvelltmax_bdmin, BO2_curvelltmin_bdmax, BO2_curvelmean_bdmean, BO2_curvelmean_bdmin, BO2_curvelmin_bdmin, BO2_curvelltmin_bdmean, BO2_curvelltmin_bdmin, BO2_curvelmean_bdmax, BO2_curvelrange_bdmax, BO2_curvelrange_bdmean, BO2_curvelrange_bdmin</span>
+<span class="co">## BO2_dissoxmax_bdmax, BO2_dissoxmax_bdmean, BO2_dissoxmax_bdmin, BO2_dissoxmean_bdmax, BO2_dissoxmean_bdmean, BO2_dissoxmean_bdmin, BO2_dissoxmin_bdmax, BO2_dissoxmin_bdmean, BO2_dissoxmin_bdmin, BO2_dissoxltmax_bdmax, BO2_dissoxltmax_bdmean, BO2_dissoxltmax_bdmin, BO2_dissoxltmin_bdmax, BO2_dissoxltmin_bdmean, BO2_dissoxltmin_bdmin, BO2_phosphatemax_bdmax, BO2_phosphatemax_bdmean, BO2_phosphatemax_bdmin, BO2_phosphatemean_bdmax, BO2_phosphatemean_bdmean, BO2_phosphatemean_bdmin, BO2_phosphatemin_bdmax, BO2_phosphatemin_bdmean, BO2_phosphatemin_bdmin, BO2_phosphateltmax_bdmax, BO2_phosphateltmax_bdmean, BO2_phosphateltmax_bdmin, BO2_phosphateltmin_bdmax, BO2_phosphateltmin_bdmean, BO2_phosphateltmin_bdmin, BO2_nitratemax_bdmax, BO2_nitratemax_bdmean, BO2_nitratemax_bdmin, BO2_nitratemean_bdmax, BO2_nitratemean_bdmean, BO2_nitratemean_bdmin, BO2_nitratemin_bdmax, BO2_nitratemin_bdmean, BO2_nitratemin_bdmin, BO2_nitrateltmax_bdmax, BO2_nitrateltmax_bdmean, BO2_nitrateltmax_bdmin, BO2_nitrateltmin_bdmax, BO2_nitrateltmin_bdmean, BO2_nitrateltmin_bdmin, BO2_silicatemax_bdmax, BO2_silicatemax_bdmean, BO2_silicatemax_bdmin, BO2_silicatemean_bdmax, BO2_silicatemean_bdmean, BO2_silicatemean_bdmin, BO2_silicatemin_bdmax, BO2_silicatemin_bdmean, BO2_silicatemin_bdmin, BO2_silicateltmax_bdmax, BO2_silicateltmax_bdmean, BO2_silicateltmax_bdmin, BO2_silicateltmin_bdmax, BO2_silicateltmin_bdmean, BO2_silicateltmin_bdmin</span>
+<span class="co">## BO2_dissoxrange_bdmax, BO2_dissoxrange_bdmean, BO2_dissoxrange_bdmin, BO2_phosphaterange_bdmax, BO2_phosphaterange_bdmean, BO2_phosphaterange_bdmin, BO2_nitraterange_bdmax, BO2_nitraterange_bdmean, BO2_nitraterange_bdmin</span>
+<span class="co">## BO2_lightbotmax_bdmax, BO2_lightbotmean_bdmax, BO2_lightbotmean_bdmean, BO2_lightbotmin_bdmax, BO2_lightbotrange_bdmax, BO2_lightbotltmax_bdmax, BO2_lightbotltmax_bdmean, BO2_lightbotltmin_bdmax, BO2_tempmax_bdmax, BO2_tempmax_bdmean, BO2_tempmax_bdmin, BO2_tempmean_bdmax, BO2_tempmean_bdmean, BO2_tempmean_bdmin, BO2_tempmin_bdmax, BO2_tempmin_bdmean, BO2_tempmin_bdmin, BO2_templtmax_bdmax, BO2_templtmax_bdmean, BO2_templtmax_bdmin, BO2_templtmin_bdmax, BO2_templtmin_bdmean, BO2_templtmin_bdmin, BO2_carbonphytomin_bdmin</span>
+<span class="co">## BO2_lightbotmax_bdmin, BO2_lightbotmean_bdmin, BO2_lightbotrange_bdmin, BO2_lightbotltmax_bdmin, BO2_lightbotltmin_bdmin, BO2_lightbotmin_bdmin</span>
+<span class="co">## BO2_silicaterange_bdmax, BO2_silicaterange_bdmean, BO2_silicaterange_bdmin</span>
+<span class="co">## BO2_icecoverltmax_ss, BO2_icecovermax_ss, BO2_icecovermean_ss, BO2_icecoverrange_ss, BO2_icethickltmax_ss, BO2_icethickmax_ss, BO2_icethickrange_ss, BO2_icecoverltmin_ss, BO2_icethickmean_ss, BO2_icecovermin_ss, BO2_icethickltmin_ss, BO2_icethickmin_ss</span>
+<span class="co">## BO2_curvelmax_ss, BO2_curvelltmax_ss</span>
+<span class="co">## BO2_curvelmean_ss, BO2_curvelrange_ss</span>
+<span class="co">## BO2_curvelmin_ss, BO2_curvelltmin_ss</span>
+<span class="co">## BO2_phosphaterange_ss, BO2_nitraterange_ss</span></code></pre>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># plot correlations (requires ggplot2)</span>
 <span class="fu"><a href="../reference/plot_correlation.html">plot_correlation</a></span><span class="op">(</span><span class="va">correlations</span><span class="op">)</span></code></pre></div>
@@ -369,11 +363,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Samuel Bosch, Salvador Fernandez.</p>
+  <p></p>
+<p>Developed by Samuel Bosch, Salvador Fernandez.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -381,6 +377,8 @@
 
   
 
+
+  
 
   </body>
 </html>

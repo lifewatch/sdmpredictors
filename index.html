@@ -22,6 +22,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -34,18 +36,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sdmpredictors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.11</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -67,7 +63,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/lifewatch/sdmpredictors/">
+  <a href="https://github.com/lifewatch/sdmpredictors/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -86,9 +82,9 @@
   <div class="contents col-md-9">
 
 
-<div id="sdmpredictors-a-compilation-of-species-distribution-modelling-predictors-data" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#sdmpredictors-a-compilation-of-species-distribution-modelling-predictors-data" class="anchor"></a>sdmpredictors: a compilation of species distribution modelling predictors data</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="sdmpredictors-a-compilation-of-species-distribution-modelling-predictors-data">sdmpredictors: a compilation of species distribution modelling predictors data<a class="anchor" aria-label="anchor" href="#sdmpredictors-a-compilation-of-species-distribution-modelling-predictors-data"></a>
+</h1></div>
 <p>An R package to improve the usability of datasets with predictors for species distribution modelling (SDM).</p>
 <p>Installation:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>    <span class="kw">install.packages</span>(<span class="st">"sdmpredictors"</span>)</span>
@@ -96,79 +92,79 @@
 <span id="cb1-3"><a href="#cb1-3"></a>    devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"lifewatch/sdmpredictors"</span>)</span></code></pre></div>
 <p>Example 1: Create SDM for Dictyota diemensis in Australia Note that this requires the <em>ZOON</em>, <em>ggplot2</em>, <em>cowplot</em> and <em>marinespeed</em> packages to be installed.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R">    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/">sdmpredictors</a></span><span class="op">)</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/zoonproject/zoon">zoon</a></span><span class="op">)</span>
+<code class="sourceCode R">    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/" class="external-link">sdmpredictors</a></span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/zoonproject/zoon" class="external-link">zoon</a></span><span class="op">)</span>
     
     <span class="co"># Inspect the available datasets and layers</span>
     <span class="va">datasets</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_datasets.html">list_datasets</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span>, marine <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
     <span class="va">layers</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_layers.html">list_layers</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
     <span class="co"># Load equal area rasters and crop with the extent of the Baltic Sea</span>
-    <span class="va">layercodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"MS_biogeo05_dist_shore_5m"</span>, <span class="st">"MS_bathy_5m"</span>, 
+    <span class="va">layercodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"MS_biogeo05_dist_shore_5m"</span>, <span class="st">"MS_bathy_5m"</span>, 
                     <span class="st">"BO_sstrange"</span>, <span class="st">"BO_sstmean"</span>, <span class="st">"BO_salinity"</span><span class="op">)</span>
     <span class="va">env</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="va">layercodes</span>, equalarea <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-    <span class="va">australia</span> <span class="op">&lt;-</span> <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/crop.html">crop</a></span><span class="op">(</span><span class="va">env</span>, <span class="fu">extent</span><span class="op">(</span><span class="fl">106e5</span>,<span class="fl">154e5</span>, <span class="op">-</span><span class="fl">52e5</span>, <span class="op">-</span><span class="fl">13e5</span><span class="op">)</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">australia</span><span class="op">)</span>
+    <span class="va">australia</span> <span class="op">&lt;-</span> <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/crop.html" class="external-link">crop</a></span><span class="op">(</span><span class="va">env</span>, <span class="fu">extent</span><span class="op">(</span><span class="fl">106e5</span>,<span class="fl">154e5</span>, <span class="op">-</span><span class="fl">52e5</span>, <span class="op">-</span><span class="fl">13e5</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">australia</span><span class="op">)</span>
     <span class="co"># Compare statistics between the original and the Australian bathymetry</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="fu"><a href="reference/layer_stats.html">layer_stats</a></span><span class="op">(</span><span class="st">"MS_bathy_5m"</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="fu"><a href="reference/layer_stats.html">layer_stats</a></span><span class="op">(</span><span class="st">"MS_bathy_5m"</span><span class="op">)</span>,
                <span class="fu"><a href="reference/calculate_statistics.html">calculate_statistics</a></span><span class="op">(</span><span class="st">"Bathymetry Australia"</span>, 
                                     <span class="fu">raster</span><span class="op">(</span><span class="va">australia</span>, layer <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
     <span class="co"># Compare correlations between predictors, globally and for Australia</span>
-    <span class="va">prettynames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>BO_salinity<span class="op">=</span><span class="st">"Salinity"</span>, BO_sstmean<span class="op">=</span><span class="st">"SST (mean)"</span>, 
+    <span class="va">prettynames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>BO_salinity<span class="op">=</span><span class="st">"Salinity"</span>, BO_sstmean<span class="op">=</span><span class="st">"SST (mean)"</span>, 
                         BO_sstrange<span class="op">=</span><span class="st">"SST (range)"</span>, MS_bathy_5m<span class="op">=</span><span class="st">"Bathymetry"</span>,
                         MS_biogeo05_dist_shore_5m <span class="op">=</span> <span class="st">"Shore distance"</span><span class="op">)</span>
     <span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu">plot_corr</span><span class="op">(</span><span class="fu"><a href="reference/layers_correlation.html">layers_correlation</a></span><span class="op">(</span><span class="va">layercodes</span><span class="op">)</span>, <span class="va">prettynames</span><span class="op">)</span>
     <span class="va">australian_correlations</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/pearson_correlation_matrix.html">pearson_correlation_matrix</a></span><span class="op">(</span><span class="va">australia</span><span class="op">)</span>
     <span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plot_correlation.html">plot_correlation</a></span><span class="op">(</span><span class="va">australian_correlations</span>, <span class="va">prettynames</span><span class="op">)</span>
-    <span class="fu">cowplot</span><span class="fu">::</span><span class="fu">plot_grid</span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span>, nrow <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="reference/correlation_groups.html">correlation_groups</a></span><span class="op">(</span><span class="va">australian_correlations</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu">cowplot</span><span class="fu">::</span><span class="fu">plot_grid</span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span>, nrow <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="reference/correlation_groups.html">correlation_groups</a></span><span class="op">(</span><span class="va">australian_correlations</span><span class="op">)</span><span class="op">)</span>
     <span class="co"># Fetch occurrences and prepare for ZOON</span>
     <span class="va">occ</span> <span class="op">&lt;-</span> <span class="fu">marinespeed</span><span class="fu">::</span><span class="fu">get_occurrences</span><span class="op">(</span><span class="st">"Dictyota diemensis"</span><span class="op">)</span>
-    <span class="va">points</span> <span class="op">&lt;-</span> <span class="fu">SpatialPoints</span><span class="op">(</span><span class="va">occ</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"longitude"</span>, <span class="st">"latitude"</span><span class="op">)</span><span class="op">]</span>,
+    <span class="va">points</span> <span class="op">&lt;-</span> <span class="fu">SpatialPoints</span><span class="op">(</span><span class="va">occ</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"longitude"</span>, <span class="st">"latitude"</span><span class="op">)</span><span class="op">]</span>,
                             <span class="va">lonlatproj</span><span class="op">)</span>
     <span class="va">points</span> <span class="op">&lt;-</span> <span class="fu">spTransform</span><span class="op">(</span><span class="va">points</span>, <span class="va">equalareaproj</span><span class="op">)</span>
-    <span class="va">occfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span><span class="op">(</span>fileext <span class="op">=</span> <span class="st">".csv"</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="fu">coordinates</span><span class="op">(</span><span class="va">points</span><span class="op">)</span>, value<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, <span class="va">occfile</span><span class="op">)</span>
+    <span class="va">occfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>fileext <span class="op">=</span> <span class="st">".csv"</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">write.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="fu">coordinates</span><span class="op">(</span><span class="va">points</span><span class="op">)</span>, value<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, <span class="va">occfile</span><span class="op">)</span>
     <span class="co"># Create SDM with ZOON</span>
     <span class="fu">workflow</span><span class="op">(</span>
       occurrence <span class="op">=</span> <span class="fu">LocalOccurrenceData</span><span class="op">(</span>
         <span class="va">occfile</span>, occurrenceType<span class="op">=</span><span class="st">"presence"</span>,
-        columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"longitude"</span>, <span class="st">"latitude"</span>, <span class="st">"value"</span><span class="op">)</span><span class="op">)</span>, 
-      covariate <span class="op">=</span> <span class="fu">LocalRaster</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/stack.html">stack</a></span><span class="op">(</span><span class="va">australia</span><span class="op">)</span><span class="op">)</span>,
+        columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"longitude"</span>, <span class="st">"latitude"</span>, <span class="st">"value"</span><span class="op">)</span><span class="op">)</span>, 
+      covariate <span class="op">=</span> <span class="fu">LocalRaster</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/stack.html" class="external-link">stack</a></span><span class="op">(</span><span class="va">australia</span><span class="op">)</span><span class="op">)</span>,
       process <span class="op">=</span> <span class="fu">OneHundredBackground</span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">42</span><span class="op">)</span>,
       model <span class="op">=</span> <span class="va">LogisticRegression</span>,
       output <span class="op">=</span> <span class="va">PrintMap</span><span class="op">)</span>
     <span class="co"># Layer citations</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="reference/layer_citations.html">layer_citations</a></span><span class="op">(</span><span class="va">layercodes</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="reference/layer_citations.html">layer_citations</a></span><span class="op">(</span><span class="va">layercodes</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Example 2: view marine datasets, layers and load a few of them by name</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R">    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/">sdmpredictors</a></span><span class="op">)</span>
+<code class="sourceCode R">    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/" class="external-link">sdmpredictors</a></span><span class="op">)</span>
     
     <span class="co"># exploring the marine datasets</span>
     <span class="va">datasets</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_datasets.html">list_datasets</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span>, marine <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/browseURL.html">browseURL</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">$</span><span class="va">url</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/browseURL.html" class="external-link">browseURL</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">$</span><span class="va">url</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>
     
     <span class="co"># exploring the layers</span>
     <span class="va">layers</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_layers.html">list_layers</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
     
     <span class="co"># download specific layers to the current directory</span>
-    <span class="va">rasters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BO_calcite"</span>, <span class="st">"BO_chlomean"</span>, <span class="st">"MS_bathy_5m"</span><span class="op">)</span>, datadir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span></code></pre></div>
+    <span class="va">rasters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_calcite"</span>, <span class="st">"BO_chlomean"</span>, <span class="st">"MS_bathy_5m"</span><span class="op">)</span>, datadir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span></code></pre></div>
 <p>Example 3: looking up statistics and correlations for marine annual layers:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R">    <span class="va">datasets</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_datasets.html">list_datasets</a></span><span class="op">(</span>terrestrial <span class="op">=</span> <span class="cn">FALSE</span>, marine <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
     <span class="va">layers</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/list_layers.html">list_layers</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span>
     
     <span class="co"># filter out monthly layers</span>
-    <span class="va">layers</span> <span class="op">&lt;-</span> <span class="va">layers</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">layers</span><span class="op">$</span><span class="va">month</span><span class="op">)</span>,<span class="op">]</span>
+    <span class="va">layers</span> <span class="op">&lt;-</span> <span class="va">layers</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">layers</span><span class="op">$</span><span class="va">month</span><span class="op">)</span>,<span class="op">]</span>
     
     <span class="va">stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/layer_stats.html">layer_stats</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">stats</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">stats</span><span class="op">)</span>
     
     <span class="va">correlations</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/layers_correlation.html">layers_correlation</a></span><span class="op">(</span><span class="va">layers</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">correlations</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">correlations</span><span class="op">)</span>
     
     <span class="co"># create groups of layers where no layers in one group </span>
     <span class="co"># have a correlation &gt; 0.7 with a layer from another group</span>
@@ -177,75 +173,85 @@
     <span class="co"># inspect groups</span>
     <span class="co"># heatmap plot for larger groups (if gplots library is installed)</span>
     <span class="kw">for</span><span class="op">(</span><span class="va">group</span> <span class="kw">in</span> <span class="va">groups</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">group_correlation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">correlations</span><span class="op">[</span><span class="va">group</span>, <span class="va">group</span>, drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span><span class="op">)</span>
-      <span class="kw">if</span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots">gplots</a></span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">4</span><span class="op">)</span><span class="op">{</span>
-        <span class="fu">heatmap.2</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">group_correlation</span><span class="op">)</span>
+      <span class="va">group_correlation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">correlations</span><span class="op">[</span><span class="va">group</span>, <span class="va">group</span>, drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span><span class="op">)</span>
+      <span class="kw">if</span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots" class="external-link">gplots</a></span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">4</span><span class="op">)</span><span class="op">{</span>
+        <span class="fu">heatmap.2</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">group_correlation</span><span class="op">)</span>
                  ,main <span class="op">=</span> <span class="st">"Correlation"</span>
                  ,col <span class="op">=</span> <span class="st">"rainbow"</span>      
                  ,notecol<span class="op">=</span><span class="st">"black"</span>      <span class="co"># change font color of cell labels to black</span>
                  ,density.info<span class="op">=</span><span class="st">"none"</span>  <span class="co"># turns off density plot inside color legend</span>
                  ,trace<span class="op">=</span><span class="st">"none"</span>         <span class="co"># turns off trace lines inside the heat map</span>
-                 ,margins <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12</span>,<span class="fl">9</span><span class="op">)</span>    <span class="co"># widens margins around plot</span>
+                 ,margins <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">12</span>,<span class="fl">9</span><span class="op">)</span>    <span class="co"># widens margins around plot</span>
                  <span class="op">)</span>
       <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-        <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">group_correlation</span><span class="op">)</span>
+        <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">group_correlation</span><span class="op">)</span>
       <span class="op">}</span>
     <span class="op">}</span></code></pre></div>
 <p>See the quickstart vignette for more information</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R">    <span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"quickstart"</span>, package <span class="op">=</span> <span class="st">"sdmpredictors"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R">    <span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"quickstart"</span>, package <span class="op">=</span> <span class="st">"sdmpredictors"</span><span class="op">)</span></code></pre></div>
 </div>
 
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=sdmpredictors">https://​cloud.r-project.org/​package=sdmpredictors</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/lifewatch/sdmpredictors/">https://​github.com/​lifewatch/​sdmpredictors/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/lifewatch/sdmpredictors/issues">https://​github.com/​lifewatch/​sdmpredictors/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Samuel Bosch <br><small class="roles"> Author </small>  </li>
-<li>Salvador Fernandez <br><small class="roles"> Author, maintainer </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=sdmpredictors" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/lifewatch/sdmpredictors/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/lifewatch/sdmpredictors/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/lifewatch/sdmpredictors/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/samuelbosch/blogbits.svg" alt="MIT License"></a></li>
-<li><a href="https://github.com/lifewatch/sdmpredictors/actions"><img src="https://github.com/lifewatch/sdmpredictors/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://CRAN.R-project.org/package=sdmpredictors"><img src="http://www.r-pkg.org/badges/version/sdmpredictors" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://cran.r-project.org/package=sdmpredictors"><img src="http://cranlogs.r-pkg.org/badges/sdmpredictors" alt="CRAN Downloads per month"></a></li>
-<li><a href="https://cran.r-project.org/package=sdmpredictors"><img src="http://cranlogs.r-pkg.org/badges/grand-total/sdmpredictors?color=lightgrey" alt="CRAN total downloads"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing sdmpredictors</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Samuel Bosch <br><small class="roles"> Author </small>  </li>
+<li>Salvador Fernandez <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/lifewatch/sdmpredictors/blob/master/LICENSE.md" class="external-link"><img src="https://img.shields.io/github/license/samuelbosch/blogbits.svg" alt="MIT License"></a></li>
+<li><a href="https://github.com/lifewatch/sdmpredictors/actions" class="external-link"><img src="https://github.com/lifewatch/sdmpredictors/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://CRAN.R-project.org/package=sdmpredictors" class="external-link"><img src="http://www.r-pkg.org/badges/version/sdmpredictors" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=sdmpredictors" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/sdmpredictors" alt="CRAN Downloads per month"></a></li>
+<li><a href="https://cran.r-project.org/package=sdmpredictors" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/sdmpredictors?color=lightgrey" alt="CRAN total downloads"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Samuel Bosch, Salvador Fernandez.</p>
+  <p></p>
+<p>Developed by Samuel Bosch, Salvador Fernandez.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -253,6 +259,8 @@
 
   
 
+
+  
 
   </body>
 </html>
