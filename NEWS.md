@@ -1,3 +1,7 @@
+# sdmpredictors 0.2.12
+Some Chlorophyll present layers had wrong URLs. These have been fixed.
+A test was added to check the HTTP status of each layer URL.
+
 # sdmpredictors 0.2.11
 
 get_sysdata has been deprecated: sysdata.rda comes now uniquely from the package and is not downloaded from lifewatch.be
