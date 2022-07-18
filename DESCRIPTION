@@ -16,7 +16,9 @@ Authors@R: c(
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
     person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb")),
     person("Salvador", "Fernandez", email = "salvador.fernandez@vliz.be", role = c("aut", "cre")),
-    person("Lennert", "Schepers", email = "lennert.schepers@vliz.be", role = c("ctb")))
+    person("Lennert", "Schepers", email = "lennert.schepers@vliz.be", role = c("ctb")),
+    person("LifeWatch Belgium", role = "fnd", comment = "https://lifewatch.be")
+    )
 Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim <https://www.worldclim.org/>,,
     ENVIREM <https://envirem.github.io/>, Bio-ORACLE <https://bio-oracle.org/>
