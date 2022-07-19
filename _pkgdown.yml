@@ -1,3 +1,6 @@
+url: http://lifewatch.github.io/sdmpredictors/
+template:
+  bootstrap: 5
 authors:
   Salvador Fernández:
     href: https://twitter.com/salvafern
