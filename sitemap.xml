@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/articles/index.html</loc>
   </url>
   <url>
-    <loc>/articles/quickstart.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/articles/quickstart.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/calculate_statistics.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/calculate_statistics.html</loc>
   </url>
   <url>
-    <loc>/reference/compress_file.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/compress_file.html</loc>
   </url>
   <url>
-    <loc>/reference/correlation_groups.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/correlation_groups.html</loc>
   </url>
   <url>
-    <loc>/reference/dataset_citations.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/dataset_citations.html</loc>
   </url>
   <url>
-    <loc>/reference/decompress_file.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/decompress_file.html</loc>
   </url>
   <url>
-    <loc>/reference/equalarea_project.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/equalarea_project.html</loc>
   </url>
   <url>
-    <loc>/reference/equalareaproj.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/equalareaproj.html</loc>
   </url>
   <url>
-    <loc>/reference/get_datadir.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/get_datadir.html</loc>
   </url>
   <url>
-    <loc>/reference/get_future_layers.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/get_future_layers.html</loc>
   </url>
   <url>
-    <loc>/reference/get_layers_info.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/get_layers_info.html</loc>
   </url>
   <url>
-    <loc>/reference/get_paleo_layers.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/get_paleo_layers.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/layer_citations.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/layer_citations.html</loc>
   </url>
   <url>
-    <loc>/reference/layer_stats.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/layer_stats.html</loc>
   </url>
   <url>
-    <loc>/reference/layers_correlation.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/layers_correlation.html</loc>
   </url>
   <url>
-    <loc>/reference/list_datasets.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/list_datasets.html</loc>
   </url>
   <url>
-    <loc>/reference/list_layers.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/list_layers.html</loc>
   </url>
   <url>
-    <loc>/reference/list_layers_future.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/list_layers_future.html</loc>
   </url>
   <url>
-    <loc>/reference/list_layers_paleo.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/list_layers_paleo.html</loc>
   </url>
   <url>
-    <loc>/reference/load_layers.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/load_layers.html</loc>
   </url>
   <url>
-    <loc>/reference/lonlatproj.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/lonlatproj.html</loc>
   </url>
   <url>
-    <loc>/reference/pearson_correlation.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/pearson_correlation.html</loc>
   </url>
   <url>
-    <loc>/reference/pearson_correlation_matrix.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/pearson_correlation_matrix.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_correlation.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/plot_correlation.html</loc>
   </url>
   <url>
-    <loc>/reference/sdm_to_bo.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/sdm_to_bo.html</loc>
   </url>
   <url>
-    <loc>/reference/sdmpredictors.html</loc>
+    <loc>http://lifewatch.github.io/sdmpredictors/reference/sdmpredictors.html</loc>
   </url>
 </urlset>

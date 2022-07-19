@@ -1,7 +1,10 @@
 pandoc: 2.7.3
-pkgdown: 2.0.2
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   quickstart: quickstart.html
-last_built: 2022-02-23T14:37Z
+last_built: 2022-07-19T07:43Z
+urls:
+  reference: http://lifewatch.github.io/sdmpredictors/reference
+  article: http://lifewatch.github.io/sdmpredictors/articles
 
