@@ -137,7 +137,7 @@ test_that("load_layer handles special cases", {
   check_skip()
   expect_error(load_layers("blabla"))
   expect_error(load_layers("BO2_tempmean_ss", equalarea = NA))
-  expect_error(load_layers(c("BO2_tempmean_ss", "BO2_dissoxmean_ss"), equalarea = c(T,F)))
+  expect_error(supressWarnings(load_layers(c("BO2_tempmean_ss", "BO2_dissoxmean_ss"), equalarea = c(T,F))))
   expect_error(load_layers(c("FW_dem_avg","MS_biogeo05_dist_shore_5m"), datadir = load_tmp_dir, equalarea = F))
   expect_warning(load_layers(c("BO2_tempmean_ss", "MS_bathy_21kya"), rasterstack = FALSE))
   expect_error(load_layers(c("BO2_tempmean_ss", "MS_biogeo05_dist_shore_5m"), datadir = load_tmp_dir, rasterstack = TRUE))

@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.12
-Date: 2022-02-23
+Version: 0.2.13
+Date: 2022-09-12
 Depends:
     R (>= 3.2.5)
 Imports:
@@ -32,6 +32,7 @@ Suggests:
     testthat,
     knitr,
     rmarkdown,
-    httr
+    httr,
+    httr2
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr

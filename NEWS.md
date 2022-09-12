@@ -1,3 +1,6 @@
+# sdmpredictors 0.2.13
+Some layers had the wrong URL.
+
 # sdmpredictors 0.2.12
 Some Chlorophyll present layers had wrong URLs. These have been fixed.
 A test was added to check the HTTP status of each layer URL.
