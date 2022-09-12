@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">sdmpredictors</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.12</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.13</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +73,7 @@
       <img src="" class="logo" alt=""><h1>sdmpredictors quickstart guide</h1>
                         <h4 data-toc-skip class="author">Samuel Bosch</h4>
             
-            <h4 data-toc-skip class="date">2022-07-19</h4>
+            <h4 data-toc-skip class="date">2022-09-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/lifewatch/sdmpredictors/blob/HEAD/vignettes/quickstart.Rmd" class="external-link"><code>vignettes/quickstart.Rmd</code></a></small>
       <div class="d-none name"><code>quickstart.Rmd</code></div>
@@ -143,10 +143,10 @@
 <span><span class="va">layers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_layers.html">list_layers</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
-<col width="4%">
-<col width="4%">
-<col width="8%">
-<col width="82%">
+<col width="12%">
+<col width="24%">
+<col width="18%">
+<col width="43%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">dataset_code</th>
@@ -156,22 +156,22 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">Bio-ORACLE</td>
-<td align="left">BO_calcite</td>
-<td align="left">Calcite (mean)</td>
-<td align="left">Calcite concentration indicates the mean concentration of calcite (CaCO3) in oceans.</td>
+<td align="left">MARSPEC</td>
+<td align="left">MS_bathy_5m</td>
+<td align="left">Bathymetry</td>
+<td align="left">Depth of the seafloor</td>
 </tr>
 <tr class="even">
-<td align="left">Bio-ORACLE</td>
-<td align="left">BO_chlomax</td>
-<td align="left">Chlorophyll A (maximum)</td>
-<td align="left">Chlorophyll A concentration indicates the concentration of photosynthetic pigment chlorophyll A (the most common green chlorophyll) in oceans. Please note that in shallow water these values may reflect any kind of autotrophic biomass.</td>
+<td align="left">MARSPEC</td>
+<td align="left">MS_biogeo01_aspect_EW_5m</td>
+<td align="left">East/West aspect</td>
+<td align="left">East/West Aspect (sin(aspect in radians))</td>
 </tr>
 <tr class="odd">
-<td align="left">Bio-ORACLE</td>
-<td align="left">BO_chlomean</td>
-<td align="left">Chlorophyll A (mean)</td>
-<td align="left">Chlorophyll A concentration indicates the concentration of photosynthetic pigment chlorophyll A (the most common green chlorophyll) in oceans. Please note that in shallow water these values may reflect any kind of autotrophic biomass.</td>
+<td align="left">MARSPEC</td>
+<td align="left">MS_biogeo02_aspect_NS_5m</td>
+<td align="left">North/South Aspect</td>
+<td align="left">North/South Aspect (cos(aspect in radians))</td>
 </tr>
 </tbody>
 </table>
@@ -252,14 +252,14 @@
 <p>Other functions related to layers metadata and future and paleo layers are:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_layers_info.html">get_layers_info</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_calcite"</span>,<span class="st">"BO_B1_2100_sstmax"</span>,<span class="st">"MS_bathy_21kya"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">common</span></span></code></pre></div>
-<pre><code><span><span class="co">##        time dataset_code        layer_code</span></span>
-<span><span class="co">## 69  current   Bio-ORACLE        BO_calcite</span></span>
-<span><span class="co">## 17   future   Bio-ORACLE BO_B1_2100_sstmax</span></span>
-<span><span class="co">## 101   paleo      MARSPEC    MS_bathy_21kya</span></span>
-<span><span class="co">##                                                            layer_url</span></span>
-<span><span class="co">## 69                    https://bio-oracle.org/data/1.0/BO_calcite.zip</span></span>
-<span><span class="co">## 17             https://bio-oracle.org/data/1.0/BO_B1_2100_sstmax.zip</span></span>
-<span><span class="co">## 101 https://www.lifewatch.be/sdmpredictors/MS_bathy_21kya_lonlat.tif</span></span></code></pre>
+<pre><code><span><span class="co">##         time dataset_code        layer_code</span></span>
+<span><span class="co">## 461  current   Bio-ORACLE        BO_calcite</span></span>
+<span><span class="co">## 1337  future   Bio-ORACLE BO_B1_2100_sstmax</span></span>
+<span><span class="co">## 101    paleo      MARSPEC    MS_bathy_21kya</span></span>
+<span><span class="co">##                                                             layer_url</span></span>
+<span><span class="co">## 461                    https://bio-oracle.org/data/1.0/BO_calcite.zip</span></span>
+<span><span class="co">## 1337            https://bio-oracle.org/data/1.0/BO_B1_2100_sstmax.zip</span></span>
+<span><span class="co">## 101  https://www.lifewatch.be/sdmpredictors/MS_bathy_21kya_lonlat.tif</span></span></code></pre>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># functions to get the equivalent future layer code for a current climate layer </span></span>
 <span><span class="fu"><a href="../reference/get_future_layers.html">get_future_layers</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_sstmax"</span>, <span class="st">"BO_salinity"</span><span class="op">)</span>, </span>
@@ -310,7 +310,8 @@
 <span></span>
 <span><span class="co"># group lengths</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">groups</span>, <span class="va">length</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##  [1]  1 34 57  1 24  4  4  1  1  1  2  1  1  2 18 60  9 24  6  3 12  2  2  2  2</span></span></code></pre>
+<pre><code><span><span class="co">##  [1]  4  1  1  1  2  1  1 24  2 38  4  1 34  1 18 60  9 24  6  3 12 17  2  2  2</span></span>
+<span><span class="co">## [26]  2</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">group</span> <span class="kw">in</span> <span class="va">groups</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span></span>
@@ -318,13 +319,13 @@
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<pre><code><span><span class="co">## BO_chlomax, BO_chlomean, BO_chlomin, BO_chlorange, BO_damax, BO_damean, BO_damin, BO2_ironmax_bdmax, BO2_ironmax_bdmean, BO2_ironmax_bdmin, BO2_ironmean_bdmax, BO2_ironmean_bdmean, BO2_ironmean_bdmin, BO2_ironmin_bdmax, BO2_ironmin_bdmean, BO2_ironmin_bdmin, BO2_ironrange_bdmax, BO2_ironrange_bdmean, BO2_ironrange_bdmin, BO2_ironltmax_bdmax, BO2_ironltmax_bdmean, BO2_ironltmax_bdmin, BO2_ironltmin_bdmax, BO2_ironltmin_bdmean, BO2_ironltmin_bdmin, BO2_carbonphytomax_bdmax, BO2_salinityrange_bdmean, BO2_salinityrange_bdmin, BO2_ironmax_ss, BO2_ironmean_ss, BO2_ironmin_ss, BO2_ironltmax_ss, BO2_ironltmin_ss, BO2_ironrange_ss</span></span>
-<span><span class="co">## BO_cloudmean, BO_cloudmin, BO_parmean, BO_dissox, BO_nitrate, BO_phosphate, BO_silicate, BO_sstmax, BO_sstmean, BO_sstmin, MS_biogeo13_sst_mean_5m, MS_biogeo14_sst_min_5m, MS_biogeo15_sst_max_5m, BO2_templtmax_ss, BO2_templtmin_ss, BO2_tempmax_ss, BO2_tempmean_ss, BO2_tempmin_ss, BO2_dissoxmax_ss, BO2_dissoxmean_ss, BO2_dissoxmin_ss, BO2_dissoxltmax_ss, BO2_dissoxltmin_ss, BO2_phosphatemax_ss, BO2_phosphatemean_ss, BO2_phosphatemin_ss, BO2_phosphateltmax_ss, BO2_phosphateltmin_ss, BO2_nitratemax_ss, BO2_nitratemean_ss, BO2_nitratemin_ss, BO2_nitrateltmax_ss, BO2_nitrateltmin_ss, BO2_silicatemax_ss, BO2_silicatemean_ss, BO2_silicatemin_ss, BO2_silicaterange_ss, BO2_silicateltmax_ss, BO2_silicateltmin_ss, BO2_chlomax_ss, BO2_chlomean_ss, BO2_chlorange_ss, BO2_chloltmax_ss, BO2_carbonphytomax_ss, BO2_carbonphytorange_ss, BO2_carbonphytoltmax_ss, BO2_carbonphytomean_ss, BO2_ppmax_ss, BO2_ppmean_ss, BO2_pprange_ss, BO2_ppltmax_ss, BO2_chlomin_ss, BO2_chloltmin_ss, BO2_carbonphytomin_ss, BO2_carbonphytoltmin_ss, BO2_ppmin_ss, BO2_ppltmin_ss</span></span>
-<span><span class="co">## BO_salinity, MS_biogeo08_sss_mean_5m, MS_biogeo09_sss_min_5m, MS_biogeo10_sss_max_5m, BO2_salinitymax_bdmax, BO2_salinitymax_bdmean, BO2_salinitymax_bdmin, BO2_salinitymean_bdmax, BO2_salinitymean_bdmean, BO2_salinitymean_bdmin, BO2_salinitymin_bdmax, BO2_salinitymin_bdmean, BO2_salinitymin_bdmin, BO2_salinityltmax_bdmax, BO2_salinityltmax_bdmean, BO2_salinityltmax_bdmin, BO2_salinityltmin_bdmax, BO2_salinityltmin_bdmean, BO2_salinityltmin_bdmin, BO2_salinitymax_ss, BO2_salinitymean_ss, BO2_salinitymin_ss, BO2_salinityltmax_ss, BO2_salinityltmin_ss</span></span>
-<span><span class="co">## BO_sstrange, MS_biogeo16_sst_range_5m, MS_biogeo17_sst_variance_5m, BO2_temprange_ss</span></span>
-<span><span class="co">## BO_bathymin, BO_bathymax, BO_bathymean, MS_bathy_5m</span></span>
+<pre><code><span><span class="co">## MS_bathy_5m, BO_bathymin, BO_bathymax, BO_bathymean</span></span>
 <span><span class="co">## MS_biogeo04_profile_curvature_5m, MS_biogeo07_concavity_5m</span></span>
+<span><span class="co">## MS_biogeo08_sss_mean_5m, MS_biogeo09_sss_min_5m, MS_biogeo10_sss_max_5m, BO_salinity, BO2_salinitymax_bdmax, BO2_salinitymax_bdmean, BO2_salinitymax_bdmin, BO2_salinitymean_bdmax, BO2_salinitymean_bdmean, BO2_salinitymean_bdmin, BO2_salinitymin_bdmax, BO2_salinitymin_bdmean, BO2_salinitymin_bdmin, BO2_salinityltmax_bdmax, BO2_salinityltmax_bdmean, BO2_salinityltmax_bdmin, BO2_salinityltmin_bdmax, BO2_salinityltmin_bdmean, BO2_salinityltmin_bdmin, BO2_salinitymax_ss, BO2_salinitymean_ss, BO2_salinitymin_ss, BO2_salinityltmax_ss, BO2_salinityltmin_ss</span></span>
 <span><span class="co">## MS_biogeo11_sss_range_5m, MS_biogeo12_sss_variance_5m</span></span>
+<span><span class="co">## MS_biogeo13_sst_mean_5m, MS_biogeo14_sst_min_5m, MS_biogeo15_sst_max_5m, BO_dissox, BO_nitrate, BO_parmax, BO_parmean, BO_phosphate, BO_sstmax, BO_sstmean, BO_sstmin, BO2_templtmax_ss, BO2_templtmin_ss, BO2_tempmax_ss, BO2_tempmean_ss, BO2_tempmin_ss, BO2_dissoxmax_ss, BO2_dissoxmean_ss, BO2_dissoxmin_ss, BO2_dissoxltmax_ss, BO2_dissoxltmin_ss, BO2_phosphatemax_ss, BO2_phosphatemean_ss, BO2_phosphatemin_ss, BO2_phosphateltmax_ss, BO2_phosphateltmin_ss, BO2_nitratemax_ss, BO2_nitratemean_ss, BO2_nitratemin_ss, BO2_nitrateltmax_ss, BO2_nitrateltmin_ss, BO_silicate, BO2_silicatemax_ss, BO2_silicatemean_ss, BO2_silicatemin_ss, BO2_silicaterange_ss, BO2_silicateltmax_ss, BO2_silicateltmin_ss</span></span>
+<span><span class="co">## MS_biogeo16_sst_range_5m, MS_biogeo17_sst_variance_5m, BO_sstrange, BO2_temprange_ss</span></span>
+<span><span class="co">## BO_chlomax, BO_chlomean, BO_chlomin, BO_chlorange, BO_damax, BO_damean, BO_damin, BO2_ironmax_bdmax, BO2_ironmax_bdmean, BO2_ironmax_bdmin, BO2_ironmean_bdmax, BO2_ironmean_bdmean, BO2_ironmean_bdmin, BO2_ironmin_bdmax, BO2_ironmin_bdmean, BO2_ironmin_bdmin, BO2_ironrange_bdmax, BO2_ironrange_bdmean, BO2_ironrange_bdmin, BO2_ironltmax_bdmax, BO2_ironltmax_bdmean, BO2_ironltmax_bdmin, BO2_ironltmin_bdmax, BO2_ironltmin_bdmean, BO2_ironltmin_bdmin, BO2_carbonphytomax_bdmax, BO2_salinityrange_bdmean, BO2_salinityrange_bdmin, BO2_ironmax_ss, BO2_ironmean_ss, BO2_ironmin_ss, BO2_ironltmax_ss, BO2_ironltmin_ss, BO2_ironrange_ss</span></span>
 <span><span class="co">## BO2_curvelmax_bdmax, BO2_curvelmax_bdmean, BO2_curvelmax_bdmin, BO2_curvelmin_bdmax, BO2_curvelmin_bdmean, BO2_curvelltmax_bdmax, BO2_curvelltmax_bdmean, BO2_curvelltmax_bdmin, BO2_curvelltmin_bdmax, BO2_curvelmean_bdmean, BO2_curvelmean_bdmin, BO2_curvelmin_bdmin, BO2_curvelltmin_bdmean, BO2_curvelltmin_bdmin, BO2_curvelmean_bdmax, BO2_curvelrange_bdmax, BO2_curvelrange_bdmean, BO2_curvelrange_bdmin</span></span>
 <span><span class="co">## BO2_dissoxmax_bdmax, BO2_dissoxmax_bdmean, BO2_dissoxmax_bdmin, BO2_dissoxmean_bdmax, BO2_dissoxmean_bdmean, BO2_dissoxmean_bdmin, BO2_dissoxmin_bdmax, BO2_dissoxmin_bdmean, BO2_dissoxmin_bdmin, BO2_dissoxltmax_bdmax, BO2_dissoxltmax_bdmean, BO2_dissoxltmax_bdmin, BO2_dissoxltmin_bdmax, BO2_dissoxltmin_bdmean, BO2_dissoxltmin_bdmin, BO2_phosphatemax_bdmax, BO2_phosphatemax_bdmean, BO2_phosphatemax_bdmin, BO2_phosphatemean_bdmax, BO2_phosphatemean_bdmean, BO2_phosphatemean_bdmin, BO2_phosphatemin_bdmax, BO2_phosphatemin_bdmean, BO2_phosphatemin_bdmin, BO2_phosphateltmax_bdmax, BO2_phosphateltmax_bdmean, BO2_phosphateltmax_bdmin, BO2_phosphateltmin_bdmax, BO2_phosphateltmin_bdmean, BO2_phosphateltmin_bdmin, BO2_nitratemax_bdmax, BO2_nitratemax_bdmean, BO2_nitratemax_bdmin, BO2_nitratemean_bdmax, BO2_nitratemean_bdmean, BO2_nitratemean_bdmin, BO2_nitratemin_bdmax, BO2_nitratemin_bdmean, BO2_nitratemin_bdmin, BO2_nitrateltmax_bdmax, BO2_nitrateltmax_bdmean, BO2_nitrateltmax_bdmin, BO2_nitrateltmin_bdmax, BO2_nitrateltmin_bdmean, BO2_nitrateltmin_bdmin, BO2_silicatemax_bdmax, BO2_silicatemax_bdmean, BO2_silicatemax_bdmin, BO2_silicatemean_bdmax, BO2_silicatemean_bdmean, BO2_silicatemean_bdmin, BO2_silicatemin_bdmax, BO2_silicatemin_bdmean, BO2_silicatemin_bdmin, BO2_silicateltmax_bdmax, BO2_silicateltmax_bdmean, BO2_silicateltmax_bdmin, BO2_silicateltmin_bdmax, BO2_silicateltmin_bdmean, BO2_silicateltmin_bdmin</span></span>
 <span><span class="co">## BO2_dissoxrange_bdmax, BO2_dissoxrange_bdmean, BO2_dissoxrange_bdmin, BO2_phosphaterange_bdmax, BO2_phosphaterange_bdmean, BO2_phosphaterange_bdmin, BO2_nitraterange_bdmax, BO2_nitraterange_bdmean, BO2_nitraterange_bdmin</span></span>
@@ -332,6 +333,7 @@
 <span><span class="co">## BO2_lightbotmax_bdmin, BO2_lightbotmean_bdmin, BO2_lightbotrange_bdmin, BO2_lightbotltmax_bdmin, BO2_lightbotltmin_bdmin, BO2_lightbotmin_bdmin</span></span>
 <span><span class="co">## BO2_silicaterange_bdmax, BO2_silicaterange_bdmean, BO2_silicaterange_bdmin</span></span>
 <span><span class="co">## BO2_icecoverltmax_ss, BO2_icecovermax_ss, BO2_icecovermean_ss, BO2_icecoverrange_ss, BO2_icethickltmax_ss, BO2_icethickmax_ss, BO2_icethickrange_ss, BO2_icecoverltmin_ss, BO2_icethickmean_ss, BO2_icecovermin_ss, BO2_icethickltmin_ss, BO2_icethickmin_ss</span></span>
+<span><span class="co">## BO2_chlomax_ss, BO2_chlomean_ss, BO2_chlorange_ss, BO2_chloltmax_ss, BO2_chloltmin_ss, BO2_carbonphytomax_ss, BO2_carbonphytomean_ss, BO2_carbonphytorange_ss, BO2_carbonphytoltmax_ss, BO2_ppltmax_ss, BO2_ppmax_ss, BO2_ppmean_ss, BO2_pprange_ss, BO2_carbonphytomin_ss, BO2_carbonphytoltmin_ss, BO2_ppmin_ss, BO2_ppltmin_ss</span></span>
 <span><span class="co">## BO2_curvelmax_ss, BO2_curvelltmax_ss</span></span>
 <span><span class="co">## BO2_curvelmean_ss, BO2_curvelrange_ss</span></span>
 <span><span class="co">## BO2_curvelmin_ss, BO2_curvelltmin_ss</span></span>
