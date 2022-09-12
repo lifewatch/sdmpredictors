@@ -1,5 +1,6 @@
 test_that("All layer urls are resolvable", {
-  skip()
+  skip_on_cran()
+  skip_on_ci()
   require(httr2)
   
   url <- c(
