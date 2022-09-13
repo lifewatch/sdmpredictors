@@ -2,7 +2,6 @@
 * Locally on Windows 10, R 4.0.2
 * GitHub actions CI (See https://github.com/lifewatch/sdmpredictors/actions)
   * windows-latest (release)
-  * macOS-latest (release)
   * Ubuntu 20-04 (release)
   * Ubuntu 20-04 (devel)
 * win-builder (devel and release)
