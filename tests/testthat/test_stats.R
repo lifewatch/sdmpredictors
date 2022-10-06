@@ -40,6 +40,7 @@ test_that("layer_stats with non existing layercodes generates a warning", {
 
 test_that("layers_correlation without args returns correlations for all layers", {
   ##layers_correlation(layercodes = c())
+  skip("stats functionality not maintained")
   layers <- skip_version(list_layers(), "Bio-ORACLE", 2.1)
   layers <- skip_version(layers, "Bio-ORACLE", 2.2)
   corr <- layers_correlation()
