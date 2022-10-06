@@ -93,28 +93,28 @@ as column <code>layer_code</code>.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">info</span> <span class="op">&lt;-</span> <span class="fu">get_layers_info</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_salinity"</span>, <span class="st">"BO_B1_2100_salinity"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">info</span><span class="op">$</span><span class="va">common</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         time dataset_code          layer_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477  current   Bio-ORACLE         BO_salinity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478  current   Bio-ORACLE         BO_salinity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1336  future   Bio-ORACLE BO_B1_2100_salinity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                    layer_url</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477          https://bio-oracle.org/data/1.0/BO_salinity.zip</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478          https://bio-oracle.org/data/1.0/BO_salinity.zip</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1336 https://bio-oracle.org/data/1.0/BO_B1_2100_salinity.zip</span>
 <span class="r-in"><span><span class="va">info</span><span class="op">$</span><span class="va">current</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     dataset_code  layer_code     name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477   Bio-ORACLE BO_salinity Salinity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478   Bio-ORACLE BO_salinity Salinity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                     description terrestrial</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477 Salinity indicates the dissolved salt content in the ocean.       FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478 Salinity indicates the dissolved salt content in the ocean.       FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     marine freshwater cellsize_equalarea cellsize_lonlat units</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477   TRUE      FALSE               7000      0.08333333   PSS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478   TRUE      FALSE               7000      0.08333333   PSS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            primary_type primary_spatial_resolution</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477 in situ measurement                         ''</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478 in situ measurement                         ''</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                primary_source</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477 World Ocean Database (2009) Reference: (Boyer et al. 2009) URL: http://www.nodc.noaa.gov/</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478 World Ocean Database (2009) Reference: (Boyer et al. 2009) URL: http://www.nodc.noaa.gov/</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     start_year start_month start_day end_year end_month end_day</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477       1961           1         1     2009        12      31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478       1961           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                  derivation month is_surface version</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477 DIVA interpolation (532377 data points)    NA       TRUE       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478 DIVA interpolation (532377 data points)    NA       TRUE      10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                           layer_url</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 477 https://bio-oracle.org/data/1.0/BO_salinity.zip</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 478 https://bio-oracle.org/data/1.0/BO_salinity.zip</span>
 <span class="r-in"><span><span class="va">info</span><span class="op">$</span><span class="va">future</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      dataset_code          layer_code current_layer_code       model scenario</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1336   Bio-ORACLE BO_B1_2100_salinity        BO_salinity UKMO-HadCM3       B1</span>

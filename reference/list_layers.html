@@ -157,11 +157,11 @@ number.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4       1950           1         1     2000         1       1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5       1950           1         1     2000         1       1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         derivation month is_surface version</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                               ''    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2               mean, thin-plate smoothing splines    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         mean range, thin-plate smoothing splines    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                               ''    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 standard deviation, thin-plate smoothing splines    NA       TRUE       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                               ''    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               mean, thin-plate smoothing splines    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         mean range, thin-plate smoothing splines    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                               ''    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 standard deviation, thin-plate smoothing splines    NA       TRUE      10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                   layer_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  https://www.lifewatch.be/sdmpredictors/WC_alt_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 https://www.lifewatch.be/sdmpredictors/WC_bio1_lonlat.tif</span>
@@ -185,484 +185,484 @@ number.</p></dd>
 <span class="r-in"><span><span class="fu">list_layers</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bio-ORACLE"</span>,<span class="st">"MARSPEC"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">layer_code</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "MS_bathy_5m"                      "MS_biogeo01_aspect_EW_5m"        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [3] "MS_biogeo02_aspect_NS_5m"         "MS_biogeo03_plan_curvature_5m"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5] "MS_biogeo04_profile_curvature_5m" "MS_biogeo05_dist_shore_5m"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [7] "MS_biogeo06_bathy_slope_5m"       "MS_biogeo07_concavity_5m"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [9] "MS_biogeo08_sss_mean_5m"          "MS_biogeo09_sss_min_5m"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [11] "MS_biogeo10_sss_max_5m"           "MS_biogeo11_sss_range_5m"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "MS_biogeo12_sss_variance_5m"      "MS_biogeo13_sst_mean_5m"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [15] "MS_biogeo14_sst_min_5m"           "MS_biogeo15_sst_max_5m"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [17] "MS_biogeo16_sst_range_5m"         "MS_biogeo17_sst_variance_5m"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "MS_sss01_5m"                      "MS_sss02_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [21] "MS_sss03_5m"                      "MS_sss04_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [23] "MS_sss05_5m"                      "MS_sss06_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "MS_sss07_5m"                      "MS_sss08_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [27] "MS_sss09_5m"                      "MS_sss10_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "MS_sss11_5m"                      "MS_sss12_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [31] "MS_sst01_5m"                      "MS_sst02_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [33] "MS_sst03_5m"                      "MS_sst04_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [35] "MS_sst05_5m"                      "MS_sst06_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "MS_sst07_5m"                      "MS_sst08_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [39] "MS_sst09_5m"                      "MS_sst10_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [41] "MS_sst11_5m"                      "MS_sst12_5m"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [43] "BO22_calcite"                     "BO22_cloudmax"                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [45] "BO22_cloudmean"                   "BO22_cloudmin"                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [47] "BO22_damax"                       "BO22_damean"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "BO22_damin"                       "BO22_parmax"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [51] "BO22_parmean"                     "BO22_ph"                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [53] "BO_calcite"                       "BO_chlomax"                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "BO_chlomean"                      "BO_chlomin"                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "BO_chlorange"                     "BO_cloudmean"                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [59] "BO_cloudmin"                      "BO_damax"                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "BO_damean"                        "BO_damin"                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [63] "BO_dissox"                        "BO_nitrate"                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [65] "BO_parmax"                        "BO_parmean"                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [67] "BO_ph"                            "BO_phosphate"                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [69] "BO_salinity"                      "BO_silicate"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [71] "BO_sstmax"                        "BO_sstmean"                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "BO_sstmin"                        "BO_sstrange"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [75] "BO_bathymin"                      "BO_bathymax"                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [77] "BO_bathymean"                     "BO2_chlomax_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [79] "BO2_chlomax_bdmean"               "BO2_chlomax_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [81] "BO2_chlomean_bdmax"               "BO2_chlomean_bdmean"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [83] "BO2_chlomean_bdmin"               "BO2_chlomin_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "BO2_chlomin_bdmean"               "BO2_chlomin_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [87] "BO2_chlorange_bdmax"              "BO2_chlorange_bdmean"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [89] "BO2_chlorange_bdmin"              "BO2_chloltmax_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "BO2_chloltmax_bdmean"             "BO2_chloltmax_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [93] "BO2_chloltmin_bdmax"              "BO2_chloltmin_bdmean"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [95] "BO2_chloltmin_bdmin"              "BO2_curvelmax_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "BO2_curvelmax_bdmean"             "BO2_curvelmax_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [99] "BO2_curvelmean_bdmax"             "BO2_curvelmean_bdmean"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [101] "BO2_curvelmean_bdmin"             "BO2_curvelmin_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [103] "BO2_curvelmin_bdmean"             "BO2_curvelmin_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [105] "BO2_curvelrange_bdmax"            "BO2_curvelrange_bdmean"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [107] "BO2_curvelrange_bdmin"            "BO2_curvelltmax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [109] "BO2_curvelltmax_bdmean"           "BO2_curvelltmax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [111] "BO2_curvelltmin_bdmax"            "BO2_curvelltmin_bdmean"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [113] "BO2_curvelltmin_bdmin"            "BO2_dissoxmax_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [115] "BO2_dissoxmax_bdmean"             "BO2_dissoxmax_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [117] "BO2_dissoxmean_bdmax"             "BO2_dissoxmean_bdmean"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [119] "BO2_dissoxmean_bdmin"             "BO2_dissoxmin_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [121] "BO2_dissoxmin_bdmean"             "BO2_dissoxmin_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [123] "BO2_dissoxrange_bdmax"            "BO2_dissoxrange_bdmean"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [125] "BO2_dissoxrange_bdmin"            "BO2_dissoxltmax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [127] "BO2_dissoxltmax_bdmean"           "BO2_dissoxltmax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [129] "BO2_dissoxltmin_bdmax"            "BO2_dissoxltmin_bdmean"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [131] "BO2_dissoxltmin_bdmin"            "BO2_ironmax_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "BO2_ironmax_bdmean"               "BO2_ironmax_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [135] "BO2_ironmean_bdmax"               "BO2_ironmean_bdmean"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [137] "BO2_ironmean_bdmin"               "BO2_ironmin_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [139] "BO2_ironmin_bdmean"               "BO2_ironmin_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [141] "BO2_ironrange_bdmax"              "BO2_ironrange_bdmean"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [143] "BO2_ironrange_bdmin"              "BO2_ironltmax_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "BO2_ironltmax_bdmean"             "BO2_ironltmax_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [147] "BO2_ironltmin_bdmax"              "BO2_ironltmin_bdmean"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [149] "BO2_ironltmin_bdmin"              "BO2_phosphatemax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [151] "BO2_phosphatemax_bdmean"          "BO2_phosphatemax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [153] "BO2_phosphatemean_bdmax"          "BO2_phosphatemean_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [155] "BO2_phosphatemean_bdmin"          "BO2_phosphatemin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "BO2_phosphatemin_bdmean"          "BO2_phosphatemin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [159] "BO2_phosphaterange_bdmax"         "BO2_phosphaterange_bdmean"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [161] "BO2_phosphaterange_bdmin"         "BO2_phosphateltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [163] "BO2_phosphateltmax_bdmean"        "BO2_phosphateltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [165] "BO2_phosphateltmin_bdmax"         "BO2_phosphateltmin_bdmean"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [167] "BO2_phosphateltmin_bdmin"         "BO2_lightbotmax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [169] "BO2_lightbotmax_bdmean"           "BO2_lightbotmax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [171] "BO2_lightbotmean_bdmax"           "BO2_lightbotmean_bdmean"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [173] "BO2_lightbotmean_bdmin"           "BO2_lightbotmin_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [175] "BO2_lightbotmin_bdmean"           "BO2_lightbotmin_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [177] "BO2_lightbotrange_bdmax"          "BO2_lightbotrange_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [179] "BO2_lightbotrange_bdmin"          "BO2_lightbotltmax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [181] "BO2_lightbotltmax_bdmean"         "BO2_lightbotltmax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [183] "BO2_lightbotltmin_bdmax"          "BO2_lightbotltmin_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [185] "BO2_lightbotltmin_bdmin"          "BO2_nitratemax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [187] "BO2_nitratemax_bdmean"            "BO2_nitratemax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [189] "BO2_nitratemean_bdmax"            "BO2_nitratemean_bdmean"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [191] "BO2_nitratemean_bdmin"            "BO2_nitratemin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [193] "BO2_nitratemin_bdmean"            "BO2_nitratemin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [195] "BO2_nitraterange_bdmax"           "BO2_nitraterange_bdmean"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [197] "BO2_nitraterange_bdmin"           "BO2_nitrateltmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [199] "BO2_nitrateltmax_bdmean"          "BO2_nitrateltmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [201] "BO2_nitrateltmin_bdmax"           "BO2_nitrateltmin_bdmean"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [203] "BO2_nitrateltmin_bdmin"           "BO2_tempmax_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [205] "BO2_tempmax_bdmean"               "BO2_tempmax_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [207] "BO2_tempmean_bdmax"               "BO2_tempmean_bdmean"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [209] "BO2_tempmean_bdmin"               "BO2_tempmin_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [211] "BO2_tempmin_bdmean"               "BO2_tempmin_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [213] "BO2_temprange_bdmax"              "BO2_temprange_bdmean"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [215] "BO2_temprange_bdmin"              "BO2_templtmax_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [217] "BO2_templtmax_bdmean"             "BO2_templtmax_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [219] "BO2_templtmin_bdmax"              "BO2_templtmin_bdmean"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [221] "BO2_templtmin_bdmin"              "BO2_carbonphytomax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [223] "BO2_carbonphytomax_bdmean"        "BO2_carbonphytomax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [225] "BO2_carbonphytomean_bdmax"        "BO2_carbonphytomean_bdmean"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [227] "BO2_carbonphytomean_bdmin"        "BO2_carbonphytomin_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [229] "BO2_carbonphytomin_bdmean"        "BO2_carbonphytomin_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [231] "BO2_carbonphytorange_bdmax"       "BO2_carbonphytorange_bdmean"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [233] "BO2_carbonphytorange_bdmin"       "BO2_carbonphytoltmax_bdmax"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [235] "BO2_carbonphytoltmax_bdmean"      "BO2_carbonphytoltmax_bdmin"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [237] "BO2_carbonphytoltmin_bdmax"       "BO2_carbonphytoltmin_bdmean"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [239] "BO2_carbonphytoltmin_bdmin"       "BO2_ppmax_bdmax"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [241] "BO2_ppmax_bdmean"                 "BO2_ppmax_bdmin"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [243] "BO2_ppmean_bdmax"                 "BO2_ppmean_bdmean"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [245] "BO2_ppmean_bdmin"                 "BO2_ppmin_bdmax"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [247] "BO2_ppmin_bdmean"                 "BO2_ppmin_bdmin"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [249] "BO2_pprange_bdmax"                "BO2_pprange_bdmean"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [251] "BO2_pprange_bdmin"                "BO2_ppltmax_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [253] "BO2_ppltmax_bdmean"               "BO2_ppltmax_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [255] "BO2_ppltmin_bdmax"                "BO2_ppltmin_bdmean"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [257] "BO2_ppltmin_bdmin"                "BO2_salinitymax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [259] "BO2_salinitymax_bdmean"           "BO2_salinitymax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [261] "BO2_salinitymean_bdmax"           "BO2_salinitymean_bdmean"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [263] "BO2_salinitymean_bdmin"           "BO2_salinitymin_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [265] "BO2_salinitymin_bdmean"           "BO2_salinitymin_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [267] "BO2_salinityrange_bdmax"          "BO2_salinityrange_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [269] "BO2_salinityrange_bdmin"          "BO2_salinityltmax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [271] "BO2_salinityltmax_bdmean"         "BO2_salinityltmax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [273] "BO2_salinityltmin_bdmax"          "BO2_salinityltmin_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [275] "BO2_salinityltmin_bdmin"          "BO2_silicatemax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [277] "BO2_silicatemax_bdmean"           "BO2_silicatemax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [279] "BO2_silicatemean_bdmax"           "BO2_silicatemean_bdmean"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [281] "BO2_silicatemean_bdmin"           "BO2_silicatemin_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [283] "BO2_silicatemin_bdmean"           "BO2_silicatemin_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [285] "BO2_silicaterange_bdmax"          "BO2_silicaterange_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [287] "BO2_silicaterange_bdmin"          "BO2_silicateltmax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [289] "BO2_silicateltmax_bdmean"         "BO2_silicateltmax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [291] "BO2_silicateltmin_bdmax"          "BO2_silicateltmin_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [293] "BO2_silicateltmin_bdmin"          "BO2_icecoverltmax_ss"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [295] "BO2_icecoverltmin_ss"             "BO2_icecovermax_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [297] "BO2_icecovermean_ss"              "BO2_icecovermin_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [299] "BO2_icecoverrange_ss"             "BO2_icethickltmax_ss"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [301] "BO2_icethickltmin_ss"             "BO2_icethickmax_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [303] "BO2_icethickmean_ss"              "BO2_icethickmin_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [305] "BO2_icethickrange_ss"             "BO2_templtmax_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [307] "BO2_templtmin_ss"                 "BO2_tempmax_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [309] "BO2_tempmean_ss"                  "BO2_tempmin_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [311] "BO2_temprange_ss"                 "BO2_chlomax_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [313] "BO2_chlomean_ss"                  "BO2_chlomin_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [315] "BO2_chlorange_ss"                 "BO2_chloltmax_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [317] "BO2_chloltmin_ss"                 "BO2_curvelmax_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [319] "BO2_curvelmean_ss"                "BO2_curvelmin_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [321] "BO2_curvelrange_ss"               "BO2_curvelltmax_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [323] "BO2_curvelltmin_ss"               "BO2_dissoxmax_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [325] "BO2_dissoxmean_ss"                "BO2_dissoxmin_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [327] "BO2_dissoxrange_ss"               "BO2_dissoxltmax_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [329] "BO2_dissoxltmin_ss"               "BO2_ironmax_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [331] "BO2_ironmean_ss"                  "BO2_ironmin_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [333] "BO2_ironrange_ss"                 "BO2_ironltmax_ss"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [335] "BO2_ironltmin_ss"                 "BO2_phosphatemax_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [337] "BO2_phosphatemean_ss"             "BO2_phosphatemin_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [339] "BO2_phosphaterange_ss"            "BO2_phosphateltmax_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [341] "BO2_phosphateltmin_ss"            "BO2_nitratemax_ss"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [343] "BO2_nitratemean_ss"               "BO2_nitratemin_ss"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [345] "BO2_nitraterange_ss"              "BO2_nitrateltmax_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [347] "BO2_nitrateltmin_ss"              "BO2_carbonphytomax_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [349] "BO2_carbonphytomean_ss"           "BO2_carbonphytomin_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [351] "BO2_carbonphytorange_ss"          "BO2_carbonphytoltmax_ss"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [353] "BO2_carbonphytoltmin_ss"          "BO2_ppmax_ss"                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [355] "BO2_ppmean_ss"                    "BO2_ppmin_ss"                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [357] "BO2_pprange_ss"                   "BO2_ppltmax_ss"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [359] "BO2_ppltmin_ss"                   "BO2_salinitymax_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [361] "BO2_salinitymean_ss"              "BO2_salinitymin_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [363] "BO2_salinityrange_ss"             "BO2_salinityltmax_ss"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [365] "BO2_salinityltmin_ss"             "BO2_silicatemax_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [367] "BO2_silicatemean_ss"              "BO2_silicatemin_ss"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [369] "BO2_silicaterange_ss"             "BO2_silicateltmax_ss"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [371] "BO2_silicateltmin_ss"             "BO21_carbonphytoltmax_bdmax"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [373] "BO21_carbonphytoltmax_bdmean"     "BO21_carbonphytoltmax_bdmin"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [375] "BO21_carbonphytoltmax_ss"         "BO21_carbonphytoltmin_bdmax"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [377] "BO21_carbonphytoltmin_bdmean"     "BO21_carbonphytoltmin_bdmin"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [379] "BO21_carbonphytoltmin_ss"         "BO21_carbonphytomax_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [381] "BO21_carbonphytomax_bdmean"       "BO21_carbonphytomax_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [383] "BO21_carbonphytomax_ss"           "BO21_carbonphytomean_bdmax"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [385] "BO21_carbonphytomean_bdmean"      "BO21_carbonphytomean_bdmin"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [387] "BO21_carbonphytomean_ss"          "BO21_carbonphytomin_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [389] "BO21_carbonphytomin_bdmean"       "BO21_carbonphytomin_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [391] "BO21_carbonphytomin_ss"           "BO21_carbonphytorange_bdmax"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [393] "BO21_carbonphytorange_bdmean"     "BO21_carbonphytorange_bdmin"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [395] "BO21_carbonphytorange_ss"         "BO21_chloltmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [397] "BO21_chloltmax_bdmean"            "BO21_chloltmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [399] "BO21_chloltmax_ss"                "BO21_chloltmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [401] "BO21_chloltmin_bdmean"            "BO21_chloltmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [403] "BO21_chloltmin_ss"                "BO21_chlomax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [405] "BO21_chlomax_bdmean"              "BO21_chlomax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [407] "BO21_chlomax_ss"                  "BO21_chlomean_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [409] "BO21_chlomean_bdmean"             "BO21_chlomean_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [411] "BO21_chlomean_ss"                 "BO21_chlomin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [413] "BO21_chlomin_bdmean"              "BO21_chlomin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [415] "BO21_chlomin_ss"                  "BO21_chlorange_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [417] "BO21_chlorange_bdmean"            "BO21_chlorange_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [419] "BO21_chlorange_ss"                "BO21_curvelltmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [421] "BO21_curvelltmax_bdmean"          "BO21_curvelltmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [423] "BO21_curvelltmax_ss"              "BO21_curvelltmin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [425] "BO21_curvelltmin_bdmean"          "BO21_curvelltmin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [427] "BO21_curvelltmin_ss"              "BO21_curvelmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [429] "BO21_curvelmax_bdmean"            "BO21_curvelmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [431] "BO21_curvelmax_ss"                "BO21_curvelmean_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [433] "BO21_curvelmean_bdmean"           "BO21_curvelmean_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [435] "BO21_curvelmean_ss"               "BO21_curvelmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [437] "BO21_curvelmin_bdmean"            "BO21_curvelmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [439] "BO21_curvelmin_ss"                "BO21_curvelrange_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [441] "BO21_curvelrange_bdmean"          "BO21_curvelrange_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [443] "BO21_curvelrange_ss"              "BO21_dissoxltmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [445] "BO21_dissoxltmax_bdmean"          "BO21_dissoxltmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [447] "BO21_dissoxltmax_ss"              "BO21_dissoxltmin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [449] "BO21_dissoxltmin_bdmean"          "BO21_dissoxltmin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [451] "BO21_dissoxltmin_ss"              "BO21_dissoxmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [453] "BO21_dissoxmax_bdmean"            "BO21_dissoxmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [455] "BO21_dissoxmax_ss"                "BO21_dissoxmean_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [457] "BO21_dissoxmean_bdmean"           "BO21_dissoxmean_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [459] "BO21_dissoxmean_ss"               "BO21_dissoxmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [461] "BO21_dissoxmin_bdmean"            "BO21_dissoxmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [463] "BO21_dissoxmin_ss"                "BO21_dissoxrange_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [465] "BO21_dissoxrange_bdmean"          "BO21_dissoxrange_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [467] "BO21_dissoxrange_ss"              "BO21_icecoverltmax_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [469] "BO21_icecoverltmin_ss"            "BO21_icecovermax_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [471] "BO21_icecovermean_ss"             "BO21_icecovermin_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [473] "BO21_icecoverrange_ss"            "BO21_icethickltmax_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [475] "BO21_icethickltmin_ss"            "BO21_icethickmax_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [477] "BO21_icethickmean_ss"             "BO21_icethickmin_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [479] "BO21_icethickrange_ss"            "BO21_ironltmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [481] "BO21_ironltmax_bdmean"            "BO21_ironltmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [483] "BO21_ironltmax_ss"                "BO21_ironltmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [485] "BO21_ironltmin_bdmean"            "BO21_ironltmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [487] "BO21_ironltmin_ss"                "BO21_ironmax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [489] "BO21_ironmax_bdmean"              "BO21_ironmax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [491] "BO21_ironmax_ss"                  "BO21_ironmean_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [493] "BO21_ironmean_bdmean"             "BO21_ironmean_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [495] "BO21_ironmean_ss"                 "BO21_ironmin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [497] "BO21_ironmin_bdmean"              "BO21_ironmin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [499] "BO21_ironmin_ss"                  "BO21_ironrange_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [501] "BO21_ironrange_bdmean"            "BO21_ironrange_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [503] "BO21_ironrange_ss"                "BO21_lightbotltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [505] "BO21_lightbotltmax_bdmean"        "BO21_lightbotltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [507] "BO21_lightbotltmin_bdmax"         "BO21_lightbotltmin_bdmean"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [509] "BO21_lightbotltmin_bdmin"         "BO21_lightbotmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [511] "BO21_lightbotmax_bdmean"          "BO21_lightbotmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [513] "BO21_lightbotmean_bdmax"          "BO21_lightbotmean_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [515] "BO21_lightbotmean_bdmin"          "BO21_lightbotmin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [517] "BO21_lightbotmin_bdmean"          "BO21_lightbotmin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [519] "BO21_lightbotrange_bdmax"         "BO21_lightbotrange_bdmean"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [521] "BO21_lightbotrange_bdmin"         "BO21_nitrateltmax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [523] "BO21_nitrateltmax_bdmean"         "BO21_nitrateltmax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [525] "BO21_nitrateltmax_ss"             "BO21_nitrateltmin_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [527] "BO21_nitrateltmin_bdmean"         "BO21_nitrateltmin_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [529] "BO21_nitrateltmin_ss"             "BO21_nitratemax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [531] "BO21_nitratemax_bdmean"           "BO21_nitratemax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [533] "BO21_nitratemax_ss"               "BO21_nitratemean_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [535] "BO21_nitratemean_bdmean"          "BO21_nitratemean_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [537] "BO21_nitratemean_ss"              "BO21_nitratemin_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [539] "BO21_nitratemin_bdmean"           "BO21_nitratemin_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [541] "BO21_nitratemin_ss"               "BO21_nitraterange_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [543] "BO21_nitraterange_bdmean"         "BO21_nitraterange_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [545] "BO21_nitraterange_ss"             "BO21_phosphateltmax_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [547] "BO21_phosphateltmax_bdmean"       "BO21_phosphateltmax_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [549] "BO21_phosphateltmax_ss"           "BO21_phosphateltmin_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [551] "BO21_phosphateltmin_bdmean"       "BO21_phosphateltmin_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [553] "BO21_phosphateltmin_ss"           "BO21_phosphatemax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [555] "BO21_phosphatemax_bdmean"         "BO21_phosphatemax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [557] "BO21_phosphatemax_ss"             "BO21_phosphatemean_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [559] "BO21_phosphatemean_bdmean"        "BO21_phosphatemean_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [561] "BO21_phosphatemean_ss"            "BO21_phosphatemin_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [563] "BO21_phosphatemin_bdmean"         "BO21_phosphatemin_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [565] "BO21_phosphatemin_ss"             "BO21_phosphaterange_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [567] "BO21_phosphaterange_bdmean"       "BO21_phosphaterange_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [569] "BO21_phosphaterange_ss"           "BO21_ppltmax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [571] "BO21_ppltmax_bdmean"              "BO21_ppltmax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [573] "BO21_ppltmax_ss"                  "BO21_ppltmin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [575] "BO21_ppltmin_bdmean"              "BO21_ppltmin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [577] "BO21_ppltmin_ss"                  "BO21_ppmax_bdmax"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [579] "BO21_ppmax_bdmean"                "BO21_ppmax_bdmin"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [581] "BO21_ppmax_ss"                    "BO21_ppmean_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [583] "BO21_ppmean_bdmean"               "BO21_ppmean_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [585] "BO21_ppmean_ss"                   "BO21_ppmin_bdmax"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [587] "BO21_ppmin_bdmean"                "BO21_ppmin_bdmin"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [589] "BO21_ppmin_ss"                    "BO21_pprange_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [591] "BO21_pprange_bdmean"              "BO21_pprange_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [593] "BO21_pprange_ss"                  "BO21_salinityltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [595] "BO21_salinityltmax_bdmean"        "BO21_salinityltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [597] "BO21_salinityltmax_ss"            "BO21_salinityltmin_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [599] "BO21_salinityltmin_bdmean"        "BO21_salinityltmin_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [601] "BO21_salinityltmin_ss"            "BO21_salinitymax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [603] "BO21_salinitymax_bdmean"          "BO21_salinitymax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [605] "BO21_salinitymax_ss"              "BO21_salinitymean_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [607] "BO21_salinitymean_bdmean"         "BO21_salinitymean_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [609] "BO21_salinitymean_ss"             "BO21_salinitymin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [611] "BO21_salinitymin_bdmean"          "BO21_salinitymin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [613] "BO21_salinitymin_ss"              "BO21_salinityrange_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [615] "BO21_salinityrange_bdmean"        "BO21_salinityrange_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [617] "BO21_salinityrange_ss"            "BO21_silicateltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [619] "BO21_silicateltmax_bdmean"        "BO21_silicateltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [621] "BO21_silicateltmax_ss"            "BO21_silicateltmin_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [623] "BO21_silicateltmin_bdmean"        "BO21_silicateltmin_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [625] "BO21_silicateltmin_ss"            "BO21_silicatemax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [627] "BO21_silicatemax_bdmean"          "BO21_silicatemax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [629] "BO21_silicatemax_ss"              "BO21_silicatemean_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [631] "BO21_silicatemean_bdmean"         "BO21_silicatemean_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [633] "BO21_silicatemean_ss"             "BO21_silicatemin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [635] "BO21_silicatemin_bdmean"          "BO21_silicatemin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [637] "BO21_silicatemin_ss"              "BO21_silicaterange_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [639] "BO21_silicaterange_bdmean"        "BO21_silicaterange_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [641] "BO21_silicaterange_ss"            "BO21_templtmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [643] "BO21_templtmax_bdmean"            "BO21_templtmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [645] "BO21_templtmax_ss"                "BO21_templtmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [647] "BO21_templtmin_bdmean"            "BO21_templtmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [649] "BO21_templtmin_ss"                "BO21_tempmax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [651] "BO21_tempmax_bdmean"              "BO21_tempmax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [653] "BO21_tempmax_ss"                  "BO21_tempmean_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [655] "BO21_tempmean_bdmean"             "BO21_tempmean_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [657] "BO21_tempmean_ss"                 "BO21_tempmin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [659] "BO21_tempmin_bdmean"              "BO21_tempmin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [661] "BO21_tempmin_ss"                  "BO21_temprange_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [663] "BO21_temprange_bdmean"            "BO21_temprange_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [665] "BO21_temprange_ss"                "BO22_carbonphytoltmax_bdmax"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [667] "BO22_carbonphytoltmax_bdmean"     "BO22_carbonphytoltmax_bdmin"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [669] "BO22_carbonphytoltmax_ss"         "BO22_carbonphytoltmin_bdmax"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [671] "BO22_carbonphytoltmin_bdmean"     "BO22_carbonphytoltmin_bdmin"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [673] "BO22_carbonphytoltmin_ss"         "BO22_carbonphytomax_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [675] "BO22_carbonphytomax_bdmean"       "BO22_carbonphytomax_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [677] "BO22_carbonphytomax_ss"           "BO22_carbonphytomean_bdmax"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [679] "BO22_carbonphytomean_bdmean"      "BO22_carbonphytomean_bdmin"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [681] "BO22_carbonphytomean_ss"          "BO22_carbonphytomin_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [683] "BO22_carbonphytomin_bdmean"       "BO22_carbonphytomin_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [685] "BO22_carbonphytomin_ss"           "BO22_carbonphytorange_bdmax"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [687] "BO22_carbonphytorange_bdmean"     "BO22_carbonphytorange_bdmin"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [689] "BO22_carbonphytorange_ss"         "BO22_chloltmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [691] "BO22_chloltmax_bdmean"            "BO22_chloltmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [693] "BO22_chloltmax_ss"                "BO22_chloltmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [695] "BO22_chloltmin_bdmean"            "BO22_chloltmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [697] "BO22_chloltmin_ss"                "BO22_chlomax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [699] "BO22_chlomax_bdmean"              "BO22_chlomax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [701] "BO22_chlomax_ss"                  "BO22_chlomean_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [703] "BO22_chlomean_bdmean"             "BO22_chlomean_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [705] "BO22_chlomean_ss"                 "BO22_chlomin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [707] "BO22_chlomin_bdmean"              "BO22_chlomin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [709] "BO22_chlomin_ss"                  "BO22_chlorange_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [711] "BO22_chlorange_bdmean"            "BO22_chlorange_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [713] "BO22_chlorange_ss"                "BO22_curvelltmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [715] "BO22_curvelltmax_bdmean"          "BO22_curvelltmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [717] "BO22_curvelltmax_ss"              "BO22_curvelltmin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [719] "BO22_curvelltmin_bdmean"          "BO22_curvelltmin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [721] "BO22_curvelltmin_ss"              "BO22_curvelmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [723] "BO22_curvelmax_bdmean"            "BO22_curvelmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [725] "BO22_curvelmax_ss"                "BO22_curvelmean_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [727] "BO22_curvelmean_bdmean"           "BO22_curvelmean_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [729] "BO22_curvelmean_ss"               "BO22_curvelmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [731] "BO22_curvelmin_bdmean"            "BO22_curvelmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [733] "BO22_curvelmin_ss"                "BO22_curvelrange_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [735] "BO22_curvelrange_bdmean"          "BO22_curvelrange_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [737] "BO22_curvelrange_ss"              "BO22_dissoxltmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [739] "BO22_dissoxltmax_bdmean"          "BO22_dissoxltmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [741] "BO22_dissoxltmax_ss"              "BO22_dissoxltmin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [743] "BO22_dissoxltmin_bdmean"          "BO22_dissoxltmin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [745] "BO22_dissoxltmin_ss"              "BO22_dissoxmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [747] "BO22_dissoxmax_bdmean"            "BO22_dissoxmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [749] "BO22_dissoxmax_ss"                "BO22_dissoxmean_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [751] "BO22_dissoxmean_bdmean"           "BO22_dissoxmean_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [753] "BO22_dissoxmean_ss"               "BO22_dissoxmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [755] "BO22_dissoxmin_bdmean"            "BO22_dissoxmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [757] "BO22_dissoxmin_ss"                "BO22_dissoxrange_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [759] "BO22_dissoxrange_bdmean"          "BO22_dissoxrange_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [761] "BO22_dissoxrange_ss"              "BO22_icecoverltmax_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [763] "BO22_icecoverltmin_ss"            "BO22_icecovermax_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [765] "BO22_icecovermean_ss"             "BO22_icecovermin_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [767] "BO22_icecoverrange_ss"            "BO22_icethickltmax_ss"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [769] "BO22_icethickltmin_ss"            "BO22_icethickmax_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [771] "BO22_icethickmean_ss"             "BO22_icethickmin_ss"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [773] "BO22_icethickrange_ss"            "BO22_ironltmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [775] "BO22_ironltmax_bdmean"            "BO22_ironltmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [777] "BO22_ironltmax_ss"                "BO22_ironltmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [779] "BO22_ironltmin_bdmean"            "BO22_ironltmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [781] "BO22_ironltmin_ss"                "BO22_ironmax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [783] "BO22_ironmax_bdmean"              "BO22_ironmax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [785] "BO22_ironmax_ss"                  "BO22_ironmean_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [787] "BO22_ironmean_bdmean"             "BO22_ironmean_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [789] "BO22_ironmean_ss"                 "BO22_ironmin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [791] "BO22_ironmin_bdmean"              "BO22_ironmin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [793] "BO22_ironmin_ss"                  "BO22_ironrange_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [795] "BO22_ironrange_bdmean"            "BO22_ironrange_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [797] "BO22_ironrange_ss"                "BO22_lightbotltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [799] "BO22_lightbotltmax_bdmean"        "BO22_lightbotltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [801] "BO22_lightbotltmin_bdmax"         "BO22_lightbotltmin_bdmean"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [803] "BO22_lightbotltmin_bdmin"         "BO22_lightbotmax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [805] "BO22_lightbotmax_bdmean"          "BO22_lightbotmax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [807] "BO22_lightbotmean_bdmax"          "BO22_lightbotmean_bdmean"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [809] "BO22_lightbotmean_bdmin"          "BO22_lightbotmin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [811] "BO22_lightbotmin_bdmean"          "BO22_lightbotmin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [813] "BO22_lightbotrange_bdmax"         "BO22_lightbotrange_bdmean"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [815] "BO22_lightbotrange_bdmin"         "BO22_nitrateltmax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [817] "BO22_nitrateltmax_bdmean"         "BO22_nitrateltmax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [819] "BO22_nitrateltmax_ss"             "BO22_nitrateltmin_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [821] "BO22_nitrateltmin_bdmean"         "BO22_nitrateltmin_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [823] "BO22_nitrateltmin_ss"             "BO22_nitratemax_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [825] "BO22_nitratemax_bdmean"           "BO22_nitratemax_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [827] "BO22_nitratemax_ss"               "BO22_nitratemean_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [829] "BO22_nitratemean_bdmean"          "BO22_nitratemean_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [831] "BO22_nitratemean_ss"              "BO22_nitratemin_bdmax"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [833] "BO22_nitratemin_bdmean"           "BO22_nitratemin_bdmin"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [835] "BO22_nitratemin_ss"               "BO22_nitraterange_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [837] "BO22_nitraterange_bdmean"         "BO22_nitraterange_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [839] "BO22_nitraterange_ss"             "BO22_phosphateltmax_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [841] "BO22_phosphateltmax_bdmean"       "BO22_phosphateltmax_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [843] "BO22_phosphateltmax_ss"           "BO22_phosphateltmin_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [845] "BO22_phosphateltmin_bdmean"       "BO22_phosphateltmin_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [847] "BO22_phosphateltmin_ss"           "BO22_phosphatemax_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [849] "BO22_phosphatemax_bdmean"         "BO22_phosphatemax_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [851] "BO22_phosphatemax_ss"             "BO22_phosphatemean_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [853] "BO22_phosphatemean_bdmean"        "BO22_phosphatemean_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [855] "BO22_phosphatemean_ss"            "BO22_phosphatemin_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [857] "BO22_phosphatemin_bdmean"         "BO22_phosphatemin_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [859] "BO22_phosphatemin_ss"             "BO22_phosphaterange_bdmax"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [861] "BO22_phosphaterange_bdmean"       "BO22_phosphaterange_bdmin"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [863] "BO22_phosphaterange_ss"           "BO22_ppltmax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [865] "BO22_ppltmax_bdmean"              "BO22_ppltmax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [867] "BO22_ppltmax_ss"                  "BO22_ppltmin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [869] "BO22_ppltmin_bdmean"              "BO22_ppltmin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [871] "BO22_ppltmin_ss"                  "BO22_ppmax_bdmax"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [873] "BO22_ppmax_bdmean"                "BO22_ppmax_bdmin"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [875] "BO22_ppmax_ss"                    "BO22_ppmean_bdmax"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [877] "BO22_ppmean_bdmean"               "BO22_ppmean_bdmin"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [879] "BO22_ppmean_ss"                   "BO22_ppmin_bdmax"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [881] "BO22_ppmin_bdmean"                "BO22_ppmin_bdmin"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [883] "BO22_ppmin_ss"                    "BO22_pprange_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [885] "BO22_pprange_bdmean"              "BO22_pprange_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [887] "BO22_pprange_ss"                  "BO22_salinityltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [889] "BO22_salinityltmax_bdmean"        "BO22_salinityltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [891] "BO22_salinityltmax_ss"            "BO22_salinityltmin_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [893] "BO22_salinityltmin_bdmean"        "BO22_salinityltmin_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [895] "BO22_salinityltmin_ss"            "BO22_salinitymax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [897] "BO22_salinitymax_bdmean"          "BO22_salinitymax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [899] "BO22_salinitymax_ss"              "BO22_salinitymean_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [901] "BO22_salinitymean_bdmean"         "BO22_salinitymean_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [903] "BO22_salinitymean_ss"             "BO22_salinitymin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [905] "BO22_salinitymin_bdmean"          "BO22_salinitymin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [907] "BO22_salinitymin_ss"              "BO22_salinityrange_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [909] "BO22_salinityrange_bdmean"        "BO22_salinityrange_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [911] "BO22_salinityrange_ss"            "BO22_silicateltmax_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [913] "BO22_silicateltmax_bdmean"        "BO22_silicateltmax_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [915] "BO22_silicateltmax_ss"            "BO22_silicateltmin_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [917] "BO22_silicateltmin_bdmean"        "BO22_silicateltmin_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [919] "BO22_silicateltmin_ss"            "BO22_silicatemax_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [921] "BO22_silicatemax_bdmean"          "BO22_silicatemax_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [923] "BO22_silicatemax_ss"              "BO22_silicatemean_bdmax"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [925] "BO22_silicatemean_bdmean"         "BO22_silicatemean_bdmin"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [927] "BO22_silicatemean_ss"             "BO22_silicatemin_bdmax"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [929] "BO22_silicatemin_bdmean"          "BO22_silicatemin_bdmin"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [931] "BO22_silicatemin_ss"              "BO22_silicaterange_bdmax"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [933] "BO22_silicaterange_bdmean"        "BO22_silicaterange_bdmin"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [935] "BO22_silicaterange_ss"            "BO22_templtmax_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [937] "BO22_templtmax_bdmean"            "BO22_templtmax_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [939] "BO22_templtmax_ss"                "BO22_templtmin_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [941] "BO22_templtmin_bdmean"            "BO22_templtmin_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [943] "BO22_templtmin_ss"                "BO22_tempmax_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [945] "BO22_tempmax_bdmean"              "BO22_tempmax_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [947] "BO22_tempmax_ss"                  "BO22_tempmean_bdmax"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [949] "BO22_tempmean_bdmean"             "BO22_tempmean_bdmin"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [951] "BO22_tempmean_ss"                 "BO22_tempmin_bdmax"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [953] "BO22_tempmin_bdmean"              "BO22_tempmin_bdmin"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [955] "BO22_tempmin_ss"                  "BO22_temprange_bdmax"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [957] "BO22_temprange_bdmean"            "BO22_temprange_bdmin"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [959] "BO22_temprange_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5] "MS_biogeo04_profile_curvature_5m" "BO_cloudmax"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [7] "MS_biogeo05_dist_shore_5m"        "MS_biogeo06_bathy_slope_5m"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [9] "MS_biogeo07_concavity_5m"         "MS_biogeo08_sss_mean_5m"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [11] "MS_biogeo09_sss_min_5m"           "MS_biogeo10_sss_max_5m"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "MS_biogeo11_sss_range_5m"         "MS_biogeo12_sss_variance_5m"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [15] "MS_biogeo13_sst_mean_5m"          "MS_biogeo14_sst_min_5m"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [17] "MS_biogeo15_sst_max_5m"           "MS_biogeo16_sst_range_5m"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "MS_biogeo17_sst_variance_5m"      "MS_sss01_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [21] "MS_sss02_5m"                      "MS_sss03_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [23] "MS_sss04_5m"                      "MS_sss05_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "MS_sss06_5m"                      "MS_sss07_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [27] "MS_sss08_5m"                      "MS_sss09_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "MS_sss10_5m"                      "MS_sss11_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [31] "MS_sss12_5m"                      "MS_sst01_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [33] "MS_sst02_5m"                      "MS_sst03_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [35] "MS_sst04_5m"                      "MS_sst05_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "MS_sst06_5m"                      "MS_sst07_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [39] "MS_sst08_5m"                      "MS_sst09_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [41] "MS_sst10_5m"                      "MS_sst11_5m"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [43] "MS_sst12_5m"                      "BO22_calcite"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [45] "BO22_cloudmax"                    "BO22_cloudmean"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [47] "BO22_cloudmin"                    "BO22_damax"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "BO22_damean"                      "BO22_damin"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [51] "BO22_parmax"                      "BO22_parmean"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [53] "BO22_ph"                          "BO_calcite"                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "BO_chlomax"                       "BO_chlomean"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "BO_chlomin"                       "BO_chlorange"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [59] "BO_cloudmean"                     "BO_cloudmin"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "BO_damax"                         "BO_damean"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [63] "BO_damin"                         "BO_dissox"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [65] "BO_nitrate"                       "BO_parmax"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [67] "BO_parmean"                       "BO_ph"                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [69] "BO_phosphate"                     "BO_salinity"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [71] "BO_silicate"                      "BO_sstmax"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "BO_sstmean"                       "BO_sstmin"                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [75] "BO_sstrange"                      "BO_bathymin"                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [77] "BO_bathymax"                      "BO_bathymean"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [79] "BO2_chlomax_bdmax"                "BO2_chlomax_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [81] "BO2_chlomax_bdmin"                "BO2_chlomean_bdmax"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [83] "BO2_chlomean_bdmean"              "BO2_chlomean_bdmin"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "BO2_chlomin_bdmax"                "BO2_chlomin_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [87] "BO2_chlomin_bdmin"                "BO2_chlorange_bdmax"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [89] "BO2_chlorange_bdmean"             "BO2_chlorange_bdmin"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "BO2_chloltmax_bdmax"              "BO2_chloltmax_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [93] "BO2_chloltmax_bdmin"              "BO2_chloltmin_bdmax"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [95] "BO2_chloltmin_bdmean"             "BO2_chloltmin_bdmin"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "BO2_curvelmax_bdmax"              "BO2_curvelmax_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [99] "BO2_curvelmax_bdmin"              "BO2_curvelmean_bdmax"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [101] "BO2_curvelmean_bdmean"            "BO2_curvelmean_bdmin"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [103] "BO2_curvelmin_bdmax"              "BO2_curvelmin_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [105] "BO2_curvelmin_bdmin"              "BO2_curvelrange_bdmax"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [107] "BO2_curvelrange_bdmean"           "BO2_curvelrange_bdmin"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [109] "BO2_curvelltmax_bdmax"            "BO2_curvelltmax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [111] "BO2_curvelltmax_bdmin"            "BO2_curvelltmin_bdmax"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [113] "BO2_curvelltmin_bdmean"           "BO2_curvelltmin_bdmin"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [115] "BO2_dissoxmax_bdmax"              "BO2_dissoxmax_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [117] "BO2_dissoxmax_bdmin"              "BO2_dissoxmean_bdmax"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [119] "BO2_dissoxmean_bdmean"            "BO2_dissoxmean_bdmin"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [121] "BO2_dissoxmin_bdmax"              "BO2_dissoxmin_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [123] "BO2_dissoxmin_bdmin"              "BO2_dissoxrange_bdmax"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [125] "BO2_dissoxrange_bdmean"           "BO2_dissoxrange_bdmin"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [127] "BO2_dissoxltmax_bdmax"            "BO2_dissoxltmax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [129] "BO2_dissoxltmax_bdmin"            "BO2_dissoxltmin_bdmax"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [131] "BO2_dissoxltmin_bdmean"           "BO2_dissoxltmin_bdmin"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "BO2_ironmax_bdmax"                "BO2_ironmax_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [135] "BO2_ironmax_bdmin"                "BO2_ironmean_bdmax"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [137] "BO2_ironmean_bdmean"              "BO2_ironmean_bdmin"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [139] "BO2_ironmin_bdmax"                "BO2_ironmin_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [141] "BO2_ironmin_bdmin"                "BO2_ironrange_bdmax"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [143] "BO2_ironrange_bdmean"             "BO2_ironrange_bdmin"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "BO2_ironltmax_bdmax"              "BO2_ironltmax_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [147] "BO2_ironltmax_bdmin"              "BO2_ironltmin_bdmax"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [149] "BO2_ironltmin_bdmean"             "BO2_ironltmin_bdmin"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [151] "BO2_phosphatemax_bdmax"           "BO2_phosphatemax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [153] "BO2_phosphatemax_bdmin"           "BO2_phosphatemean_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [155] "BO2_phosphatemean_bdmean"         "BO2_phosphatemean_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "BO2_phosphatemin_bdmax"           "BO2_phosphatemin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [159] "BO2_phosphatemin_bdmin"           "BO2_phosphaterange_bdmax"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [161] "BO2_phosphaterange_bdmean"        "BO2_phosphaterange_bdmin"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [163] "BO2_phosphateltmax_bdmax"         "BO2_phosphateltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [165] "BO2_phosphateltmax_bdmin"         "BO2_phosphateltmin_bdmax"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [167] "BO2_phosphateltmin_bdmean"        "BO2_phosphateltmin_bdmin"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [169] "BO2_lightbotmax_bdmax"            "BO2_lightbotmax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [171] "BO2_lightbotmax_bdmin"            "BO2_lightbotmean_bdmax"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [173] "BO2_lightbotmean_bdmean"          "BO2_lightbotmean_bdmin"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [175] "BO2_lightbotmin_bdmax"            "BO2_lightbotmin_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [177] "BO2_lightbotmin_bdmin"            "BO2_lightbotrange_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [179] "BO2_lightbotrange_bdmean"         "BO2_lightbotrange_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [181] "BO2_lightbotltmax_bdmax"          "BO2_lightbotltmax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [183] "BO2_lightbotltmax_bdmin"          "BO2_lightbotltmin_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [185] "BO2_lightbotltmin_bdmean"         "BO2_lightbotltmin_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [187] "BO2_nitratemax_bdmax"             "BO2_nitratemax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [189] "BO2_nitratemax_bdmin"             "BO2_nitratemean_bdmax"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [191] "BO2_nitratemean_bdmean"           "BO2_nitratemean_bdmin"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [193] "BO2_nitratemin_bdmax"             "BO2_nitratemin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [195] "BO2_nitratemin_bdmin"             "BO2_nitraterange_bdmax"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [197] "BO2_nitraterange_bdmean"          "BO2_nitraterange_bdmin"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [199] "BO2_nitrateltmax_bdmax"           "BO2_nitrateltmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [201] "BO2_nitrateltmax_bdmin"           "BO2_nitrateltmin_bdmax"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [203] "BO2_nitrateltmin_bdmean"          "BO2_nitrateltmin_bdmin"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [205] "BO2_tempmax_bdmax"                "BO2_tempmax_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [207] "BO2_tempmax_bdmin"                "BO2_tempmean_bdmax"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [209] "BO2_tempmean_bdmean"              "BO2_tempmean_bdmin"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [211] "BO2_tempmin_bdmax"                "BO2_tempmin_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [213] "BO2_tempmin_bdmin"                "BO2_temprange_bdmax"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [215] "BO2_temprange_bdmean"             "BO2_temprange_bdmin"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [217] "BO2_templtmax_bdmax"              "BO2_templtmax_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [219] "BO2_templtmax_bdmin"              "BO2_templtmin_bdmax"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [221] "BO2_templtmin_bdmean"             "BO2_templtmin_bdmin"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [223] "BO2_carbonphytomax_bdmax"         "BO2_carbonphytomax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [225] "BO2_carbonphytomax_bdmin"         "BO2_carbonphytomean_bdmax"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [227] "BO2_carbonphytomean_bdmean"       "BO2_carbonphytomean_bdmin"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [229] "BO2_carbonphytomin_bdmax"         "BO2_carbonphytomin_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [231] "BO2_carbonphytomin_bdmin"         "BO2_carbonphytorange_bdmax"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [233] "BO2_carbonphytorange_bdmean"      "BO2_carbonphytorange_bdmin"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [235] "BO2_carbonphytoltmax_bdmax"       "BO2_carbonphytoltmax_bdmean"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [237] "BO2_carbonphytoltmax_bdmin"       "BO2_carbonphytoltmin_bdmax"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [239] "BO2_carbonphytoltmin_bdmean"      "BO2_carbonphytoltmin_bdmin"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [241] "BO2_ppmax_bdmax"                  "BO2_ppmax_bdmean"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [243] "BO2_ppmax_bdmin"                  "BO2_ppmean_bdmax"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [245] "BO2_ppmean_bdmean"                "BO2_ppmean_bdmin"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [247] "BO2_ppmin_bdmax"                  "BO2_ppmin_bdmean"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [249] "BO2_ppmin_bdmin"                  "BO2_pprange_bdmax"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [251] "BO2_pprange_bdmean"               "BO2_pprange_bdmin"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [253] "BO2_ppltmax_bdmax"                "BO2_ppltmax_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [255] "BO2_ppltmax_bdmin"                "BO2_ppltmin_bdmax"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [257] "BO2_ppltmin_bdmean"               "BO2_ppltmin_bdmin"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [259] "BO2_salinitymax_bdmax"            "BO2_salinitymax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [261] "BO2_salinitymax_bdmin"            "BO2_salinitymean_bdmax"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [263] "BO2_salinitymean_bdmean"          "BO2_salinitymean_bdmin"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [265] "BO2_salinitymin_bdmax"            "BO2_salinitymin_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [267] "BO2_salinitymin_bdmin"            "BO2_salinityrange_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [269] "BO2_salinityrange_bdmean"         "BO2_salinityrange_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [271] "BO2_salinityltmax_bdmax"          "BO2_salinityltmax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [273] "BO2_salinityltmax_bdmin"          "BO2_salinityltmin_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [275] "BO2_salinityltmin_bdmean"         "BO2_salinityltmin_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [277] "BO2_silicatemax_bdmax"            "BO2_silicatemax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [279] "BO2_silicatemax_bdmin"            "BO2_silicatemean_bdmax"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [281] "BO2_silicatemean_bdmean"          "BO2_silicatemean_bdmin"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [283] "BO2_silicatemin_bdmax"            "BO2_silicatemin_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [285] "BO2_silicatemin_bdmin"            "BO2_silicaterange_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [287] "BO2_silicaterange_bdmean"         "BO2_silicaterange_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [289] "BO2_silicateltmax_bdmax"          "BO2_silicateltmax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [291] "BO2_silicateltmax_bdmin"          "BO2_silicateltmin_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [293] "BO2_silicateltmin_bdmean"         "BO2_silicateltmin_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [295] "BO2_icecoverltmax_ss"             "BO2_icecoverltmin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [297] "BO2_icecovermax_ss"               "BO2_icecovermean_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [299] "BO2_icecovermin_ss"               "BO2_icecoverrange_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [301] "BO2_icethickltmax_ss"             "BO2_icethickltmin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [303] "BO2_icethickmax_ss"               "BO2_icethickmean_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [305] "BO2_icethickmin_ss"               "BO2_icethickrange_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [307] "BO2_templtmax_ss"                 "BO2_templtmin_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [309] "BO2_tempmax_ss"                   "BO2_tempmean_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [311] "BO2_tempmin_ss"                   "BO2_temprange_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [313] "BO2_chlomax_ss"                   "BO2_chlomean_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [315] "BO2_chlomin_ss"                   "BO2_chlorange_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [317] "BO2_chloltmax_ss"                 "BO2_chloltmin_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [319] "BO2_curvelmax_ss"                 "BO2_curvelmean_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [321] "BO2_curvelmin_ss"                 "BO2_curvelrange_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [323] "BO2_curvelltmax_ss"               "BO2_curvelltmin_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [325] "BO2_dissoxmax_ss"                 "BO2_dissoxmean_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [327] "BO2_dissoxmin_ss"                 "BO2_dissoxrange_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [329] "BO2_dissoxltmax_ss"               "BO2_dissoxltmin_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [331] "BO2_ironmax_ss"                   "BO2_ironmean_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [333] "BO2_ironmin_ss"                   "BO2_ironrange_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [335] "BO2_ironltmax_ss"                 "BO2_ironltmin_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [337] "BO2_phosphatemax_ss"              "BO2_phosphatemean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [339] "BO2_phosphatemin_ss"              "BO2_phosphaterange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [341] "BO2_phosphateltmax_ss"            "BO2_phosphateltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [343] "BO2_nitratemax_ss"                "BO2_nitratemean_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [345] "BO2_nitratemin_ss"                "BO2_nitraterange_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [347] "BO2_nitrateltmax_ss"              "BO2_nitrateltmin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [349] "BO2_carbonphytomax_ss"            "BO2_carbonphytomean_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [351] "BO2_carbonphytomin_ss"            "BO2_carbonphytorange_ss"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [353] "BO2_carbonphytoltmax_ss"          "BO2_carbonphytoltmin_ss"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [355] "BO2_ppmax_ss"                     "BO2_ppmean_ss"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [357] "BO2_ppmin_ss"                     "BO2_pprange_ss"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [359] "BO2_ppltmax_ss"                   "BO2_ppltmin_ss"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [361] "BO2_salinitymax_ss"               "BO2_salinitymean_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [363] "BO2_salinitymin_ss"               "BO2_salinityrange_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [365] "BO2_salinityltmax_ss"             "BO2_salinityltmin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [367] "BO2_silicatemax_ss"               "BO2_silicatemean_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [369] "BO2_silicatemin_ss"               "BO2_silicaterange_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [371] "BO2_silicateltmax_ss"             "BO2_silicateltmin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [373] "BO21_carbonphytoltmax_bdmax"      "BO21_carbonphytoltmax_bdmean"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [375] "BO21_carbonphytoltmax_bdmin"      "BO21_carbonphytoltmax_ss"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [377] "BO21_carbonphytoltmin_bdmax"      "BO21_carbonphytoltmin_bdmean"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [379] "BO21_carbonphytoltmin_bdmin"      "BO21_carbonphytoltmin_ss"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [381] "BO21_carbonphytomax_bdmax"        "BO21_carbonphytomax_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [383] "BO21_carbonphytomax_bdmin"        "BO21_carbonphytomax_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [385] "BO21_carbonphytomean_bdmax"       "BO21_carbonphytomean_bdmean"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [387] "BO21_carbonphytomean_bdmin"       "BO21_carbonphytomean_ss"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [389] "BO21_carbonphytomin_bdmax"        "BO21_carbonphytomin_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [391] "BO21_carbonphytomin_bdmin"        "BO21_carbonphytomin_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [393] "BO21_carbonphytorange_bdmax"      "BO21_carbonphytorange_bdmean"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [395] "BO21_carbonphytorange_bdmin"      "BO21_carbonphytorange_ss"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [397] "BO21_chloltmax_bdmax"             "BO21_chloltmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [399] "BO21_chloltmax_bdmin"             "BO21_chloltmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [401] "BO21_chloltmin_bdmax"             "BO21_chloltmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [403] "BO21_chloltmin_bdmin"             "BO21_chloltmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [405] "BO21_chlomax_bdmax"               "BO21_chlomax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [407] "BO21_chlomax_bdmin"               "BO21_chlomax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [409] "BO21_chlomean_bdmax"              "BO21_chlomean_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [411] "BO21_chlomean_bdmin"              "BO21_chlomean_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [413] "BO21_chlomin_bdmax"               "BO21_chlomin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [415] "BO21_chlomin_bdmin"               "BO21_chlomin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [417] "BO21_chlorange_bdmax"             "BO21_chlorange_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [419] "BO21_chlorange_bdmin"             "BO21_chlorange_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [421] "BO21_curvelltmax_bdmax"           "BO21_curvelltmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [423] "BO21_curvelltmax_bdmin"           "BO21_curvelltmax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [425] "BO21_curvelltmin_bdmax"           "BO21_curvelltmin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [427] "BO21_curvelltmin_bdmin"           "BO21_curvelltmin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [429] "BO21_curvelmax_bdmax"             "BO21_curvelmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [431] "BO21_curvelmax_bdmin"             "BO21_curvelmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [433] "BO21_curvelmean_bdmax"            "BO21_curvelmean_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [435] "BO21_curvelmean_bdmin"            "BO21_curvelmean_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [437] "BO21_curvelmin_bdmax"             "BO21_curvelmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [439] "BO21_curvelmin_bdmin"             "BO21_curvelmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [441] "BO21_curvelrange_bdmax"           "BO21_curvelrange_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [443] "BO21_curvelrange_bdmin"           "BO21_curvelrange_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [445] "BO21_dissoxltmax_bdmax"           "BO21_dissoxltmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [447] "BO21_dissoxltmax_bdmin"           "BO21_dissoxltmax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [449] "BO21_dissoxltmin_bdmax"           "BO21_dissoxltmin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [451] "BO21_dissoxltmin_bdmin"           "BO21_dissoxltmin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [453] "BO21_dissoxmax_bdmax"             "BO21_dissoxmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [455] "BO21_dissoxmax_bdmin"             "BO21_dissoxmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [457] "BO21_dissoxmean_bdmax"            "BO21_dissoxmean_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [459] "BO21_dissoxmean_bdmin"            "BO21_dissoxmean_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [461] "BO21_dissoxmin_bdmax"             "BO21_dissoxmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [463] "BO21_dissoxmin_bdmin"             "BO21_dissoxmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [465] "BO21_dissoxrange_bdmax"           "BO21_dissoxrange_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [467] "BO21_dissoxrange_bdmin"           "BO21_dissoxrange_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [469] "BO21_icecoverltmax_ss"            "BO21_icecoverltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [471] "BO21_icecovermax_ss"              "BO21_icecovermean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [473] "BO21_icecovermin_ss"              "BO21_icecoverrange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [475] "BO21_icethickltmax_ss"            "BO21_icethickltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [477] "BO21_icethickmax_ss"              "BO21_icethickmean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [479] "BO21_icethickmin_ss"              "BO21_icethickrange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [481] "BO21_ironltmax_bdmax"             "BO21_ironltmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [483] "BO21_ironltmax_bdmin"             "BO21_ironltmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [485] "BO21_ironltmin_bdmax"             "BO21_ironltmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [487] "BO21_ironltmin_bdmin"             "BO21_ironltmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [489] "BO21_ironmax_bdmax"               "BO21_ironmax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [491] "BO21_ironmax_bdmin"               "BO21_ironmax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [493] "BO21_ironmean_bdmax"              "BO21_ironmean_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [495] "BO21_ironmean_bdmin"              "BO21_ironmean_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [497] "BO21_ironmin_bdmax"               "BO21_ironmin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [499] "BO21_ironmin_bdmin"               "BO21_ironmin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [501] "BO21_ironrange_bdmax"             "BO21_ironrange_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [503] "BO21_ironrange_bdmin"             "BO21_ironrange_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [505] "BO21_lightbotltmax_bdmax"         "BO21_lightbotltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [507] "BO21_lightbotltmax_bdmin"         "BO21_lightbotltmin_bdmax"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [509] "BO21_lightbotltmin_bdmean"        "BO21_lightbotltmin_bdmin"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [511] "BO21_lightbotmax_bdmax"           "BO21_lightbotmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [513] "BO21_lightbotmax_bdmin"           "BO21_lightbotmean_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [515] "BO21_lightbotmean_bdmean"         "BO21_lightbotmean_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [517] "BO21_lightbotmin_bdmax"           "BO21_lightbotmin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [519] "BO21_lightbotmin_bdmin"           "BO21_lightbotrange_bdmax"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [521] "BO21_lightbotrange_bdmean"        "BO21_lightbotrange_bdmin"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [523] "BO21_nitrateltmax_bdmax"          "BO21_nitrateltmax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [525] "BO21_nitrateltmax_bdmin"          "BO21_nitrateltmax_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [527] "BO21_nitrateltmin_bdmax"          "BO21_nitrateltmin_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [529] "BO21_nitrateltmin_bdmin"          "BO21_nitrateltmin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [531] "BO21_nitratemax_bdmax"            "BO21_nitratemax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [533] "BO21_nitratemax_bdmin"            "BO21_nitratemax_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [535] "BO21_nitratemean_bdmax"           "BO21_nitratemean_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [537] "BO21_nitratemean_bdmin"           "BO21_nitratemean_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [539] "BO21_nitratemin_bdmax"            "BO21_nitratemin_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [541] "BO21_nitratemin_bdmin"            "BO21_nitratemin_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [543] "BO21_nitraterange_bdmax"          "BO21_nitraterange_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [545] "BO21_nitraterange_bdmin"          "BO21_nitraterange_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [547] "BO21_phosphateltmax_bdmax"        "BO21_phosphateltmax_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [549] "BO21_phosphateltmax_bdmin"        "BO21_phosphateltmax_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [551] "BO21_phosphateltmin_bdmax"        "BO21_phosphateltmin_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [553] "BO21_phosphateltmin_bdmin"        "BO21_phosphateltmin_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [555] "BO21_phosphatemax_bdmax"          "BO21_phosphatemax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [557] "BO21_phosphatemax_bdmin"          "BO21_phosphatemax_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [559] "BO21_phosphatemean_bdmax"         "BO21_phosphatemean_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [561] "BO21_phosphatemean_bdmin"         "BO21_phosphatemean_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [563] "BO21_phosphatemin_bdmax"          "BO21_phosphatemin_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [565] "BO21_phosphatemin_bdmin"          "BO21_phosphatemin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [567] "BO21_phosphaterange_bdmax"        "BO21_phosphaterange_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [569] "BO21_phosphaterange_bdmin"        "BO21_phosphaterange_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [571] "BO21_ppltmax_bdmax"               "BO21_ppltmax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [573] "BO21_ppltmax_bdmin"               "BO21_ppltmax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [575] "BO21_ppltmin_bdmax"               "BO21_ppltmin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [577] "BO21_ppltmin_bdmin"               "BO21_ppltmin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [579] "BO21_ppmax_bdmax"                 "BO21_ppmax_bdmean"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [581] "BO21_ppmax_bdmin"                 "BO21_ppmax_ss"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [583] "BO21_ppmean_bdmax"                "BO21_ppmean_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [585] "BO21_ppmean_bdmin"                "BO21_ppmean_ss"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [587] "BO21_ppmin_bdmax"                 "BO21_ppmin_bdmean"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [589] "BO21_ppmin_bdmin"                 "BO21_ppmin_ss"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [591] "BO21_pprange_bdmax"               "BO21_pprange_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [593] "BO21_pprange_bdmin"               "BO21_pprange_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [595] "BO21_salinityltmax_bdmax"         "BO21_salinityltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [597] "BO21_salinityltmax_bdmin"         "BO21_salinityltmax_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [599] "BO21_salinityltmin_bdmax"         "BO21_salinityltmin_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [601] "BO21_salinityltmin_bdmin"         "BO21_salinityltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [603] "BO21_salinitymax_bdmax"           "BO21_salinitymax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [605] "BO21_salinitymax_bdmin"           "BO21_salinitymax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [607] "BO21_salinitymean_bdmax"          "BO21_salinitymean_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [609] "BO21_salinitymean_bdmin"          "BO21_salinitymean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [611] "BO21_salinitymin_bdmax"           "BO21_salinitymin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [613] "BO21_salinitymin_bdmin"           "BO21_salinitymin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [615] "BO21_salinityrange_bdmax"         "BO21_salinityrange_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [617] "BO21_salinityrange_bdmin"         "BO21_salinityrange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [619] "BO21_silicateltmax_bdmax"         "BO21_silicateltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [621] "BO21_silicateltmax_bdmin"         "BO21_silicateltmax_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [623] "BO21_silicateltmin_bdmax"         "BO21_silicateltmin_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [625] "BO21_silicateltmin_bdmin"         "BO21_silicateltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [627] "BO21_silicatemax_bdmax"           "BO21_silicatemax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [629] "BO21_silicatemax_bdmin"           "BO21_silicatemax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [631] "BO21_silicatemean_bdmax"          "BO21_silicatemean_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [633] "BO21_silicatemean_bdmin"          "BO21_silicatemean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [635] "BO21_silicatemin_bdmax"           "BO21_silicatemin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [637] "BO21_silicatemin_bdmin"           "BO21_silicatemin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [639] "BO21_silicaterange_bdmax"         "BO21_silicaterange_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [641] "BO21_silicaterange_bdmin"         "BO21_silicaterange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [643] "BO21_templtmax_bdmax"             "BO21_templtmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [645] "BO21_templtmax_bdmin"             "BO21_templtmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [647] "BO21_templtmin_bdmax"             "BO21_templtmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [649] "BO21_templtmin_bdmin"             "BO21_templtmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [651] "BO21_tempmax_bdmax"               "BO21_tempmax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [653] "BO21_tempmax_bdmin"               "BO21_tempmax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [655] "BO21_tempmean_bdmax"              "BO21_tempmean_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [657] "BO21_tempmean_bdmin"              "BO21_tempmean_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [659] "BO21_tempmin_bdmax"               "BO21_tempmin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [661] "BO21_tempmin_bdmin"               "BO21_tempmin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [663] "BO21_temprange_bdmax"             "BO21_temprange_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [665] "BO21_temprange_bdmin"             "BO21_temprange_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [667] "BO22_carbonphytoltmax_bdmax"      "BO22_carbonphytoltmax_bdmean"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [669] "BO22_carbonphytoltmax_bdmin"      "BO22_carbonphytoltmax_ss"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [671] "BO22_carbonphytoltmin_bdmax"      "BO22_carbonphytoltmin_bdmean"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [673] "BO22_carbonphytoltmin_bdmin"      "BO22_carbonphytoltmin_ss"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [675] "BO22_carbonphytomax_bdmax"        "BO22_carbonphytomax_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [677] "BO22_carbonphytomax_bdmin"        "BO22_carbonphytomax_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [679] "BO22_carbonphytomean_bdmax"       "BO22_carbonphytomean_bdmean"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [681] "BO22_carbonphytomean_bdmin"       "BO22_carbonphytomean_ss"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [683] "BO22_carbonphytomin_bdmax"        "BO22_carbonphytomin_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [685] "BO22_carbonphytomin_bdmin"        "BO22_carbonphytomin_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [687] "BO22_carbonphytorange_bdmax"      "BO22_carbonphytorange_bdmean"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [689] "BO22_carbonphytorange_bdmin"      "BO22_carbonphytorange_ss"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [691] "BO22_chloltmax_bdmax"             "BO22_chloltmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [693] "BO22_chloltmax_bdmin"             "BO22_chloltmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [695] "BO22_chloltmin_bdmax"             "BO22_chloltmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [697] "BO22_chloltmin_bdmin"             "BO22_chloltmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [699] "BO22_chlomax_bdmax"               "BO22_chlomax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [701] "BO22_chlomax_bdmin"               "BO22_chlomax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [703] "BO22_chlomean_bdmax"              "BO22_chlomean_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [705] "BO22_chlomean_bdmin"              "BO22_chlomean_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [707] "BO22_chlomin_bdmax"               "BO22_chlomin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [709] "BO22_chlomin_bdmin"               "BO22_chlomin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [711] "BO22_chlorange_bdmax"             "BO22_chlorange_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [713] "BO22_chlorange_bdmin"             "BO22_chlorange_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [715] "BO22_curvelltmax_bdmax"           "BO22_curvelltmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [717] "BO22_curvelltmax_bdmin"           "BO22_curvelltmax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [719] "BO22_curvelltmin_bdmax"           "BO22_curvelltmin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [721] "BO22_curvelltmin_bdmin"           "BO22_curvelltmin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [723] "BO22_curvelmax_bdmax"             "BO22_curvelmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [725] "BO22_curvelmax_bdmin"             "BO22_curvelmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [727] "BO22_curvelmean_bdmax"            "BO22_curvelmean_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [729] "BO22_curvelmean_bdmin"            "BO22_curvelmean_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [731] "BO22_curvelmin_bdmax"             "BO22_curvelmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [733] "BO22_curvelmin_bdmin"             "BO22_curvelmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [735] "BO22_curvelrange_bdmax"           "BO22_curvelrange_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [737] "BO22_curvelrange_bdmin"           "BO22_curvelrange_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [739] "BO22_dissoxltmax_bdmax"           "BO22_dissoxltmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [741] "BO22_dissoxltmax_bdmin"           "BO22_dissoxltmax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [743] "BO22_dissoxltmin_bdmax"           "BO22_dissoxltmin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [745] "BO22_dissoxltmin_bdmin"           "BO22_dissoxltmin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [747] "BO22_dissoxmax_bdmax"             "BO22_dissoxmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [749] "BO22_dissoxmax_bdmin"             "BO22_dissoxmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [751] "BO22_dissoxmean_bdmax"            "BO22_dissoxmean_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [753] "BO22_dissoxmean_bdmin"            "BO22_dissoxmean_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [755] "BO22_dissoxmin_bdmax"             "BO22_dissoxmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [757] "BO22_dissoxmin_bdmin"             "BO22_dissoxmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [759] "BO22_dissoxrange_bdmax"           "BO22_dissoxrange_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [761] "BO22_dissoxrange_bdmin"           "BO22_dissoxrange_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [763] "BO22_icecoverltmax_ss"            "BO22_icecoverltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [765] "BO22_icecovermax_ss"              "BO22_icecovermean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [767] "BO22_icecovermin_ss"              "BO22_icecoverrange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [769] "BO22_icethickltmax_ss"            "BO22_icethickltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [771] "BO22_icethickmax_ss"              "BO22_icethickmean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [773] "BO22_icethickmin_ss"              "BO22_icethickrange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [775] "BO22_ironltmax_bdmax"             "BO22_ironltmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [777] "BO22_ironltmax_bdmin"             "BO22_ironltmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [779] "BO22_ironltmin_bdmax"             "BO22_ironltmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [781] "BO22_ironltmin_bdmin"             "BO22_ironltmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [783] "BO22_ironmax_bdmax"               "BO22_ironmax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [785] "BO22_ironmax_bdmin"               "BO22_ironmax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [787] "BO22_ironmean_bdmax"              "BO22_ironmean_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [789] "BO22_ironmean_bdmin"              "BO22_ironmean_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [791] "BO22_ironmin_bdmax"               "BO22_ironmin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [793] "BO22_ironmin_bdmin"               "BO22_ironmin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [795] "BO22_ironrange_bdmax"             "BO22_ironrange_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [797] "BO22_ironrange_bdmin"             "BO22_ironrange_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [799] "BO22_lightbotltmax_bdmax"         "BO22_lightbotltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [801] "BO22_lightbotltmax_bdmin"         "BO22_lightbotltmin_bdmax"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [803] "BO22_lightbotltmin_bdmean"        "BO22_lightbotltmin_bdmin"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [805] "BO22_lightbotmax_bdmax"           "BO22_lightbotmax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [807] "BO22_lightbotmax_bdmin"           "BO22_lightbotmean_bdmax"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [809] "BO22_lightbotmean_bdmean"         "BO22_lightbotmean_bdmin"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [811] "BO22_lightbotmin_bdmax"           "BO22_lightbotmin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [813] "BO22_lightbotmin_bdmin"           "BO22_lightbotrange_bdmax"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [815] "BO22_lightbotrange_bdmean"        "BO22_lightbotrange_bdmin"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [817] "BO22_nitrateltmax_bdmax"          "BO22_nitrateltmax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [819] "BO22_nitrateltmax_bdmin"          "BO22_nitrateltmax_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [821] "BO22_nitrateltmin_bdmax"          "BO22_nitrateltmin_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [823] "BO22_nitrateltmin_bdmin"          "BO22_nitrateltmin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [825] "BO22_nitratemax_bdmax"            "BO22_nitratemax_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [827] "BO22_nitratemax_bdmin"            "BO22_nitratemax_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [829] "BO22_nitratemean_bdmax"           "BO22_nitratemean_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [831] "BO22_nitratemean_bdmin"           "BO22_nitratemean_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [833] "BO22_nitratemin_bdmax"            "BO22_nitratemin_bdmean"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [835] "BO22_nitratemin_bdmin"            "BO22_nitratemin_ss"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [837] "BO22_nitraterange_bdmax"          "BO22_nitraterange_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [839] "BO22_nitraterange_bdmin"          "BO22_nitraterange_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [841] "BO22_phosphateltmax_bdmax"        "BO22_phosphateltmax_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [843] "BO22_phosphateltmax_bdmin"        "BO22_phosphateltmax_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [845] "BO22_phosphateltmin_bdmax"        "BO22_phosphateltmin_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [847] "BO22_phosphateltmin_bdmin"        "BO22_phosphateltmin_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [849] "BO22_phosphatemax_bdmax"          "BO22_phosphatemax_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [851] "BO22_phosphatemax_bdmin"          "BO22_phosphatemax_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [853] "BO22_phosphatemean_bdmax"         "BO22_phosphatemean_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [855] "BO22_phosphatemean_bdmin"         "BO22_phosphatemean_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [857] "BO22_phosphatemin_bdmax"          "BO22_phosphatemin_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [859] "BO22_phosphatemin_bdmin"          "BO22_phosphatemin_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [861] "BO22_phosphaterange_bdmax"        "BO22_phosphaterange_bdmean"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [863] "BO22_phosphaterange_bdmin"        "BO22_phosphaterange_ss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [865] "BO22_ppltmax_bdmax"               "BO22_ppltmax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [867] "BO22_ppltmax_bdmin"               "BO22_ppltmax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [869] "BO22_ppltmin_bdmax"               "BO22_ppltmin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [871] "BO22_ppltmin_bdmin"               "BO22_ppltmin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [873] "BO22_ppmax_bdmax"                 "BO22_ppmax_bdmean"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [875] "BO22_ppmax_bdmin"                 "BO22_ppmax_ss"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [877] "BO22_ppmean_bdmax"                "BO22_ppmean_bdmean"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [879] "BO22_ppmean_bdmin"                "BO22_ppmean_ss"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [881] "BO22_ppmin_bdmax"                 "BO22_ppmin_bdmean"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [883] "BO22_ppmin_bdmin"                 "BO22_ppmin_ss"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [885] "BO22_pprange_bdmax"               "BO22_pprange_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [887] "BO22_pprange_bdmin"               "BO22_pprange_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [889] "BO22_salinityltmax_bdmax"         "BO22_salinityltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [891] "BO22_salinityltmax_bdmin"         "BO22_salinityltmax_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [893] "BO22_salinityltmin_bdmax"         "BO22_salinityltmin_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [895] "BO22_salinityltmin_bdmin"         "BO22_salinityltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [897] "BO22_salinitymax_bdmax"           "BO22_salinitymax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [899] "BO22_salinitymax_bdmin"           "BO22_salinitymax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [901] "BO22_salinitymean_bdmax"          "BO22_salinitymean_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [903] "BO22_salinitymean_bdmin"          "BO22_salinitymean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [905] "BO22_salinitymin_bdmax"           "BO22_salinitymin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [907] "BO22_salinitymin_bdmin"           "BO22_salinitymin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [909] "BO22_salinityrange_bdmax"         "BO22_salinityrange_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [911] "BO22_salinityrange_bdmin"         "BO22_salinityrange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [913] "BO22_silicateltmax_bdmax"         "BO22_silicateltmax_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [915] "BO22_silicateltmax_bdmin"         "BO22_silicateltmax_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [917] "BO22_silicateltmin_bdmax"         "BO22_silicateltmin_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [919] "BO22_silicateltmin_bdmin"         "BO22_silicateltmin_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [921] "BO22_silicatemax_bdmax"           "BO22_silicatemax_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [923] "BO22_silicatemax_bdmin"           "BO22_silicatemax_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [925] "BO22_silicatemean_bdmax"          "BO22_silicatemean_bdmean"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [927] "BO22_silicatemean_bdmin"          "BO22_silicatemean_ss"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [929] "BO22_silicatemin_bdmax"           "BO22_silicatemin_bdmean"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [931] "BO22_silicatemin_bdmin"           "BO22_silicatemin_ss"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [933] "BO22_silicaterange_bdmax"         "BO22_silicaterange_bdmean"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [935] "BO22_silicaterange_bdmin"         "BO22_silicaterange_ss"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [937] "BO22_templtmax_bdmax"             "BO22_templtmax_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [939] "BO22_templtmax_bdmin"             "BO22_templtmax_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [941] "BO22_templtmin_bdmax"             "BO22_templtmin_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [943] "BO22_templtmin_bdmin"             "BO22_templtmin_ss"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [945] "BO22_tempmax_bdmax"               "BO22_tempmax_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [947] "BO22_tempmax_bdmin"               "BO22_tempmax_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [949] "BO22_tempmean_bdmax"              "BO22_tempmean_bdmean"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [951] "BO22_tempmean_bdmin"              "BO22_tempmean_ss"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [953] "BO22_tempmin_bdmax"               "BO22_tempmin_bdmean"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [955] "BO22_tempmin_bdmin"               "BO22_tempmin_ss"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [957] "BO22_temprange_bdmax"             "BO22_temprange_bdmean"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [959] "BO22_temprange_bdmin"             "BO22_temprange_ss"               </span>
 <span class="r-in"><span><span class="co"># list the first 5 terrestrial layers</span></span></span>
 <span class="r-in"><span><span class="fu">list_layers</span><span class="op">(</span>marine<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,<span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   dataset_code layer_code                           name</span>
@@ -702,11 +702,11 @@ number.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4       1950           1         1     2000         1       1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5       1950           1         1     2000         1       1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         derivation month is_surface version</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                               ''    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2               mean, thin-plate smoothing splines    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         mean range, thin-plate smoothing splines    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                               ''    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 standard deviation, thin-plate smoothing splines    NA       TRUE       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                               ''    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               mean, thin-plate smoothing splines    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         mean range, thin-plate smoothing splines    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                               ''    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 standard deviation, thin-plate smoothing splines    NA       TRUE      10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                   layer_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  https://www.lifewatch.be/sdmpredictors/WC_alt_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 https://www.lifewatch.be/sdmpredictors/WC_bio1_lonlat.tif</span>
@@ -752,11 +752,11 @@ number.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                          derivation month is_surface version</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69                                               ''    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70 derived from bathymetry (sin(aspect in radians))    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71 derived from bathymetry (cos(aspect in radians))    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72                           derived from bathmetry    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73                           derived from bathmetry    NA       TRUE       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69                                               ''    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70 derived from bathymetry (sin(aspect in radians))    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71 derived from bathymetry (cos(aspect in radians))    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                           derived from bathmetry    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73                           derived from bathmetry    NA       TRUE      10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                             layer_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                      https://www.lifewatch.be/sdmpredictors/MS_bathy_5m_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70         https://www.lifewatch.be/sdmpredictors/MS_biogeo01_aspect_EW_5m_lonlat.tif</span>
@@ -771,171 +771,171 @@ number.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71      MARSPEC         MS_biogeo02_aspect_NS_5m</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72      MARSPEC    MS_biogeo03_plan_curvature_5m</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73      MARSPEC MS_biogeo04_profile_curvature_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74      MARSPEC        MS_biogeo05_dist_shore_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75      MARSPEC       MS_biogeo06_bathy_slope_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76      MARSPEC         MS_biogeo07_concavity_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77      MARSPEC          MS_biogeo08_sss_mean_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78      MARSPEC           MS_biogeo09_sss_min_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79      MARSPEC           MS_biogeo10_sss_max_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80      MARSPEC         MS_biogeo11_sss_range_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81      MARSPEC      MS_biogeo12_sss_variance_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82      MARSPEC          MS_biogeo13_sst_mean_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83      MARSPEC           MS_biogeo14_sst_min_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84      MARSPEC           MS_biogeo15_sst_max_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85      MARSPEC         MS_biogeo16_sst_range_5m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86      MARSPEC      MS_biogeo17_sst_variance_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75      MARSPEC        MS_biogeo05_dist_shore_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76      MARSPEC       MS_biogeo06_bathy_slope_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77      MARSPEC         MS_biogeo07_concavity_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78      MARSPEC          MS_biogeo08_sss_mean_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79      MARSPEC           MS_biogeo09_sss_min_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80      MARSPEC           MS_biogeo10_sss_max_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81      MARSPEC         MS_biogeo11_sss_range_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82      MARSPEC      MS_biogeo12_sss_variance_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83      MARSPEC          MS_biogeo13_sst_mean_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84      MARSPEC           MS_biogeo14_sst_min_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85      MARSPEC           MS_biogeo15_sst_max_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86      MARSPEC         MS_biogeo16_sst_range_5m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87      MARSPEC      MS_biogeo17_sst_variance_5m</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                                       Bathymetry</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70                                 East/West aspect</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71                               North/South Aspect</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72                                   Plan curvature</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73                                Profile curvature</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74                                Distance to shore</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75                                Bathymetric slope</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76                                        Concavity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77               Sea surface salinity (annual mean)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78           Sea surface salinity (monthly minimum)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79           Sea surface salinity (monthly maximum)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80              Sea surface salinity (annual range)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81           Sea surface salinity (annual variance)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82            Sea surface temperature (annual mean)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83 Sea surface temperature (coldest ice-free month)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84 Sea surface temperature (warmest ice-free month)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85                  Sea surface temperature (range)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86               Sea surface temperature (variance)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75                                Distance to shore</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76                                Bathymetric slope</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                                        Concavity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78               Sea surface salinity (annual mean)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79           Sea surface salinity (monthly minimum)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80           Sea surface salinity (monthly maximum)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81              Sea surface salinity (annual range)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82           Sea surface salinity (annual variance)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83            Sea surface temperature (annual mean)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84 Sea surface temperature (coldest ice-free month)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85 Sea surface temperature (warmest ice-free month)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86                  Sea surface temperature (range)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87               Sea surface temperature (variance)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                             description</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                                                                                                                                                                                                                                                                Depth of the seafloor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70                                                                                                                                                                                                                                            East/West Aspect (sin(aspect in radians))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71                                                                                                                                                                                                                                          North/South Aspect (cos(aspect in radians))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72                                                                                       Plan curvature is the curvature in the direction perpendicular to the maximum slope and indicates whether flow across a surface would diverge (positive values) or converge (negative values).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73                                                                                    Profile curvature is the curvature in the direction parallel to the maximum slope and indicates whether flow across a surface would accelerate (positive values) or decelerate (negative values).</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74                                                                                                                                                                                                                                                                                   ''</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75                                                                                                                                                                                Bathymetric slope was measured in degrees ranging from 0??? (flat surface) to 90??? (vertical slope).</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76                                                                                         Concavity is the second derivative of the bathymetry layer (or the slope of the slope) and represents whether a raster cell is on a hill (negative values) or in a valley (positive values).</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77                                                                                                             Measurements of sea surface salinity (SSS) were obtained from in situ oceanographic observations compiled by NOAA?s World Ocean Atlas 2009 (WOA09, Antonov et al. 2010).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75                                                                                                                                                                                                                                                                                   ''</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76                                                                                                                                                                                Bathymetric slope was measured in degrees ranging from 0??? (flat surface) to 90??? (vertical slope).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                                                                                         Concavity is the second derivative of the bathymetry layer (or the slope of the slope) and represents whether a raster cell is on a hill (negative values) or in a valley (positive values).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 78                                                                                                             Measurements of sea surface salinity (SSS) were obtained from in situ oceanographic observations compiled by NOAA?s World Ocean Atlas 2009 (WOA09, Antonov et al. 2010).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 79                                                                                                             Measurements of sea surface salinity (SSS) were obtained from in situ oceanographic observations compiled by NOAA?s World Ocean Atlas 2009 (WOA09, Antonov et al. 2010).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 80                                                                                                             Measurements of sea surface salinity (SSS) were obtained from in situ oceanographic observations compiled by NOAA?s World Ocean Atlas 2009 (WOA09, Antonov et al. 2010).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 81                                                                                                             Measurements of sea surface salinity (SSS) were obtained from in situ oceanographic observations compiled by NOAA?s World Ocean Atlas 2009 (WOA09, Antonov et al. 2010).</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82 Satellite measures of sea surface temperature (SST) were obtained at a 2.5 arc-minute resolution (approximately 4 km_) from Aqua-MODIS 4-micron nighttime SST Level 3 standard mapped image products, downloaded from NASA's Ocean Color website (http://oceancolor.gsfc.nasa.gov/).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                                                                                                             Measurements of sea surface salinity (SSS) were obtained from in situ oceanographic observations compiled by NOAA?s World Ocean Atlas 2009 (WOA09, Antonov et al. 2010).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 83 Satellite measures of sea surface temperature (SST) were obtained at a 2.5 arc-minute resolution (approximately 4 km_) from Aqua-MODIS 4-micron nighttime SST Level 3 standard mapped image products, downloaded from NASA's Ocean Color website (http://oceancolor.gsfc.nasa.gov/).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 84 Satellite measures of sea surface temperature (SST) were obtained at a 2.5 arc-minute resolution (approximately 4 km_) from Aqua-MODIS 4-micron nighttime SST Level 3 standard mapped image products, downloaded from NASA's Ocean Color website (http://oceancolor.gsfc.nasa.gov/).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 85 Satellite measures of sea surface temperature (SST) were obtained at a 2.5 arc-minute resolution (approximately 4 km_) from Aqua-MODIS 4-micron nighttime SST Level 3 standard mapped image products, downloaded from NASA's Ocean Color website (http://oceancolor.gsfc.nasa.gov/).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 86 Satellite measures of sea surface temperature (SST) were obtained at a 2.5 arc-minute resolution (approximately 4 km_) from Aqua-MODIS 4-micron nighttime SST Level 3 standard mapped image products, downloaded from NASA's Ocean Color website (http://oceancolor.gsfc.nasa.gov/).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87 Satellite measures of sea surface temperature (SST) were obtained at a 2.5 arc-minute resolution (approximately 4 km_) from Aqua-MODIS 4-micron nighttime SST Level 3 standard mapped image products, downloaded from NASA's Ocean Color website (http://oceancolor.gsfc.nasa.gov/).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    terrestrial marine freshwater cellsize_equalarea cellsize_lonlat      units</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69       FALSE   TRUE      FALSE               7000      0.08333333     meters</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70       FALSE   TRUE      FALSE               7000      0.08333333    radians</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71       FALSE   TRUE      FALSE               7000      0.08333333    radians</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72       FALSE   TRUE      FALSE               7000      0.08333333   unitless</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73       FALSE   TRUE      FALSE               7000      0.08333333   unitless</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74       FALSE   TRUE      FALSE               7000      0.08333333 kilometers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75       FALSE   TRUE      FALSE               7000      0.08333333    degrees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75       FALSE   TRUE      FALSE               7000      0.08333333 kilometers</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 76       FALSE   TRUE      FALSE               7000      0.08333333    degrees</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77       FALSE   TRUE      FALSE               7000      0.08333333        psu</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77       FALSE   TRUE      FALSE               7000      0.08333333    degrees</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 78       FALSE   TRUE      FALSE               7000      0.08333333        psu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 79       FALSE   TRUE      FALSE               7000      0.08333333        psu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 80       FALSE   TRUE      FALSE               7000      0.08333333        psu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 81       FALSE   TRUE      FALSE               7000      0.08333333        psu</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82       FALSE   TRUE      FALSE               7000      0.08333333    Celsius</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82       FALSE   TRUE      FALSE               7000      0.08333333        psu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 83       FALSE   TRUE      FALSE               7000      0.08333333    Celsius</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 84       FALSE   TRUE      FALSE               7000      0.08333333    Celsius</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 85       FALSE   TRUE      FALSE               7000      0.08333333    Celsius</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 86       FALSE   TRUE      FALSE               7000      0.08333333    Celsius</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87       FALSE   TRUE      FALSE               7000      0.08333333    Celsius</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                     primary_type primary_spatial_resolution</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                              Satellite (SRTM)               30 arcsecond</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70                              Satellite (SRTM)               30 arcsecond</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71                              Satellite (SRTM)               30 arcsecond</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72                              Satellite (SRTM)               30 arcsecond</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73                              Satellite (SRTM)               30 arcsecond</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74                                            ''                         ''</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75                              Satellite (SRTM)               30 arcsecond</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75                                            ''                         ''</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 76                              Satellite (SRTM)               30 arcsecond</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77   in situ measurements, monthly climatologies                1 arcdegree</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                              Satellite (SRTM)               30 arcsecond</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 78   in situ measurements, monthly climatologies                1 arcdegree</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 79   in situ measurements, monthly climatologies                1 arcdegree</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 80   in situ measurements, monthly climatologies                1 arcdegree</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 81   in situ measurements, monthly climatologies                1 arcdegree</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82 Satellite (Aqua-MODIS), monthly climatologies              2.5 arcminute</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82   in situ measurements, monthly climatologies                1 arcdegree</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 83 Satellite (Aqua-MODIS), monthly climatologies              2.5 arcminute</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 84 Satellite (Aqua-MODIS), monthly climatologies              2.5 arcminute</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 85 Satellite (Aqua-MODIS), monthly climatologies              2.5 arcminute</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 86 Satellite (Aqua-MODIS), monthly climatologies              2.5 arcminute</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87 Satellite (Aqua-MODIS), monthly climatologies              2.5 arcminute</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         primary_source</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74   GSHHS v2.1 reference:Wessel and Smith 1996 URL:http://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75   GSHHS v2.1 reference:Wessel and Smith 1996 URL:http://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 76 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77                                                World Ocean Atlas 2009 reference:Antonov et al. 2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77 SRTM30_PLUS V6.0 reference: Becker et al. 2009 URL: http://topex.ucsd.edu/WWW_html/srtm30_plus.html</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 78                                                World Ocean Atlas 2009 reference:Antonov et al. 2010</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 79                                                World Ocean Atlas 2009 reference:Antonov et al. 2010</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 80                                                World Ocean Atlas 2009 reference:Antonov et al. 2010</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 81                                                World Ocean Atlas 2009 reference:Antonov et al. 2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82                           Reference: (Feldman &amp; McClain 2010) URL: http://oceancolor.gsfc.nasa.gov/</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                                                World Ocean Atlas 2009 reference:Antonov et al. 2010</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 83                           Reference: (Feldman &amp; McClain 2010) URL: http://oceancolor.gsfc.nasa.gov/</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 84                           Reference: (Feldman &amp; McClain 2010) URL: http://oceancolor.gsfc.nasa.gov/</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 85                           Reference: (Feldman &amp; McClain 2010) URL: http://oceancolor.gsfc.nasa.gov/</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 86                           Reference: (Feldman &amp; McClain 2010) URL: http://oceancolor.gsfc.nasa.gov/</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87                           Reference: (Feldman &amp; McClain 2010) URL: http://oceancolor.gsfc.nasa.gov/</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    start_year start_month start_day end_year end_month end_day</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73       2009           1         1     2009        12      31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 75       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 76       2009           1         1     2009        12      31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77       1955           1         1     2006        12      31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77       2009           1         1     2009        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 78       1955           1         1     2006        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 79       1955           1         1     2006        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 80       1955           1         1     2006        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 81       1955           1         1     2006        12      31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82       2002           1         1     2010        12      31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82       1955           1         1     2006        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 83       2002           1         1     2010        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 84       2002           1         1     2010        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 85       2002           1         1     2010        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 86       2002           1         1     2010        12      31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87       2002           1         1     2010        12      31</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                          derivation month is_surface version</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69                                               ''    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70 derived from bathymetry (sin(aspect in radians))    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71 derived from bathymetry (cos(aspect in radians))    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72                           derived from bathmetry    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73                           derived from bathmetry    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74                     derived from GSHHS Coastline    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75                           derived from bathmetry    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76                           derived from bathmetry    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77                       mean, spline interpolation    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78                    minimum, spline interpolation    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79                    maximum, spline interpolation    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80                      range, spline interpolation    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81                   variance, spline interpolation    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82                                             mean    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83                                          minimum    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84                                          maximum    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85                                            range    NA       TRUE       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86                                         variance    NA       TRUE       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69                                               ''    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70 derived from bathymetry (sin(aspect in radians))    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71 derived from bathymetry (cos(aspect in radians))    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                           derived from bathmetry    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73                           derived from bathmetry    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75                     derived from GSHHS Coastline    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76                           derived from bathmetry    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                           derived from bathmetry    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78                       mean, spline interpolation    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79                    minimum, spline interpolation    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80                    maximum, spline interpolation    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81                      range, spline interpolation    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                   variance, spline interpolation    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83                                             mean    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84                                          minimum    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85                                          maximum    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86                                            range    NA       TRUE      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87                                         variance    NA       TRUE      10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                             layer_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                      https://www.lifewatch.be/sdmpredictors/MS_bathy_5m_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70         https://www.lifewatch.be/sdmpredictors/MS_biogeo01_aspect_EW_5m_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71         https://www.lifewatch.be/sdmpredictors/MS_biogeo02_aspect_NS_5m_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 72    https://www.lifewatch.be/sdmpredictors/MS_biogeo03_plan_curvature_5m_lonlat.tif</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73 https://www.lifewatch.be/sdmpredictors/MS_biogeo04_profile_curvature_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74        https://www.lifewatch.be/sdmpredictors/MS_biogeo05_dist_shore_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75       https://www.lifewatch.be/sdmpredictors/MS_biogeo06_bathy_slope_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76         https://www.lifewatch.be/sdmpredictors/MS_biogeo07_concavity_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77          https://www.lifewatch.be/sdmpredictors/MS_biogeo08_sss_mean_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78           https://www.lifewatch.be/sdmpredictors/MS_biogeo09_sss_min_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79           https://www.lifewatch.be/sdmpredictors/MS_biogeo10_sss_max_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80         https://www.lifewatch.be/sdmpredictors/MS_biogeo11_sss_range_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81      https://www.lifewatch.be/sdmpredictors/MS_biogeo12_sss_variance_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82          https://www.lifewatch.be/sdmpredictors/MS_biogeo13_sst_mean_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83           https://www.lifewatch.be/sdmpredictors/MS_biogeo14_sst_min_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84           https://www.lifewatch.be/sdmpredictors/MS_biogeo15_sst_max_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85         https://www.lifewatch.be/sdmpredictors/MS_biogeo16_sst_range_5m_lonlat.tif</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86      https://www.lifewatch.be/sdmpredictors/MS_biogeo17_sst_variance_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75        https://www.lifewatch.be/sdmpredictors/MS_biogeo05_dist_shore_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76       https://www.lifewatch.be/sdmpredictors/MS_biogeo06_bathy_slope_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77         https://www.lifewatch.be/sdmpredictors/MS_biogeo07_concavity_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78          https://www.lifewatch.be/sdmpredictors/MS_biogeo08_sss_mean_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79           https://www.lifewatch.be/sdmpredictors/MS_biogeo09_sss_min_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80           https://www.lifewatch.be/sdmpredictors/MS_biogeo10_sss_max_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81         https://www.lifewatch.be/sdmpredictors/MS_biogeo11_sss_range_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82      https://www.lifewatch.be/sdmpredictors/MS_biogeo12_sss_variance_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83          https://www.lifewatch.be/sdmpredictors/MS_biogeo13_sst_mean_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84           https://www.lifewatch.be/sdmpredictors/MS_biogeo14_sst_min_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85           https://www.lifewatch.be/sdmpredictors/MS_biogeo15_sst_max_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86         https://www.lifewatch.be/sdmpredictors/MS_biogeo16_sst_range_5m_lonlat.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87      https://www.lifewatch.be/sdmpredictors/MS_biogeo17_sst_variance_5m_lonlat.tif</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
