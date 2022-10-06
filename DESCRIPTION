@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.12
-Date: 2022-02-23
+Version: 0.2.13
+Date: 2022-09-13
 Depends:
     R (>= 3.2.5)
 Imports:
@@ -16,7 +16,9 @@ Authors@R: c(
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
     person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb")),
     person("Salvador", "Fernandez", email = "salvador.fernandez@vliz.be", role = c("aut", "cre")),
-    person("Lennert", "Schepers", email = "lennert.schepers@vliz.be", role = c("ctb")))
+    person("Lennert", "Schepers", email = "lennert.schepers@vliz.be", role = c("ctb")),
+    person("LifeWatch Belgium", role = "fnd", comment = "https://lifewatch.be")
+    )
 Description: Terrestrial and marine predictors for species distribution modelling
     from multiple sources, including WorldClim <https://www.worldclim.org/>,,
     ENVIREM <https://envirem.github.io/>, Bio-ORACLE <https://bio-oracle.org/>
@@ -30,6 +32,7 @@ Suggests:
     testthat,
     knitr,
     rmarkdown,
-    httr
+    httr,
+    httr2
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
