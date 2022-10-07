@@ -101,6 +101,7 @@ test_that("correlation_groups return correct correlation groups", {
 })
 
 test_that("plot_correlation works", {
+  skip("stats features not maintained")
   skip_on_cran()
   skip_on_ci()
   

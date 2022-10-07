@@ -1,3 +1,6 @@
+# sdmpredictors 0.2.14
+Add missing cloudmax layer
+
 # sdmpredictors 0.2.13
 Some layers had the wrong URL.
 

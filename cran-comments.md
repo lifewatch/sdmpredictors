@@ -1,5 +1,5 @@
 ## Test environments
-* Locally on Windows 10, R 4.0.2
+* Locally on Windows 10, R 4.2.0
 * GitHub actions CI (See https://github.com/lifewatch/sdmpredictors/actions)
   * windows-latest (release)
   * Ubuntu 20-04 (release)
