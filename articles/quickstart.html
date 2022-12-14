@@ -68,12 +68,14 @@
 
 
 
-<script src="quickstart_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+
+<div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>sdmpredictors quickstart guide</h1>
-                        <h4 data-toc-skip class="author">Samuel Bosch</h4>
+                        <h4 data-toc-skip class="author">Samuel
+Bosch</h4>
             
-            <h4 data-toc-skip class="date">2022-10-07</h4>
+            <h4 data-toc-skip class="date">2022-12-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/lifewatch/sdmpredictors/blob/HEAD/vignettes/quickstart.Rmd" class="external-link"><code>vignettes/quickstart.Rmd</code></a></small>
       <div class="d-none name"><code>quickstart.Rmd</code></div>
@@ -81,15 +83,24 @@
 
     
     
-<p>The goal of sdmpredictors is to make environmental data, commonly used for species distribution modelling (SDM), also called ecological niche modelling (ENM) or habitat suitability modelling, easy to use in R. It contains methods for getting metadata about the available environmental data for the current climate but also for future and paleo climatic conditions. A way to download the rasters and load them into R and some general statistics about the different layers.</p>
+<p>The goal of sdmpredictors is to make environmental data, commonly
+used for species distribution modelling (SDM), also called ecological
+niche modelling (ENM) or habitat suitability modelling, easy to use in
+R. It contains methods for getting metadata about the available
+environmental data for the current climate but also for future and paleo
+climatic conditions. A way to download the rasters and load them into R
+and some general statistics about the different layers.</p>
 <div class="section level2">
 <h2 id="getting-the-metadata">Getting the metadata<a class="anchor" aria-label="anchor" href="#getting-the-metadata"></a>
 </h2>
-<p>Different list_* functions are available in order to find out which datasets and environmental layers can be downloaded.</p>
+<p>Different list_* functions are available in order to find out which
+datasets and environmental layers can be downloaded.</p>
 <div class="section level3">
 <h3 id="list_datasets">list_datasets<a class="anchor" aria-label="anchor" href="#list_datasets"></a>
 </h3>
-<p>With the <em>list_datasets</em> function you can view all the available datasets. If you only want terrestrial datasets then you have to set the marine parameter to FALSE and vice versa.</p>
+<p>With the <em>list_datasets</em> function you can view all the
+available datasets. If you only want terrestrial datasets then you have
+to set the marine parameter to FALSE and vice versa.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://lifewatch.github.io/sdmpredictors/">sdmpredictors</a></span><span class="op">)</span></span>
 <span></span>
@@ -118,16 +129,35 @@
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left"><a href="https://bio-oracle.org/" class="external-link uri">https://bio-oracle.org/</a></td>
-<td align="left">Bio-ORACLE is a set of GIS rasters providing geophysical, biotic and environmental data for surface and benthic marine realms at a spatial resolution 5 arcmin (9.2 km) in the ESRI ascii and tif format.</td>
-<td align="left">Tyberghein L., Verbruggen H., Pauly K., Troupin C., Mineur F. &amp; De Clerck O. Bio-ORACLE: a global environmental dataset for marine species distribution modeling. Global Ecology and Biogeography. doi: 10.1111/j.1466-8238.2011.00656.x</td>
+<td align="left">Bio-ORACLE is a set of GIS rasters providing
+geophysical, biotic and environmental data for surface and benthic
+marine realms at a spatial resolution 5 arcmin (9.2 km) in the ESRI
+ascii and tif format.</td>
+<td align="left">Tyberghein L., Verbruggen H., Pauly K., Troupin C.,
+Mineur F. &amp; De Clerck O. Bio-ORACLE: a global environmental dataset
+for marine species distribution modeling. Global Ecology and
+Biogeography. doi: 10.1111/j.1466-8238.2011.00656.x</td>
 </tr>
 <tr class="even">
 <td align="left">MARSPEC</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left"><a href="http://marspec.org/" class="external-link uri">http://marspec.org/</a></td>
-<td align="left">MARSPEC is a set of high resolution climatic and geophysical GIS data layers for the world ocean. Seven geophysical variables were derived from the SRTM30_PLUS high resolution bathymetry dataset. These layers characterize the horizontal orientation (aspect), slope, and curvature of the seafloor and the distance from shore. Ten “bioclimatic” variables were derived from NOAA’s World Ocean Atlas and NASA’s MODIS satellite imagery and characterize the inter-annual means, extremes, and variances in sea surface temperature and salinity. These variables will be useful to those interested in the spatial ecology of marine shallow-water and surface-associated pelagic organisms across the globe. Note that, in contrary to the original MARSPEC, all layers have unscaled values.</td>
-<td align="left">Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean climate layers for marine spatial ecology. Ecology 94: 979. doi: 10.1890/12-1358.1</td>
+<td align="left">MARSPEC is a set of high resolution climatic and
+geophysical GIS data layers for the world ocean. Seven geophysical
+variables were derived from the SRTM30_PLUS high resolution bathymetry
+dataset. These layers characterize the horizontal orientation (aspect),
+slope, and curvature of the seafloor and the distance from shore. Ten
+“bioclimatic” variables were derived from NOAA’s World Ocean Atlas and
+NASA’s MODIS satellite imagery and characterize the inter-annual means,
+extremes, and variances in sea surface temperature and salinity. These
+variables will be useful to those interested in the spatial ecology of
+marine shallow-water and surface-associated pelagic organisms across the
+globe. Note that, in contrary to the original MARSPEC, all layers have
+unscaled values.</td>
+<td align="left">Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean
+climate layers for marine spatial ecology. Ecology 94: 979. doi:
+10.1890/12-1358.1</td>
 </tr>
 </tbody>
 </table>
@@ -135,7 +165,10 @@
 <div class="section level3">
 <h3 id="list_layers">list_layers<a class="anchor" aria-label="anchor" href="#list_layers"></a>
 </h3>
-<p>Using the <em>list_layers</em> function we can view all layer information based on datasets, terrestrial (TRUE/FALSE), marine (TRUE/FALSE) and/or whether it should be monthly data. The table only shows the first 4 columns of the first 3 layers.</p>
+<p>Using the <em>list_layers</em> function we can view all layer
+information based on datasets, terrestrial (TRUE/FALSE), marine
+(TRUE/FALSE) and/or whether it should be monthly data. The table only
+shows the first 4 columns of the first 3 layers.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># exploring the marine layers </span></span>
 <span><span class="va">layers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_layers.html">list_layers</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span></span></code></pre></div>
@@ -178,7 +211,9 @@
 <div class="section level2">
 <h2 id="citing-data">Citing data<a class="anchor" aria-label="anchor" href="#citing-data"></a>
 </h2>
-<p>With the <em>dataset_citations</em> and <em>layer_citations</em> functions you can fetch plain text or bibentries for the datasets and layers used, allowing for proper citation of the data.</p>
+<p>With the <em>dataset_citations</em> and <em>layer_citations</em>
+functions you can fetch plain text or bibentries for the datasets and
+layers used, allowing for proper citation of the data.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># print the Bio-ORACLE citation</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dataset_citations.html">dataset_citations</a></span><span class="op">(</span><span class="st">"Bio-ORACLE"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -210,7 +245,8 @@
 <div class="section level3">
 <h3 id="load_layers">load_layers<a class="anchor" aria-label="anchor" href="#load_layers"></a>
 </h3>
-<p>To be able to use the layers you want in R you have to call the <em>load_layers</em> function with</p>
+<p>To be able to use the layers you want in R you have to call the
+<em>load_layers</em> function with</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># download pH and Salinity to the temporary directory</span></span>
 <span><span class="fu"><a href="../reference/load_layers.html">load_layers</a></span><span class="op">(</span><span class="va">layers</span><span class="op">[</span><span class="va">layers</span><span class="op">$</span><span class="va">name</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pH"</span>, <span class="st">"Salinity"</span><span class="op">)</span> <span class="op">&amp;</span> </span>
@@ -247,7 +283,8 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">paleo</span><span class="op">$</span><span class="va">model_name</span><span class="op">)</span> </span></code></pre></div>
 <pre><code><span><span class="co">## [1] "21kya_geophysical"      "21kya_ensemble_adjCCSM" "21kya_ensemble_noCCSM" </span></span>
 <span><span class="co">## [4] "6kya_Ensemble"</span></span></code></pre>
-<p>Other functions related to layers metadata and future and paleo layers are:</p>
+<p>Other functions related to layers metadata and future and paleo
+layers are:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_layers_info.html">get_layers_info</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BO_calcite"</span>,<span class="st">"BO_B1_2100_sstmax"</span>,<span class="st">"MS_bathy_21kya"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">common</span></span></code></pre></div>
 <pre><code><span><span class="co">##         time dataset_code        layer_code</span></span>
@@ -274,15 +311,18 @@
 <div class="section level2">
 <h2 id="statistics">Statistics<a class="anchor" aria-label="anchor" href="#statistics"></a>
 </h2>
-<p>Two types of statistics are available for the current climate layers:</p>
+<p>Two types of statistics are available for the current climate
+layers:</p>
 <ul>
 <li>individual layer statistics
 <ul>
-<li>summary statistics (minimum, q1, median, q3, maximum, mad, mean and sd)</li>
+<li>summary statistics (minimum, q1, median, q3, maximum, mad, mean and
+sd)</li>
 <li>spatial autocorrelation (Moran’s I and Geary’s C)</li>
 </ul>
 </li>
-<li>Pearson correlation coefficient between the different layers and their quadratic</li>
+<li>Pearson correlation coefficient between the different layers and
+their quadratic</li>
 </ul>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># looking up statistics and correlations for marine annual layers</span></span>
