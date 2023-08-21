@@ -33,5 +33,5 @@
 #' @name sdmpredictors
 #'   
 #' @importFrom raster raster stack
-#' @import stats utils rgdal
+#' @import stats utils
 NULL

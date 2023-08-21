@@ -10,7 +10,7 @@ Imports:
     stats,
     utils,
     raster,
-    rgdal
+    terra
 Authors@R: c(
     person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut")),
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
@@ -35,5 +35,5 @@ Suggests:
     rmarkdown,
     httr,
     httr2
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr

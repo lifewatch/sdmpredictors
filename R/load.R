@@ -109,7 +109,7 @@ load_layers <- function(layercodes, equalarea = FALSE, rasterstack = TRUE, datad
   if(max(counts) != NROW(layercodes)) {
     warning("Layers from different eras (current, future, paleo) are being loaded together")
   }
-  if(!rgdal::GDALis3ormore()){
+  if(gdal_is_lower_than_3()){
     warning("GDAL is lower than version 3. Consider updating GDAL to avoid errors.")
   }
   datadir <- get_datadir(datadir)
@@ -180,3 +180,13 @@ lonlatproj <- sp::CRS("+proj=longlat +datum=WGS84 +no_defs")
 #' using load_layers with equal_area = TRUE
 #' @export
 equalareaproj <- sp::CRS("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs")
+
+#' Is gdal v3 or more?
+#' @noRd
+gdal_is_lower_than_3 <- function(){
+  vgdal <- terra::gdal()
+  vgdal <- strsplit(vgdal, ".", fixed = TRUE)[[1]][1]
+  vgdal <- as.numeric(vgdal)
+  is_less_than_3 <- vgdal < 3
+  is_less_than_3
+}

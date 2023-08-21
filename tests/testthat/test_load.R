@@ -1,5 +1,5 @@
 library(sdmpredictors)
-library(raster)
+suppressWarnings({library(raster)})
 
 test_dir <- file.path(tempdir(), "sdmpredictors")
 options(sdmpredictors_datadir = test_dir)
@@ -58,7 +58,9 @@ test_that("load_layer equal area layer works", {
 })
 test_that("load_layer works with different datadir options", {
   normalize <- function(p) {
-    normalizePath(paste0(p,"/"), winslash = "/", mustWork = TRUE)
+    suppressWarnings({
+      normalizePath(paste0(p,"/"), winslash = "/", mustWork = TRUE)
+    })
   }
   rpath <- function(rs) {
     path <- gsub("/vsizip/", "", dirname(raster::raster(rs,1)@file@name), fixed = TRUE)
@@ -174,7 +176,7 @@ test_that("GDAL virtual file system works to read zipped raster files", {
   rs <- raster::raster(url)
   
   expect_equal(class(rs)[1], "RasterLayer")
-  expect_true(rgdal::GDALis3ormore())
+  expect_false(gdal_is_lower_than_3())
 })
 
 
