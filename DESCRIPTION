@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.14
-Date: 2022-12-14
+Version: 0.2.15
+Date: 2023-08-11
 Depends:
     R (>= 3.2.5)
 Imports:

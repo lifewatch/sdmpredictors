@@ -1,3 +1,6 @@
+# sdmpredictors 0.2.15
+Remove dependency on defunct package rgdal.
+
 # sdmpredictors 0.2.14
 Add missing cloudmax layer
 
