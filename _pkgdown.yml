@@ -2,8 +2,7 @@ url: http://lifewatch.github.io/sdmpredictors/
 template:
   bootstrap: 5
 authors:
-  Salvador Fernández:
-    href: https://twitter.com/salvafern
+  Samuel Bosch:
   LifeWatch Belgium:
     href: https://lifewatch.be
     html: "<img src='https://www.lifewatch.be/sites/lifewatch.be/themes/lifewatchportal/images/header_lw_logo.png' width=72>"
