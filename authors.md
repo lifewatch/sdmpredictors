@@ -19,7 +19,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/lifewatch/sdmpredictors/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/lifewatch/sdmpredictors/blob/v0.2.16/DESCRIPTION)
 
 Bosch S, Fernandez S (2026). *sdmpredictors: Species Distribution
 Modelling Predictor Datasets*. R package version 0.2.16,
