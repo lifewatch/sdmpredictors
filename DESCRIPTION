@@ -1,8 +1,8 @@
 Package: sdmpredictors
 Type: Package
 Title: Species Distribution Modelling Predictor Datasets
-Version: 0.2.15
-Date: 2023-08-11
+Version: 0.2.16
+Date: 2026-07-03
 Depends:
     R (>= 3.2.5)
 Imports:
@@ -12,11 +12,11 @@ Imports:
     raster,
     terra
 Authors@R: c(
-    person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut")),
+    person("Samuel", "Bosch", email = "mail@samuelbosch.com", role = c("aut", "cre")),
     person("Lennert", "Tyberghein", email = "lennert.tyberghein@vliz.be", role = c("ctb")),
     person("Olivier", "De Clerck", email = "olivier.declerck@ugent.be", role = c("ctb")),
-    person("Salvador", "Fernandez", email = "salvador.fernandez@vliz.be", role = c("aut", "cre")),
-    person("Lennert", "Schepers", email = "lennert.schepers@vliz.be", role = c("ctb")),
+    person("Salvador", "Fernandez", role = c("aut")),
+    person("Lennert", "Schepers", role = c("ctb")),
     person("LifeWatch Belgium", role = "fnd", comment = "https://lifewatch.be")
     )
 Description: Terrestrial and marine predictors for species distribution modelling
