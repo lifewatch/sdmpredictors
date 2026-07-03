@@ -2,13 +2,13 @@
 
 ## Authors
 
-- **Samuel Bosch**. Author.
+- **Samuel Bosch**. Author, maintainer.
 
 - **Lennert Tyberghein**. Contributor.
 
 - **Olivier De Clerck**. Contributor.
 
-- **Salvador Fernandez**. Author, maintainer.
+- **Salvador Fernandez**. Author.
 
 - **Lennert Schepers**. Contributor.
 
@@ -22,13 +22,13 @@ Source:
 [`DESCRIPTION`](https://github.com/lifewatch/sdmpredictors/blob/master/DESCRIPTION)
 
 Bosch S, Fernandez S (2026). *sdmpredictors: Species Distribution
-Modelling Predictor Datasets*. R package version 0.2.15,
+Modelling Predictor Datasets*. R package version 0.2.16,
 <http://lifewatch.github.io/sdmpredictors/>.
 
     @Manual{,
       title = {sdmpredictors: Species Distribution Modelling Predictor Datasets},
       author = {Samuel Bosch and Salvador Fernandez},
       year = {2026},
-      note = {R package version 0.2.15},
+      note = {R package version 0.2.16},
       url = {http://lifewatch.github.io/sdmpredictors/},
     }
