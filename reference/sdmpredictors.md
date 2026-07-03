@@ -1,0 +1,33 @@
+# sdmpredictors: Species Distribution Modeling Predictor Datasets
+
+Terrestrial and marine predictors for species distribution modeling from
+multiple sources, including WorldClim (<https://www.worldclim.org/>),
+Bio-ORACLE (<https://bio-oracle.org/>) and MARSPEC
+(<http://www.marspec.org/>).
+
+## References
+
+WorldClim: Hijmans, R.J., S.E. Cameron, J.L. Parra, P.G. Jones and A.
+Jarvis (2005). Very high resolution interpolated climate surfaces for
+global land areas. International Journal of Climatology 25: 1965-1978.
+([doi:10.1002/joc.1276](https://doi.org/10.1002/joc.1276) )
+
+ENVIREM: Title, P. O. and Bemmels, J. B. (2017). envirem: An expanded
+set of bioclimatic and topographic variables increases flexibility and
+improves performance of ecological niche modeling. Ecography (Cop.). in
+press. ([doi:10.1111/ecog.02880](https://doi.org/10.1111/ecog.02880) )
+
+Bio-ORACLE: Tyberghein L., Verbruggen H., Pauly K., Troupin C., Mineur
+F. & De Clerck O. (2012) Bio-ORACLE: a global environmental dataset for
+marine species distribution modeling. Global Ecology and Biogeography
+([doi:10.1111/j.1466-8238.2011.00656.x](https://doi.org/10.1111/j.1466-8238.2011.00656.x)
+).
+
+Assis, J., Tyberghein, L., Bosh, S., Verbruggen, H., Serrao, E. A., & De
+Clerck, O. (2017). Bio-ORACLE v2.0: Extending marine data layers for
+bioclimatic modelling. Global Ecology and Biogeography.
+([doi:10.1111/geb.12693](https://doi.org/10.1111/geb.12693) )
+
+MARSPEC: Sbrocco, EJ and Barber, PH (2013) MARSPEC: Ocean climate layers
+for marine spatial ecology. Ecology 94: 979.
+([doi:10.1890/12-1358.1](https://doi.org/10.1890/12-1358.1) )
